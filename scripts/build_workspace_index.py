@@ -611,12 +611,30 @@ def generate_domain_portal_html(domain: str, items: list):
     .cat-badge {{
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 5px 12px;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
       background: {config['color']}18;
       color: {config['color']};
-      text-transform: uppercase;
     }}
+    .cat-badge.math        {{ background: linear-gradient(135deg, #0d9488, #14b8a6); color: #fff; }}
+    .cat-badge.reading-writing {{ background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; }}
+    .cat-badge.algebra        {{ background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; }}
+    .cat-badge.advanced-math  {{ background: linear-gradient(135deg, #8b5cf6, #a78bfa); color: #fff; }}
+    .cat-badge.geometry-and-trigonometry {{ background: linear-gradient(135deg, #6366f1, #c084fc); color: #fff; }}
+    .cat-badge.problem-solving-and-data-analysis {{ background: linear-gradient(135deg, #0ea5e9, #38bdf8); color: #fff; }}
+    .cat-badge.question-banks {{ background: linear-gradient(135deg, #f97316, #fb923c); color: #fff; }}
+    .cat-badge.practice-modules {{ background: linear-gradient(135deg, #c084fc, #e879f9); color: #fff; }}
+    .cat-badge.craft-and-structure {{ background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; }}
+    .cat-badge.information-and-ideas {{ background: linear-gradient(135deg, #f97316, #fb923c); color: #fff; }}
+    .cat-badge.expression-of-ideas {{ background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; }}
+    .cat-badge.standard-english-conventions {{ background: linear-gradient(135deg, #f97316, #fb923c); color: #fff; }}
+    .cat-badge.vocabulary     {{ background: linear-gradient(135deg, #10b981, #34d399); color: #fff; }}
+    .cat-badge.show           {{ background: linear-gradient(135deg, #3b82f6, #60a5fa); color: #fff; }}
+    .cat-badge.test           {{ background: linear-gradient(135deg, #e11d48, #fb7185); color: #fff; }}
+    .cat-badge.study-notes    {{ background: linear-gradient(135deg, #334155, #64748b); color: #e2e8f0; }}
 
     .level-tag {{
       font-size: 0.75rem;
@@ -854,7 +872,7 @@ def generate_domain_portal_html(domain: str, items: list):
         <div class="content-card">
           <div>
             <div class="card-top">
-              <span class="cat-badge">${{item.category.replace(/_/g, ' ')}}</span>
+              <span class="cat-badge ${{item.category.toLowerCase().replace(/_/g,'-')}}">${{item.category.replace(/_/g, ' ')}}</span>
               <span class="level-tag">${{item.target_level}}</span>
             </div>
             <h3 class="card-title">${{item.title}}</h3>
