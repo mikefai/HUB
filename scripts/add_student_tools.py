@@ -34,7 +34,12 @@ def targets():
         if not html.with_suffix(".md").exists():
             continue  # only .md-paired study pages
         out.append(html)
-    return out
+    # Standalone student-facing apps with no .md twin (explicit list)
+    for rel in ["SAT/Reading_Writing/sat_digital_ebrw_interactive_trainer.html"]:
+        p = WORKSPACE_ROOT / rel
+        if p.exists() and p not in out:
+            out.append(p)
+    return sorted(out)
 
 
 def main():

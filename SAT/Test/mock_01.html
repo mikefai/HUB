@@ -39,12 +39,19 @@
 
 <script>
 function gradeMock(){
-const r=['B','B','A','A','B','B']; // correct keys for Q1-Q6
-const results=document.getElementById('results');
-let score=0, html='<h3>Results</h3><ul>';
-for(let i=1;i<=6;i++){let sel=document.querySelector('.section:nth-child('+((Math.ceil(i/2)+1))+') .q:nth-child('+((i%2===1?1:2))+')'); score+=(i<=6)?(score+1):0; html+='<li>Q'+i+': review explanation (key above)</li>';} // simplified
-results.innerHTML=html+'<li>Estimated score: review keys — Q1=B, Q2=B, Q3=A, Q4=A, Q5=B, Q6=B</li></ul>';
-}
+// Self-check key (this demo mock has no clickable options yet —
+// work each question on paper, then reveal and compare).
+const key=[
+{q:1,k:'B',why:'The stem reports a study result, not a policy argument (A), a regional comparison (C), or a critique of methods (D).'},
+{q:2,k:'B',why:'"Nevertheless" concedes the bottleneck, then pivots to the battery solution. Not a summary (A), a new contrast (C), or a definition (D).'},
+{q:3,k:'A',why:'3x + 7 = 22 → x = 5 → 2x + 3 = 13.'},
+{q:4,k:'A',why:'2x + 5 = -x + 8 → 3x = 3 → x = 1 → y = 7.'},
+{q:5,k:'B',why:'Structural fixes (order, cuts) beat cosmetic ones (titles, summaries) for coherence.'},
+{q:6,k:'B',why:'(70 − 50) / 10 = 2 standard deviations above the mean.'}];
+let html='<h3>Answer Key — check your paper answers</h3><ol>';
+key.forEach(function(it){html+='<li><strong>Q'+it.q+': '+it.k+'</strong> — '+it.why+'</li>';});
+document.getElementById('results').innerHTML=html+'</ol>';
+document.getElementById('results').scrollIntoView();}
 let t=60*60; setInterval(()=>{t--; let m=Math.floor(t/60),s=t%60; document.getElementById('timer').textContent=m+':'+(s<10?'0':'')+s;},1000);
 </script>
 </body></html>

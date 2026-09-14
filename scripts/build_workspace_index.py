@@ -177,10 +177,20 @@ def scan_workspace():
                 print(f"Error reading {md_file}: {e}")
 
     # 2. Scan Interactive HTML simulators
+    # Dedupe: an HTML page with an indexed .md twin does NOT get its own card —
+    # the MD card already links to the HTML twin (link_root/link_domain).
+    md_indexed = {it["path_root"] for it in items}
     for html_file in WORKSPACE_ROOT.rglob("*.html"):
-        if html_file.name in {"index.html"}:
+        if html_file.name in {"index.html", "README.html"}:
             continue
         if any(part.startswith(".") for part in html_file.parts):
+            continue
+        twin = html_file.with_suffix(".md")
+        try:
+            twin_rel = twin.relative_to(WORKSPACE_ROOT).as_posix()
+        except ValueError:
+            twin_rel = None
+        if twin_rel and twin_rel in md_indexed:
             continue
         try:
             content = html_file.read_text(encoding="utf-8")

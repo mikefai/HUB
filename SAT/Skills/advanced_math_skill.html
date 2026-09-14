@@ -20,13 +20,13 @@ a{color:#10b981}</style></head><body><div class="wrap">
 <p>Pick an answer for instant feedback with rationale. Use the portal toolbar
 (<strong>Pen / Highlight / Mark</strong>) to annotate.</p>
 <div class="q" id="q1"><h3>Q1 — Easy: Quadratic Solve</h3><p>x² - 5x + 6 = 0</p><p><strong>x² - 5x + 6 = 0</strong></p><button class="opt" onclick="pick(this,1,'B')">A) 5,6</button><button class="opt" onclick="pick(this,1,'B')">B) 2,3</button><button class="opt" onclick="pick(this,1,'B')">C) -2,-3</button><button class="opt" onclick="pick(this,1,'B')">D) 1,6</button><div id="fb1"></div></div>
-<div class="q" id="q2"><h3>Q2 — Medium: Quadratic Formula</h3><p>2x² + 4x - 6 = 0. Sum of roots?</p><p><strong>2x² + 4x - 6 = 0. Sum of roots?</strong></p><button class="opt" onclick="pick(this,2,'B')">A) -3</button><button class="opt" onclick="pick(this,2,'B')">B) -2</button><button class="opt" onclick="pick(this,2,'B')">C) 2</button><button class="opt" onclick="pick(this,2,'B')">D) 3</button><div id="fb2"></div></div>
-<div class="q" id="q3"><h3>Q3 — Hard: Function Inverse</h3><p>f(x)=2x+4. Find f⁻¹(10).</p><p><strong>f(x)=2x+4. Find f⁻¹(10).</strong></p><button class="opt" onclick="pick(this,3,'B')">A) 2</button><button class="opt" onclick="pick(this,3,'B')">B) 3</button><button class="opt" onclick="pick(this,3,'B')">C) 4</button><button class="opt" onclick="pick(this,3,'B')">D) 5</button><div id="fb3"></div></div>
+<div class="q" id="q2"><h3>Q2 — Medium: Quadratic Formula</h3><p>2x² + 4x - 6 = 0. Sum of roots?</p><p><strong>2x² + 4x - 6 = 0. Sum of roots?</strong></p><button class="opt" onclick="pick(this,2,'C')">A) -3</button><button class="opt" onclick="pick(this,2,'C')">B) 2</button><button class="opt" onclick="pick(this,2,'C')">C) -2</button><button class="opt" onclick="pick(this,2,'C')">D) 3</button><div id="fb2"></div></div>
+<div class="q" id="q3"><h3>Q3 — Hard: Function Inverse</h3><p>f(x)=2x+4. Find f⁻¹(10).</p><p><strong>f(x)=2x+4. Find f⁻¹(10).</strong></p><button class="opt" onclick="pick(this,3,'D')">A) 2</button><button class="opt" onclick="pick(this,3,'D')">B) 5</button><button class="opt" onclick="pick(this,3,'D')">C) 4</button><button class="opt" onclick="pick(this,3,'D')">D) 3</button><div id="fb3"></div></div>
 <button class="go" onclick="clearAll()">Clear Selections</button>
 <p style="margin-top:2rem"><a href="../index.html">← Master Portal</a> |
 <a href="../Question_Banks/sat_advanced_math_10_items.html">35-Item Bank →</a></p></div>
 <script>
-const QD = {"1": {"key": "B", "rat": "factors to (x-2)(x-3)). C wrong signs; A sum=11.", "qid": "Advanced Math-Q1"}, "2": {"key": "B", "rat": "sum = -b/a = -4/2 = -2). C opposite sign; D product.", "qid": "Advanced Math-Q2"}, "3": {"key": "B", "rat": "y=2x+4 => x=(y-4)/2 => (10-4)/2=3). A = 10/2 no -4; C = 10-4; D wrong.", "qid": "Advanced Math-Q4"}};
+const QD = {"1": {"key": "B", "rat": "factors to (x-2)(x-3)). C wrong signs; A sum=11.", "qid": "Advanced Math-Q1"}, "2": {"key": "C", "rat": "sum = -b/a = -4/2 = -2). B opposite sign; D product.", "qid": "Advanced Math-Q2"}, "3": {"key": "D", "rat": "y=2x+4 => x=(y-4)/2 => (10-4)/2=3). A = 10/2 no -4; C = 10-4; B wrong.", "qid": "Advanced Math-Q4"}};
 let picks={};
 function pick(btn,q,correct){
 document.querySelectorAll('#q'+q+' .opt').forEach(b=>b.classList.remove('selected'));

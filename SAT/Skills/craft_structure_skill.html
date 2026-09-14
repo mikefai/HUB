@@ -21,10 +21,10 @@
 <h3>Q2 â€” Medium: Transition Function</h3>
 <p>"Although solar costs fell, storage remains a bottleneck. Nevertheless, new batteries suggest a path forward."</p>
 <p><strong>The phrase "Nevertheless..." mainly does what?</strong></p>
-<button class="opt" onclick="pick(this,2,'B')">A) Summarize conclusion</button>
-<button class="opt" onclick="pick(this,2,'B')">B) Concede limitation then introduce solution</button>
-<button class="opt" onclick="pick(this,2,'B')">C) Contrast solar with wind</button>
-<button class="opt" onclick="pick(this,2,'B')">D) Define grid storage</button>
+<button class="opt" onclick="pick(this,2,'C')">A) Summarize conclusion</button>
+<button class="opt" onclick="pick(this,2,'C')">B) Contrast solar with wind</button>
+<button class="opt" onclick="pick(this,2,'C')">C) Concede limitation then introduce solution</button>
+<button class="opt" onclick="pick(this,2,'C')">D) Define grid storage</button>
 <div id="fb2"></div>
 </div>
 
@@ -32,10 +32,10 @@
 <h3>Q3 â€” Hard: Evidence & Inference</h3>
 <p>A historian claims 19th-century strikes were about time autonomy, not wages. Evidence: demands mentioned fixed-hour clauses over pay after 1870.</p>
 <p><strong>Which finding best supports this?</strong></p>
-<button class="opt" onclick="pick(this,3,'B')">A) Wages rose faster after 1870</button>
-<button class="opt" onclick="pick(this,3,'B')">B) Scheduling demands dominated 78% of post-1870 strikes</button>
-<button class="opt" onclick="pick(this,3,'B')">C) Owners reduced hours voluntarily</button>
-<button class="opt" onclick="pick(this,3,'B')">D) Strike frequency fell after 1870</button>
+<button class="opt" onclick="pick(this,3,'D')">A) Wages rose faster after 1870</button>
+<button class="opt" onclick="pick(this,3,'D')">B) Strike frequency fell after 1870</button>
+<button class="opt" onclick="pick(this,3,'D')">C) Owners reduced hours voluntarily</button>
+<button class="opt" onclick="pick(this,3,'D')">D) Scheduling demands dominated 78% of post-1870 strikes</button>
 <div id="fb3"></div>
 </div>
 
@@ -50,8 +50,8 @@ function pick(btn,q,correct){
   btn.classList.add('selected');
   picks[q]=btn.textContent.trim().charAt(0);
   let fb=document.getElementById('fb'+q);
-  if(picks[q]===correct){fb.className='feedback correct';fb.innerHTML='<b>Correct.</b> '+ (q===1?'The passage reports a result (B). A is too prescriptive; C/D off-topic.':q===2?'Concession + pivot (B). A is summary; C is unrelated; D is definition.':'Direct evidence aligns with claim (B). A/C/D contradict or are irrelevant.');}
-  else{fb.className='feedback wrong';fb.innerHTML='<b>Incorrect.</b> '+ (q===1?'Correct is B: report finding. A tries to persuade; C compares regions; D critiques.':q===2?'Correct is B: concede then pivot. A summarizes wrongly; C introduces wind; D defines term.':'Correct is B: scheduling dominates evidence. A contradicts; C irrelevant; D is frequency.');}
+  if(picks[q]===correct){fb.className='feedback correct';fb.innerHTML='<b>Correct.</b> '+ (q===1?'The passage reports a result (B). A is too prescriptive; C/D off-topic.':q===2?'Concession + pivot (C). A is summary; B is unrelated; D is definition.':'Direct evidence aligns with claim (D). A/C/B contradict or are irrelevant.');}
+  else{fb.className='feedback wrong';fb.innerHTML='<b>Incorrect.</b> '+ (q===1?'Correct is B: report finding. A tries to persuade; C compares regions; D critiques.':q===2?'Correct is C: concede then pivot. A summarizes wrongly; B introduces wind; D defines term.':'Correct is D: scheduling dominates evidence. A contradicts; C irrelevant; B is frequency.');}
 }
 function clearAll(){document.querySelectorAll('.opt').forEach(b=>b.classList.remove('selected'));document.querySelectorAll('.feedback').forEach(b=>b.innerHTML='');picks={};}
 function toggleBookmark(id){let s=document.querySelector('#q'+id+' .bookmark');if(s.innerText==='â­'){s.innerText='â˜…';localStorage.setItem('sat_bookmark_craft_'+id,'1');}else{s.innerText='â­';localStorage.removeItem('sat_bookmark_craft_'+id);}}
