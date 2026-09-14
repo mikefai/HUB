@@ -1,713 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks | SAT Academic Study Module</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <!-- KaTeX for Math Equation Rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\(', right: '\)', display: false}, {left: '\[', right: '\]', display: true}]});"></script>
-
-  <!-- Mermaid for diagram rendering (mindmap, flowchart) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <style>
-    .mermaid-diagram{background:#fff;border:1px solid var(--border,#e2e8f0);border-radius:10px;padding:1rem;margin:.6rem 0;overflow-x:auto;text-align:center}
-  </style>
-  <style>
-    :root {
-      --primary: #8b5cf6;
-      --primary-dark: #7c3aed;
-      --primary-light: rgba(139, 92, 246, 0.08);
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-      --radius: 12px;
-      --font: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --base-font-size: 16px;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b0f19;
-      --surface: #131b2e;
-      --card-bg: #1e293b;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --primary-light: rgba(255, 255, 255, 0.05);
-      --border: #334155;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: var(--base-font-size); scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      padding-bottom: 80px;
-    }
-
-    /* Global Header */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      padding: 0.75rem 1.5rem;
-    }
-
-    .header-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .btn-back:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    .domain-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(139, 92, 246, 0.08);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn-action {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .btn-action:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .btn-teacher-toggle {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    /* Audio Player Bar */
-    .audio-player-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 1.5rem;
-      font-size: 0.85rem;
-    }
-    .audio-bar-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .audio-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .speed-select {
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
-
-    main {
-      max-width: 1080px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero Banner */
-    .module-hero {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.25rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .module-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), #3b82f6);
-    }
-
-    .module-meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .meta-pill {
-      font-size: 0.8rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .meta-pill.highlight {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    .module-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    /* Scaffolding Card */
-    .scaffold-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .scaffold-header {
-      padding: 1.25rem;
-      background: var(--primary-light);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .scaffold-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .scaffold-content {
-      padding: 1.5rem;
-      display: block;
-    }
-    .scaffold-intro {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    .starter-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .starter-btn {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 12px;
-      border-radius: 8px;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .starter-btn:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-    .starter-btn .tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .starter-btn code {
-      font-family: var(--font);
-      font-size: 0.85rem;
-      color: var(--text);
-      line-height: 1.4;
-    }
-    .pitfall-radar {
-      background: rgba(239, 68, 68, 0.05);
-      border-left: 4px solid #ef4444;
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-    }
-    .pitfall-radar ul {
-      margin: 0.5rem 0 0 1.25rem;
-    }
-    .pitfall-radar li {
-      margin-bottom: 0.3rem;
-    }
-
-    /* Main Content Card */
-    .module-content-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-    }
-
-    /* Typography */
-    .study-heading {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      color: var(--text);
-      scroll-margin-top: 80px;
-    }
-    .study-heading.h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
-    .study-heading.h2 { font-size: 1.45rem; border-left: 4px solid var(--primary); padding-left: 12px; }
-    .study-heading.h3 { font-size: 1.2rem; color: var(--primary); }
-    .study-heading.h4 { font-size: 1.05rem; font-weight: 700; }
-
-    p { margin-bottom: 1.25rem; color: var(--text); }
-    .study-list { margin: 1rem 0 1.5rem 1.5rem; }
-    .study-list li { margin-bottom: 0.6rem; }
-
-    /* Code Blocks */
-    .code-block-wrapper {
-      background: #0f172a;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 1.5rem 0;
-      border: 1px solid #334155;
-    }
-    .code-header {
-      background: #1e293b;
-      padding: 8px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #94a3b8;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .code-actions {
-      display: flex;
-      gap: 6px;
-    }
-    .btn-copy-code {
-      background: transparent;
-      border: 1px solid #475569;
-      color: #cbd5e1;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    .btn-copy-code:hover {
-      background: #334155;
-      color: #fff;
-    }
-    pre {
-      padding: 1.25rem;
-      overflow-x: auto;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #e2e8f0;
-    }
-
-    /* Tables */
-    .table-container {
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-      text-align: left;
-    }
-    .data-table th {
-      background: var(--bg);
-      padding: 12px 16px;
-      border-bottom: 2px solid var(--border);
-      font-weight: 700;
-      color: var(--text);
-    }
-    .data-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table tr:hover td { background: var(--primary-light); }
-
-    /* Alerts */
-    .alert {
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin: 1.5rem 0;
-      border-left: 4px solid;
-    }
-    .alert-title { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .alert-note { background: rgba(59, 130, 246, 0.08); border-color: #3b82f6; }
-    .alert-tip { background: rgba(16, 185, 129, 0.08); border-color: #10b981; }
-    .alert-important { background: rgba(239, 68, 68, 0.08); border-color: #ef4444; }
-    .alert-warning { background: rgba(245, 158, 11, 0.08); border-color: #f59e0b; }
-
-    .study-quote {
-      border-left: 4px solid var(--primary);
-      padding: 1rem 1.25rem;
-      background: var(--bg);
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    /* KaTeX & Desmos Formula Styling */
-    .katex-display {
-      margin: 1.2rem 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0.5rem 0;
-    }
-    .desmos-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: rgba(139, 92, 246, 0.12);
-      color: #7c3aed;
-      margin-bottom: 8px;
-    }
-    .study-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-    /* Interactive Tool Cards */
-    .interactive-tool-card {
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .tool-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tool-title { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
-    .tool-badges { display: flex; gap: 8px; }
-    .badge {
-      background: var(--primary);
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-    }
-    .timer-controls, .speaking-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
-    .btn-tool {
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      background: var(--primary);
-      color: #fff;
-      transition: all 0.2s;
-    }
-    .btn-tool:hover { opacity: 0.9; }
-    .btn-tool-outline { background: var(--bg); border: 1px solid var(--border); color: var(--text); }
-    .btn-tool-outline:hover { border-color: var(--primary); color: var(--primary); }
-    textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 1rem;
-      padding: 1rem;
-      line-height: 1.6;
-      resize: vertical;
-      margin-bottom: 1rem;
-    }
-    textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
-    .stats-bar { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
-    .progress-bar-bg, .speaking-progress-container {
-      flex: 1;
-      height: 10px;
-      background: var(--border);
-      border-radius: 5px;
-      overflow: hidden;
-      min-width: 150px;
-    }
-    .progress-bar-fill, .speaking-progress-bar { height: 100%; background: #10b981; transition: width 0.3s ease; }
-    .word-status-badge { font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); }
-
-    /* Mastery Checklist Card */
-    .mastery-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .mastery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .mastery-score {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .mastery-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mastery-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: var(--bg);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      font-size: 0.92rem;
-    }
-    .mastery-item input[type="checkbox"] {
-      margin-top: 4px;
-      cursor: pointer;
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-    }
-    .mastery-banner {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid #10b981;
-      border-radius: 8px;
-      color: #10b981;
-      text-align: center;
-    }
-
-    /* Teacher Drawer */
-    .teacher-drawer {
-      display: none;
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-    }
-    .teacher-drawer.active { display: block; }
-    .teacher-drawer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.75rem;
-    }
-    .teacher-block { margin-bottom: 1.25rem; }
-    .teacher-block h4 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .teacher-block ul { margin-left: 1.25rem; font-size: 0.9rem; }
-    .teacher-block li { margin-bottom: 0.4rem; }
-    .btn-close-drawer { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    @media print {
-      header, .audio-player-bar, .scaffold-card, .interactive-tool-card, .mastery-card, .teacher-drawer, footer, .btn-copy-code { display: none !important; }
-      body { background: #fff; color: #000; font-size: 12pt; }
-      .module-content-card, .module-hero { border: none; box-shadow: none; padding: 0; margin-bottom: 1rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks | SAT Study Guide</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+h2{font-size:1.3rem;margin-top:2rem;border-bottom:2px solid var(--border);padding-bottom:.3rem}
+h3{font-size:1.08rem;margin-top:1.5rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.guide{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.guide p{margin:.65rem 0}.guide ul,.guide ol{margin:.5rem 0 .9rem;padding-left:1.4rem}.guide li{margin:.28rem 0}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+@media print{.topbar,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}}
+</style>
 </head>
 <body>
-
-  <header>
-    <div class="header-container">
-      <div class="nav-left">
-        <a href="../index.html" class="btn-back">← Back to Digital SAT Portal</a>
-        <span class="domain-tag">🏛️ SAT</span>
-      </div>
-      <div class="nav-actions">
-        <button class="btn-action btn-teacher-toggle" onclick="toggleTeacherMode()">👨‍🏫 Teacher Mode</button>
-        <button class="btn-action" onclick="adjustFontSize(-1)" title="Decrease font size">A-</button>
-        <button class="btn-action" onclick="adjustFontSize(1)" title="Increase font size">A+</button>
-        <button class="btn-action" onclick="window.print()" title="Print / Save PDF">🖨️ PDF</button>
-        <button class="btn-action" onclick="toggleTheme()">🌓 Theme</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="audio-player-bar">
-    <div class="audio-bar-inner">
-      <div class="audio-controls">
-        <span>🔊 <strong>Audio Reader:</strong></span>
-        <button class="btn-action" onclick="toggleReadAloud()" id="btnPlayAudio">▶️ Read Aloud</button>
-        <button class="btn-action" onclick="stopAudio()">⏹️ Stop</button>
-        <select class="speed-select" id="audioSpeed" onchange="updateAudioSpeed()">
-          <option value="0.75">0.75x (Slow - Struggling Learners)</option>
-          <option value="1.0" selected>1.0x (Normal Pace)</option>
-          <option value="1.25">1.25x (Fast Pace)</option>
-        </select>
-      </div>
-      <span style="color: var(--text-muted); font-size: 0.8rem;">Select any text to read specific sections</span>
-    </div>
-  </div>
-
-  <main>
-    
-    <!-- Teacher Mode Drawer -->
-    <div class="teacher-drawer" id="teacherDrawer">
-      <div class="teacher-drawer-header">
-        <h3>👨‍🏫 Teacher Mode: Classroom Facilitator Guide</h3>
-        <button class="btn-close-drawer" onclick="toggleTeacherMode()">✕ Close</button>
-      </div>
-      <div class="teacher-drawer-body">
-        
-        
-        <div class="teacher-block">
-          <h4>🖨️ Classroom Printing</h4>
-          <p>Click below to format this module into a clean, 2-page student handout for classroom distribution:</p>
-          <button class="btn-tool" onclick="window.print()">🖨️ Print Student Worksheet</button>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="module-hero">
-      <div class="module-meta-pills">
-        <span class="meta-pill highlight">Score 750 - 800</span>
-        <span class="meta-pill">Student Toolkit & Strategy Guide</span>
-        <span class="meta-pill">📅 2026-09-01</span>
-      </div>
-      <h1 class="module-title">The Ultimate Digital SAT Desmos Calculator Mastery Guide & Speed Hacks</h1>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">Interactive Academic Study Module • Pedagogically Scaffolded Curriculum</p>
-    </div>
-
-    
-    
-    
-
-    <article class="module-content-card">
-      <h1 id="the-ultimate-digital-sat-desmos-calculator-mastery-guide--speed-hacks" class="study-heading h1">📐 The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks</h1>
-<p></p>
-<h2 id="executive-overview" class="study-heading h2">📌 Executive Overview</h2>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../index.html">SAT Portal</a> &rsaquo; Question_Banks</div>
+<div><button class="btn" id="mx-theme" title="Dark / light" style="border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;cursor:pointer">🌓 Theme</button></div>
+</div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../index.html">&larr; SAT Portal</a> &rsaquo; Question_Banks</div>
+<h1>The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks</h1>
+<div class="meta"><span><b>Level:</b> Score 750 - 800</span><span><b>Topic:</b> The Ultimate Digital SAT Desmos Calculator Mastery Guide & Speed Hacks</span><span><b>Type:</b> Student Toolkit & Strategy Guide</span></div>
+<div class="guide"><h2>📐 The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks</h2>
+<h3>📌 Executive Overview</h3>
 <p>On the Digital SAT, the embedded <strong>Desmos Graphing Calculator</strong> is available for <strong>100% of the Math section</strong>. Mastering Desmos transforms 3-minute complex algebraic problems into 15-second visual clicks. This student toolkit details the <strong>15 most essential Desmos hacks</strong> with step-by-step keystrokes and Bluebook-calibrated examples.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="the-15-essential-desmos-speed-hacks" class="study-heading h2">🚀 The 15 Essential Desmos Speed Hacks</h2>
-<p></p>
-<div class="code-block-wrapper"><div class="code-header"><span>mermaid</span><div class="code-actions"><button class="btn-copy-code" onclick="readTextChunk(this)">🔊 Read</button><button class="btn-copy-code" onclick="copyCode(this)">📋 Copy</button></div></div><pre><code class="language-mermaid">mindmap
+<hr>
+<h3>🚀 The 15 Essential Desmos Speed Hacks</h3>
+<pre><code class="language-mermaid">mindmap
   root((Desmos Speed Hacks))
     Solving Equations
       Single Variable Roots
@@ -724,364 +69,70 @@
     Function Features
       Table Values f(x)
       Extrema Min/Max Coordinates
-      Percentage &amp; Statistics Mean/Median</code></pre></div>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="1-the-single-variable-root-solver" class="study-heading h3">1. The Single-Variable Root Solver</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: Solving complex quadratic or radical equations like $3(x - 4)^2 - 18 = 7x + 5$.</li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Type the entire equation directly into Line 1: <code>3(x - 4)^2 - 18 = 7x + 5</code>.</p>
-<p>  2. Desmos will draw vertical gray lines through every real solution.</p>
-<p>  3. Click on the $x$-intercept of the vertical lines to read the exact solutions instantly.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="2-the-slider-hack-for-unknown-constants-k-a-b" class="study-heading h3">2. The Slider Hack for Unknown Constants ($k, a, b$)</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: <em>"For what value of $k$ does $2x^2 - 8x + k = 0$ have exactly one solution?"</em></li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Type <code>y = 2x^2 - 8x + k</code> into Line 1.</p>
-<p>  2. Click <strong>"add slider: k"</strong>.</p>
-<p>  3. Slide or type values for $k$ until the parabola's vertex is exactly tangent to the $x$-axis ($y = 0$).</p>
-<p>  4. The slider reads $k = 8$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="3-system-of-equations-intersection-finder" class="study-heading h3">3. System of Equations Intersection Finder</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: Finding intersection points $(x, y)$ of a linear line and a circle or parabola.</li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Line 1: <code>(x - 3)^2 + (y + 2)^2 = 25</code></p>
-<p>  2. Line 2: <code>y = 2x - 1</code></p>
-<p>  3. Click directly on the gray intersection dots on the graph. Desmos locks onto coordinates like $(3, 5)$ and $(-1, -3)$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="4-table-regression-hack-finding-unknown-quadratic-equations" class="study-heading h3">4. Table Regression Hack: Finding Unknown Quadratic Equations</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: <em>"A parabola passes through $(-2, 12)$, $(1, -3)$, and $(4, 18)$. What is the equation in standard form?"</em></li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Click the <code>+</code> icon $\rightarrow$ select <strong>Table</strong>.</p>
-<p>  2. Enter the $x_1$ and $y_1$ coordinates into the table.</p>
-<p>  3. In Line 2, type the regression command:</p>
-<p>     $$y_1 \sim ax_1^2 + bx_1 + c$$</p>
-<p>  4. Desmos instantly outputs the exact values for parameters $a, b, c$ and $R^2 = 1$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="5-linear-equation-from-two-points-instant-slope--intercept" class="study-heading h3">5. Linear Equation from Two Points (Instant Slope &amp; Intercept)</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: <em>"Find the linear equation passing through $(-5, 14)$ and $(7, -10)$."</em></li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Add a table with points $(-5, 14)$ and $(7, -10)$.</p>
-<p>  2. Line 2: <code>y1 ~ mx1 + b</code></p>
-<p>  3. Desmos gives $m = -2$ and $b = 4 \implies y = -2x + 4$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="6-circle-equation-standard-form-extractor" class="study-heading h3">6. Circle Equation Standard Form Extractor</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: Find the radius and center of $x^2 + y^2 - 8x + 12y - 12 = 0$.</li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Type the full expanded circle equation directly into Desmos.</p>
-<p>  2. Click the leftmost point $(-2, -6)$ and rightmost point $(10, -6)$.</p>
-<p>  3. $\text{Diameter} = 10 - (-2) = 12 \implies \text{Radius } r = 6$.</p>
-<p>  4. The center $x$-coordinate is the midpoint: $\frac{10 + (-2)}{2} = 4$; center $y = -6 \implies (4, -6)$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="7-infinite-solutions-vs-no-solutions-in-linear-systems" class="study-heading h3">7. Infinite Solutions vs No Solutions in Linear Systems</h3>
-<ul class="study-list">
-<li><strong>Infinite Solutions</strong>: Graph both equations with sliders. The lines must overlap completely across every point.</li>
-<li><strong>No Solution</strong>: The lines must be parallel (equal slope, non-overlapping).</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="8-evaluating-complex-function-compositions-fgx" class="study-heading h3">8. Evaluating Complex Function Compositions $f(g(x))$</h3>
-<ul class="study-list">
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Line 1: <code>f(x) = 3x^2 - 5x + 2</code></p>
-<p>  2. Line 2: <code>g(x) = 2x - 7</code></p>
-<p>  3. Line 3: <code>f(g(4))</code> $\rightarrow$ Desmos immediately displays the numerical output <code>f(g(4)) = 10</code>.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="9-instant-removable-discontinuity-hole-finder" class="study-heading h3">9. Instant Removable Discontinuity (Hole) Finder</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: <em>"At what $x$-value does $g(x) = \frac{x^2 - 9}{x - 3}$ have a hole?"</em></li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Type <code>y = (x^2 - 9)/(x - 3)</code>.</p>
-<p>  2. Click and hold on the line, dragging your cursor to $x = 3$.</p>
-<p>  3. Desmos displays a hollow circle with <code>(3, undefined)</code>, proving the removable hole is at $x = 3$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="10-percentage--exponential-modeling-regression" class="study-heading h3">10. Percentage &amp; Exponential Modeling Regression</h3>
-<ul class="study-list">
-<li><strong>The Problem</strong>: <em>"A population begins at 400 and grows to 1,600 after 6 years. Find the exponential model $y = a \cdot b^x$."</em></li>
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  1. Table: $(0, 400)$ and $(6, 1600)$.</p>
-<p>  2. Line 2: <code>y1 ~ a * b^(x1)</code></p>
-<p>  3. Desmos outputs $a = 400$, $b \approx 1.2599$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="11-trigonometric-mode-toggle-radians-vs-degrees" class="study-heading h3">11. Trigonometric Mode Toggle (Radians vs. Degrees)</h3>
-<ul class="study-list">
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  - Click the <strong>Wrench icon (Settings)</strong> in the top right.</p>
-<p>  - At the very bottom, toggle between <strong>Radians</strong> and <strong>Degrees</strong>.</p>
-<p>  - <em>Default is Radians!</em> Always check mode when calculating $\sin(30^\circ)$ vs $\sin(\frac{\pi}{6})$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="12-instant-statistics-mean-median-standard-deviation" class="study-heading h3">12. Instant Statistics: Mean, Median, Standard Deviation</h3>
-<ul class="study-list">
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  - Define a list in Line 1: <code>L = [12, 15, 18, 22, 25, 29, 35]</code></p>
-<p>  - Line 2: <code>mean(L)</code> $\rightarrow$ gives exact average.</p>
-<p>  - Line 3: <code>median(L)</code> $\rightarrow$ gives exact median.</p>
-<p>  - Line 4: <code>stdev(L)</code> $\rightarrow$ gives sample standard deviation.</p>
-<p>  - Line 5: <code>total(L)</code> $\rightarrow$ gives sum of all values.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="13-absolute-value-inequalities-feasible-regions" class="study-heading h3">13. Absolute Value Inequalities Feasible Regions</h3>
-<ul class="study-list">
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  - Type <code>|2x - 5| &lt;= 11</code> $\rightarrow$ Desmos shades the exact interval on the $x$-axis from $[-3, 8]$.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="14-vietas-formula-verification" class="study-heading h3">14. Vieta's Formula Verification</h3>
-<ul class="study-list">
-<li>For any quadratic $ax^2 + bx + c = 0$, verify root sums and products:</li>
-</ul>
-<p>  - $\text{Sum} = -\frac{b}{a}$</p>
-<p>  - $\text{Product} = \frac{c}{a}$</p>
-<p>  - Check visually by typing <code>y = ax^2 + bx + c</code> and clicking both $x$-intercepts.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="15-vertex-coordinates-finder-for-parabolas" class="study-heading h3">15. Vertex Coordinates Finder for Parabolas</h3>
-<ul class="study-list">
-<li><strong>Desmos Hack</strong>:</li>
-</ul>
-<p>  - Type any quadratic $f(x) = ax^2 + bx + c$.</p>
-<p>  - Click on the peak (maximum) or valley (minimum).</p>
-<p>  - The gray dot displays $(h, k)$ where $h = -\frac{b}{2a}$ and $k = f(h)$.</p>
-    </article>
-
-    
-    <!-- Self-Assessment Mastery Checklist -->
-    <div class="mastery-card">
-      <div class="mastery-header">
-        <h3>🎯 Student Self-Assessment & Mastery Checklist</h3>
-        <span class="mastery-score" id="masteryScore">0 / 4 Mastered</span>
-      </div>
-      <div class="mastery-list">
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c1')">
-          <span>I can write a compound introduction paraphrasing both visuals without copying prompt words.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c2')">
-          <span>I can write a dual overview summarizing macro-trends with <strong>ZERO figures/percentages</strong>.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c3')">
-          <span>I grouped data logically into 2 separate body paragraphs with clear bridging connectors.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c4')">
-          <span>I used at least 3 advanced academic proportion or comparative phrases (e.g. <em>lion's share, in stark contrast</em>).</span>
-        </label>
-      </div>
-      <div class="mastery-banner" id="masteryBanner" style="display: none;">
-        🎉 <strong>Outstanding! You have mastered the core competencies for this module.</strong>
-      </div>
-    </div>
-    
-
-    <footer>
-      <p>🏛️ SAT Academic Preparation Workspace • Engineered for Classroom Teaching & High-Yield Self-Study</p>
-    </footer>
-  </main>
-
-  <script>
-    // Theme Switcher
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('study_theme', next);
-    }
-    (function() {
-      const saved = localStorage.getItem('study_theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    })();
-
-    // Font Scaling
-    let currentScale = 16;
-    function adjustFontSize(delta) {
-      currentScale = Math.min(22, Math.max(13, currentScale + delta));
-      document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      localStorage.setItem('study_font_size', currentScale);
-    }
-    (function() {
-      const savedSize = localStorage.getItem('study_font_size');
-      if (savedSize) {
-        currentScale = parseInt(savedSize, 10);
-        document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      }
-    })();
-
-    // Teacher Mode Toggle
-    function toggleTeacherMode() {
-      const drawer = document.getElementById('teacherDrawer');
-      if (drawer) {
-        drawer.classList.toggle('active');
-        if (drawer.classList.contains('active')) {
-          drawer.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-
-    // Scaffolding Toggle & Inserter
-    function toggleScaffold() {
-      const content = document.getElementById('scaffoldContent');
-      const icon = document.getElementById('scaffoldIcon');
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.innerText = '▼';
-      } else {
-        content.style.display = 'none';
-        icon.innerText = '▶';
-      }
-    }
-
-    function updateAudioSpeed() {
-      audioRate = parseFloat(document.getElementById('audioSpeed').value) || 1.0;
-      if (isSpeaking) {
-        stopAudio();
-        toggleReadAloud();
-      }
-    }
-
-    function toggleReadAloud() {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech is not supported in this browser.');
-        return;
-      }
-      if (isSpeaking) {
-        stopAudio();
-        return;
-      }
-      
-      const selected = window.getSelection().toString().trim();
-      const textToRead = selected || document.querySelector('.module-content-card').innerText;
-      
-      currentUtterance = new SpeechSynthesisUtterance(textToRead);
-      currentUtterance.rate = audioRate;
-      currentUtterance.lang = 'en-US';
-
-      currentUtterance.onstart = () => {
-        isSpeaking = true;
-        document.getElementById('btnPlayAudio').innerText = '⏸️ Pause';
-      };
-      currentUtterance.onend = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-      currentUtterance.onerror = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-
-      window.speechSynthesis.speak(currentUtterance);
-    }
-
-    function stopAudio() {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        const btn = document.getElementById('btnPlayAudio');
-        if (btn) btn.innerText = '▶️ Read Aloud';
-      }
-    }
-
-    function readTextChunk(btn) {
-      const pre = btn.closest('.code-block-wrapper').querySelector('pre code');
-      if (pre && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(pre.innerText);
-        utter.rate = audioRate;
-        window.speechSynthesis.speak(utter);
-      }
-    }
-
-    // Mastery Checklist Logic
-    const pageKey = 'mastery_' + window.location.pathname;
-    function updateMastery(chk, key) {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      checks[key] = chk.checked;
-      localStorage.setItem(pageKey, JSON.stringify(checks));
-      renderMastery();
-    }
-    function renderMastery() {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      let count = 0;
-      ['c1', 'c2', 'c3', 'c4'].forEach((k, idx) => {
-        const el = document.querySelectorAll('.mastery-item input')[idx];
-        if (el) {
-          el.checked = !!checks[k];
-          if (checks[k]) count++;
-        }
-      });
-      const scoreEl = document.getElementById('masteryScore');
-      const banner = document.getElementById('masteryBanner');
-      if (scoreEl) scoreEl.innerText = `${count} / 4 Mastered`;
-      if (banner) banner.style.display = count === 4 ? 'block' : 'none';
-    }
-    (function() { renderMastery(); })();
-  </script>
-
-  <script>
-  /* Render mermaid source blocks as diagrams; source code stays for Read/Copy. */
-  window.addEventListener('load', function () {
-    if (!window.mermaid) return;
-    try {
-      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'loose' });
-      document.querySelectorAll('code.language-mermaid').forEach(function (code, i) {
-        var text = code.textContent;
-        if (!text || !text.trim()) return;
-        mermaid.render('sat-mrd-' + i, text).then(function (res) {
-          var holder = document.createElement('div');
-          holder.className = 'mermaid-diagram';
-          holder.innerHTML = res.svg;
-          var pre = code.closest('pre');
-          if (pre && pre.parentNode) pre.parentNode.insertBefore(holder, pre);
-        }).catch(function () {});
-      });
-    } catch (e) {}
-  });
-  </script>
+      Percentage &amp; Statistics Mean/Median</code></pre>
+<hr>
+<h4>1. The Single-Variable Root Solver</h4>
+<ul><li><strong>The Problem</strong>: Solving complex quadratic or radical equations like <span class="mx">3(x - 4)<sup>2</sup> - 18 = 7x + 5</span>.</li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Type the entire equation directly into Line 1: <code>3(x - 4)^2 - 18 = 7x + 5</code>.</li><li>Desmos will draw vertical gray lines through every real solution.</li><li>Click on the <span class="mx">x</span>-intercept of the vertical lines to read the exact solutions instantly.</li></ol>
+<hr>
+<h4>2. The Slider Hack for Unknown Constants (<span class="mx">k, a, b</span>)</h4>
+<ul><li><strong>The Problem</strong>: <em>&quot;For what value of <span class="mx">k</span> does <span class="mx">2x<sup>2</sup> - 8x + k = 0</span> have exactly one solution?&quot;</em></li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Type <code>y = 2x^2 - 8x + k</code> into Line 1.</li><li>Click <strong>&quot;add slider: k&quot;</strong>.</li><li>Slide or type values for <span class="mx">k</span> until the parabola&#x27;s vertex is exactly tangent to the <span class="mx">x</span>-axis (<span class="mx">y = 0</span>).</li><li>The slider reads <span class="mx">k = 8</span>.</li></ol>
+<hr>
+<h4>3. System of Equations Intersection Finder</h4>
+<ul><li><strong>The Problem</strong>: Finding intersection points <span class="mx">(x, y)</span> of a linear line and a circle or parabola.</li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Line 1: <code>(x - 3)^2 + (y + 2)^2 = 25</code></li><li>Line 2: <code>y = 2x - 1</code></li><li>Click directly on the gray intersection dots on the graph. Desmos locks onto coordinates like <span class="mx">(3, 5)</span> and <span class="mx">(-1, -3)</span>.</li></ol>
+<hr>
+<h4>4. Table Regression Hack: Finding Unknown Quadratic Equations</h4>
+<ul><li><strong>The Problem</strong>: <em>&quot;A parabola passes through <span class="mx">(-2, 12)</span>, <span class="mx">(1, -3)</span>, and <span class="mx">(4, 18)</span>. What is the equation in standard form?&quot;</em></li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Click the <code>+</code> icon <span class="mx">→</span> select <strong>Table</strong>.</li><li>Enter the <span class="mx">x<sub>1</sub></span> and <span class="mx">y<sub>1</sub></span> coordinates into the table.</li><li>In Line 2, type the regression command:</li></ol>
+<p><span class="mx-disp">y<sub>1</sub> ~ ax<sub>1</sub><sup>2</sup> + bx<sub>1</sub> + c</span></p>
+<ol><li>Desmos instantly outputs the exact values for parameters <span class="mx">a, b, c</span> and <span class="mx">R<sup>2</sup> = 1</span>.</li></ol>
+<hr>
+<h4>5. Linear Equation from Two Points (Instant Slope &amp; Intercept)</h4>
+<ul><li><strong>The Problem</strong>: <em>&quot;Find the linear equation passing through <span class="mx">(-5, 14)</span> and <span class="mx">(7, -10)</span>.&quot;</em></li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Add a table with points <span class="mx">(-5, 14)</span> and <span class="mx">(7, -10)</span>.</li><li>Line 2: <code>y1 ~ mx1 + b</code></li><li>Desmos gives <span class="mx">m = -2</span> and <span class="mx">b = 4 ⇒ y = -2x + 4</span>.</li></ol>
+<hr>
+<h4>6. Circle Equation Standard Form Extractor</h4>
+<ul><li><strong>The Problem</strong>: Find the radius and center of <span class="mx">x<sup>2</sup> + y<sup>2</sup> - 8x + 12y - 12 = 0</span>.</li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Type the full expanded circle equation directly into Desmos.</li><li>Click the leftmost point <span class="mx">(-2, -6)</span> and rightmost point <span class="mx">(10, -6)</span>.</li><li><span class="mx">Diameter = 10 - (-2) = 12 ⇒ Radius  r = 6</span>.</li><li>The center <span class="mx">x</span>-coordinate is the midpoint: <span class="mx"><span class="mx-frac"><span>10 + (-2)</span><span>2</span></span> = 4</span>; center <span class="mx">y = -6 ⇒ (4, -6)</span>.</li></ol>
+<hr>
+<h4>7. Infinite Solutions vs No Solutions in Linear Systems</h4>
+<ul><li><strong>Infinite Solutions</strong>: Graph both equations with sliders. The lines must overlap completely across every point.</li><li><strong>No Solution</strong>: The lines must be parallel (equal slope, non-overlapping).</li></ul>
+<hr>
+<h4>8. Evaluating Complex Function Compositions <span class="mx">f(g(x))</span></h4>
+<ul><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Line 1: <code>f(x) = 3x^2 - 5x + 2</code></li><li>Line 2: <code>g(x) = 2x - 7</code></li><li>Line 3: <code>f(g(4))</code> <span class="mx">→</span> Desmos immediately displays the numerical output <code>f(g(4)) = 10</code>.</li></ol>
+<hr>
+<h4>9. Instant Removable Discontinuity (Hole) Finder</h4>
+<ul><li><strong>The Problem</strong>: <em>&quot;At what <span class="mx">x</span>-value does <span class="mx">g(x) = <span class="mx-frac"><span>x<sup>2</sup> - 9</span><span>x - 3</span></span></span> have a hole?&quot;</em></li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Type <code>y = (x^2 - 9)/(x - 3)</code>.</li><li>Click and hold on the line, dragging your cursor to <span class="mx">x = 3</span>.</li><li>Desmos displays a hollow circle with <code>(3, undefined)</code>, proving the removable hole is at <span class="mx">x = 3</span>.</li></ol>
+<hr>
+<h4>10. Percentage &amp; Exponential Modeling Regression</h4>
+<ul><li><strong>The Problem</strong>: <em>&quot;A population begins at 400 and grows to 1,600 after 6 years. Find the exponential model <span class="mx">y = a · b<sup>x</sup></span>.&quot;</em></li><li><strong>Desmos Hack</strong>:</li></ul>
+<ol><li>Table: <span class="mx">(0, 400)</span> and <span class="mx">(6, 1600)</span>.</li><li>Line 2: <code>y1 ~ a * b^(x1)</code></li><li>Desmos outputs <span class="mx">a = 400</span>, <span class="mx">b ≈ 1.2599</span>.</li></ol>
+<hr>
+<h4>11. Trigonometric Mode Toggle (Radians vs. Degrees)</h4>
+<ul><li><strong>Desmos Hack</strong>:</li><li>Click the <strong>Wrench icon (Settings)</strong> in the top right.</li><li>At the very bottom, toggle between <strong>Radians</strong> and <strong>Degrees</strong>.</li><li><em>Default is Radians!</em> Always check mode when calculating <span class="mx">sin(30<sup>\</sup>circ)</span> vs <span class="mx">sin(<span class="mx-frac"><span>π</span><span>6</span></span>)</span>.</li></ul>
+<hr>
+<h4>12. Instant Statistics: Mean, Median, Standard Deviation</h4>
+<ul><li><strong>Desmos Hack</strong>:</li><li>Define a list in Line 1: <code>L = [12, 15, 18, 22, 25, 29, 35]</code></li><li>Line 2: <code>mean(L)</code> <span class="mx">→</span> gives exact average.</li><li>Line 3: <code>median(L)</code> <span class="mx">→</span> gives exact median.</li><li>Line 4: <code>stdev(L)</code> <span class="mx">→</span> gives sample standard deviation.</li><li>Line 5: <code>total(L)</code> <span class="mx">→</span> gives sum of all values.</li></ul>
+<hr>
+<h4>13. Absolute Value Inequalities Feasible Regions</h4>
+<ul><li><strong>Desmos Hack</strong>:</li><li>Type <code>|2x - 5| &lt;= 11</code> <span class="mx">→</span> Desmos shades the exact interval on the <span class="mx">x</span>-axis from <span class="mx">[-3, 8]</span>.</li></ul>
+<hr>
+<h4>14. Vieta&#x27;s Formula Verification</h4>
+<ul><li>For any quadratic <span class="mx">ax<sup>2</sup> + bx + c = 0</span>, verify root sums and products:</li><li><span class="mx">Sum = -<span class="mx-frac"><span>b</span><span>a</span></span></span></li><li><span class="mx">Product = <span class="mx-frac"><span>c</span><span>a</span></span></span></li><li>Check visually by typing <code>y = ax^2 + bx + c</code> and clicking both <span class="mx">x</span>-intercepts.</li></ul>
+<hr>
+<h4>15. Vertex Coordinates Finder for Parabolas</h4>
+<ul><li><strong>Desmos Hack</strong>:</li><li>Type any quadratic <span class="mx">f(x) = ax<sup>2</sup> + bx + c</span>.</li><li>Click on the peak (maximum) or valley (minimum).</li><li>The gray dot displays <span class="mx">(h, k)</span> where <span class="mx">h = -<span class="mx-frac"><span>b</span><span>2a</span></span></span> and <span class="mx">k = f(h)</span>.</li></ul>
+<hr></div>
+<div class="flow"><a href="../Show/show_walkthrough.html">Show/show_walkthrough.html</a><a href="../Test/mock_01.html">Test/mock_01.html</a><a href="../index.html">Portal</a></div>
+</div>
+<script>
+document.getElementById('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+</script>
+<!-- student-tools v1 -->
 <!-- student-tools v1 -->
 <style>
 

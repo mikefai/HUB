@@ -1,12 +1,12 @@
----
+﻿---
 domain: SAT
 target_level: Score 700+
-topic: Study Notes — Algebra
+topic: Study Notes â€” Algebra
 date_created: 2026-09-13
 content_type: Study Notes / Strategy Guide
 ---
 
-# Algebra — Study Notes
+# Algebra â€” Study Notes
 
 Linear equations, systems, inequalities, and linear functions. Master isolating variables, reading slopes, and testing solutions.
 
@@ -17,7 +17,7 @@ Linear equations, systems, inequalities, and linear functions. Master isolating 
 - **Parallel lines** share a slope ($m_1 = m_2$) and never meet; **perpendicular lines** have slopes whose product is $-1$.
 - **Systems**: substitution works best when one variable is already isolated; elimination works best when coefficients line up.
 - **No solution** = same slope, different intercept. **Infinite solutions** = the same line twice (all ratios equal).
-- **Function check**: $f(a)$ means substitute $a$ everywhere $x$ appears — including inside squares and roots.
+- **Function check**: $f(a)$ means substitute $a$ everywhere $x$ appears â€” including inside squares and roots.
 
 ## Worked Micro-Examples
 
@@ -29,16 +29,16 @@ Linear equations, systems, inequalities, and linear functions. Master isolating 
 
 - Sign errors when moving terms across `=` (change the sign!).
 - Forgetting to flip inequality signs on negative division.
-- Solving for $x$ when the question asks for $2x + 3$ or $y$ — reread the final ask.
+- Solving for $x$ when the question asks for $2x + 3$ or $y$ â€” reread the final ask.
 
 ## Self-Check (answers in the drills)
 
 - If $5x - 8 = 2x + 13$, $x = ?$ *(7)*
 - Line through $(1, 3)$ with slope $2$: $y$-intercept? *(1)*
-- $|x - 4| = 6$: solutions? *(10 and −2)*
+- $|x - 4| = 6$: solutions? *(10 and âˆ’2)*
 
 - **Teach:** Detailed rules above
 - **Show:** [SAT/Show/show_walkthrough.html](../Show/show_walkthrough.html)
 - **Test:** [SAT/Test/mock_01.html](../Test/mock_01.html)
-- **Interactive Drill:** [SAT/Skills/algebra_skill.html](../Skills/algebra_skill.html)
+- **Interactive Drill:** [SAT/Question_Banks/sat_algebra_10_items.html](../Question_Banks/sat_algebra_10_items.html)
 - **Portal:** [SAT/index.html](../index.html)

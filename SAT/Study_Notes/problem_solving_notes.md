@@ -1,12 +1,12 @@
----
+﻿---
 domain: SAT
 target_level: Score 700+
-topic: Study Notes — Problem Solving & Data Analysis
+topic: Study Notes â€” Problem Solving & Data Analysis
 date_created: 2026-09-13
 content_type: Study Notes / Strategy Guide
 ---
 
-# Problem Solving & Data Analysis — Study Notes
+# Problem Solving & Data Analysis â€” Study Notes
 
 Ratios, percents, probability, and reading data. Slow down, name the whole, then compute.
 
@@ -15,9 +15,9 @@ Ratios, percents, probability, and reading data. Slow down, name the whole, then
 - **Percent change** $= \frac{\text{new} - \text{old}}{\text{old}} \times 100\%$. The denominator is always the original.
 - **Ratios**: $a:b$ with total $T$ means parts $T \cdot \frac{a}{a+b}$ and $T \cdot \frac{b}{a+b}$.
 - **Probability** $= \frac{\text{favorable}}{\text{total possible}}$. Conditional probability shrinks the denominator to the given group.
-- **Mean vs median**: outliers drag the mean but barely move the median. Symmetric data: mean ≈ median.
-- **Weighted mean**: multiply each value by its frequency, then divide by total count — never average the averages.
-- **Margin of error**: a 5-point lead with ±3 error and 13% undecided is a close race, not a lock.
+- **Mean vs median**: outliers drag the mean but barely move the median. Symmetric data: mean â‰ˆ median.
+- **Weighted mean**: multiply each value by its frequency, then divide by total count â€” never average the averages.
+- **Margin of error**: a 5-point lead with Â±3 error and 13% undecided is a close race, not a lock.
 - **Line of best fit** $y = mx + b$: slope $m$ is the per-unit change; substitute to predict.
 
 ## Worked Micro-Examples
@@ -42,5 +42,5 @@ Ratios, percents, probability, and reading data. Slow down, name the whole, then
 - **Teach:** Detailed rules above
 - **Show:** [SAT/Show/show_walkthrough.html](../Show/show_walkthrough.html)
 - **Test:** [SAT/Test/mock_01.html](../Test/mock_01.html)
-- **Interactive Drill:** [SAT/Skills/problem_solving_skill.html](../Skills/problem_solving_skill.html)
+- **Interactive Drill:** [SAT/Question_Banks/sat_problem_solving_10_items.html](../Question_Banks/sat_problem_solving_10_items.html)
 - **Portal:** [SAT/index.html](../index.html)

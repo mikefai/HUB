@@ -1,70 +1,72 @@
-<!DOCTYPE html><html lang="en"><!-- compiled by scripts/md_to_html.py --><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Problem Solving &amp; Data Analysis — Study Notes | SATPrep</title><style>
-:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;
---primary:#2b7fff;--border:#e2e8f0;--radius:12px;
---font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
---mono:'JetBrains Mono',Consolas,monospace}
-*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);
-color:var(--text);line-height:1.7;margin:0;padding:2rem 1rem 4rem}
-.wrap{max-width:900px;margin:0 auto}.crumbs{font-size:.82rem;color:var(--muted);
-margin-bottom:1rem}.crumbs a{color:var(--primary);text-decoration:none}
-h1{font-size:1.9rem;border-left:6px solid var(--primary);padding-left:1rem;
-line-height:1.3}h2{font-size:1.35rem;margin-top:2rem;border-bottom:2px solid
-var(--border);padding-bottom:.3rem}h3{font-size:1.1rem;margin-top:1.5rem}
-.meta{background:var(--surface);border:1px solid var(--border);
-border-radius:var(--radius);padding:.8rem 1.1rem;margin:1rem 0;font-size:.86rem;
-color:var(--muted);display:flex;flex-wrap:wrap;gap:.4rem 1.2rem}
-.meta b{color:var(--text)}p{margin:.7rem 0}
-ul,ol{margin:.5rem 0 .9rem;padding-left:1.4rem}li{margin:.28rem 0}
-hr{border:none;border-top:2px solid var(--border);margin:1.6rem 0}
-blockquote{border-left:4px solid var(--primary);margin:1rem 0;padding:.4rem 1rem;
-background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
-code{font-family:var(--mono);font-size:.85em;background:#eef2ff;padding:.1rem .35rem;
-border-radius:6px}pre{background:#0f172a;color:#e2e8f0;padding:1rem;
-border-radius:var(--radius);overflow:auto}pre code{background:none;color:inherit;
-padding:0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;
-background:var(--surface)}th,td{border:1px solid var(--border);padding:.5rem .7rem;
-text-align:left}th{background:#eff6ff}a{color:var(--primary)}
-.answer{background:#f0fdf4;border-left:4px solid #16a34a;padding:.7rem 1rem;
-border-radius:8px;margin:.7rem 0}.card{background:var(--surface);
-border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;
-margin:1rem 0;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
-</style></head><body><div class="wrap"><div class="crumbs"><a href="../index.html">SAT Portal</a> &rsaquo; Study_Notes &rsaquo; problem_solving_notes.html</div><div class="card"><h1 style="border:none;padding:0;margin-top:0">Problem Solving &amp; Data Analysis — Study Notes</h1><div class="meta"><span><b>domain:</b> SAT</span><span><b>target_level:</b> Score 700+</span><span><b>topic:</b> Study Notes — Problem Solving &amp; Data Analysis</span><span><b>date_created:</b> 2026-09-13</span><span><b>content_type:</b> Study Notes / Strategy Guide</span></div></div><p>Ratios, percents, probability, and reading data. Slow down, name the whole, then compute.</p>
-<h2>Core Rules</h2>
-<ul>
-<li><strong>Percent change</strong> $= \frac{\text{new} - \text{old}}{\text{old}} \times 100\%$. The denominator is always the original.</li>
-<li><strong>Ratios</strong>: $a:b$ with total $T$ means parts $T \cdot \frac{a}{a+b}$ and $T \cdot \frac{b}{a+b}$.</li>
-<li><strong>Probability</strong> $= \frac{\text{favorable}}{\text{total possible}}$. Conditional probability shrinks the denominator to the given group.</li>
-<li><strong>Mean vs median</strong>: outliers drag the mean but barely move the median. Symmetric data: mean ≈ median.</li>
-<li><strong>Weighted mean</strong>: multiply each value by its frequency, then divide by total count — never average the averages.</li>
-<li><strong>Margin of error</strong>: a 5-point lead with ±3 error and 13% undecided is a close race, not a lock.</li>
-<li><strong>Line of best fit</strong> $y = mx + b$: slope $m$ is the per-unit change; substitute to predict.</li>
-</ul>
-<h2>Worked Micro-Examples</h2>
-<ol>
-<li>$\$80 \to \$100$: $(100 - 80)/80 = 25\%$ increase.</li>
-<li>Values $6(\times 5)$, $4(\times 3)$, $14(\times 2)$: mean $= 70/10 = 7$.</li>
-<li>$60$ mph $= 60 \cdot 5280/3600 = 88$ ft/s.</li>
-</ol>
-<h2>Common Traps</h2>
-<ul>
-<li>Dividing by the new value instead of the old in percent change.</li>
-<li>Averaging group means without weighting by group size.</li>
-<li>Using the grand total as denominator in conditional probability.</li>
-<li>Confusing median (middle value) with mean, or range with IQR.</li>
-</ul>
-<h2>Self-Check (answers in the drills)</h2>
-<ul>
-<li>Ratio $3:4$, sum $63$: smaller number? <em>(27)</em></li>
-<li>Bag has 4 red, 5 blue, 11 green: P(blue)? <em>(1/4)</em></li>
-<li>$y = 5x + 60$ predicts what at $x = 7$? <em>(95)</em></li>
-</ul>
-<ul>
-<li><strong>Teach:</strong> Detailed rules above</li>
-<li><strong>Show:</strong> <a href="../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a></li>
-<li><strong>Test:</strong> <a href="../Test/mock_01.html">SAT/Test/mock_01.html</a></li>
-<li><strong>Interactive Drill:</strong> <a href="../Skills/problem_solving_skill.html">SAT/Skills/problem_solving_skill.html</a></li>
-<li><strong>Portal:</strong> <a href="../index.html">SAT/index.html</a></li>
-</ul><p class="crumbs" style="margin-top:2rem"><a href="../index.html">&larr; SAT Portal</a></p></div><!-- student-tools v1 -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problem Solving &amp; Data Analysis â€” Study Notes | SAT Study Guide</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+h2{font-size:1.3rem;margin-top:2rem;border-bottom:2px solid var(--border);padding-bottom:.3rem}
+h3{font-size:1.08rem;margin-top:1.5rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.guide{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.guide p{margin:.65rem 0}.guide ul,.guide ol{margin:.5rem 0 .9rem;padding-left:1.4rem}.guide li{margin:.28rem 0}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+@media print{.topbar,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../index.html">SAT Portal</a> &rsaquo; Study_Notes</div>
+<div><button class="btn" id="mx-theme" title="Dark / light" style="border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;cursor:pointer">🌓 Theme</button></div>
+</div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../index.html">&larr; SAT Portal</a> &rsaquo; Study_Notes</div>
+<h1>Problem Solving &amp; Data Analysis â€” Study Notes</h1>
+<div class="meta"><span><b>Type:</b> Study Guide</span></div>
+<div class="guide"><p>﻿--- domain: SAT target_level: Score 700+ topic: Study Notes â€” Problem Solving &amp; Data Analysis date_created: 2026-09-13 content_type: Study Notes / Strategy Guide</p>
+<hr>
+<h2>Problem Solving &amp; Data Analysis â€” Study Notes</h2>
+<p>Ratios, percents, probability, and reading data. Slow down, name the whole, then compute.</p>
+<h3>Core Rules</h3>
+<ul><li><strong>Percent change</strong> <span class="mx">= <span class="mx-frac"><span>new - old</span><span>old</span></span> × 100%</span>. The denominator is always the original.</li><li><strong>Ratios</strong>: <span class="mx">a:b</span> with total <span class="mx">T</span> means parts <span class="mx">T · <span class="mx-frac"><span>a</span><span>a+b</span></span></span> and <span class="mx">T · <span class="mx-frac"><span>b</span><span>a+b</span></span></span>.</li><li><strong>Probability</strong> <span class="mx">= <span class="mx-frac"><span>favorable</span><span>total possible</span></span></span>. Conditional probability shrinks the denominator to the given group.</li><li><strong>Mean vs median</strong>: outliers drag the mean but barely move the median. Symmetric data: mean â‰ˆ median.</li><li><strong>Weighted mean</strong>: multiply each value by its frequency, then divide by total count â€” never average the averages.</li><li><strong>Margin of error</strong>: a 5-point lead with Â±3 error and 13% undecided is a close race, not a lock.</li><li><strong>Line of best fit</strong> <span class="mx">y = mx + b</span>: slope <span class="mx">m</span> is the per-unit change; substitute to predict.</li></ul>
+<h3>Worked Micro-Examples</h3>
+<ol><li><span class="mx">$80 to $100</span>: <span class="mx">(100 - 80)/80 = 25%</span> increase.</li><li>Values <span class="mx">6(× 5)</span>, <span class="mx">4(× 3)</span>, <span class="mx">14(× 2)</span>: mean <span class="mx">= 70/10 = 7</span>.</li><li><span class="mx">60</span> mph <span class="mx">= 60 · 5280/3600 = 88</span> ft/s.</li></ol>
+<h3>Common Traps</h3>
+<ul><li>Dividing by the new value instead of the old in percent change.</li><li>Averaging group means without weighting by group size.</li><li>Using the grand total as denominator in conditional probability.</li><li>Confusing median (middle value) with mean, or range with IQR.</li></ul>
+<h3>Self-Check (answers in the drills)</h3>
+<ul><li>Ratio <span class="mx">3:4</span>, sum <span class="mx">63</span>: smaller number? <em>(27)</em></li><li>Bag has 4 red, 5 blue, 11 green: P(blue)? <em>(1/4)</em></li><li><span class="mx">y = 5x + 60</span> predicts what at <span class="mx">x = 7</span>? <em>(95)</em></li></ul>
+<ul><li><strong>Teach:</strong> Detailed rules above</li><li><strong>Show:</strong> <a href="../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a></li><li><strong>Test:</strong> <a href="../Test/mock_01.html">SAT/Test/mock_01.html</a></li><li><strong>Interactive Drill:</strong> <a href="../Question_Banks/sat_problem_solving_10_items.html">SAT/Question_Banks/sat_problem_solving_10_items.html</a></li><li><strong>Portal:</strong> <a href="../index.html">SAT/index.html</a></li></ul></div>
+<div class="flow"><a href="../Show/show_walkthrough.html">Show/show_walkthrough.html</a><a href="../Test/mock_01.html">Test/mock_01.html</a><a href="../Question_Banks/sat_problem_solving_10_items.html">Question_Banks/sat_problem_solving_10_items.html</a><a href="../index.html">Portal</a></div>
+</div>
+<script>
+document.getElementById('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+</script>
+<!-- student-tools v1 -->
+<!-- student-tools v1 -->
 <style>
 
 #st-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0f172a;color:#fff;padding:8px 10px;border-radius:14px;box-shadow:0 10px 25px rgb(0 0 0/.35);max-width:96vw;overflow-x:auto;font-family:system-ui,sans-serif}
@@ -235,4 +237,5 @@ restoreHL();
 })();
 
 </script>
-</body></html>
+</body>
+</html>

@@ -1,18 +1,18 @@
----
+﻿---
 domain: SAT
 target_level: Score 700+
-topic: Study Notes — Geometry & Trigonometry
+topic: Study Notes â€” Geometry & Trigonometry
 date_created: 2026-09-13
 content_type: Study Notes / Strategy Guide
 ---
 
-# Geometry & Trigonometry — Study Notes
+# Geometry & Trigonometry â€” Study Notes
 
 Circles, triangles, radians, and volume. Draw the figure, label everything, then pick the formula.
 
 ## Core Rules
 
-- **Circle**: $(x - h)^2 + (y - k)^2 = r^2$. Complete the square to find center $(h, k)$ and radius $r$ (take the square root — $r^2 = 36$ means $r = 6$).
+- **Circle**: $(x - h)^2 + (y - k)^2 = r^2$. Complete the square to find center $(h, k)$ and radius $r$ (take the square root â€” $r^2 = 36$ means $r = 6$).
 - **Radians**: $\text{arc} = r\theta$, $\text{sector} = \frac{1}{2}r^2\theta$, degrees $\times \frac{\pi}{180}$.
 - **Special triangles**: 45-45-90 legs $1:1:\sqrt{2}$; 30-60-90 legs $1:\sqrt{3}:2$. Spot 5-12-13 and 6-8-10 triples.
 - **Cofunction**: $\sin(A) = \cos(90^\circ - A)$. In a right triangle, $\sin(A) = \cos(B)$.
@@ -41,5 +41,5 @@ Circles, triangles, radians, and volume. Draw the figure, label everything, then
 - **Teach:** Detailed rules above
 - **Show:** [SAT/Show/show_walkthrough.html](../Show/show_walkthrough.html)
 - **Test:** [SAT/Test/mock_01.html](../Test/mock_01.html)
-- **Interactive Drill:** [SAT/Skills/geometry_skill.html](../Skills/geometry_skill.html)
+- **Interactive Drill:** [SAT/Question_Banks/sat_geometry_10_items.html](../Question_Banks/sat_geometry_10_items.html)
 - **Portal:** [SAT/index.html](../index.html)

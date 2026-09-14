@@ -1,6 +1,6 @@
 # 📚 Master Workspace Educational Content Catalog
 
-> *Auto-generated on 2026-09-14 07:46 via `scripts/build_workspace_index.py`*
+> *Auto-generated on 2026-09-14 07:58 via `scripts/build_workspace_index.py`*
 
 This catalog indexes all structured lesson plans, test prep modules, question banks, and interactive simulators across the workspace, along with independent domain portals.
 
@@ -65,24 +65,25 @@ This catalog indexes all structured lesson plans, test prep modules, question ba
 | Vocabulary & Lexical Matrix Toolkit | IELTS Academic Band 9.0 Lexical Resource Master Matrix across 8 Core Topics | `Band 8.0 to 9.0` | 📄 Markdown | [IELTS Academic: Band 9.0 Lexical Resource Master Matrix](IELTS/Vocabulary_Collocations/ielts_academic_band_9_lexical_resource_master_matrix.md) |
 | Vocabulary Bank | Worksheet | Analysis | Academic Vocabulary & High-Scoring Thematic Collocations Master Bank | `Band 7.0 to 9.0` | 📄 Markdown | [IELTS Academic: High-Scoring Collocations & Lexical Resource Bank](IELTS/Vocabulary_Collocations/ielts_academic_high_scoring_collocations_and_lexical_resource.md) |
 
-## 🌐 SAT Modules & Resources (45 Total)
+## 🌐 SAT Modules & Resources (38 Total)
 
 | Type | Title / Topic | Target Level | Format | Direct Link |
 | :--- | :--- | :--- | :--- | :--- |
+| Document | Advanced Math Notes | `All Levels` | 📄 Markdown | [Advanced Math â€” Study Notes](SAT/Study_Notes/advanced_math_notes.md) |
+| Document | Algebra Notes | `All Levels` | 📄 Markdown | [Algebra â€” Study Notes](SAT/Study_Notes/algebra_notes.md) |
+| Document | Craft Structure Notes | `All Levels` | 📄 Markdown | [Craft & Structure â€” Study Notes](SAT/Study_Notes/craft_structure_notes.md) |
+| Document | Expression Ideas Notes | `All Levels` | 📄 Markdown | [Expression of Ideas â€” Study Notes](SAT/Study_Notes/expression_ideas_notes.md) |
+| Document | Geometry Notes | `All Levels` | 📄 Markdown | [Geometry & Trigonometry â€” Study Notes](SAT/Study_Notes/geometry_notes.md) |
+| Document | Information Ideas Notes | `All Levels` | 📄 Markdown | [Information & Ideas â€” Study Notes](SAT/Study_Notes/information_ideas_notes.md) |
+| Document | Pangolin Notes | `All Levels` | 📄 Markdown | [Pangolin Notes](SAT/Study_Notes/Pangolin_notes.md) |
+| Document | Problem Solving Notes | `All Levels` | 📄 Markdown | [Problem Solving & Data Analysis â€” Study Notes](SAT/Study_Notes/problem_solving_notes.md) |
+| Document | Standard Conventions Notes | `All Levels` | 📄 Markdown | [Standard English Conventions â€” Study Notes](SAT/Study_Notes/standard_conventions_notes.md) |
 | Full Practice Module / Mock Test | Digital SAT Math Full Practice Test Module 1 | `Score 700 - 800` | 📄 Markdown | [Digital SAT Math: Full Practice Module 1](SAT/Practice_Modules/sat_digital_full_practice_test_01_math_module.md) |
 | Full Practice Module / Mock Test | Digital SAT Reading and Writing Full Practice Test Module 1 | `Score 700 - 800` | 📄 Markdown | [Digital SAT Reading and Writing: Full Practice Module 1](SAT/Practice_Modules/sat_digital_full_practice_test_01_rw_module.md) |
 | Interactive Simulator | Sat Digital Ebrw Interactive Trainer | `Interactive Webapp` | 🚀 **Interactive App** | [Digital SAT EBRW Practice Module: Craft & Structure | Interactive Simulator](SAT/Reading_Writing/sat_digital_ebrw_interactive_trainer.html) |
 | Interactive Simulator | Mock 2026 Full | `Interactive Webapp` | 🚀 **Interactive App** | [SAT 2026 Full Adaptive Mock — 4 Modules](SAT/Test/mock_2026_full.html) |
 | Interactive Simulator | Mock 01 | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Mock 01 — Full Exam](SAT/Test/mock_01.html) |
 | Interactive Simulator | Show Walkthrough | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Show — Walkthrough (Craft & Structure)](SAT/Show/show_walkthrough.html) |
-| Interactive Simulator | Algebra Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill â€” Algebra](SAT/Skills/algebra_skill.html) |
-| Interactive Simulator | Craft Structure Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill â€” Craft & Structure](SAT/Skills/craft_structure_skill.html) |
-| Interactive Simulator | Advanced Math Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Advanced Math](SAT/Skills/advanced_math_skill.html) |
-| Interactive Simulator | Expression Ideas Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Expression of Ideas](SAT/Skills/expression_ideas_skill.html) |
-| Interactive Simulator | Geometry Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Geometry & Trigonometry](SAT/Skills/geometry_skill.html) |
-| Interactive Simulator | Information Ideas Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Information & Ideas](SAT/Skills/information_ideas_skill.html) |
-| Interactive Simulator | Problem Solving Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Problem Solving & Data Analysis](SAT/Skills/problem_solving_skill.html) |
-| Interactive Simulator | Standard Conventions Skill | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Skill — Standard English Conventions](SAT/Skills/standard_conventions_skill.html) |
 | Question Bank / Drill | Question Bank — Advanced Math (35 Items) | `Score 700+` | 📄 Markdown | [Advanced Math — 35 Practice Items](SAT/Question_Banks/sat_advanced_math_10_items.md) |
 | Question Bank / Drill | Question Bank — Algebra (35 Items) | `Score 700+` | 📄 Markdown | [Algebra — 35 Practice Items](SAT/Question_Banks/sat_algebra_10_items.md) |
 | Question Bank / Drill | Question Bank — Craft & Structure (35 Items) | `Score 700+` | 📄 Markdown | [Craft & Structure — 35 Practice Items](SAT/Question_Banks/sat_craft_structure_10_items.md) |
@@ -105,12 +106,4 @@ This catalog indexes all structured lesson plans, test prep modules, question ba
 | Student Strategy Guide & Cheat Sheet | Digital SAT Reading & Writing Distractor Radar & Strategy Cheat Sheet | `Score 750 - 800` | 📄 Markdown | [Digital SAT Reading & Writing: Distractor Trap Radar & Strategy Guide](SAT/Question_Banks/sat_digital_rw_distractor_trap_radar_and_cheat_sheet.md) |
 | Student Toolkit & Strategy Guide | The Ultimate Digital SAT Desmos Calculator Mastery Guide & Speed Hacks | `Score 750 - 800` | 📄 Markdown | [The Ultimate Digital SAT Desmos Calculator Mastery Guide & Speed Hacks](SAT/Question_Banks/sat_desmos_calculator_mastery_guide_and_hacks.md) |
 | Study Notes / 2026 Update Guide | SAT 2026 Digital Blueprint — Study Notes & Updates | `Score 700+` | 📄 Markdown | [SAT 2026 Digital — What Changed & How to Prepare](SAT/Study_Notes/sat_2026_blueprint_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Advanced Math | `Score 700+` | 📄 Markdown | [Advanced Math — Study Notes](SAT/Study_Notes/advanced_math_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Algebra | `Score 700+` | 📄 Markdown | [Algebra — Study Notes](SAT/Study_Notes/algebra_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Craft & Structure | `Score 700+` | 📄 Markdown | [Craft & Structure — Study Notes](SAT/Study_Notes/craft_structure_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Expression of Ideas | `Score 700+` | 📄 Markdown | [Expression of Ideas — Study Notes](SAT/Study_Notes/expression_ideas_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Geometry & Trigonometry | `Score 700+` | 📄 Markdown | [Geometry & Trigonometry — Study Notes](SAT/Study_Notes/geometry_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Information & Ideas | `Score 700+` | 📄 Markdown | [Information & Ideas — Study Notes](SAT/Study_Notes/information_ideas_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Problem Solving & Data Analysis | `Score 700+` | 📄 Markdown | [Problem Solving & Data Analysis — Study Notes](SAT/Study_Notes/problem_solving_notes.md) |
-| Study Notes / Strategy Guide | Study Notes — Standard English Conventions | `Score 700+` | 📄 Markdown | [Standard English Conventions — Study Notes](SAT/Study_Notes/standard_conventions_notes.md) |
 | Vocabulary / Collocations Study Guide | SAT Vocabulary — High-Frequency Words & Collocations | `Score 700+` | 📄 Markdown | [SAT Vocabulary — Key Words by Category](SAT/Vocabulary/sat_vocab_collocations_notes.md) |

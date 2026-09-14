@@ -254,6 +254,18 @@ def md_blocks(s):
             out.append("<hr>")
             i += 1
             continue
+        if line.strip().startswith("```"):
+            flush_para()
+            lang = line.strip()[3:].strip()
+            code_lines = []
+            i += 1
+            while i < len(lines) and not lines[i].strip().startswith("```"):
+                code_lines.append(lines[i])
+                i += 1
+            i += 1  # skip closing fence
+            cls = f' class="language-{html.escape(lang)}"' if lang else ""
+            out.append(f"<pre><code{cls}>" + html.escape("\n".join(code_lines)) + "</code></pre>")
+            continue
         if re.match(r"^\s*[-*]\s+", line):
             flush_para()
             items = []

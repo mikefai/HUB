@@ -119,12 +119,24 @@ def parse_rationales(body):
     return chunks
 
 
+def clean_flow_text(t):
+    t = t.replace("SAT/", "").replace("index.html", "Portal").strip(" :")
+    return t or "Open"
+
+
 def parse_flow_links(body):
     """Teach -> Show -> Test footer links from the alignment section."""
     m = re.search(r"New System Alignment(.*?)(?:^---|\Z)", body, re.S | re.M)
     if not m:
-        return []
-    return [{"text": t.strip(), "url": u.strip()} for t, u in re.findall(r"\[([^\]]+?)\]\(([^)]+?)\)", m.group(1))]
+        # fallback: any relative doc links (study-note footers)
+        seen, out = set(), []
+        for t, u in re.findall(r"\[([^\]]+?)\]\((\.\./[^)]+?)\)", body):
+            if u not in seen:
+                seen.add(u)
+                out.append({"text": clean_flow_text(t), "url": u.strip()})
+        return out[:6]
+    return [{"text": clean_flow_text(t), "url": u.strip()}
+            for t, u in re.findall(r"\[([^\]]+?)\]\(([^)]+?)\)", m.group(1))]
 
 
 def parse_overview(body):
@@ -477,6 +489,100 @@ def build_page(parsed, crumb_up, crumb_cat, meta_html):
     return page
 
 
+PROSE_TEMPLATE = r"""<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@@TITLE@@ | SAT Study Guide</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+h2{font-size:1.3rem;margin-top:2rem;border-bottom:2px solid var(--border);padding-bottom:.3rem}
+h3{font-size:1.08rem;margin-top:1.5rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.guide{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.guide p{margin:.65rem 0}.guide ul,.guide ol{margin:.5rem 0 .9rem;padding-left:1.4rem}.guide li{margin:.28rem 0}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+@media print{.topbar,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="@@CRUMB_UP@@">SAT Portal</a> &rsaquo; @@CRUMB_CAT@@</div>
+<div><button class="btn" id="mx-theme" title="Dark / light" style="border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;cursor:pointer">🌓 Theme</button></div>
+</div></div>
+<div class="wrap">
+<div class="crumbs"><a href="@@CRUMB_UP@@">&larr; SAT Portal</a> &rsaquo; @@CRUMB_CAT@@</div>
+<h1>@@TITLE@@</h1>
+<div class="meta">@@META@@</div>
+<div class="guide">@@BODY@@</div>
+<div class="flow">@@FLOW@@</div>
+</div>
+<script>
+document.getElementById('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+</script>
+@@ST@@
+</body>
+</html>
+"""
+
+
+def build_prose_page(md_path, parsed):
+    from sat_tex import md_blocks as _blocks
+    text = md_path.read_text(encoding="utf-8")
+    _, body = frontmatter(text)
+    body = re.split(r"^##\s+New System Alignment", body, maxsplit=1, flags=re.M)[0]
+    body_html = _blocks(body)
+    m = parsed["meta"]
+    bits = []
+    if m.get("target_level"):
+        bits.append(f"<span><b>Level:</b> {m['target_level']}</span>")
+    if m.get("topic"):
+        bits.append(f"<span><b>Topic:</b> {m['topic']}</span>")
+    bits.append(f"<span><b>Type:</b> {m.get('content_type', 'Study Guide')}</span>")
+    flow = "".join(f'<a href="{f["url"]}">{f["text"]}</a>' for f in parsed["flow"])
+    depth = len(md_path.parent.relative_to(WORKSPACE_ROOT).parts)
+    crumb_up = "../" * (depth - 1) + "index.html"
+    st = ""
+    if _st_snippet:
+        try:
+            st = _st_snippet()
+        except Exception as e:
+            print(f"  (toolbar unavailable: {e})")
+    page = PROSE_TEMPLATE
+    page = page.replace("@@TITLE@@", parsed["title"].replace("&", "&amp;").replace("<", "&lt;"))
+    page = page.replace("@@CRUMB_UP@@", crumb_up)
+    page = page.replace("@@CRUMB_CAT@@", md_path.parent.name)
+    page = page.replace("@@META@@", "".join(bits))
+    page = page.replace("@@BODY@@", body_html)
+    page = page.replace("@@FLOW@@", flow)
+    page = page.replace("@@ST@@", "<!-- student-tools v1 -->\n" + st if st else "")
+    return page
+
+
 def meta_html_for(parsed, rel):
     m = parsed["meta"]
     bits = [f"<span><b>Questions:</b> {len(parsed['questions'])}</span>"]
@@ -518,10 +624,16 @@ def main():
         total_q += nq
         rel = md.relative_to(WORKSPACE_ROOT).as_posix()
         print(f"{rel}: {nq} Qs, {missing} missing keys, {parsed['seconds'] // 60} min")
-        if nq == 0:
-            skipped.append(rel)
-            continue
         if check_only:
+            if nq == 0:
+                skipped.append(rel)
+            continue
+        if nq == 0:
+            if md.name == "README.md":
+                skipped.append(rel)
+                continue
+            md.with_suffix(".html").write_text(build_prose_page(md, parsed), encoding="utf-8")
+            built += 1
             continue
         depth = len(md.parent.relative_to(WORKSPACE_ROOT).parts)
         crumb_up = "../" * (depth - 1) + "index.html"  # twin sits next to its .md
