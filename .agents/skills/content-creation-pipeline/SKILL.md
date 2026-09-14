@@ -3,17 +3,16 @@ name: content-creation-pipeline
 description: >-
   Master workflow for designing and generating structured educational content,
   lesson plans, question sets, and exam preparation materials across ESL, IELTS Academic,
-  Digital SAT, and YDT English. Enforces pedagogical scaffolding, authentic
+  and Digital SAT. Enforces pedagogical scaffolding, authentic
   rubric alignment, and complete distractor rationales.
 ---
 
 # 🎓 Content Creation Pipeline Skill
 
-This skill provides step-by-step procedures for generating curriculum-aligned, exam-accurate pedagogical content across the four core domains:
+This skill provides step-by-step procedures for generating curriculum-aligned, exam-accurate pedagogical content across the three core domains:
 1. **ESL** (CEFR A1, A2, B1, B2, C1, C2 & Lesson Flow)
 2. **IELTS** (IELTS Academic Exclusively - Band 5.0 to 6.0, Band 6.0 to 7.0, Band 7.0 to 8.0, Band 8.0 to 9.0)
 3. **SAT** (Digital SAT Reading/Writing & Math)
-4. **YDT** (ÖSYM Standard: Konu Anlatımı, Soru Bankası, Denemeler, Vocabulary)
 
 ---
 
@@ -26,7 +25,6 @@ Always verify the user's target domain and difficulty level before generating ma
 | **ESL** | CEFR Level & Flow | `A1`, `A2`, `B1`, `B2`, `C1`, `C2`, `Lesson_Flow` |
 | **IELTS** | Target Band Progression | `Band 5.0 to 6.0`, `Band 6.0 to 7.0`, `Band 7.0 to 8.0`, `Band 8.0 to 9.0` (Academic only) |
 | **SAT** | Score Range & Domain | Score 600–800 (Reading/Writing vs Math; Craft & Structure, Info & Ideas, SEC, Expression) |
-| **YDT** | ÖSYM Question Type & Mod | Konu Anlatımı, Soru Bankası (Soru 1–80 tipleri), Denemeler, Vocabulary |
 
 ---
 
@@ -52,12 +50,6 @@ Always verify the user's target domain and difficulty level before generating ma
   - Direct textual / grammatical rationale for the correct answer.
   - Granular distractor analysis explaining the specific trap (e.g. *Opposite Claim*, *Verbatim Echo*, *Not Supported*, *Faulty Modifier*).
 
-### 4. YDT Konu Anlatımı, Soru Bankası & Deneme Üretimi
-- **5 Seçenekli Format**: `A`, `B`, `C`, `D`, `E` standart ÖSYM şablonu.
-- **Türkçe Çözüm & Çeldirici Analizi**:
-  - Doğru cevaba götüren ipuçları (bağlaç anlamı, zaman uyumu, zamir referansı, ana fiil).
-  - Güçlü çeldiricilerin neden yanlış olduğunun net açıklaması.
-
 ---
 
 ## 🏷️ Step 3: Mandatory Metadata & File Saving
@@ -65,7 +57,7 @@ Always verify the user's target domain and difficulty level before generating ma
 Every generated file MUST start with YAML frontmatter:
 ```yaml
 ---
-domain: "ESL | IELTS | SAT | YDT"
+domain: "ESL | IELTS | SAT"
 target_level: "[Level / Band Transition / Score]"
 topic: "[Specific Subject / Topic]"
 date_created: "YYYY-MM-DD"
@@ -77,4 +69,3 @@ Save into the matching domain directory:
 - ESL: `ESL/[A1|A2|B1|B2|C1|C2|Lesson_Flow]/`
 - IELTS: `IELTS/[Reading|Writing_Task1|Writing_Task2|Listening|Speaking]/<Band_Transition>/` (or `Mock_Tests/`, `Vocabulary_Collocations/`)
 - SAT: `SAT/[Reading_Writing|Math|Question_Banks|Practice_Modules]/`
-- YDT: `YDT/[Konu_Anlatimi|Soru_Bankasi|Denemeler|Vocabulary]/`

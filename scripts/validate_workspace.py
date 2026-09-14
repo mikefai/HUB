@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Workspace Educational Content Validator
-Audits markdown files across ESL, IELTS, SAT, and YKS for YAML metadata,
+Audits markdown files across ESL, IELTS, and SAT for YAML metadata,
 folder routing consistency, answer keys, and pedagogical standards.
 """
 
@@ -23,7 +23,7 @@ BOLD = "\033[1m"
 RESET = "\033[0m"
 
 WORKSPACE_ROOT = Path(__file__).resolve().parent.parent
-DOMAINS = {"ESL", "IELTS", "SAT", "YDT"}
+DOMAINS = {"ESL", "IELTS", "SAT"}
 EXCLUDED_FILENAMES = {"README.md", "AGENTS.md", "GEMINI.md", "WORKSPACE_INDEX.md", "routing.md"}
 
 REQUIRED_METADATA_FIELDS = ["domain", "target_level", "topic", "date_created", "content_type"]
@@ -110,7 +110,7 @@ def main():
     print(f"{BOLD}{CYAN}======================================================{RESET}\n")
 
     files_to_check = []
-    for search_dir in ["ESL", "IELTS", "SAT", "YDT", "Templates"]:
+    for search_dir in ["ESL", "IELTS", "SAT", "Templates"]:
         dir_path = WORKSPACE_ROOT / search_dir
         if dir_path.exists():
             for p in dir_path.rglob("*.md"):

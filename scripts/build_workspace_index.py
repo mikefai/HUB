@@ -3,12 +3,15 @@
 Workspace Index & Independent Portal Builder
 Scans the workspace for educational markdown files and interactive HTML simulators,
 then generates:
-1. IELTS/index.html (Dedicated IELTS Academic Portal linked to https://github.com/mikefai/AG-IELTS-Academic)
-2. SAT/index.html (Dedicated Digital SAT Portal linked to https://github.com/mikefai/AG-SAT)
-3. ESL/index.html (Dedicated ESL Curriculum Portal)
-4. YDT/index.html (Dedicated YDT Prep Portal)
-5. Root index.html (Master Educational Workspace Hub)
-6. WORKSPACE_INDEX.md (Master Markdown Catalog)
+1. ESL/index.html (Dedicated ESL Curriculum Portal — hub for ALL ESL content)
+2. IELTS/index.html (Dedicated IELTS Academic Portal linked to https://github.com/mikefai/AG-IELTS-Academic — hub for ALL IELTS content)
+3. SAT/index.html (Dedicated Digital SAT Portal linked to https://github.com/mikefai/AG-SAT — hub for ALL SAT content)
+4. Root index.html (Master Educational Workspace Hub — deployed on Vercel, links to the 3 domain portals)
+5. WORKSPACE_INDEX.md (Master Markdown Catalog)
+
+Wiring: content pages -> domain portal (ESL/IELTS/SAT index.html) -> root index.html.
+All links are relative so the static output deploys unchanged on Vercel (see vercel.json).
+Set SITE_REPO_URL below to the new GitHub repo URL for the Vercel deployment.
 """
 
 import os
@@ -23,8 +26,11 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 WORKSPACE_ROOT = Path(__file__).resolve().parent.parent
-DOMAINS = ["ESL", "IELTS", "SAT", "YDT"]
+DOMAINS = ["ESL", "IELTS", "SAT"]
 EXCLUDED_MD = {"README.md", "AGENTS.md", "GEMINI.md", "WORKSPACE_INDEX.md", "routing.md"}
+
+# GitHub repo backing the Vercel deployment of the root index.html.
+SITE_REPO_URL = "https://github.com/mikefai/HUB"
 
 # Domain configurations & GitHub repository links
 DOMAIN_CONFIGS = {
@@ -93,30 +99,6 @@ DOMAIN_CONFIGS = {
             "CEFR A1", "CEFR A2", "CEFR B1", "CEFR B2", "CEFR C1", "CEFR C2"
         ]
     },
-    "YDT": {
-        "title": "YDT İngilizce Hazırlık Portalı",
-        "subtitle": "ÖSYM Standartlarında Konu Anlatımı, Soru Bankası ve Özgün Denemeler",
-        "repo_url": None,
-        "icon": "📚",
-        "color": "#f59e0b",
-        "tagline": "Konu Anlatımı • Soru Bankası • Özgün Denemeler • Akademik Kelime Çalışmaları",
-        "categories": [
-            "Konu_Anlatimi",
-            "Soru_Bankasi",
-            "Reading_Passages",
-            "Grammar_Cloze",
-            "Sentence_Completion",
-            "Translation",
-            "Dialogue_Restatement",
-            "Situation",
-            "Paragraph_Completion_Irrelevant",
-            "Denemeler",
-            "Vocabulary"
-        ],
-        "band_levels": [
-            "YDT 60+ Net", "YDT 70+ Net", "YDT 75+ Net", "YDT 80/80 Hedef"
-        ]
-    }
 }
 
 
@@ -733,7 +715,7 @@ def generate_domain_portal_html(domain: str, items: list):
 
   <header>
     <div class="header-content">
-      <a href="index.html" class="brand">
+      <a href="../index.html" class="brand">
         <div class="brand-icon">{config['icon']}</div>
         <div>
           <h1>{config['title']}</h1>
@@ -741,7 +723,7 @@ def generate_domain_portal_html(domain: str, items: list):
         </div>
       </a>
       <div class="header-actions">
-        <a href="index.html" class="btn-nav">🏠 Portal Home</a>
+        <a href="../index.html" class="btn-nav">🏠 Main Hub</a>
         {repo_button_html}
         <button class="btn-nav" id="themeToggle" onclick="toggleTheme()">🌓 Theme</button>
       </div>
@@ -917,7 +899,6 @@ def generate_root_portal_html(items: list):
       --border: #e2e8f0;
       --tag-ielts: #ef4444;
       --tag-sat: #8b5cf6;
-      --tag-ydt: #f59e0b;
       --tag-esl: #10b981;
       --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
       --radius: 12px;
@@ -1061,7 +1042,6 @@ def generate_root_portal_html(items: list):
 
     .card-ielts::before {{ background: #ef4444; }}
     .card-sat::before {{ background: #8b5cf6; }}
-    .card-ydt::before {{ background: #f59e0b; }}
     .card-esl::before {{ background: #10b981; }}
 
     .launchpad-card:hover {{
@@ -1116,7 +1096,6 @@ def generate_root_portal_html(items: list):
 
     .btn-ielts {{ background: #ef4444; }}
     .btn-sat {{ background: #8b5cf6; }}
-    .btn-ydt {{ background: #f59e0b; }}
     .btn-esl {{ background: #10b981; }}
 
     .section-heading {{
@@ -1208,7 +1187,6 @@ def generate_root_portal_html(items: list):
 
     .domain-IELTS {{ background: #fee2e2; color: #dc2626; }}
     .domain-SAT {{ background: #ede9fe; color: #7c3aed; }}
-    .domain-YDT {{ background: #fef3c7; color: #d97706; }}
     .domain-ESL {{ background: #dcfce7; color: #16a34a; }}
     .domain-General {{ background: #e2e8f0; color: #475569; }}
 
@@ -1268,10 +1246,13 @@ def generate_root_portal_html(items: list):
         <div class="brand-icon">AG</div>
         <div>
           <h1>AG Teaching & Exam Prep Hub</h1>
-          <p>ESL • IELTS Academic • Digital SAT • YDT</p>
+          <p>ESL • IELTS Academic • Digital SAT</p>
         </div>
       </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+      <a href="{SITE_REPO_URL}" target="_blank" rel="noopener noreferrer" class="theme-toggle" style="text-decoration:none;">⭐ GitHub Repo</a>
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌓 Theme</button>
+      </div>
     </div>
   </header>
 
@@ -1318,22 +1299,6 @@ def generate_root_portal_html(items: list):
         </a>
       </div>
 
-      <div class="launchpad-card card-ydt">
-        <div>
-          <div class="launchpad-header">
-            <span class="launchpad-icon" style="background: #fef3c7; color: #d97706;">📚</span>
-            <div>
-              <div class="launchpad-title">YDT İngilizce</div>
-              <div style="font-size: 0.75rem; color: #d97706; font-weight: 700;">ÖSYM Standardı</div>
-            </div>
-          </div>
-          <p class="launchpad-desc">Konu Anlatımları, Soru Bankası, Çeviri & Paragraf Çalışmaları, 80 Soruluk Özgün Deneme Simülatörleri.</p>
-        </div>
-        <a href="YDT/index.html" class="launchpad-btn btn-ydt">
-          Open YDT Portal ➔
-        </a>
-      </div>
-
       <div class="launchpad-card card-esl">
         <div>
           <div class="launchpad-header">
@@ -1360,7 +1325,6 @@ def generate_root_portal_html(items: list):
       <button class="filter-btn active" onclick="filterDomain('ALL')">All Modules</button>
       <button class="filter-btn" onclick="filterDomain('IELTS')">IELTS Academic</button>
       <button class="filter-btn" onclick="filterDomain('SAT')">Digital SAT</button>
-      <button class="filter-btn" onclick="filterDomain('YDT')">YDT İngilizce</button>
       <button class="filter-btn" onclick="filterDomain('ESL')">ESL</button>
       <button class="filter-btn" onclick="filterInteractive()">🚀 Interactive Simulators</button>
       <input type="text" class="search-input" id="searchBox" placeholder="🔍 Search topics, skills, or titles across entire workspace..." oninput="handleSearch()">
@@ -1485,7 +1449,6 @@ def generate_markdown_index(items):
         "",
         "- 🎯 **IELTS Academic Portal**: [`IELTS/index.html`](IELTS/index.html) *(Repo: [mikefai/AG-IELTS-Academic](https://github.com/mikefai/AG-IELTS-Academic))*",
         "- 🏛️ **Digital SAT Portal**: [`SAT/index.html`](SAT/index.html) *(Repo: [mikefai/AG-SAT](https://github.com/mikefai/AG-SAT))*",
-        "- 📚 **YDT İngilizce Portalı**: [`YDT/index.html`](YDT/index.html)",
         "- 🌍 **ESL Curriculum Portal**: [`ESL/index.html`](ESL/index.html)",
         "",
         "---",

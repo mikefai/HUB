@@ -2,7 +2,7 @@
 name: exam-simulator-generator
 description: >-
   Workflow and guidelines for building responsive, standalone, client-side
-  interactive exam simulators (HTML/CSS/JS) for IELTS, SAT, YKS/YDT, and ESL.
+  interactive exam simulators (HTML/CSS/JS) for IELTS, SAT, and ESL.
   Supports dual-pane reading, instant grading, countdown timers, distractor
   breakdown toggles, and print/PDF views.
 ---
@@ -15,7 +15,7 @@ Use this skill when creating or converting educational content into interactive 
 
 ## 🎨 UI & Design Principles
 
-1. **Zero External Dependencies**: Must run as self-contained HTML/CSS/JS (or clean modular assets) opening directly via `file://` protocol in any browser without needing a Node or Python server.
+1. **Zero Server Dependencies**: Must run as self-contained HTML/CSS/JS (or clean modular assets) with **relative links only** — works via `file://`, and deploys unchanged on Vercel. Link every simulator to its domain hub (`../ESL/index.html`, `../IELTS/index.html`, `../SAT/index.html`), which in turn links to the master portal (`../index.html`).
 2. **Dual-Pane Layout (for Reading & Data Prompts)**:
    - Left Pane: Passage, chart, or contextual stimulus with resizable splitter and text highlight capability.
    - Right Pane: Question cards, navigation pill bar, and instant feedback controls.

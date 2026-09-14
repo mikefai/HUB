@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Universal Study Module Webpage Compiler & Pedagogical Optimizer
-Compiles every markdown study module in IELTS, SAT, ESL, and YDT into a standalone,
+Compiles every markdown study module in IELTS, SAT, and ESL into a standalone,
 offline-capable, responsive interactive HTML study webpage equipped with:
 - "Struggling Student" Support System (Scaffolded Sentence Starters, Common Pitfall Radar, Lexicon Cheat Sheet)
 - Interactive Writing & Speaking Practice Arenas (Live Word Counter, Progress Bars, Timers, Draft Persistence)
@@ -45,13 +45,6 @@ DOMAIN_THEMES = {
         "primary_light": "rgba(16, 185, 129, 0.08)",
         "icon": "🌍",
         "title": "ESL Learning Portal"
-    },
-    "YDT": {
-        "primary": "#f59e0b",
-        "primary_dark": "#d97706",
-        "primary_light": "rgba(245, 158, 11, 0.08)",
-        "icon": "🇹🇷",
-        "title": "YDT İngilizce Portal"
     }
 }
 
@@ -1455,7 +1448,7 @@ def main():
     print("======================================================")
 
     count = 0
-    for domain_folder in ["IELTS", "SAT", "ESL", "YDT"]:
+    for domain_folder in ["IELTS", "SAT", "ESL"]:
         folder = WORKSPACE_ROOT / domain_folder
         if not folder.exists():
             continue

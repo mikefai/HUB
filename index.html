@@ -20,7 +20,6 @@
       --border: #e2e8f0;
       --tag-ielts: #ef4444;
       --tag-sat: #8b5cf6;
-      --tag-ydt: #f59e0b;
       --tag-esl: #10b981;
       --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
       --radius: 12px;
@@ -164,7 +163,6 @@
 
     .card-ielts::before { background: #ef4444; }
     .card-sat::before { background: #8b5cf6; }
-    .card-ydt::before { background: #f59e0b; }
     .card-esl::before { background: #10b981; }
 
     .launchpad-card:hover {
@@ -219,7 +217,6 @@
 
     .btn-ielts { background: #ef4444; }
     .btn-sat { background: #8b5cf6; }
-    .btn-ydt { background: #f59e0b; }
     .btn-esl { background: #10b981; }
 
     .section-heading {
@@ -311,7 +308,6 @@
 
     .domain-IELTS { background: #fee2e2; color: #dc2626; }
     .domain-SAT { background: #ede9fe; color: #7c3aed; }
-    .domain-YDT { background: #fef3c7; color: #d97706; }
     .domain-ESL { background: #dcfce7; color: #16a34a; }
     .domain-General { background: #e2e8f0; color: #475569; }
 
@@ -371,10 +367,13 @@
         <div class="brand-icon">AG</div>
         <div>
           <h1>AG Teaching & Exam Prep Hub</h1>
-          <p>ESL • IELTS Academic • Digital SAT • YDT</p>
+          <p>ESL • IELTS Academic • Digital SAT</p>
         </div>
       </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+      <a href="https://github.com/mikefai/HUB" target="_blank" rel="noopener noreferrer" class="theme-toggle" style="text-decoration:none;">⭐ GitHub Repo</a>
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌓 Theme</button>
+      </div>
     </div>
   </header>
 
@@ -421,22 +420,6 @@
         </a>
       </div>
 
-      <div class="launchpad-card card-ydt">
-        <div>
-          <div class="launchpad-header">
-            <span class="launchpad-icon" style="background: #fef3c7; color: #d97706;">📚</span>
-            <div>
-              <div class="launchpad-title">YDT İngilizce</div>
-              <div style="font-size: 0.75rem; color: #d97706; font-weight: 700;">ÖSYM Standardı</div>
-            </div>
-          </div>
-          <p class="launchpad-desc">Konu Anlatımları, Soru Bankası, Çeviri & Paragraf Çalışmaları, 80 Soruluk Özgün Deneme Simülatörleri.</p>
-        </div>
-        <a href="YDT/index.html" class="launchpad-btn btn-ydt">
-          Open YDT Portal ➔
-        </a>
-      </div>
-
       <div class="launchpad-card card-esl">
         <div>
           <div class="launchpad-header">
@@ -463,7 +446,6 @@
       <button class="filter-btn active" onclick="filterDomain('ALL')">All Modules</button>
       <button class="filter-btn" onclick="filterDomain('IELTS')">IELTS Academic</button>
       <button class="filter-btn" onclick="filterDomain('SAT')">Digital SAT</button>
-      <button class="filter-btn" onclick="filterDomain('YDT')">YDT İngilizce</button>
       <button class="filter-btn" onclick="filterDomain('ESL')">ESL</button>
       <button class="filter-btn" onclick="filterInteractive()">🚀 Interactive Simulators</button>
       <input type="text" class="search-input" id="searchBox" placeholder="🔍 Search topics, skills, or titles across entire workspace..." oninput="handleSearch()">
@@ -1077,6 +1059,51 @@
     "filename": "sat_digital_full_practice_test_01_rw_module.md"
   },
   {
+    "title": "Advanced Math — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Advanced Math (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_advanced_math_10_items.md",
+    "path_domain": "Question_Banks/sat_advanced_math_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_advanced_math_10_items.md"
+  },
+  {
+    "title": "Algebra — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Algebra (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_algebra_10_items.md",
+    "path_domain": "Question_Banks/sat_algebra_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_algebra_10_items.md"
+  },
+  {
+    "title": "Craft & Structure — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Craft & Structure (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_craft_structure_10_items.md",
+    "path_domain": "Question_Banks/sat_craft_structure_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_craft_structure_10_items.md"
+  },
+  {
     "title": "The Ultimate Digital SAT Desmos Calculator Mastery Guide & Speed Hacks",
     "domain": "SAT",
     "target_level": "Score 750 - 800",
@@ -1105,6 +1132,231 @@
     "is_interactive": false,
     "file_type": "Markdown",
     "filename": "sat_digital_rw_distractor_trap_radar_and_cheat_sheet.md"
+  },
+  {
+    "title": "Expression of Ideas — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Expression of Ideas (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_expression_ideas_10_items.md",
+    "path_domain": "Question_Banks/sat_expression_ideas_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_expression_ideas_10_items.md"
+  },
+  {
+    "title": "Geometry & Trigonometry — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Geometry & Trigonometry (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_geometry_10_items.md",
+    "path_domain": "Question_Banks/sat_geometry_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_geometry_10_items.md"
+  },
+  {
+    "title": "Information & Ideas — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Information & Ideas (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_information_ideas_10_items.md",
+    "path_domain": "Question_Banks/sat_information_ideas_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_information_ideas_10_items.md"
+  },
+  {
+    "title": "Problem Solving & Data Analysis — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Problem Solving & Data Analysis (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_problem_solving_10_items.md",
+    "path_domain": "Question_Banks/sat_problem_solving_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_problem_solving_10_items.md"
+  },
+  {
+    "title": "Standard English Conventions — 35 Practice Items",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Question Bank — Standard English Conventions (35 Items)",
+    "date_created": "2026-09-13",
+    "content_type": "Question Bank / Drill",
+    "path_root": "SAT/Question_Banks/sat_standard_conventions_10_items.md",
+    "path_domain": "Question_Banks/sat_standard_conventions_10_items.md",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_standard_conventions_10_items.md"
+  },
+  {
+    "title": "Advanced Math — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Advanced Math",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/advanced_math_notes.md",
+    "path_domain": "Study_Notes/advanced_math_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "advanced_math_notes.md"
+  },
+  {
+    "title": "Algebra — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Algebra",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/algebra_notes.md",
+    "path_domain": "Study_Notes/algebra_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "algebra_notes.md"
+  },
+  {
+    "title": "Craft & Structure — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Craft & Structure",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/craft_structure_notes.md",
+    "path_domain": "Study_Notes/craft_structure_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "craft_structure_notes.md"
+  },
+  {
+    "title": "Expression of Ideas — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Expression of Ideas",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/expression_ideas_notes.md",
+    "path_domain": "Study_Notes/expression_ideas_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "expression_ideas_notes.md"
+  },
+  {
+    "title": "Geometry & Trigonometry — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Geometry & Trigonometry",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/geometry_notes.md",
+    "path_domain": "Study_Notes/geometry_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "geometry_notes.md"
+  },
+  {
+    "title": "Information & Ideas — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Information & Ideas",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/information_ideas_notes.md",
+    "path_domain": "Study_Notes/information_ideas_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "information_ideas_notes.md"
+  },
+  {
+    "title": "Problem Solving & Data Analysis — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Problem Solving & Data Analysis",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/problem_solving_notes.md",
+    "path_domain": "Study_Notes/problem_solving_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "problem_solving_notes.md"
+  },
+  {
+    "title": "SAT 2026 Digital — What Changed & How to Prepare",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "SAT 2026 Digital Blueprint — Study Notes & Updates",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / 2026 Update Guide",
+    "path_root": "SAT/Study_Notes/sat_2026_blueprint_notes.md",
+    "path_domain": "Study_Notes/sat_2026_blueprint_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_2026_blueprint_notes.md"
+  },
+  {
+    "title": "Standard English Conventions — Study Notes",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "Study Notes — Standard English Conventions",
+    "date_created": "2026-09-13",
+    "content_type": "Study Notes / Strategy Guide",
+    "path_root": "SAT/Study_Notes/standard_conventions_notes.md",
+    "path_domain": "Study_Notes/standard_conventions_notes.md",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "standard_conventions_notes.md"
+  },
+  {
+    "title": "SAT Vocabulary — Key Words by Category",
+    "domain": "SAT",
+    "target_level": "Score 700+",
+    "topic": "SAT Vocabulary — High-Frequency Words & Collocations",
+    "date_created": "2026-09-13",
+    "content_type": "Vocabulary / Collocations Study Guide",
+    "path_root": "SAT/Vocabulary/sat_vocab_collocations_notes.md",
+    "path_domain": "Vocabulary/sat_vocab_collocations_notes.md",
+    "category": "Vocabulary",
+    "sub_category": "",
+    "is_interactive": false,
+    "file_type": "Markdown",
+    "filename": "sat_vocab_collocations_notes.md"
   },
   {
     "title": "Digital SAT Reading & Writing: Cross-Text Connections Masterclass",
@@ -1272,259 +1524,19 @@
     "filename": "sat_math_problem_solving_data_statistics_set_01.md"
   },
   {
-    "title": "YDT İngilizce — 40 Soruluk Tanılama Deneme Sınavı",
-    "domain": "YDT",
-    "target_level": "YDT 55-65 Net | CEFR B1-B2",
-    "topic": "Diagnostic YDT Mock Exam (40 Questions)",
-    "date_created": "2026-08-28",
-    "content_type": "Mock Test",
-    "path_root": "YDT/Denemeler/ydt_mock_exam_40q.md",
-    "path_domain": "Denemeler/ydt_mock_exam_40q.md",
-    "category": "Denemeler",
-    "sub_category": "",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_mock_exam_40q.md"
-  },
-  {
-    "title": "YDT İngilizce: 12 Tense Master Konu Anlatımı, Kullanım Rehberi ve ÖSYM Soru Bankası",
-    "domain": "YDT",
-    "target_level": "YDT 75+ Net | ÖSYM Standard",
-    "topic": "İngilizce 12 Tense Master Konu Anlatımı, Tüm Kullanım Alanları (5 Örnekli), 60 ÖSYM Çıkmış/Özgün Soru Bankası, İleri Düzey Tuzaklar ve Şık Eleme Stratejileri",
-    "date_created": "2026-08-28",
-    "content_type": "Konu Anlatımı & Master Web Simulator",
-    "path_root": "YDT/Konu_Anlatimi/ydt_tenses_konu_anlatimi.md",
-    "path_domain": "Konu_Anlatimi/ydt_tenses_konu_anlatimi.md",
-    "category": "Konu_Anlatimi",
-    "sub_category": "",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_tenses_konu_anlatimi.md"
-  },
-  {
-    "title": "YDT İngilizce: Yüksek Frekanslı Akademik Kelime Rehberi & Özgün Kelime Testi",
-    "domain": "YDT",
-    "target_level": "YDT 70+ Net | CEFR B1 - B2",
-    "topic": "YDT İngilizce Yüksek Frekanslı Akademik Kelimeler, Phrasal Verbs & Çözümlü Test",
-    "date_created": "2026-08-26",
-    "content_type": "Vocabulary Bank & Drills",
-    "path_root": "YDT/Vocabulary/ydt_essential_academic_vocabulary_set_01.md",
-    "path_domain": "Vocabulary/ydt_essential_academic_vocabulary_set_01.md",
-    "category": "Vocabulary",
-    "sub_category": "",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_essential_academic_vocabulary_set_01.md"
-  },
-  {
-    "title": "YDT İngilizce: Karşılıklı Konuşma & Anlamca En Yakın Cümle (50–59. Sorular)",
-    "domain": "YDT",
-    "target_level": "YDT 75+ Net",
-    "topic": "YDT Karşılıklı Konuşma & Anlamca En Yakın Cümle Soru Bankası",
-    "date_created": "2026-09-01",
-    "content_type": "Question Bank / Drill",
-    "path_root": "YDT/Soru_Bankasi/Dialogue_Restatement/ydt_diyalog_ve_anlamca_yakin_01.md",
-    "path_domain": "Soru_Bankasi/Dialogue_Restatement/ydt_diyalog_ve_anlamca_yakin_01.md",
-    "category": "Soru_Bankasi",
-    "sub_category": "Dialogue_Restatement",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_diyalog_ve_anlamca_yakin_01.md"
-  },
-  {
-    "title": "YDT İngilizce: Dilbilgisi ve Cloze Test Soru Bankası (1–20. Sorular)",
-    "domain": "YDT",
-    "target_level": "YDT 75+ Net",
-    "topic": "YDT Dilbilgisi & Cloze Test Soru Bankası Modülü",
-    "date_created": "2026-09-01",
-    "content_type": "Question Bank / Drill",
-    "path_root": "YDT/Soru_Bankasi/Grammar_Cloze/ydt_grammar_cloze_soru_bankasi_01.md",
-    "path_domain": "Soru_Bankasi/Grammar_Cloze/ydt_grammar_cloze_soru_bankasi_01.md",
-    "category": "Soru_Bankasi",
-    "sub_category": "Grammar_Cloze",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_grammar_cloze_soru_bankasi_01.md"
-  },
-  {
-    "title": "YDT İngilizce — Okuma Parçaları (Reading Passages) Çalışma Modülü",
-    "domain": "YDT",
-    "target_level": "YDT 70+ Net | CEFR B2-C1",
-    "topic": "YDT Paragraf Soruları & Okuma Becerileri Kapsamlı Çalışma Modülü",
-    "date_created": "2026-08-26",
-    "content_type": "Worksheet | Drill | Analysis",
-    "path_root": "YDT/Soru_Bankasi/Reading_Passages/ydt_okuma_parcalari_calisma_modulu_01.md",
-    "path_domain": "Soru_Bankasi/Reading_Passages/ydt_okuma_parcalari_calisma_modulu_01.md",
-    "category": "Soru_Bankasi",
-    "sub_category": "Reading_Passages",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_okuma_parcalari_calisma_modulu_01.md"
-  },
-  {
-    "title": "YDT İngilizce: Cümle Tamamlama Soru Bankası (21–28. Sorular)",
-    "domain": "YDT",
-    "target_level": "YDT 75+ Net",
-    "topic": "YDT Cümle Tamamlama (Sentence Completion) Soru Bankası Modülü",
-    "date_created": "2026-09-01",
-    "content_type": "Question Bank / Drill",
-    "path_root": "YDT/Soru_Bankasi/Sentence_Completion/ydt_cumle_tamamlama_soru_bankasi_01.md",
-    "path_domain": "Soru_Bankasi/Sentence_Completion/ydt_cumle_tamamlama_soru_bankasi_01.md",
-    "category": "Soru_Bankasi",
-    "sub_category": "Sentence_Completion",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_cumle_tamamlama_soru_bankasi_01.md"
-  },
-  {
-    "title": "YDT İngilizce: Çeviri Soru Bankası (29–34. Sorular)",
-    "domain": "YDT",
-    "target_level": "YDT 75+ Net",
-    "topic": "YDT Çeviri (Translation EN-TR & TR-EN) Soru Bankası Modülü",
-    "date_created": "2026-09-01",
-    "content_type": "Question Bank / Drill",
-    "path_root": "YDT/Soru_Bankasi/Translation/ydt_ceviri_soru_bankasi_01.md",
-    "path_domain": "Soru_Bankasi/Translation/ydt_ceviri_soru_bankasi_01.md",
-    "category": "Soru_Bankasi",
-    "sub_category": "Translation",
-    "is_interactive": false,
-    "file_type": "Markdown",
-    "filename": "ydt_ceviri_soru_bankasi_01.md"
-  },
-  {
-    "title": "YDT İngilizce — 40 Soruluk Tanılama Deneme Sınavı | YDT Academic Study Module",
-    "domain": "YDT",
+    "title": "SAT (Digital SAT) Workspace | SATPrep",
+    "domain": "SAT",
     "target_level": "Interactive Webapp",
-    "topic": "Ydt Mock Exam 40Q",
+    "topic": "Readme",
     "date_created": "2026",
     "content_type": "Interactive Simulator",
-    "path_root": "YDT/Denemeler/ydt_mock_exam_40q.html",
-    "path_domain": "Denemeler/ydt_mock_exam_40q.html",
-    "category": "Denemeler",
+    "path_root": "SAT/README.html",
+    "path_domain": "README.html",
+    "category": "Interactive App",
     "sub_category": "",
     "is_interactive": true,
     "file_type": "HTML Simulator",
-    "filename": "ydt_mock_exam_40q.html"
-  },
-  {
-    "title": "YDT İngilizce: 12 Tense Master Konu Anlatımı, Kullanım Rehberi ve ÖSYM Soru Bankası | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Tenses Konu Anlatimi",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Konu_Anlatimi/ydt_tenses_konu_anlatimi.html",
-    "path_domain": "Konu_Anlatimi/ydt_tenses_konu_anlatimi.html",
-    "category": "Konu_Anlatimi",
-    "sub_category": "",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_tenses_konu_anlatimi.html"
-  },
-  {
-    "title": "YDT İngilizce: Yüksek Frekanslı Akademik Kelime Rehberi &amp; Özgün Kelime Testi | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Essential Academic Vocabulary Set 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Vocabulary/ydt_essential_academic_vocabulary_set_01.html",
-    "path_domain": "Vocabulary/ydt_essential_academic_vocabulary_set_01.html",
-    "category": "Vocabulary",
-    "sub_category": "",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_essential_academic_vocabulary_set_01.html"
-  },
-  {
-    "title": "YDT İngilizce: Yüksek Frekanslı Akademik Kelime Rehberi & Özgün Kelime Testi | Interactive Exam Simulator",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Vocabulary Quiz App",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Vocabulary/ydt_vocabulary_quiz_app.html",
-    "path_domain": "Vocabulary/ydt_vocabulary_quiz_app.html",
-    "category": "Vocabulary",
-    "sub_category": "",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_vocabulary_quiz_app.html"
-  },
-  {
-    "title": "YDT İngilizce: Karşılıklı Konuşma &amp; Anlamca En Yakın Cümle (50–59. Sorular) | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Diyalog Ve Anlamca Yakin 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Soru_Bankasi/Dialogue_Restatement/ydt_diyalog_ve_anlamca_yakin_01.html",
-    "path_domain": "Soru_Bankasi/Dialogue_Restatement/ydt_diyalog_ve_anlamca_yakin_01.html",
-    "category": "Soru_Bankasi",
-    "sub_category": "Dialogue_Restatement",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_diyalog_ve_anlamca_yakin_01.html"
-  },
-  {
-    "title": "YDT İngilizce: Dilbilgisi ve Cloze Test Soru Bankası (1–20. Sorular) | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Grammar Cloze Soru Bankasi 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Soru_Bankasi/Grammar_Cloze/ydt_grammar_cloze_soru_bankasi_01.html",
-    "path_domain": "Soru_Bankasi/Grammar_Cloze/ydt_grammar_cloze_soru_bankasi_01.html",
-    "category": "Soru_Bankasi",
-    "sub_category": "Grammar_Cloze",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_grammar_cloze_soru_bankasi_01.html"
-  },
-  {
-    "title": "YDT İngilizce — Okuma Parçaları (Reading Passages) Çalışma Modülü | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Okuma Parcalari Calisma Modulu 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Soru_Bankasi/Reading_Passages/ydt_okuma_parcalari_calisma_modulu_01.html",
-    "path_domain": "Soru_Bankasi/Reading_Passages/ydt_okuma_parcalari_calisma_modulu_01.html",
-    "category": "Soru_Bankasi",
-    "sub_category": "Reading_Passages",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_okuma_parcalari_calisma_modulu_01.html"
-  },
-  {
-    "title": "YDT İngilizce: Cümle Tamamlama Soru Bankası (21–28. Sorular) | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Cumle Tamamlama Soru Bankasi 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Soru_Bankasi/Sentence_Completion/ydt_cumle_tamamlama_soru_bankasi_01.html",
-    "path_domain": "Soru_Bankasi/Sentence_Completion/ydt_cumle_tamamlama_soru_bankasi_01.html",
-    "category": "Soru_Bankasi",
-    "sub_category": "Sentence_Completion",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_cumle_tamamlama_soru_bankasi_01.html"
-  },
-  {
-    "title": "YDT İngilizce: Çeviri Soru Bankası (29–34. Sorular) | YDT Academic Study Module",
-    "domain": "YDT",
-    "target_level": "Interactive Webapp",
-    "topic": "Ydt Ceviri Soru Bankasi 01",
-    "date_created": "2026",
-    "content_type": "Interactive Simulator",
-    "path_root": "YDT/Soru_Bankasi/Translation/ydt_ceviri_soru_bankasi_01.html",
-    "path_domain": "Soru_Bankasi/Translation/ydt_ceviri_soru_bankasi_01.html",
-    "category": "Soru_Bankasi",
-    "sub_category": "Translation",
-    "is_interactive": true,
-    "file_type": "HTML Simulator",
-    "filename": "ydt_ceviri_soru_bankasi_01.html"
+    "filename": "README.html"
   },
   {
     "title": "Digital SAT Math: Full Practice Module 1 | SAT Academic Study Module",
@@ -1557,6 +1569,51 @@
     "filename": "sat_digital_full_practice_test_01_rw_module.html"
   },
   {
+    "title": "Advanced Math — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Advanced Math 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_advanced_math_10_items.html",
+    "path_domain": "Question_Banks/sat_advanced_math_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_advanced_math_10_items.html"
+  },
+  {
+    "title": "Algebra — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Algebra 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_algebra_10_items.html",
+    "path_domain": "Question_Banks/sat_algebra_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_algebra_10_items.html"
+  },
+  {
+    "title": "Craft &amp; Structure — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Craft Structure 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_craft_structure_10_items.html",
+    "path_domain": "Question_Banks/sat_craft_structure_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_craft_structure_10_items.html"
+  },
+  {
     "title": "The Ultimate Digital SAT Desmos Calculator Mastery Guide &amp; Speed Hacks | SAT Academic Study Module",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
@@ -1587,6 +1644,81 @@
     "filename": "sat_digital_rw_distractor_trap_radar_and_cheat_sheet.html"
   },
   {
+    "title": "Expression of Ideas — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Expression Ideas 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_expression_ideas_10_items.html",
+    "path_domain": "Question_Banks/sat_expression_ideas_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_expression_ideas_10_items.html"
+  },
+  {
+    "title": "Geometry &amp; Trigonometry — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Geometry 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_geometry_10_items.html",
+    "path_domain": "Question_Banks/sat_geometry_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_geometry_10_items.html"
+  },
+  {
+    "title": "Information &amp; Ideas — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Information Ideas 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_information_ideas_10_items.html",
+    "path_domain": "Question_Banks/sat_information_ideas_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_information_ideas_10_items.html"
+  },
+  {
+    "title": "Problem Solving &amp; Data Analysis — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Problem Solving 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_problem_solving_10_items.html",
+    "path_domain": "Question_Banks/sat_problem_solving_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_problem_solving_10_items.html"
+  },
+  {
+    "title": "Standard English Conventions — 35 Practice Items | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Standard Conventions 10 Items",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Question_Banks/sat_standard_conventions_10_items.html",
+    "path_domain": "Question_Banks/sat_standard_conventions_10_items.html",
+    "category": "Question_Banks",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_standard_conventions_10_items.html"
+  },
+  {
     "title": "Digital SAT EBRW Practice Module: Craft & Structure | Interactive Simulator",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
@@ -1602,7 +1734,322 @@
     "filename": "sat_digital_ebrw_interactive_trainer.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Cross-Text Connections Masterclass | SAT Academic Study Module",
+    "title": "SAT Show — Walkthrough (Craft & Structure)",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Show Walkthrough",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Show/show_walkthrough.html",
+    "path_domain": "Show/show_walkthrough.html",
+    "category": "Show",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "show_walkthrough.html"
+  },
+  {
+    "title": "SAT Skill — Advanced Math",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Advanced Math Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/advanced_math_skill.html",
+    "path_domain": "Skills/advanced_math_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "advanced_math_skill.html"
+  },
+  {
+    "title": "SAT Skill â€” Algebra",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Algebra Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/algebra_skill.html",
+    "path_domain": "Skills/algebra_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "algebra_skill.html"
+  },
+  {
+    "title": "SAT Skill â€” Craft & Structure",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Craft Structure Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/craft_structure_skill.html",
+    "path_domain": "Skills/craft_structure_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "craft_structure_skill.html"
+  },
+  {
+    "title": "SAT Skill — Expression of Ideas",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Expression Ideas Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/expression_ideas_skill.html",
+    "path_domain": "Skills/expression_ideas_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "expression_ideas_skill.html"
+  },
+  {
+    "title": "SAT Skill — Geometry & Trigonometry",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Geometry Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/geometry_skill.html",
+    "path_domain": "Skills/geometry_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "geometry_skill.html"
+  },
+  {
+    "title": "SAT Skill — Information & Ideas",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Information Ideas Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/information_ideas_skill.html",
+    "path_domain": "Skills/information_ideas_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "information_ideas_skill.html"
+  },
+  {
+    "title": "SAT Skill — Problem Solving & Data Analysis",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Problem Solving Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/problem_solving_skill.html",
+    "path_domain": "Skills/problem_solving_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "problem_solving_skill.html"
+  },
+  {
+    "title": "SAT Skill — Standard English Conventions",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Standard Conventions Skill",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Skills/standard_conventions_skill.html",
+    "path_domain": "Skills/standard_conventions_skill.html",
+    "category": "Skills",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "standard_conventions_skill.html"
+  },
+  {
+    "title": "Advanced Math — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Advanced Math Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/advanced_math_notes.html",
+    "path_domain": "Study_Notes/advanced_math_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "advanced_math_notes.html"
+  },
+  {
+    "title": "Algebra — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Algebra Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/algebra_notes.html",
+    "path_domain": "Study_Notes/algebra_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "algebra_notes.html"
+  },
+  {
+    "title": "Craft &amp; Structure — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Craft Structure Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/craft_structure_notes.html",
+    "path_domain": "Study_Notes/craft_structure_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "craft_structure_notes.html"
+  },
+  {
+    "title": "Expression of Ideas — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Expression Ideas Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/expression_ideas_notes.html",
+    "path_domain": "Study_Notes/expression_ideas_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "expression_ideas_notes.html"
+  },
+  {
+    "title": "Geometry &amp; Trigonometry — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Geometry Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/geometry_notes.html",
+    "path_domain": "Study_Notes/geometry_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "geometry_notes.html"
+  },
+  {
+    "title": "Information &amp; Ideas — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Information Ideas Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/information_ideas_notes.html",
+    "path_domain": "Study_Notes/information_ideas_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "information_ideas_notes.html"
+  },
+  {
+    "title": "Problem Solving &amp; Data Analysis — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Problem Solving Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/problem_solving_notes.html",
+    "path_domain": "Study_Notes/problem_solving_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "problem_solving_notes.html"
+  },
+  {
+    "title": "SAT 2026 Digital — What Changed &amp; How to Prepare | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat 2026 Blueprint Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/sat_2026_blueprint_notes.html",
+    "path_domain": "Study_Notes/sat_2026_blueprint_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_2026_blueprint_notes.html"
+  },
+  {
+    "title": "Standard English Conventions — Study Notes | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Standard Conventions Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Study_Notes/standard_conventions_notes.html",
+    "path_domain": "Study_Notes/standard_conventions_notes.html",
+    "category": "Study_Notes",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "standard_conventions_notes.html"
+  },
+  {
+    "title": "SAT Mock 01 — Full Exam",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Mock 01",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Test/mock_01.html",
+    "path_domain": "Test/mock_01.html",
+    "category": "Test",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "mock_01.html"
+  },
+  {
+    "title": "SAT 2026 Full Adaptive Mock — 4 Modules",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Mock 2026 Full",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Test/mock_2026_full.html",
+    "path_domain": "Test/mock_2026_full.html",
+    "category": "Test",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "mock_2026_full.html"
+  },
+  {
+    "title": "SAT Vocabulary — Key Words by Category | SATPrep",
+    "domain": "SAT",
+    "target_level": "Interactive Webapp",
+    "topic": "Sat Vocab Collocations Notes",
+    "date_created": "2026",
+    "content_type": "Interactive Simulator",
+    "path_root": "SAT/Vocabulary/sat_vocab_collocations_notes.html",
+    "path_domain": "Vocabulary/sat_vocab_collocations_notes.html",
+    "category": "Vocabulary",
+    "sub_category": "",
+    "is_interactive": true,
+    "file_type": "HTML Simulator",
+    "filename": "sat_vocab_collocations_notes.html"
+  },
+  {
+    "title": "Digital SAT Reading &amp; Writing: Cross-Text Connections Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Craft And Structure Cross Text Connections Set 02",
@@ -1617,7 +2064,7 @@
     "filename": "sat_craft_and_structure_cross_text_connections_set_02.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Words in Context Drill Set 01 | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Words in Context Drill Set 01 | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Craft And Structure Words In Context Set 01",
@@ -1632,7 +2079,7 @@
     "filename": "sat_craft_and_structure_words_in_context_set_01.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Expression of Ideas Masterclass | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Expression of Ideas Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Expression Of Ideas Transitions Rhetorical Synthesis Set 01",
@@ -1647,7 +2094,7 @@
     "filename": "sat_expression_of_ideas_transitions_rhetorical_synthesis_set_01.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Information and Ideas Masterclass | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Information and Ideas Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Information And Ideas Evidence Inference Set 01",
@@ -1662,7 +2109,7 @@
     "filename": "sat_information_and_ideas_evidence_inference_set_01.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Scientific Data Tables &amp; Quantitative Evidence | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Scientific Data Tables &amp; Quantitative Evidence | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Information And Ideas Scientific Tables And Graphs Set 02",
@@ -1677,7 +2124,7 @@
     "filename": "sat_information_and_ideas_scientific_tables_and_graphs_set_02.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Standard English Conventions Masterclass | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Standard English Conventions Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Standard English Conventions Boundaries And Modifiers Set 01",
@@ -1692,7 +2139,7 @@
     "filename": "sat_standard_english_conventions_boundaries_and_modifiers_set_01.html"
   },
   {
-    "title": "Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism | SAT Academic Study Module",
+    "title": "Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Standard English Conventions Verbs Pronouns Parallelism Set 02",
@@ -1707,7 +2154,7 @@
     "filename": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02.html"
   },
   {
-    "title": "Digital SAT Math: Polynomials, Remainder Theorem &amp; Nonlinear Systems | SAT Academic Study Module",
+    "title": "Digital SAT Math: Polynomials, Remainder Theorem &amp; Nonlinear Systems | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Math Advanced Math Polynomials And Nonlinear Systems Set 02",
@@ -1722,7 +2169,7 @@
     "filename": "sat_math_advanced_math_polynomials_and_nonlinear_systems_set_02.html"
   },
   {
-    "title": "Digital SAT Math: Algebra &amp; Advanced Math Masterclass | SAT Academic Study Module",
+    "title": "Digital SAT Math: Algebra &amp; Advanced Math Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Math Algebra And Advanced Functions Set 01",
@@ -1737,7 +2184,7 @@
     "filename": "sat_math_algebra_and_advanced_functions_set_01.html"
   },
   {
-    "title": "Digital SAT Math: Geometry, Trigonometry &amp; Data Analysis Masterclass | SAT Academic Study Module",
+    "title": "Digital SAT Math: Geometry, Trigonometry &amp; Data Analysis Masterclass | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Math Geometry Trigonometry And Data Set 01",
@@ -1752,7 +2199,7 @@
     "filename": "sat_math_geometry_trigonometry_and_data_set_01.html"
   },
   {
-    "title": "Digital SAT Math: Statistics, Probability &amp; Data Distributions | SAT Academic Study Module",
+    "title": "Digital SAT Math: Statistics, Probability &amp; Data Distributions | SAT Drill",
     "domain": "SAT",
     "target_level": "Interactive Webapp",
     "topic": "Sat Math Problem Solving Data Statistics Set 01",

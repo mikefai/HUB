@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Markdown to Interactive Exam Simulator Compiler
-Converts standard educational question banks and reading tests (IELTS, SAT, YKS, ESL)
+Converts standard educational question banks and reading tests (IELTS, SAT, ESL)
 into responsive, zero-dependency interactive HTML test simulators.
 """
 
