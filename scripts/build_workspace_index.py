@@ -139,7 +139,18 @@ def scan_workspace():
 
                 rel_to_root = md_file.relative_to(WORKSPACE_ROOT).as_posix()
                 rel_to_domain = md_file.relative_to(domain_dir).as_posix()
-                
+
+                # Button link: prefer the rendered HTML twin. Browsers cannot
+                # render raw .md as a study page, and every content .md ships
+                # with a paired .html page (verified: zero orphan MDs).
+                html_twin = md_file.with_suffix(".html")
+                if html_twin.exists():
+                    link_root = html_twin.relative_to(WORKSPACE_ROOT).as_posix()
+                    link_domain = html_twin.relative_to(domain_dir).as_posix()
+                else:
+                    link_root = rel_to_root
+                    link_domain = rel_to_domain
+
                 # Determine subcategory / folder tags
                 parts = md_file.relative_to(domain_dir).parts
                 category = parts[0] if len(parts) > 1 else "General"
@@ -154,6 +165,8 @@ def scan_workspace():
                     "content_type": meta.get("content_type", "Document"),
                     "path_root": rel_to_root,
                     "path_domain": rel_to_domain,
+                    "link_root": link_root,
+                    "link_domain": link_domain,
                     "category": category,
                     "sub_category": sub_category,
                     "is_interactive": False,
@@ -196,11 +209,13 @@ def scan_workspace():
                 "topic": html_file.stem.replace("_", " ").title(),
                 "date_created": "2026",
                 "content_type": "Interactive Simulator",
-                "path_root": rel_to_root,
-                "path_domain": rel_to_domain,
-                "category": category,
-                "sub_category": sub_category,
-                "is_interactive": True,
+                    "path_root": rel_to_root,
+                    "path_domain": rel_to_domain,
+                    "link_root": rel_to_root,
+                    "link_domain": rel_to_domain,
+                    "category": category,
+                    "sub_category": sub_category,
+                    "is_interactive": True,
                 "file_type": "HTML Simulator",
                 "filename": html_file.name
             })
@@ -839,7 +854,7 @@ def generate_domain_portal_html(domain: str, items: list):
             </p>
           </div>
           <div class="card-actions">
-            <a href="${{item.path_domain}}" class="btn-launch ${{item.is_interactive ? 'btn-interactive' : ''}}">
+            <a href="${{item.link_domain || item.path_domain}}" class="btn-launch ${{item.is_interactive ? 'btn-interactive' : ''}}">
               ${{item.is_interactive ? '🚀 Launch Interactive App' : '📄 View Study Material'}}
             </a>
           </div>
@@ -1389,7 +1404,7 @@ def generate_root_portal_html(items: list):
             </p>
           </div>
           <div class="card-actions">
-            <a href="${{item.path_root}}" class="btn-launch ${{item.is_interactive ? 'btn-interactive' : ''}}">
+            <a href="${{item.link_root || item.path_root}}" class="btn-launch ${{item.is_interactive ? 'btn-interactive' : ''}}">
               ${{item.is_interactive ? '🚀 Launch Simulator' : '📄 Open Document'}}
             </a>
           </div>
