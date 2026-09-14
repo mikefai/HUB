@@ -64,7 +64,7 @@ def build_index(d):
     return True
 
 TARGETS = ['Practice_Modules', 'Question_Banks', 'Reading_Writing', 'Math',
-           'Study_Notes', 'Vocabulary', 'Skills', 'Show', 'Test',
+           'Study_Notes', 'Vocabulary', 'Show', 'Test',
            'Reading_Writing/Craft_and_Structure',
            'Reading_Writing/Expression_of_Ideas',
            'Reading_Writing/Information_and_Ideas',
