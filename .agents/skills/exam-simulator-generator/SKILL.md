@@ -28,6 +28,9 @@ Use this skill when creating or converting educational content into interactive 
    - Instant or exam-mode scoring (reveal immediately vs reveal on submit).
    - "Why is this right?" and "Why are distractors wrong?" accordion toggles for every question.
    - Question filter buttons (All, Answered, Unanswered, Bookmarked / Flagged).
+5. **Student Tools Toolbar Standard** (SAT study pages; see `scripts/student_tools.py` + `scripts/add_student_tools.py`):
+   - 🖊 Pen (draw on page, colors, eraser, per-page persistence), 🖍 Highlighter (selection-based, persists), 📝 Notes (autosaved panel), 🧮 Calculator (safe eval, `%`/`^`/`√`), 📖 Words (B1 glosses for hard words, tap for meaning).
+   - Re-run `python scripts/add_student_tools.py` after regenerating any SAT study HTML so no page ships without it.
 
 ---
 
