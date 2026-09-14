@@ -1,6 +1,6 @@
 # 📚 Master Workspace Educational Content Catalog
 
-> *Auto-generated on 2026-09-14 08:38 via `scripts/build_workspace_index.py`*
+> *Auto-generated on 2026-09-14 08:53 via `scripts/build_workspace_index.py`*
 
 This catalog indexes all structured lesson plans, test prep modules, question banks, and interactive simulators across the workspace, along with independent domain portals.
 
@@ -65,16 +65,12 @@ This catalog indexes all structured lesson plans, test prep modules, question ba
 | Vocabulary & Lexical Matrix Toolkit | IELTS Academic Band 9.0 Lexical Resource Master Matrix across 8 Core Topics | `Band 8.0 to 9.0` | 📄 Markdown | [IELTS Academic: Band 9.0 Lexical Resource Master Matrix](IELTS/Vocabulary_Collocations/ielts_academic_band_9_lexical_resource_master_matrix.md) |
 | Vocabulary Bank | Worksheet | Analysis | Academic Vocabulary & High-Scoring Thematic Collocations Master Bank | `Band 7.0 to 9.0` | 📄 Markdown | [IELTS Academic: High-Scoring Collocations & Lexical Resource Bank](IELTS/Vocabulary_Collocations/ielts_academic_high_scoring_collocations_and_lexical_resource.md) |
 
-## 🌐 SAT Modules & Resources (28 Total)
+## 🌐 SAT Modules & Resources (24 Total)
 
 | Type | Title / Topic | Target Level | Format | Direct Link |
 | :--- | :--- | :--- | :--- | :--- |
 | Full Practice Module / Mock Test | Digital SAT Math Full Practice Test Module 1 | `Score 700 - 800` | 📄 Markdown | [Digital SAT Math: Full Practice Module 1](SAT/Practice_Modules/sat_digital_full_practice_test_01_math_module.md) |
 | Full Practice Module / Mock Test | Digital SAT Reading and Writing Full Practice Test Module 1 | `Score 700 - 800` | 📄 Markdown | [Digital SAT Reading and Writing: Full Practice Module 1](SAT/Practice_Modules/sat_digital_full_practice_test_01_rw_module.md) |
-| Interactive Simulator | Sat Digital Ebrw Interactive Trainer | `Interactive Webapp` | 🚀 **Interactive App** | [Digital SAT EBRW Practice Module: Craft & Structure | Interactive Simulator](SAT/Reading_Writing/sat_digital_ebrw_interactive_trainer.html) |
-| Interactive Simulator | Mock 2026 Full | `Interactive Webapp` | 🚀 **Interactive App** | [SAT 2026 Full Adaptive Mock — 4 Modules](SAT/Test/mock_2026_full.html) |
-| Interactive Simulator | Mock 01 | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Mock 01 — Full Exam](SAT/Test/mock_01.html) |
-| Interactive Simulator | Show Walkthrough | `Interactive Webapp` | 🚀 **Interactive App** | [SAT Show — Walkthrough (Craft & Structure)](SAT/Show/show_walkthrough.html) |
 | Question Bank / Drill | Question Bank — Advanced Math (35 Items) | `Score 700+` | 📄 Markdown | [Advanced Math — 35 Practice Items](SAT/Question_Banks/sat_advanced_math_10_items.md) |
 | Question Bank / Drill | Question Bank — Algebra (35 Items) | `Score 700+` | 📄 Markdown | [Algebra — 35 Practice Items](SAT/Question_Banks/sat_algebra_10_items.md) |
 | Question Bank / Drill | Question Bank — Craft & Structure (35 Items) | `Score 700+` | 📄 Markdown | [Craft & Structure — 35 Practice Items](SAT/Question_Banks/sat_craft_structure_10_items.md) |
