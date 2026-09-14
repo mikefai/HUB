@@ -1,143 +1,235 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital SAT Math: Algebra &amp; Advanced Math Masterclass | SAT Drill</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script><style>
-:root{--bg:#e9f1fd;--surface:#fff;--surface2:#f4f8ff;--text:#0a1a3c;--muted:#5b6b8c;
---primary:#2b7fff;--primary-dark:#1a5fd0;--soft:#e3efff;--ok:#16a34a;--okbg:#f0fdf4;
---bad:#dc2626;--badbg:#fef2f2;--border:#d7e3f7;--radius:14px;
---font:'Segoe UI',system-ui,-apple-system,sans-serif;--mono:Consolas,monospace}
-[data-theme=dark]{--bg:#0a1428;--surface:#12203c;--surface2:#0e1a32;--text:#eaf1ff;
---muted:#93a4c4;--primary:#5b97ff;--primary-dark:#3f7bf0;--soft:#1b2c52;
---okbg:#052e16;--badbg:#450a0a;--border:#243a63}
-*{box-sizing:border-box}body{margin:0;font-family:var(--font);background:var(--bg);
-color:var(--text);line-height:1.65;padding-bottom:4rem}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);
-position:sticky;top:0;z-index:50}.topbar-in{max-width:1180px;margin:0 auto;
-padding:.6rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.brand{font-weight:800;text-decoration:none;color:var(--text)}
-.badge{background:var(--soft);color:var(--primary);font-weight:800;font-size:.72rem;
-border-radius:6px;padding:.15rem .5rem;text-transform:uppercase;letter-spacing:.05em}
-.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-left:auto}
-.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);
-border-radius:99px;padding:.2rem .7rem;font-size:.78rem;font-weight:600}
-.wrap{max-width:1180px;margin:0 auto;padding:1.2rem}
-.toolbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:.7rem 1rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
-position:sticky;top:57px;z-index:40;box-shadow:0 4px 12px rgba(15,40,100,.07)}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Math: Algebra &amp; Advanced Math Masterclass | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
 .timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
-.toolbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--text);
-border-radius:99px;padding:.32rem .85rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.toolbtn.on,.toolbtn.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.pill{border:1.5px solid var(--border);background:var(--surface);color:var(--muted);
-border-radius:99px;padding:.3rem .9rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.pill.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.teach{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-margin:1rem 0;overflow:hidden}
-.teach summary{cursor:pointer;font-weight:800;padding:.9rem 1.2rem;list-style:none}
-.teach summary::-webkit-details-marker{display:none}
-.teach summary::before{content:'\25B6  ';color:var(--primary);font-size:.8rem}
-.teach[open] summary::before{content:'\25BC  '}
-.teach-body{padding:0 1.2rem 1.2rem}
-table.rules{width:100%;border-collapse:collapse;font-size:.86rem}
-table.rules th,table.rules td{border-bottom:1px solid var(--border);padding:.45rem;text-align:left}
-.diff{font-size:.7rem;font-weight:800;text-transform:uppercase;border-radius:6px;padding:.12rem .45rem;white-space:nowrap}
-.diff-easy{background:#dcfce7;color:#166534}.diff-medium{background:#fef3c7;color:#92400e}
-.diff-expert{background:#fee2e2;color:#991b1b}
-.layout{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin-top:1rem}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.stimulus{position:static!important;max-height:none!important}}
-.stimulus{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.1rem;position:sticky;top:140px;max-height:70vh;overflow:auto}
-.qnav{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}
-.qpill{width:36px;height:36px;border-radius:9px;border:1.5px solid var(--border);
-background:var(--surface);color:var(--text);font-weight:800;cursor:pointer}
-.qpill.cur{border-color:var(--primary);background:var(--soft)}
-.qpill.ok{background:#dcfce7;border-color:var(--ok);color:#166534}
-.qpill.no{background:#fee2e2;border-color:var(--bad);color:#991b1b}
-.qpill.flag::after{content:' \2691';font-size:.7rem}
-.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem}
-.opt{display:block;width:100%;text-align:left;margin:.45rem 0;padding:.7rem .9rem;
-border:1.5px solid var(--border);border-radius:10px;background:var(--surface);
-color:var(--text);cursor:pointer;font-size:.95rem;font-family:var(--font)}
-.opt:hover:not(:disabled){border-color:var(--primary)}
-.opt.right{border-color:var(--ok);background:var(--okbg)}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
-.opt.dim{opacity:.8}.opt:disabled{cursor:default}
-.spr-row{display:flex;gap:.5rem;margin:.6rem 0}
-.spr-row input{flex:1;font:inherit;color:var(--text);background:var(--surface2);
-border:1.5px solid var(--border);border-radius:10px;padding:.6rem .8rem;font-family:var(--mono)}
-.feedback{border-radius:10px;padding:.8rem 1rem;margin-top:.7rem;font-size:.92rem}
-.feedback.good{background:var(--okbg);border:1.5px solid var(--ok)}
-.feedback.bad{background:var(--badbg);border:1.5px solid var(--bad)}
-details.sol{margin-top:.7rem}details.sol summary{cursor:pointer;font-weight:800;color:var(--primary)}
-.sol-list{margin:.4rem 0}code{font-family:var(--mono);font-size:.85em;background:var(--surface2);
-padding:.1rem .35rem;border-radius:6px}
-.navrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
-.btn{display:inline-block;border:none;cursor:pointer;font-weight:800;border-radius:99px;
-padding:.55rem 1.3rem;font-size:.9rem;text-decoration:none}
-.btn-p{background:var(--primary);color:#fff}.btn-g{background:var(--soft);color:var(--primary)}
-.results{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.3rem;margin-top:1rem}
-.bar{height:9px;background:var(--surface2);border:1px solid var(--border);border-radius:99px;overflow:hidden}
-.bar>span{display:block;height:100%;background:var(--primary)}
-.foot{max-width:1180px;margin:2rem auto 0;padding:0 1.2rem;color:var(--muted);font-size:.85rem}
-.foot a{color:var(--primary)}
-@media print{.topbar,.toolbar,.navrow,.no-print{display:none!important}body{background:#fff}}
-</style></head><body><div class="topbar"><div class="topbar-in"><a class="brand" href="../../index.html">&larr; SAT Portal</a><span class="badge">SAT drill</span><div class="chips"><span class="chip">Algebra &amp; Advanced Math</span><span class="chip">Target Score 750 - 800</span><span class="chip">5 questions</span><span class="chip">~80s each</span></div></div></div><div class="wrap"><h1>Digital SAT Math: Algebra &amp; Advanced Math Masterclass</h1><div class="toolbar"><span class="timer" id="clock">--:--</span><button class="toolbtn" id="pauseBtn">Pause</button><button class="toolbtn" id="resetBtn">Reset timer</button><span id="tierRow"><button class="pill active" data-t="all">All</button><button class="pill" data-t="easy">Easy (0)</button><button class="pill" data-t="medium">Medium (3)</button><button class="pill" data-t="expert">Expert (2)</button></span><button class="toolbtn" id="flagOnly">⚑ Flagged</button><button class="toolbtn" id="themeBtn">Theme</button><button class="toolbtn" id="restartBtn">Restart</button></div><details class="teach"><summary>What this drill trains &amp; how to use it</summary><div class="teach-body"><p><strong>Skills:</strong> Systems of Linear Equations (Constants for No/Infinite Solutions), Quadratic Functions &amp; Vertex Form, Discriminant $\Delta = b^2 - 4ac$, Radical &amp; Rational Equations, Exponential Modeling</p><table class="rules"><tr><th>#</th><th>Skill tested</th><th>Tier</th></tr><tr><td>Q1</td><td>Multiple Choice: Systems of Linear Equations with Constants</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q2</td><td>Multiple Choice: Quadratic Vertex Form &amp; Transformations</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q3</td><td>Multiple Choice: Discriminant &amp; Number of Real Solutions</td><td>Medium <span class="diff diff-medium">Medium</span></td></tr><tr><td>Q4</td><td>Multiple Choice: Rational Expressions &amp; Asymptotes</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q5</td><td>Student-Produced Response: Exponential Growth &amp; Modeling</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr></table><p><strong>How to use:</strong> 1) Read the stem. 2) Answer (keys 1–4, arrows move). 3) Open the solution to study the rule. Filter by tier to train easy, medium, or expert items.</p></div></details><div class="layout"><div class="stimulus"><strong>Navigator</strong><div class="qnav" id="qnav"></div><div class="bar"><span id="progFill" style="width:0%"></span></div><div id="stim"></div></div><div><div id="qbox"></div><div id="results"></div></div></div></div><div class="foot"><a href="../../index.html">&larr; SAT Portal</a> &middot; <a href="../../Show/show_walkthrough.html">Show walkthrough</a> &middot; <a href="../../Test/mock_01.html">Test mock</a> &middot; <a href="../../webapp/index.html#/practice">More practice in SATPrep Studio</a></div><script>
-const QD = [{"id": "sat_math_algebra_and_advanced_functions_set_01-q1", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Multiple Choice: Systems of Linear Equations with Constants", "cat": "Algebra & Advanced Math", "type": "mcq", "stem": "<p>In the system of equations below, $k$ is a constant. $$\\begin{cases} 3x - 5y = 14 \\\\ kx + 15y = -42 \\end{cases}$$ If the system has infinitely many solutions, what is the value of $k$?</p>", "passage": "", "options": ["$-9$", "$-3$", "$3$", "$9$"], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A ($-9$)</strong></li>\n<li><strong>Method 1 (Algebraic Ratio Method)</strong>:</li>\n</ul>\n<p>For a linear system $a_1 x + b_1 y = c_1$ and $a_2 x + b_2 y = c_2$ to have infinitely many solutions, the two equations must be linearly dependent (identical lines):</p>\n<p>$$\\frac{a_1}{a_2} = \\frac{b_1}{b_2} = \\frac{c_1}{c_2}$$</p>\n<p>Comparing the coefficients of $y$ and the constants:</p>\n<p>$$\\frac{-5}{15} = \\frac{14}{-42} = -\\frac{1}{3}$$</p>\n<p>Therefore:</p>\n<p>$$\\frac{3}{k} = -\\frac{1}{3} \\implies k = 3 \\cdot (-3) = -9$$</p>\n<ul class=\"sol-list\">\n<li><strong>Method 2 (Desmos Graphing Shortcut)</strong>:</li>\n<ul class=\"sol-list\">\n<li>Type <code>3x - 5y = 14</code> into line 1.</li>\n<li>Type <code>kx + 15y = -42</code> into line 2 and add a slider for <code>k</code>.</li>\n<li>Adjust <code>k</code> until line 2 overlaps line 1 completely across all points. The slider lands exactly on $k = -9$.</li>\n</ul>\n<li><strong>Distractor Analysis</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>D ($9$)</strong>: Result if the student forgets the sign inversion between $-5$ and $+15$.</li>\n<li><strong>B ($-3$)</strong>: Result of an inverted ratio error ($\\frac{k}{3} = -1$).</li>\n</ul>\n</ul>"}, {"id": "sat_math_algebra_and_advanced_functions_set_01-q2", "tier": "expert", "tierRaw": "Hard", "skill": "Multiple Choice: Quadratic Vertex Form & Transformations", "cat": "Algebra & Advanced Math", "type": "mcq", "stem": "<p>A quadratic function $f(x)$ has its vertex at $(4, -18)$ and passes through the point $(1, 0)$. Which of the following defines $f(x)$ in standard form?</p>", "passage": "", "options": ["$f(x) = 2x^2 - 16x + 14$", "$f(x) = 2x^2 - 8x - 10$", "$f(x) = -2x^2 + 16x - 14$", "$f(x) = x^2 - 8x + 7$"], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A ($f(x) = 2x^2 - 16x + 14$)</strong></li>\n<li><strong>Method 1 (Vertex Form to Standard Form)</strong>:</li>\n</ul>\n<p>The vertex form of a parabola is:</p>\n<p>$$f(x) = a(x - h)^2 + k$$</p>\n<p>Given vertex $(h, k) = (4, -18)$:</p>\n<p>$$f(x) = a(x - 4)^2 - 18$$</p>\n<p>Substitute the point $(1, 0)$ where $f(1) = 0$:</p>\n<p>$$0 = a(1 - 4)^2 - 18 \\implies 0 = 9a - 18 \\implies 9a = 18 \\implies a = 2$$</p>\n<p>Now expand into standard form:</p>\n<p>$$f(x) = 2(x^2 - 8x + 16) - 18 = 2x^2 - 16x + 32 - 18 = 2x^2 - 16x + 14$$</p>\n<ul class=\"sol-list\">\n<li><strong>Method 2 (Desmos Graphing Shortcut)</strong>:</li>\n<ul class=\"sol-list\">\n<li>Plot the points $(4, -18)$ and $(1, 0)$ in Desmos.</li>\n<li>Type each multiple choice option into Desmos.</li>\n<li>Option A is the only parabola whose minimum vertex touches $(4, -18)$ and crosses the x-axis at $(1, 0)$.</li>\n</ul>\n</ul>"}, {"id": "sat_math_algebra_and_advanced_functions_set_01-q3", "tier": "medium", "tierRaw": "Medium", "skill": "Multiple Choice: Discriminant & Number of Real Solutions", "cat": "Algebra & Advanced Math", "type": "mcq", "stem": "<p>For what value of the constant $c$ does the equation $4x^2 - 12x + c = 0$ have exactly one distinct real solution?</p>", "passage": "", "options": ["$-9$", "$3$", "$9$", "$36$"], "key": "C", "keyDisplay": "C", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: C ($9$)</strong></li>\n<li><strong>Method 1 (Discriminant Analysis)</strong>:</li>\n</ul>\n<p>A quadratic equation $ax^2 + bx + c = 0$ has exactly one real solution (a double root) when the discriminant equals zero:</p>\n<p>$$\\Delta = b^2 - 4ac = 0$$</p>\n<p>Here $a = 4$, $b = -12$, and $c$ is unknown:</p>\n<p>$$(-12)^2 - 4(4)(c) = 0$$</p>\n<p>$$144 - 16c = 0 \\implies 16c = 144 \\implies c = \\frac{144}{16} = 9$$</p>\n<ul class=\"sol-list\">\n<li><strong>Method 2 (Perfect Square Trinomial)</strong>:</li>\n</ul>\n<p>$$4x^2 - 12x + c = (2x - 3)^2 = 4x^2 - 12x + 9 \\implies c = 9$$</p>\n<ul class=\"sol-list\">\n<li><strong>Desmos Shortcut</strong>:</li>\n</ul>\n<p>Type <code>y = 4x^2 - 12x + c</code> with a slider for <code>c</code>. The graph touches the x-axis at exactly one tangent point when $c = 9$.</p>"}, {"id": "sat_math_algebra_and_advanced_functions_set_01-q4", "tier": "expert", "tierRaw": "Hard", "skill": "Multiple Choice: Rational Expressions & Asymptotes", "cat": "Algebra & Advanced Math", "type": "mcq", "stem": "<p>The function $g$ is defined by: $$g(x) = \\frac{3x^2 - 12}{x^2 - 5x + 6}$$ For what value of $x$ does the graph of $y = g(x)$ have a removable discontinuity (a hole) rather than a vertical asymptote?</p>", "passage": "", "options": ["$x = -2$", "$x = 2$", "$x = 3$", "$x = 6$"], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B ($x = 2$)</strong></li>\n<li><strong>Method 1 (Factoring &amp; Discontinuity Analysis)</strong>:</li>\n</ul>\n<p>Factor both numerator and denominator completely:</p>\n<p>$$\\text{Numerator: } 3(x^2 - 4) = 3(x - 2)(x + 2)$$</p>\n<p>$$\\text{Denominator: } (x - 2)(x - 3)$$</p>\n<p>Thus:</p>\n<p>$$g(x) = \\frac{3(x - 2)(x + 2)}{(x - 2)(x - 3)}$$</p>\n<ul class=\"sol-list\">\n<ul class=\"sol-list\">\n<li>The common factor $(x - 2)$ cancels out, indicating a <strong>removable discontinuity (hole)</strong> at $x = 2$.</li>\n<li>The non-canceling factor in the denominator $(x - 3)$ produces a <strong>vertical asymptote</strong> at $x = 3$.</li>\n</ul>\n<li><strong>Desmos Shortcut</strong>:</li>\n</ul>\n<p>Graph <code>y = (3x^2 - 12)/(x^2 - 5x + 6)</code>. Click and drag along the curve to $x = 2$; Desmos displays <code>(2, undefined)</code> as a hollow circle, confirming a hole at $x = 2$.</p>"}, {"id": "sat_math_algebra_and_advanced_functions_set_01-q5", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Student-Produced Response: Exponential Growth & Modeling", "cat": "Algebra & Advanced Math", "type": "spr", "stem": "<p>A microbiological culture initially contains $450$ bacterial cells. Under optimal laboratory conditions, the population doubles every $18$ hours according to the function: $$P(t) = 450 \\cdot 2^{\\frac{t}{k}}$$ where $t$ represents time in hours. If after $72$ hours the population reaches $7{,}200$ cells, what is the value of the constant $k$? <em>(Enter your numerical answer as an integer).</em></p>", "passage": "", "options": ["", "", "", ""], "key": "", "keyDisplay": "18", "accept": ["18"], "expFloat": 18.0, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: 18</strong></li>\n<li><strong>Method 1 (Direct Problem Definition &amp; Algebraic Verification)</strong>:</li>\n</ul>\n<p>The problem stem states that the bacterial population doubles every $18$ hours. In the standard exponential doubling formula $P(t) = P_0 \\cdot 2^{\\frac{t}{k}}$, the denominator $k$ represents the exact doubling period in hours. Hence $k = 18$.</p>\n<ul class=\"sol-list\">\n<li><strong>Verification via Given Data Point</strong>:</li>\n</ul>\n<p>After $t = 72$ hours, $P(72) = 7{,}200$:</p>\n<p>$$7200 = 450 \\cdot 2^{\\frac{72}{k}}$$</p>\n<p>$$\\frac{7200}{450} = 16 = 2^4$$</p>\n<p>$$2^4 = 2^{\\frac{72}{k}} \\implies 4 = \\frac{72}{k} \\implies k = \\frac{72}{4} = 18$$</p>"}];
-const LSKEY = 'satdrill_sat_math_algebra_and_advanced_functions_set_01';
-let state = {answers:{}, flags:[], idx:0, tier:'all', flagOnly:false, left:400, timerOn:false, timerId:null, done:false};
-try{const s = JSON.parse(localStorage.getItem(LSKEY)); if(s && s.answers) state.answers=s.answers; if(s&&s.flags) state.flags=s.flags;}catch(e){}
-function save(){try{localStorage.setItem(LSKEY, JSON.stringify({answers:state.answers,flags:state.flags}));}catch(e){}}
-const LET=['A','B','C','D'];
-function list(){return QD.filter(q=>(state.tier==='all'||q.tier===state.tier)&&(!state.flagOnly||state.flags.includes(q.id)));}
-function fmt(s){s=Math.max(0,s);const m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');}
-function tick(){document.getElementById('clock').textContent=fmt(state.left);}
-function startTimer(){if(state.timerId)return;state.timerOn=true;state.timerId=setInterval(()=>{if(!state.timerOn)return;state.left--;tick();if(state.left<=0){clearInterval(state.timerId);state.timerId=null;finish();}},1000);}
-function pauseTimer(){state.timerOn=!state.timerOn;document.getElementById('pauseBtn').textContent=state.timerOn?'Pause':'Resume';}
-function resetTimer(){clearInterval(state.timerId);state.timerId=null;state.left=400;state.timerOn=false;document.getElementById('pauseBtn').textContent='Pause';tick();}
-function renderNav(){const L=list();document.getElementById('qnav').innerHTML=L.map((q,i)=>{const a=state.answers[q.id];let c='qpill'+(i===state.idx?' cur':'')+(a?(a.ok?' ok':' no'):'')+(state.flags.includes(q.id)?' flag':'');return `<button class="${c}" data-i="${i}">${i+1}</button>`;}).join('');
-document.querySelectorAll('#qnav .qpill').forEach(b=>b.onclick=()=>{state.idx=+b.dataset.i;renderQ();});}
-function renderQ(){const L=list();const box=document.getElementById('qbox');
-if(!L.length){box.innerHTML='<div class="qcard"><p>No questions match this filter.</p></div>';document.getElementById('stim').innerHTML='';renderNav();return;}
-if(state.idx>=L.length)state.idx=0;
-const q=L[state.idx],a=state.answers[q.id],flagged=state.flags.includes(q.id);
-let stimHtml=`<span class="badge">${q.cat}</span> <span class="diff diff-${q.tier}">${q.tier}</span><p style="color:var(--muted);font-size:.82rem"><strong>${q.skill}</strong> &middot; source tier: ${q.tierRaw}</p>`;
-if(q.passage)stimHtml+=`<h3>Passage</h3><p>${q.passage}</p>`;
-document.getElementById('stim').innerHTML=stimHtml;
-let inner=`<p><strong>Q${state.idx+1} of ${L.length}.</strong> ${q.stem}</p>`;
-if(q.type==='mcq'){
-inner+='<div>'+q.options.map((o,i)=>{let c='opt';if(a){c+=' dim';if(LET[i]===q.key)c+=' right';else if(LET[i]===a.pick)c+=' wrong';}return `<button class="${c}" data-p="${LET[i]}" ${a?'disabled':''}><strong>${LET[i]}.</strong> ${o}</button>`;}).join('')+'</div>';
-}else{
-inner+=`<div class="spr-row"><input id="sprIn" inputmode="decimal" placeholder="Enter your answer" value="${a?a.pick:''}" ${a?'disabled':''}><button class="btn btn-p" id="sprGo" ${a?'disabled':''}>Check</button></div><p style="color:var(--muted);font-size:.82rem">Student-produced response: equivalent fractions and decimals accepted.</p>`;
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../../index.html">SAT Portal</a> &rsaquo; Algebra</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../../index.html">&larr; SAT Portal</a> &rsaquo; Algebra</div>
+<h1>Digital SAT Math: Algebra &amp; Advanced Math Masterclass</h1>
+<div class="meta"><span><b>Questions:</b> 12</span><span><b>Level:</b> Score 750 - 800</span><span><b>Topic:</b> Algebra & Advanced Math High-Yield Problem Set</span><span><b>Suggested time:</b> 16 min</span></div>
+<div class="overview"><ul><li><strong>Domain</strong>: Algebra &amp; Advanced Math</li><li><strong>Target Skills</strong>: Systems of Linear Equations (Constants for No/Infinite Solutions), Quadratic Functions &amp; Vertex Form, Discriminant <span class="mx">Δ = b<sup>2</sup> - 4ac</span>, Radical &amp; Rational Equations, Exponential Modeling</li><li><strong>Calculator Policy</strong>: Desmos Graphing Calculator Permitted (Embedded shortcuts included)</li><li><strong>Number of Items</strong>: 12 Items (10 Multiple Choice, 2 Student-Produced Responses)</li><li><strong>Time Recommended</strong>: ~80 seconds per item</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>In the system of equations below, <span class=\"mx\">k</span> is a constant.</p>\n<p><span class=\"mx-disp\"><span class=\"mx-cases\"><span class=\"mx-brace\">⎧</span><span class=\"mx-rows\"><span class=\"mx-row\"><span>3x - 5y = 14</span></span><span class=\"mx-row\"><span>kx + 15y = -42</span></span></span></span></span></p>\n<p>If the system has infinitely many solutions, what is the value of <span class=\"mx\">k</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">-9</span>"}, {"L": "B", "t": "<span class=\"mx\">-3</span>"}, {"L": "C", "t": "<span class=\"mx\">3</span>"}, {"L": "D", "t": "<span class=\"mx\">9</span>"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (<span class=\"mx\">-9</span>)</strong></li><li><strong>Method 1 (Algebraic Ratio Method)</strong>:</li></ul>\n<p>For a linear system <span class=\"mx\">a<sub>1</sub> x + b<sub>1</sub> y = c<sub>1</sub></span> and <span class=\"mx\">a<sub>2</sub> x + b<sub>2</sub> y = c<sub>2</sub></span> to have infinitely many solutions, the two equations must be linearly dependent (identical lines): <span class=\"mx-disp\"><span class=\"mx-frac\"><span>a<sub>1</sub></span><span>a<sub>2</sub></span></span> = <span class=\"mx-frac\"><span>b<sub>1</sub></span><span>b<sub>2</sub></span></span> = <span class=\"mx-frac\"><span>c<sub>1</sub></span><span>c<sub>2</sub></span></span></span> Comparing the coefficients of <span class=\"mx\">y</span> and the constants: <span class=\"mx-disp\"><span class=\"mx-frac\"><span>-5</span><span>15</span></span> = <span class=\"mx-frac\"><span>14</span><span>-42</span></span> = -<span class=\"mx-frac\"><span>1</span><span>3</span></span></span> Therefore: <span class=\"mx-disp\"><span class=\"mx-frac\"><span>3</span><span>k</span></span> = -<span class=\"mx-frac\"><span>1</span><span>3</span></span> ⇒ k = 3 · (-3) = -9</span></p>\n<ul><li><strong>Method 2 (Desmos Graphing Shortcut)</strong>:</li></ul>\n<ol><li>Type <code>3x - 5y = 14</code> into line 1.</li><li>Type <code>kx + 15y = -42</code> into line 2 and add a slider for <code>k</code>.</li><li>Adjust <code>k</code> until line 2 overlaps line 1 completely across all points. The slider lands exactly on <span class=\"mx\">k = -9</span>.</li></ol>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>D (<span class=\"mx\">9</span>)</strong>: Result if the student forgets the sign inversion between <span class=\"mx\">-5</span> and <span class=\"mx\">+15</span>.</li><li><strong>B (<span class=\"mx\">-3</span>)</strong>: Result of an inverted ratio error (<span class=\"mx\"><span class=\"mx-frac\"><span>k</span><span>3</span></span> = -1</span>).</li></ul>\n<hr>", "diff": "Medium-Hard", "domain": "Algebra: Systems with Infinite Solutions"}, {"n": 2, "kind": "mc", "stem": "<p>A quadratic function <span class=\"mx\">f(x)</span> has its vertex at <span class=\"mx\">(4, -18)</span> and passes through the point <span class=\"mx\">(1, 0)</span>. Which of the following defines <span class=\"mx\">f(x)</span> in standard form?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">f(x) = 2x<sup>2</sup> - 16x + 14</span>"}, {"L": "B", "t": "<span class=\"mx\">f(x) = 2x<sup>2</sup> - 8x - 10</span>"}, {"L": "C", "t": "<span class=\"mx\">f(x) = -2x<sup>2</sup> + 16x - 14</span>"}, {"L": "D", "t": "<span class=\"mx\">f(x) = x<sup>2</sup> - 8x + 7</span>"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (<span class=\"mx\">f(x) = 2x<sup>2</sup> - 16x + 14</span>)</strong></li><li><strong>Method 1 (Vertex Form to Standard Form)</strong>:</li></ul>\n<p>The vertex form of a parabola is: <span class=\"mx-disp\">f(x) = a(x - h)<sup>2</sup> + k</span> Given vertex <span class=\"mx\">(h, k) = (4, -18)</span>: <span class=\"mx-disp\">f(x) = a(x - 4)<sup>2</sup> - 18</span> Substitute the point <span class=\"mx\">(1, 0)</span> where <span class=\"mx\">f(1) = 0</span>: <span class=\"mx-disp\">0 = a(1 - 4)<sup>2</sup> - 18 ⇒ 0 = 9a - 18 ⇒ 9a = 18 ⇒ a = 2</span> Now expand into standard form: <span class=\"mx-disp\">f(x) = 2(x<sup>2</sup> - 8x + 16) - 18 = 2x<sup>2</sup> - 16x + 32 - 18 = 2x<sup>2</sup> - 16x + 14</span></p>\n<ul><li><strong>Method 2 (Desmos Graphing Shortcut)</strong>:</li></ul>\n<ol><li>Plot the points <span class=\"mx\">(4, -18)</span> and <span class=\"mx\">(1, 0)</span> in Desmos.</li><li>Type each multiple choice option into Desmos.</li><li>Option A is the only parabola whose minimum vertex touches <span class=\"mx\">(4, -18)</span> and crosses the x-axis at <span class=\"mx\">(1, 0)</span>.</li></ol>\n<hr>", "diff": "Hard", "domain": "Advanced Math: Quadratic Vertex Form"}, {"n": 3, "kind": "mc", "stem": "<p>For what value of the constant <span class=\"mx\">c</span> does the equation <span class=\"mx\">4x<sup>2</sup> - 12x + c = 0</span> have exactly one distinct real solution?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">-9</span>"}, {"L": "B", "t": "<span class=\"mx\">3</span>"}, {"L": "C", "t": "<span class=\"mx\">9</span>"}, {"L": "D", "t": "<span class=\"mx\">36</span>"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (<span class=\"mx\">9</span>)</strong></li><li><strong>Method 1 (Discriminant Analysis)</strong>:</li></ul>\n<p>A quadratic equation <span class=\"mx\">ax<sup>2</sup> + bx + c = 0</span> has exactly one real solution (a double root) when the discriminant equals zero: <span class=\"mx-disp\">Δ = b<sup>2</sup> - 4ac = 0</span> Here <span class=\"mx\">a = 4</span>, <span class=\"mx\">b = -12</span>, and <span class=\"mx\">c</span> is unknown: <span class=\"mx-disp\">(-12)<sup>2</sup> - 4(4)(c) = 0</span> <span class=\"mx-disp\">144 - 16c = 0 ⇒ 16c = 144 ⇒ c = <span class=\"mx-frac\"><span>144</span><span>16</span></span> = 9</span></p>\n<ul><li><strong>Method 2 (Perfect Square Trinomial)</strong>:</li></ul>\n<p><span class=\"mx-disp\">4x<sup>2</sup> - 12x + c = (2x - 3)<sup>2</sup> = 4x<sup>2</sup> - 12x + 9 ⇒ c = 9</span></p>\n<ul><li><strong>Desmos Shortcut</strong>:</li></ul>\n<p>Type <code>y = 4x^2 - 12x + c</code> with a slider for <code>c</code>. The graph touches the x-axis at exactly one tangent point when <span class=\"mx\">c = 9</span>.</p>\n<hr>", "diff": "Medium", "domain": "Advanced Math: Discriminant Condition"}, {"n": 4, "kind": "mc", "stem": "<p>The function <span class=\"mx\">g</span> is defined by:</p>\n<p><span class=\"mx-disp\">g(x) = <span class=\"mx-frac\"><span>3x<sup>2</sup> - 12</span><span>x<sup>2</sup> - 5x + 6</span></span></span></p>\n<p>For what value of <span class=\"mx\">x</span> does the graph of <span class=\"mx\">y = g(x)</span> have a removable discontinuity (a hole) rather than a vertical asymptote?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">x = -2</span>"}, {"L": "B", "t": "<span class=\"mx\">x = 2</span>"}, {"L": "C", "t": "<span class=\"mx\">x = 3</span>"}, {"L": "D", "t": "<span class=\"mx\">x = 6</span>"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<span class=\"mx\">x = 2</span>)</strong></li><li><strong>Method 1 (Factoring &amp; Discontinuity Analysis)</strong>:</li></ul>\n<p>Factor both numerator and denominator completely: <span class=\"mx-disp\">Numerator:  3(x<sup>2</sup> - 4) = 3(x - 2)(x + 2)</span> <span class=\"mx-disp\">Denominator:  (x - 2)(x - 3)</span> Thus: <span class=\"mx-disp\">g(x) = <span class=\"mx-frac\"><span>3(x - 2)(x + 2)</span><span>(x - 2)(x - 3)</span></span></span></p>\n<ul><li>The common factor <span class=\"mx\">(x - 2)</span> cancels out, indicating a <strong>removable discontinuity (hole)</strong> at <span class=\"mx\">x = 2</span>.</li><li>The non-canceling factor in the denominator <span class=\"mx\">(x - 3)</span> produces a <strong>vertical asymptote</strong> at <span class=\"mx\">x = 3</span>.</li><li><strong>Desmos Shortcut</strong>:</li></ul>\n<p>Graph <code>y = (3x^2 - 12)/(x^2 - 5x + 6)</code>. Click and drag along the curve to <span class=\"mx\">x = 2</span>; Desmos displays <code>(2, undefined)</code> as a hollow circle, confirming a hole at <span class=\"mx\">x = 2</span>.</p>\n<hr>", "diff": "Hard", "domain": "Advanced Math: Rational Functions & Discontinuity"}, {"n": 5, "kind": "spr", "stem": "<p>A microbiological culture initially contains <span class=\"mx\">450</span> bacterial cells. Under optimal laboratory conditions, the population doubles every <span class=\"mx\">18</span> hours according to the function:</p>\n<p><span class=\"mx-disp\">P(t) = 450 · 2<sup><span class=\"mx-frac\"><span>t</span><span>k</span></span></sup></span></p>\n<p>where <span class=\"mx\">t</span> represents time in hours. If after <span class=\"mx\">72</span> hours the population reaches <span class=\"mx\">7,200</span> cells, what is the value of the constant <span class=\"mx\">k</span>?</p>\n<p><em>(Enter your numerical answer as an integer).</em></p>", "options": [], "key": "18", "rat": "<ul><li><strong>Correct Answer: 18</strong></li><li><strong>Method 1 (Direct Problem Definition &amp; Algebraic Verification)</strong>:</li></ul>\n<p>The problem stem states that the bacterial population doubles every <span class=\"mx\">18</span> hours. In the standard exponential doubling formula <span class=\"mx\">P(t) = P<sub>0</sub> · 2<sup><span class=\"mx-frac\"><span>t</span><span>k</span></span></sup></span>, the denominator <span class=\"mx\">k</span> represents the exact doubling period in hours. Hence <span class=\"mx\">k = 18</span>.</p>\n<ul><li><strong>Verification via Given Data Point</strong>:</li></ul>\n<p>After <span class=\"mx\">t = 72</span> hours, <span class=\"mx\">P(72) = 7,200</span>: <span class=\"mx-disp\">7200 = 450 · 2<sup><span class=\"mx-frac\"><span>72</span><span>k</span></span></sup></span> <span class=\"mx-disp\"><span class=\"mx-frac\"><span>7200</span><span>450</span></span> = 16 = 2<sup>4</sup></span> <span class=\"mx-disp\">2<sup>4</sup> = 2<sup><span class=\"mx-frac\"><span>72</span><span>k</span></span></sup> ⇒ 4 = <span class=\"mx-frac\"><span>72</span><span>k</span></span> ⇒ k = <span class=\"mx-frac\"><span>72</span><span>4</span></span> = 18</span></p>\n<hr>", "diff": "Medium-Hard", "domain": "Advanced Math: Exponential Growth Models"}, {"n": 6, "kind": "mc", "stem": "<p>What is the solution set to the inequality <span class=\"mx\">-2x + 5 ge 11</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">x ge -3</span>"}, {"L": "B", "t": "<span class=\"mx\">x &gt; -3</span>"}, {"L": "C", "t": "<span class=\"mx\">x ge 3</span>"}, {"L": "D", "t": "<span class=\"mx\">x le -3</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">x le -3</span>)</strong></li><li><strong>Method 1 (Isolate with Sign Flip)</strong>:</li></ul>\n<p><span class=\"mx-disp\">-2x + 5 ge 11 ⇒ -2x ge 6</span> Dividing by a negative number reverses the inequality: <span class=\"mx-disp\">x le <span class=\"mx-frac\"><span>6</span><span>-2</span></span> = -3</span></p>\n<ul><li><strong>Method 2 (Desmos Check)</strong>: Graph <code>y = -2x + 5</code> and <code>y = 11</code>. The line sits on or above 11 exactly when <span class=\"mx\">x le -3</span>.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">x ge -3</span>)</strong>: Forgot to flip the inequality sign when dividing by <span class=\"mx\">-2</span>.</li><li><strong>B (<span class=\"mx\">x &gt; -3</span>)</strong>: Forgot the flip and dropped the equality.</li><li><strong>C (<span class=\"mx\">x ge 3</span>)</strong>: Divided <span class=\"mx\">6</span> by <span class=\"mx\">2</span> and kept the sign — double error.</li></ul>\n<hr>", "diff": "Medium", "domain": "Algebra: Linear Inequalities"}, {"n": 7, "kind": "mc", "stem": "<p>Line <span class=\"mx\">ell</span> is defined by <span class=\"mx\">y = 3x - 7</span>. Which of the following is the equation of a line parallel to <span class=\"mx\">ell</span> that passes through the point <span class=\"mx\">(2, 1)</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">y = 3x - 7</span>"}, {"L": "B", "t": "<span class=\"mx\">y = -3x + 5</span>"}, {"L": "C", "t": "<span class=\"mx\">y = 3x - 5</span>"}, {"L": "D", "t": "<span class=\"mx\">y = 3x + 1</span>"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (<span class=\"mx\">y = 3x - 5</span>)</strong></li><li><strong>Method 1 (Point-Slope Form)</strong>:</li></ul>\n<p>Parallel lines share the slope <span class=\"mx\">m = 3</span>. Through <span class=\"mx\">(2, 1)</span>: <span class=\"mx-disp\">y - 1 = 3(x - 2) ⇒ y = 3x - 5</span></p>\n<ul><li><strong>Method 2 (Desmos Check)</strong>: Plot <span class=\"mx\">(2, 1)</span> and each option; only C passes through the point with slope <span class=\"mx\">3</span>.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">y = 3x - 7</span>)</strong>: Reuses the original line instead of shifting it.</li><li><strong>B (<span class=\"mx\">y = -3x + 5</span>)</strong>: Flips the slope sign (perpendicular-style error).</li><li><strong>D (<span class=\"mx\">y = 3x + 1</span>)</strong>: Sign error solving <span class=\"mx\">1 = 6 + b</span>.</li></ul>\n<hr>", "diff": "Medium", "domain": "Algebra: Parallel Lines"}, {"n": 8, "kind": "mc", "stem": "<p>If <span class=\"mx\">f(t) = 2t<sup>2</sup> - 5t + 3</span>, what is the value of <span class=\"mx\">f(-2)</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">1</span>"}, {"L": "B", "t": "<span class=\"mx\">9</span>"}, {"L": "C", "t": "<span class=\"mx\">5</span>"}, {"L": "D", "t": "<span class=\"mx\">21</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">21</span>)</strong></li><li><strong>Method 1 (Direct Substitution)</strong>:</li></ul>\n<p><span class=\"mx-disp\">f(-2) = 2(-2)<sup>2</sup> - 5(-2) + 3 = 2(4) + 10 + 3 = 8 + 10 + 3 = 21</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">1</span>)</strong>: Sign slip on the middle term: <span class=\"mx\">8 - 10 + 3</span>.</li><li><strong>B (<span class=\"mx\">9</span>)</strong>: Forgot to square: <span class=\"mx\">2(-2) + 10 + 3</span>.</li><li><strong>C (<span class=\"mx\">5</span>)</strong>: Sign slip on the squared term: <span class=\"mx\">-8 + 10 + 3</span>.</li></ul>\n<hr>", "diff": "Medium", "domain": "Algebra: Function Evaluation"}, {"n": 9, "kind": "mc", "stem": "<p>If <span class=\"mx\">|2x - 3| = 7</span>, what is the greatest possible value of <span class=\"mx\">x</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">-2</span>"}, {"L": "B", "t": "<span class=\"mx\">5</span>"}, {"L": "C", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>7</span><span>2</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\">2</span>"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<span class=\"mx\">5</span>)</strong></li><li><strong>Method 1 (Split into Two Cases)</strong>:</li></ul>\n<p><span class=\"mx-disp\">2x - 3 = 7 ⇒ x = 5  or  2x - 3 = -7 ⇒ x = -2</span> The greatest possible value is <span class=\"mx\">5</span>.</p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">-2</span>)</strong>: The lesser root — answers the wrong extreme.</li><li><strong>C (<span class=\"mx\"><span class=\"mx-frac\"><span>7</span><span>2</span></span></span>)</strong>: Solved <span class=\"mx\">2x = 7</span>, dropping the <span class=\"mx\">-3</span>.</li><li><strong>D (<span class=\"mx\">2</span>)</strong>: Arithmetic slip combining cases.</li></ul>\n<hr>", "diff": "Medium", "domain": "Algebra: Absolute Value Equations"}, {"n": 10, "kind": "mc", "stem": "<p>In the system below, <span class=\"mx\">k</span> is a constant.</p>\n<p><span class=\"mx-disp\"><span class=\"mx-cases\"><span class=\"mx-brace\">⎧</span><span class=\"mx-rows\"><span class=\"mx-row\"><span>5x + ky = 9</span></span><span class=\"mx-row\"><span>15x + 12y = 30</span></span></span></span></span></p>\n<p>For which value of <span class=\"mx\">k</span> does the system have no solution?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">3</span>"}, {"L": "B", "t": "<span class=\"mx\">12</span>"}, {"L": "C", "t": "<span class=\"mx\">9</span>"}, {"L": "D", "t": "<span class=\"mx\">4</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">k = 4</span>)</strong></li><li><strong>Method 1 (Parallel-and-Distinct Test)</strong>:</li></ul>\n<p>No solution means identical slopes but different intercepts: <span class=\"mx-disp\"><span class=\"mx-frac\"><span>5</span><span>15</span></span> = <span class=\"mx-frac\"><span>k</span><span>12</span></span> ⇒ <span class=\"mx-frac\"><span>1</span><span>3</span></span> = <span class=\"mx-frac\"><span>k</span><span>12</span></span> ⇒ k = 4</span> Check the constants differ in ratio: <span class=\"mx\"><span class=\"mx-frac\"><span>9</span><span>30</span></span> = <span class=\"mx-frac\"><span>3</span><span>10</span></span> ne <span class=\"mx-frac\"><span>1</span><span>3</span></span></span> — parallel and distinct, so zero solutions.</p>\n<ul><li><strong>Method 2 (Desmos Slider)</strong>: Graph both lines with a slider for <span class=\"mx\">k</span>; they stay parallel and apart exactly at <span class=\"mx\">k = 4</span>.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">3</span>)</strong>: Used the <span class=\"mx\">x</span>-coefficient ratio instead of matching slopes.</li><li><strong>B (<span class=\"mx\">12</span>)</strong>: Kept the <span class=\"mx\">y</span>-coefficient instead of solving the proportion.</li><li><strong>C (<span class=\"mx\">9</span>)</strong>: Grabbed the constant term.</li></ul>\n<hr>", "diff": "Hard", "domain": "Algebra: Systems with No Solution"}, {"n": 11, "kind": "mc", "stem": "<p>If <span class=\"mx\">r<sub>1</sub></span> and <span class=\"mx\">r<sub>2</sub></span> are the roots of <span class=\"mx\">x<sup>2</sup> - 7x + 12 = 0</span>, what is the value of <span class=\"mx\">r<sub>1</sub><sup>2</sup> + r<sub>2</sub><sup>2</sup></span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">25</span>"}, {"L": "B", "t": "<span class=\"mx\">49</span>"}, {"L": "C", "t": "<span class=\"mx\">24</span>"}, {"L": "D", "t": "<span class=\"mx\">73</span>"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (<span class=\"mx\">25</span>)</strong></li><li><strong>Method 1 (Vieta&#x27;s Identity)</strong>:</li></ul>\n<p>For <span class=\"mx\">x<sup>2</sup> - 7x + 12 = 0</span>: <span class=\"mx\">r<sub>1</sub> + r<sub>2</sub> = 7</span>, <span class=\"mx\">r<sub>1</sub> r<sub>2</sub> = 12</span>. <span class=\"mx-disp\">r<sub>1</sub><sup>2</sup> + r<sub>2</sub><sup>2</sup> = (r<sub>1</sub> + r<sub>2</sub>)<sup>2</sup> - 2r<sub>1</sub> r<sub>2</sub> = 49 - 24 = 25</span></p>\n<ul><li><strong>Method 2 (Solve and Square)</strong>: Roots are <span class=\"mx\">3</span> and <span class=\"mx\">4</span>; <span class=\"mx\">3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25</span>.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>B (<span class=\"mx\">49</span>)</strong>: Squared the sum but forgot to subtract <span class=\"mx\">2r<sub>1</sub> r<sub>2</sub></span>.</li><li><strong>C (<span class=\"mx\">24</span>)</strong>: Doubled the product instead of using the identity.</li><li><strong>D (<span class=\"mx\">73</span>)</strong>: Added <span class=\"mx\">2r<sub>1</sub> r<sub>2</sub></span> instead of subtracting.</li></ul>\n<hr>", "diff": "Hard", "domain": "Algebra: Vieta Sum of Squares"}, {"n": 12, "kind": "spr", "stem": "<p>If <span class=\"mx\">4(x - 3) + 7 = 5x - 2</span>, what is the value of <span class=\"mx\">x</span>?</p>\n<p><em>(Enter your answer as an integer.)</em></p>", "options": [], "key": "-3", "rat": "<ul><li><strong>Correct Answer: -3</strong></li><li><strong>Method 1 (Expand and Isolate)</strong>:</li></ul>\n<p><span class=\"mx-disp\">4(x - 3) + 7 = 5x - 2 ⇒ 4x - 12 + 7 = 5x - 2 ⇒ 4x - 5 = 5x - 2</span> <span class=\"mx-disp\">-5 + 2 = 5x - 4x ⇒ x = -3</span></p>\n<ul><li><strong>Verification</strong>: Left side <span class=\"mx\">4(-6) + 7 = -17</span>; right side <span class=\"mx\">5(-3) - 2 = -17</span>. ✓</li></ul>\n<hr>\n<h3>New System Alignment (Updated)</h3>\n<p><strong>Flow:</strong> Teach → Show → Test</p>\n<ul><li><strong>Teach:</strong> Detailed strategy and rules (this file)</li><li><strong>Show:</strong> Walkthrough solving examples — <a href=\"../../Show/show_walkthrough.html\">SAT/Show/show_walkthrough.html</a></li><li><strong>Test:</strong> Real SAT difficulty mock — <a href=\"../../Test/mock_01.html\">SAT/Test/mock_01.html</a></li><li><strong>Portal:</strong> <a href=\"../../index.html\">SAT/index.html</a> (interactive pen / highlight / mark tools)</li></ul>\n<hr>", "diff": "Medium", "domain": "Algebra: Linear Equations (SPR)"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:960,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
 }
-if(a){inner+=`<div class="feedback ${a.ok?'good':'bad'}">${a.ok?'&#10003; Correct.':'&#10007; Correct answer: <strong>${q.keyDisplay}</strong>.'}<details class="sol"><summary>Why? Show solution</summary>${q.sol}</details></div>`;}
-inner+=`<div class="navrow"><button class="btn btn-g" id="prevB">&larr; Prev</button><button class="btn btn-g" id="nextB">Next &rarr;</button><button class="btn btn-g" id="flagB">${flagged?'&#9873; Flagged':'&#9872; Flag'}</button>${a?'<button class="btn btn-g" id="retryB">Retry</button>':''}<button class="btn btn-p" id="finB">Finish drill</button></div><div class="navrow"><span id="scoreLine" style="color:var(--muted);font-size:.85rem"></span></div>`;
-box.innerHTML='<div class="qcard">'+inner+'</div>';
-if(q.type==='mcq'&&!a){box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q,b.dataset.p));}
-if(q.type==='spr'&&!a){const go=()=>{const v=document.getElementById('sprIn').value;if(v.trim()==='')return;answer(q,v.trim());};document.getElementById('sprGo').onclick=go;document.getElementById('sprIn').addEventListener('keydown',e=>{if(e.key==='Enter')go();});}
-document.getElementById('prevB').onclick=()=>{state.idx=(state.idx-1+L.length)%L.length;renderQ();};
-document.getElementById('nextB').onclick=()=>{state.idx=(state.idx+1)%L.length;renderQ();};
-document.getElementById('flagB').onclick=function(){const i=state.flags.indexOf(q.id);if(i>=0)state.flags.splice(i,1);else state.flags.push(q.id);save();renderQ();};
-const rt=document.getElementById('retryB');if(rt)rt.onclick=()=>{delete state.answers[q.id];save();renderQ();};
-document.getElementById('finB').onclick=finish;
-if(window.renderMathInElement)try{renderMathInElement(box,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});}catch(e){}
-updateScore();renderNav();}
-function sprOk(q,v){const s=v.replace(/[\s,]/g,'');if(q.accept.includes(s))return true;if(q.expFloat===null||q.expFloat===undefined)return false;let n=null;const fr=s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(fr&&parseFloat(fr[2])!==0)n=parseFloat(fr[1])/parseFloat(fr[2]);else if(/^-?\d+(?:\.\d+)?$/.test(s))n=parseFloat(s);if(n===null||!isFinite(n))return false;const tol=Math.max(0.005,Math.abs(q.expFloat)*0.002);return Math.abs(n-q.expFloat)<=tol;}
-function answer(q,pick){let ok;if(q.type==='mcq')ok=(pick===q.key);else ok=sprOk(q,pick);state.answers[q.id]={pick:pick,ok:ok};save();renderQ();}
-function updateScore(){const ids=Object.keys(state.answers);const ok=ids.filter(k=>state.answers[k].ok).length;const el=document.getElementById('scoreLine');if(el)el.textContent=ids.length?`Score this device: ${ok}/${ids.length} (${Math.round(ok/ids.length*100)}%) — saved automatically`:'Answer to begin — progress saves on this device.';const g=document.getElementById('progFill');if(g){g.style.width=Math.min(100,Math.round(ids.length/QD.length*100))+'%';}}
-function finish(){const L=list();let tot=0,ok=0;const byTier={};L.forEach(q=>{const a=state.answers[q.id];byTier[q.tier]=byTier[q.tier]||{t:0,o:0};byTier[q.tier].t++;if(a){tot++;if(a.ok){ok++;byTier[q.tier].o++;}}});
-let rows=Object.keys(byTier).map(t=>{const b=byTier[t];const p=b.t?Math.round(b.o/b.t*100):0;return `<div><strong style="text-transform:capitalize">${t}</strong> — ${b.o}/${b.t} (${p}%)<div class="bar"><span style="width:${p}%"></span></div></div>`;}).join('');
-const un=L.length-tot;
-document.getElementById('results').innerHTML=`<div class="results"><h2>Drill complete: ${ok}/${L.length}</h2>${un?`<p>${un} unanswered.</p>`:''}${rows}<div class="navrow"><button class="btn btn-g" id="revMiss">Review misses in drill &uarr;</button></div></div>`;
-document.getElementById('revMiss').onclick=()=>{document.getElementById('results').innerHTML='';window.scrollTo(0,0);};
-document.getElementById('results').scrollIntoView({behavior:'smooth'});}
-document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName))return;const m={'1':0,'2':1,'3':2,'4':3,a:0,b:1,c:2,d:3,A:0,B:1,C:2,D:3};if(e.key in m){const b=document.querySelectorAll('#qbox .opt');if(b[m[e.key]])b[m[e.key]].click();}if(e.key==='ArrowRight'){const n=document.getElementById('nextB');if(n)n.click();}if(e.key==='ArrowLeft'){const p=document.getElementById('prevB');if(p)p.click();}});
-document.querySelectorAll('#tierRow .pill').forEach(p=>p.onclick=()=>{document.querySelectorAll('#tierRow .pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');state.tier=p.dataset.t;state.idx=0;renderQ();});
-document.getElementById('flagOnly').onclick=function(){state.flagOnly=!state.flagOnly;this.classList.toggle('on',state.flagOnly);state.idx=0;renderQ();};
-document.getElementById('pauseBtn').onclick=pauseTimer;
-document.getElementById('resetBtn').onclick=resetTimer;
-document.getElementById('restartBtn').onclick=()=>{if(confirm('Clear saved answers for this drill?')){state.answers={};state.flags=[];state.idx=0;save();renderQ();}};
-document.getElementById('themeBtn').onclick=()=>{const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('satdrill_theme',n);}catch(e){}};
-try{if(localStorage.getItem('satdrill_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
-tick();startTimer();renderQ();
-</script><!-- student-tools v1 -->
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=960,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
+<!-- student-tools v1 -->
 <style>
 
 #st-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0f172a;color:#fff;padding:8px 10px;border-radius:14px;box-shadow:0 10px 25px rgb(0 0 0/.35);max-width:96vw;overflow-x:auto;font-family:system-ui,sans-serif}
@@ -308,4 +400,5 @@ restoreHL();
 })();
 
 </script>
-</body></html>
+</body>
+</html>

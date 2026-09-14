@@ -1,143 +1,235 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism | SAT Drill</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script><style>
-:root{--bg:#e9f1fd;--surface:#fff;--surface2:#f4f8ff;--text:#0a1a3c;--muted:#5b6b8c;
---primary:#2b7fff;--primary-dark:#1a5fd0;--soft:#e3efff;--ok:#16a34a;--okbg:#f0fdf4;
---bad:#dc2626;--badbg:#fef2f2;--border:#d7e3f7;--radius:14px;
---font:'Segoe UI',system-ui,-apple-system,sans-serif;--mono:Consolas,monospace}
-[data-theme=dark]{--bg:#0a1428;--surface:#12203c;--surface2:#0e1a32;--text:#eaf1ff;
---muted:#93a4c4;--primary:#5b97ff;--primary-dark:#3f7bf0;--soft:#1b2c52;
---okbg:#052e16;--badbg:#450a0a;--border:#243a63}
-*{box-sizing:border-box}body{margin:0;font-family:var(--font);background:var(--bg);
-color:var(--text);line-height:1.65;padding-bottom:4rem}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);
-position:sticky;top:0;z-index:50}.topbar-in{max-width:1180px;margin:0 auto;
-padding:.6rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.brand{font-weight:800;text-decoration:none;color:var(--text)}
-.badge{background:var(--soft);color:var(--primary);font-weight:800;font-size:.72rem;
-border-radius:6px;padding:.15rem .5rem;text-transform:uppercase;letter-spacing:.05em}
-.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-left:auto}
-.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);
-border-radius:99px;padding:.2rem .7rem;font-size:.78rem;font-weight:600}
-.wrap{max-width:1180px;margin:0 auto;padding:1.2rem}
-.toolbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:.7rem 1rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
-position:sticky;top:57px;z-index:40;box-shadow:0 4px 12px rgba(15,40,100,.07)}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
 .timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
-.toolbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--text);
-border-radius:99px;padding:.32rem .85rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.toolbtn.on,.toolbtn.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.pill{border:1.5px solid var(--border);background:var(--surface);color:var(--muted);
-border-radius:99px;padding:.3rem .9rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.pill.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.teach{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-margin:1rem 0;overflow:hidden}
-.teach summary{cursor:pointer;font-weight:800;padding:.9rem 1.2rem;list-style:none}
-.teach summary::-webkit-details-marker{display:none}
-.teach summary::before{content:'\25B6  ';color:var(--primary);font-size:.8rem}
-.teach[open] summary::before{content:'\25BC  '}
-.teach-body{padding:0 1.2rem 1.2rem}
-table.rules{width:100%;border-collapse:collapse;font-size:.86rem}
-table.rules th,table.rules td{border-bottom:1px solid var(--border);padding:.45rem;text-align:left}
-.diff{font-size:.7rem;font-weight:800;text-transform:uppercase;border-radius:6px;padding:.12rem .45rem;white-space:nowrap}
-.diff-easy{background:#dcfce7;color:#166534}.diff-medium{background:#fef3c7;color:#92400e}
-.diff-expert{background:#fee2e2;color:#991b1b}
-.layout{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin-top:1rem}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.stimulus{position:static!important;max-height:none!important}}
-.stimulus{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.1rem;position:sticky;top:140px;max-height:70vh;overflow:auto}
-.qnav{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}
-.qpill{width:36px;height:36px;border-radius:9px;border:1.5px solid var(--border);
-background:var(--surface);color:var(--text);font-weight:800;cursor:pointer}
-.qpill.cur{border-color:var(--primary);background:var(--soft)}
-.qpill.ok{background:#dcfce7;border-color:var(--ok);color:#166534}
-.qpill.no{background:#fee2e2;border-color:var(--bad);color:#991b1b}
-.qpill.flag::after{content:' \2691';font-size:.7rem}
-.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem}
-.opt{display:block;width:100%;text-align:left;margin:.45rem 0;padding:.7rem .9rem;
-border:1.5px solid var(--border);border-radius:10px;background:var(--surface);
-color:var(--text);cursor:pointer;font-size:.95rem;font-family:var(--font)}
-.opt:hover:not(:disabled){border-color:var(--primary)}
-.opt.right{border-color:var(--ok);background:var(--okbg)}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
-.opt.dim{opacity:.8}.opt:disabled{cursor:default}
-.spr-row{display:flex;gap:.5rem;margin:.6rem 0}
-.spr-row input{flex:1;font:inherit;color:var(--text);background:var(--surface2);
-border:1.5px solid var(--border);border-radius:10px;padding:.6rem .8rem;font-family:var(--mono)}
-.feedback{border-radius:10px;padding:.8rem 1rem;margin-top:.7rem;font-size:.92rem}
-.feedback.good{background:var(--okbg);border:1.5px solid var(--ok)}
-.feedback.bad{background:var(--badbg);border:1.5px solid var(--bad)}
-details.sol{margin-top:.7rem}details.sol summary{cursor:pointer;font-weight:800;color:var(--primary)}
-.sol-list{margin:.4rem 0}code{font-family:var(--mono);font-size:.85em;background:var(--surface2);
-padding:.1rem .35rem;border-radius:6px}
-.navrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
-.btn{display:inline-block;border:none;cursor:pointer;font-weight:800;border-radius:99px;
-padding:.55rem 1.3rem;font-size:.9rem;text-decoration:none}
-.btn-p{background:var(--primary);color:#fff}.btn-g{background:var(--soft);color:var(--primary)}
-.results{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.3rem;margin-top:1rem}
-.bar{height:9px;background:var(--surface2);border:1px solid var(--border);border-radius:99px;overflow:hidden}
-.bar>span{display:block;height:100%;background:var(--primary)}
-.foot{max-width:1180px;margin:2rem auto 0;padding:0 1.2rem;color:var(--muted);font-size:.85rem}
-.foot a{color:var(--primary)}
-@media print{.topbar,.toolbar,.navrow,.no-print{display:none!important}body{background:#fff}}
-</style></head><body><div class="topbar"><div class="topbar-in"><a class="brand" href="../../index.html">&larr; SAT Portal</a><span class="badge">SAT drill</span><div class="chips"><span class="chip">Standard English Conventions</span><span class="chip">Target 750–800</span><span class="chip">5 questions</span><span class="chip">~60s each</span></div></div></div><div class="wrap"><h1>Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism</h1><div class="toolbar"><span class="timer" id="clock">--:--</span><button class="toolbtn" id="pauseBtn">Pause</button><button class="toolbtn" id="resetBtn">Reset timer</button><span id="tierRow"><button class="pill active" data-t="all">All</button><button class="pill" data-t="easy">Easy (0)</button><button class="pill" data-t="medium">Medium (2)</button><button class="pill" data-t="expert">Expert (3)</button></span><button class="toolbtn" id="flagOnly">⚑ Flagged</button><button class="toolbtn" id="themeBtn">Theme</button><button class="toolbtn" id="restartBtn">Restart</button></div><details class="teach"><summary>What this drill trains &amp; how to use it</summary><div class="teach-body"><p><strong>Skills:</strong> Complex Subject-Verb Agreement, Verb Tense Harmony, Pronoun-Antecedent Ambiguity &amp; Number, Structural Parallelism in Correlative Conjunctions</p><table class="rules"><tr><th>#</th><th>Skill tested</th><th>Tier</th></tr><tr><td>Q1</td><td>Subject-Verb Agreement: Inverted Syntax</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q2</td><td>Pronoun-Antecedent Agreement: Number &amp; Clarity</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q3</td><td>Verb Tense &amp; Conditionals: Subjunctive Mood / Unfulfilled Past</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q4</td><td>Parallel Structure: Correlative Conjunctions</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q5</td><td>Subject-Verb Agreement: Indefinite Pronouns &amp; Prepositional Clutter</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr></table><p><strong>How to use:</strong> 1) Read the stem. 2) Answer (keys 1–4, arrows move). 3) Open the solution to study the rule. Filter by tier to train easy, medium, or expert items.</p></div></details><div class="layout"><div class="stimulus"><strong>Navigator</strong><div class="qnav" id="qnav"></div><div class="bar"><span id="progFill" style="width:0%"></span></div><div id="stim"></div></div><div><div id="qbox"></div><div id="results"></div></div></div></div><div class="foot"><a href="../../index.html">&larr; SAT Portal</a> &middot; <a href="../../Show/show_walkthrough.html">Show walkthrough</a> &middot; <a href="../../Test/mock_01.html">Test mock</a> &middot; <a href="../../webapp/index.html#/practice">More practice in SATPrep Studio</a></div><script>
-const QD = [{"id": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02-q1", "tier": "expert", "tierRaw": "Hard", "skill": "Subject-Verb Agreement: Inverted Syntax", "cat": "Standard English Conventions", "type": "mcq", "stem": "<p>Surrounding the perimeter of the ancient Persian ceremonial complex of Persepolis ______ several imposing limestone colossi representing mythical winged bulls known as <em>lamassu</em>. Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "passage": "", "options": ["stands", "stand", "was standing", "has stood"], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B (<em>stand</em>)</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Inverted Syntax Rule</strong>: The prepositional phrase <em>\"Surrounding the perimeter of the ancient Persian ceremonial complex of Persepolis\"</em> is the locative predicate. The true subject comes AFTER the verb: <em>\"several imposing limestone colossi\"</em> (plural). A plural subject requires the plural present verb <code>stand</code>.</li>\n<li><strong>Distractors (A, C, D)</strong>: Singular verbs (<em>stands, was standing, has stood</em>) that erroneously agree with <em>\"complex\"</em> or <em>\"Persepolis\"</em>.</li>\n</ul>\n</ul>"}, {"id": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02-q2", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Pronoun-Antecedent Agreement: Number & Clarity", "cat": "Standard English Conventions", "type": "mcq", "stem": "<p>When an injured salamander regenerates an amputated limb, its blastema cells revert to an embryonic-like state, reprogram ______ epigenetic expression, and systematically reconstruct muscle, bone, and nerve tissue. Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "passage": "", "options": ["its", "their", "one's", "it's"], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B (<em>their</em>)</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Antecedent Rule</strong>: The pronoun refers back to <em>\"its blastema cells\"</em> (plural noun). Plural antecedent requires the plural possessive pronoun <code>their</code>.</li>\n<li><strong>Distractor A (<em>its</em>)</strong>: Singular possessive; fails to match plural <em>\"cells\"</em>.</li>\n<li><strong>Distractor D (<em>it's</em>)</strong>: Contraction for <em>it is</em>, which is grammatically impossible before a noun phrase.</li>\n</ul>\n</ul>"}, {"id": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02-q3", "tier": "expert", "tierRaw": "Hard", "skill": "Verb Tense & Conditionals: Subjunctive Mood / Unfulfilled Past", "cat": "Standard English Conventions", "type": "mcq", "stem": "<p>Had the aerospace engineers ______ the composite carbon-fiber fairing to cryogenic thermal testing before the launch, they would have detected the microscopic micro-fractures in the seal. Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "passage": "", "options": ["subjected", "subject", "subjecting", "have subjected"], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A (<em>subjected</em>)</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Inverted Third Conditional Rule</strong>: The formal inversion for an unfulfilled past condition is: <code>Had + Subject + Past Participle (V3)</code>. With subject <em>\"the aerospace engineers\"</em>, the past participle is <code>subjected</code>.</li>\n<li><strong>Distractor D (<em>have subjected</em>)</strong>: Double auxiliary (<em>Had ... have subjected</em>) is ungrammatical.</li>\n</ul>\n</ul>"}, {"id": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02-q4", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Parallel Structure: Correlative Conjunctions", "cat": "Standard English Conventions", "type": "mcq", "stem": "<p>The newly developed environmental policy aims not only to incentivize municipal adoption of renewable microgrids but also ______ industrial greenhouse gas emissions through stringent carbon taxation. Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "passage": "", "options": ["penalizing", "to penalize", "it penalizes", "for the penalization of"], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B (<em>to penalize</em>)</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Correlative Parallelism Rule</strong>: Elements joined by <code>not only [X] but also [Y]</code> must share identical grammatical form. Since element X is an infinitive phrase (<em>to incentivize municipal adoption...</em>), element Y must also be an infinitive phrase (<em>to penalize industrial emissions...</em>).</li>\n</ul>\n</ul>"}, {"id": "sat_standard_english_conventions_verbs_pronouns_parallelism_set_02-q5", "tier": "expert", "tierRaw": "Hard", "skill": "Subject-Verb Agreement: Indefinite Pronouns & Prepositional Clutter", "cat": "Standard English Conventions", "type": "mcq", "stem": "<p>Neither of the two autonomous deep-sea research submersibles deployed by the oceanic institute ______ equipped to withstand the hydrostatic pressure of the Mariana Trench. Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "passage": "", "options": ["are", "were", "is", "have been"], "key": "C", "keyDisplay": "C", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: C (<em>is</em>)</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Indefinite Pronoun Rule</strong>: In formal Standard English, <code>Neither</code> when used as the subject pronoun is singular (<em>\"Neither of the [plural noun] is...\"</em>). The intervening phrase <em>\"of the two autonomous deep-sea research submersibles\"</em> is a modifier. Singular present verb <code>is</code> is required.</li>\n<li><strong>Distractors (A, B, D)</strong>: Plural verbs (<em>are, were, have been</em>).</li>\n</ul>\n</ul>"}];
-const LSKEY = 'satdrill_sat_standard_english_conventions_verbs_pronouns_parallelism_set_02';
-let state = {answers:{}, flags:[], idx:0, tier:'all', flagOnly:false, left:300, timerOn:false, timerId:null, done:false};
-try{const s = JSON.parse(localStorage.getItem(LSKEY)); if(s && s.answers) state.answers=s.answers; if(s&&s.flags) state.flags=s.flags;}catch(e){}
-function save(){try{localStorage.setItem(LSKEY, JSON.stringify({answers:state.answers,flags:state.flags}));}catch(e){}}
-const LET=['A','B','C','D'];
-function list(){return QD.filter(q=>(state.tier==='all'||q.tier===state.tier)&&(!state.flagOnly||state.flags.includes(q.id)));}
-function fmt(s){s=Math.max(0,s);const m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');}
-function tick(){document.getElementById('clock').textContent=fmt(state.left);}
-function startTimer(){if(state.timerId)return;state.timerOn=true;state.timerId=setInterval(()=>{if(!state.timerOn)return;state.left--;tick();if(state.left<=0){clearInterval(state.timerId);state.timerId=null;finish();}},1000);}
-function pauseTimer(){state.timerOn=!state.timerOn;document.getElementById('pauseBtn').textContent=state.timerOn?'Pause':'Resume';}
-function resetTimer(){clearInterval(state.timerId);state.timerId=null;state.left=300;state.timerOn=false;document.getElementById('pauseBtn').textContent='Pause';tick();}
-function renderNav(){const L=list();document.getElementById('qnav').innerHTML=L.map((q,i)=>{const a=state.answers[q.id];let c='qpill'+(i===state.idx?' cur':'')+(a?(a.ok?' ok':' no'):'')+(state.flags.includes(q.id)?' flag':'');return `<button class="${c}" data-i="${i}">${i+1}</button>`;}).join('');
-document.querySelectorAll('#qnav .qpill').forEach(b=>b.onclick=()=>{state.idx=+b.dataset.i;renderQ();});}
-function renderQ(){const L=list();const box=document.getElementById('qbox');
-if(!L.length){box.innerHTML='<div class="qcard"><p>No questions match this filter.</p></div>';document.getElementById('stim').innerHTML='';renderNav();return;}
-if(state.idx>=L.length)state.idx=0;
-const q=L[state.idx],a=state.answers[q.id],flagged=state.flags.includes(q.id);
-let stimHtml=`<span class="badge">${q.cat}</span> <span class="diff diff-${q.tier}">${q.tier}</span><p style="color:var(--muted);font-size:.82rem"><strong>${q.skill}</strong> &middot; source tier: ${q.tierRaw}</p>`;
-if(q.passage)stimHtml+=`<h3>Passage</h3><p>${q.passage}</p>`;
-document.getElementById('stim').innerHTML=stimHtml;
-let inner=`<p><strong>Q${state.idx+1} of ${L.length}.</strong> ${q.stem}</p>`;
-if(q.type==='mcq'){
-inner+='<div>'+q.options.map((o,i)=>{let c='opt';if(a){c+=' dim';if(LET[i]===q.key)c+=' right';else if(LET[i]===a.pick)c+=' wrong';}return `<button class="${c}" data-p="${LET[i]}" ${a?'disabled':''}><strong>${LET[i]}.</strong> ${o}</button>`;}).join('')+'</div>';
-}else{
-inner+=`<div class="spr-row"><input id="sprIn" inputmode="decimal" placeholder="Enter your answer" value="${a?a.pick:''}" ${a?'disabled':''}><button class="btn btn-p" id="sprGo" ${a?'disabled':''}>Check</button></div><p style="color:var(--muted);font-size:.82rem">Student-produced response: equivalent fractions and decimals accepted.</p>`;
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../../index.html">SAT Portal</a> &rsaquo; Standard_English_Conventions</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../../index.html">&larr; SAT Portal</a> &rsaquo; Standard_English_Conventions</div>
+<h1>Digital SAT Reading &amp; Writing: Verbs, Pronouns &amp; Parallelism</h1>
+<div class="meta"><span><b>Questions:</b> 12</span><span><b>Level:</b> Score 750 - 800</span><span><b>Topic:</b> Verbs, Pronoun-Antecedents & Advanced Parallelism Set</span><span><b>Suggested time:</b> 19 min</span></div>
+<div class="overview"><ul><li><strong>Domain</strong>: Standard English Conventions</li><li><strong>Target Skills</strong>: Complex Subject-Verb Agreement, Verb Tense Harmony, Pronoun-Antecedent Ambiguity &amp; Number, Structural Parallelism in Correlative Conjunctions</li><li><strong>Target Score</strong>: 750–800</li><li><strong>Number of Items</strong>: 12 Items</li><li><strong>Pacing Guideline</strong>: ~45–60 seconds per item</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>Surrounding the perimeter of the ancient Persian ceremonial complex of Persepolis ______ several imposing limestone colossi representing mythical winged bulls known as <em>lamassu</em>.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "stands"}, {"L": "B", "t": "stand"}, {"L": "C", "t": "was standing"}, {"L": "D", "t": "has stood"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<em>stand</em>)</strong></li><li><strong>Inverted Syntax Rule</strong>: The prepositional phrase <em>&quot;Surrounding the perimeter of the ancient Persian ceremonial complex of Persepolis&quot;</em> is the locative predicate. The true subject comes AFTER the verb: <em>&quot;several imposing limestone colossi&quot;</em> (plural). A plural subject requires the plural present verb <code>stand</code>.</li><li><strong>Distractors (A, C, D)</strong>: Singular verbs (<em>stands, was standing, has stood</em>) that erroneously agree with <em>&quot;complex&quot;</em> or <em>&quot;Persepolis&quot;</em>.</li></ul>", "diff": "Hard", "domain": "Inverted Sentence Subject-Verb Agreement"}, {"n": 2, "kind": "mc", "stem": "<p>When an injured salamander regenerates an amputated limb, its blastema cells revert to an embryonic-like state, reprogram ______ epigenetic expression, and systematically reconstruct muscle, bone, and nerve tissue.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "its"}, {"L": "B", "t": "their"}, {"L": "C", "t": "one&#x27;s"}, {"L": "D", "t": "it&#x27;s"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<em>their</em>)</strong></li><li><strong>Antecedent Rule</strong>: The pronoun refers back to <em>&quot;its blastema cells&quot;</em> (plural noun). Plural antecedent requires the plural possessive pronoun <code>their</code>.</li><li><strong>Distractor A (<em>its</em>)</strong>: Singular possessive; fails to match plural <em>&quot;cells&quot;</em>.</li><li><strong>Distractor D (<em>it&#x27;s</em>)</strong>: Contraction for <em>it is</em>, which is grammatically impossible before a noun phrase.</li></ul>", "diff": "Medium-Hard", "domain": "Plural Pronoun-Antecedent Agreement (*cells $\\rightarrow$ their*)"}, {"n": 3, "kind": "mc", "stem": "<p>Had the aerospace engineers ______ the composite carbon-fiber fairing to cryogenic thermal testing before the launch, they would have detected the microscopic micro-fractures in the seal.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "subjected"}, {"L": "B", "t": "subject"}, {"L": "C", "t": "subjecting"}, {"L": "D", "t": "have subjected"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (<em>subjected</em>)</strong></li><li><strong>Inverted Third Conditional Rule</strong>: The formal inversion for an unfulfilled past condition is: <code>Had + Subject + Past Participle (V3)</code>. With subject <em>&quot;the aerospace engineers&quot;</em>, the past participle is <code>subjected</code>.</li><li><strong>Distractor D (<em>have subjected</em>)</strong>: Double auxiliary (<em>Had ... have subjected</em>) is ungrammatical.</li></ul>", "diff": "Hard", "domain": "Past Subjunctive Inversion (*Had ... subjected*)"}, {"n": 4, "kind": "mc", "stem": "<p>The newly developed environmental policy aims not only to incentivize municipal adoption of renewable microgrids but also ______ industrial greenhouse gas emissions through stringent carbon taxation.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "penalizing"}, {"L": "B", "t": "to penalize"}, {"L": "C", "t": "it penalizes"}, {"L": "D", "t": "for the penalization of"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<em>to penalize</em>)</strong></li><li><strong>Correlative Parallelism Rule</strong>: Elements joined by <code>not only [X] but also [Y]</code> must share identical grammatical form. Since element X is an infinitive phrase (<em>to incentivize municipal adoption...</em>), element Y must also be an infinitive phrase (<em>to penalize industrial emissions...</em>).</li></ul>", "diff": "Medium-Hard", "domain": "Parallelism with *Not only [to + verb] but also [to + verb]"}, {"n": 5, "kind": "mc", "stem": "<p>Neither of the two autonomous deep-sea research submersibles deployed by the oceanic institute ______ equipped to withstand the hydrostatic pressure of the Mariana Trench.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "are"}, {"L": "B", "t": "were"}, {"L": "C", "t": "is"}, {"L": "D", "t": "have been"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (<em>is</em>)</strong></li><li><strong>Indefinite Pronoun Rule</strong>: In formal Standard English, <code>Neither</code> when used as the subject pronoun is singular (<em>&quot;Neither of the [plural noun] is...&quot;</em>). The intervening phrase <em>&quot;of the two autonomous deep-sea research submersibles&quot;</em> is a modifier. Singular present verb <code>is</code> is required.</li><li><strong>Distractors (A, B, D)</strong>: Plural verbs (<em>are, were, have been</em>).</li></ul>\n<hr>", "diff": "Hard", "domain": "Singular Indefinite Pronoun (*Neither $\\rightarrow$ is*)"}, {"n": 6, "kind": "mc", "stem": "<p>The list of ingredients ___ taped to the refrigerator door.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "is"}, {"L": "B", "t": "are"}, {"L": "C", "t": "were"}, {"L": "D", "t": "be"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (is)</strong></li><li><strong>Textual Proof</strong>: The subject is singular &quot;list&quot;; the prepositional phrase &quot;of ingredients&quot; cannot change the verb.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>B (are)</strong>: <em>Incorrect.</em> Agrees with nearby &quot;ingredients&quot; instead of &quot;list.&quot;</li><li><strong>C (were)</strong>: <em>Incorrect.</em> Past tense with no past-time signal.</li><li><strong>D (be)</strong>: <em>Incorrect.</em> Bare form leaves the clause without a tensed verb.</li></ul>", "diff": "Medium", "domain": "Standard English Conventions"}, {"n": 7, "kind": "mc", "stem": "<p>She will submit the report after she ___ the final dataset.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "reviewed"}, {"L": "B", "t": "will review"}, {"L": "C", "t": "had reviewed"}, {"L": "D", "t": "reviews"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (reviews)</strong></li><li><strong>Textual Proof</strong>: Time clauses after &quot;after&quot; use present tense for future meaning.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (reviewed)</strong>: <em>Incorrect.</em> Past tense places review before any timeline anchor.</li><li><strong>B (will review)</strong>: <em>Incorrect.</em> &quot;Will&quot; never appears in the time clause itself.</li><li><strong>C (had reviewed)</strong>: <em>Incorrect.</em> Past perfect with no earlier past event.</li></ul>", "diff": "Hard", "domain": "Standard English Conventions"}, {"n": 8, "kind": "mc", "stem": "<p>The training course covers not only theory ___ hands-on practical labs.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "and"}, {"L": "B", "t": "but"}, {"L": "C", "t": "but also"}, {"L": "D", "t": "as well"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (but also)</strong></li><li><strong>Textual Proof</strong>: &quot;Not only&quot; pairs idiomatically with &quot;but also.&quot;</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (and)</strong>: <em>Incorrect.</em> Breaks the correlative pair.</li><li><strong>B (but)</strong>: <em>Incorrect.</em> Incomplete without &quot;also.&quot;</li><li><strong>D (as well)</strong>: <em>Incorrect.</em> Does not pair with &quot;not only.&quot;</li></ul>", "diff": "Medium", "domain": "Standard English Conventions"}, {"n": 9, "kind": "mc", "stem": "<p>When Maya met Lena at the station, ___ was already twenty minutes late.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "she"}, {"L": "B", "t": "they"}, {"L": "C", "t": "it"}, {"L": "D", "t": "Maya"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (Maya)</strong></li><li><strong>Textual Proof</strong>: Two women make &quot;she&quot; ambiguous; repeating the noun removes all doubt.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (she)</strong>: <em>Incorrect.</em> Could refer to either woman.</li><li><strong>B (they)</strong>: <em>Incorrect.</em> Plural pronoun for one late person.</li><li><strong>C (it)</strong>: <em>Incorrect.</em> Neuter pronoun for a person.</li></ul>", "diff": "Hard", "domain": "Standard English Conventions"}, {"n": 10, "kind": "mc", "stem": "<p>The committee ___ to postpone the vote until Friday.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "decided"}, {"L": "B", "t": "deciding"}, {"L": "C", "t": "decide"}, {"L": "D", "t": "decision"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (decided)</strong></li><li><strong>Textual Proof</strong>: Past-tense finite verb completes the sentence.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>B (deciding)</strong>: <em>Incorrect.</em> Participle leaves a fragment.</li><li><strong>C (decide)</strong>: <em>Incorrect.</em> Base form mismatches singular past context.</li><li><strong>D (decision)</strong>: <em>Incorrect.</em> Noun cannot serve as the verb.</li></ul>", "diff": "Easy-Medium", "domain": "Standard English Conventions"}, {"n": 11, "kind": "mc", "stem": "<p>The poems of Rumi are more widely read than ___ of Hafez.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "that"}, {"L": "B", "t": "them"}, {"L": "C", "t": "those"}, {"L": "D", "t": "deleting the underlined portion"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (those)</strong></li><li><strong>Textual Proof</strong>: Plural &quot;poems&quot; requires plural &quot;those.&quot;</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A (that)</strong>: <em>Incorrect.</em> Singular for plural poems.</li><li><strong>B (them)</strong>: <em>Incorrect.</em> Object pronoun cannot stand in comparison this way.</li><li><strong>D (deleting)</strong>: <em>Incorrect.</em> &quot;Than of Hafez&quot; is ungrammatical.</li></ul>", "diff": "Hard", "domain": "Standard English Conventions"}, {"n": 12, "kind": "mc", "stem": "<p>Having finished dinner, ___.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "the dishes were cleared quickly"}, {"L": "B", "t": "going for a walk sounded pleasant"}, {"L": "C", "t": "the evening was still young"}, {"L": "D", "t": "the family went for a walk"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D</strong></li><li><strong>Textual Proof</strong>: &quot;The family&quot; are the ones who finished dinner — the doer follows the phrase.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> The dishes did not eat dinner.</li><li><strong>B</strong>: <em>Incorrect.</em> &quot;Going&quot; names no dinner-eater.</li><li><strong>C</strong>: <em>Incorrect.</em> The evening ate nothing.</li></ul>\n<hr>\n<h3>New System Alignment (Updated)</h3>\n<p><strong>Flow:</strong> Teach → Show → Test</p>\n<ul><li><strong>Teach:</strong> Detailed strategy and rules (this file)</li><li><strong>Show:</strong> Walkthrough solving examples — <a href=\"../../Show/show_walkthrough.html\">SAT/Show/show_walkthrough.html</a></li><li><strong>Test:</strong> Real SAT difficulty mock — <a href=\"../../Test/mock_01.html\">SAT/Test/mock_01.html</a></li><li><strong>Portal:</strong> <a href=\"../../index.html\">SAT/index.html</a> (interactive pen / highlight / mark tools)</li></ul>\n<hr>", "diff": "Medium", "domain": "Standard English Conventions"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:1140,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
 }
-if(a){inner+=`<div class="feedback ${a.ok?'good':'bad'}">${a.ok?'&#10003; Correct.':'&#10007; Correct answer: <strong>${q.keyDisplay}</strong>.'}<details class="sol"><summary>Why? Show solution</summary>${q.sol}</details></div>`;}
-inner+=`<div class="navrow"><button class="btn btn-g" id="prevB">&larr; Prev</button><button class="btn btn-g" id="nextB">Next &rarr;</button><button class="btn btn-g" id="flagB">${flagged?'&#9873; Flagged':'&#9872; Flag'}</button>${a?'<button class="btn btn-g" id="retryB">Retry</button>':''}<button class="btn btn-p" id="finB">Finish drill</button></div><div class="navrow"><span id="scoreLine" style="color:var(--muted);font-size:.85rem"></span></div>`;
-box.innerHTML='<div class="qcard">'+inner+'</div>';
-if(q.type==='mcq'&&!a){box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q,b.dataset.p));}
-if(q.type==='spr'&&!a){const go=()=>{const v=document.getElementById('sprIn').value;if(v.trim()==='')return;answer(q,v.trim());};document.getElementById('sprGo').onclick=go;document.getElementById('sprIn').addEventListener('keydown',e=>{if(e.key==='Enter')go();});}
-document.getElementById('prevB').onclick=()=>{state.idx=(state.idx-1+L.length)%L.length;renderQ();};
-document.getElementById('nextB').onclick=()=>{state.idx=(state.idx+1)%L.length;renderQ();};
-document.getElementById('flagB').onclick=function(){const i=state.flags.indexOf(q.id);if(i>=0)state.flags.splice(i,1);else state.flags.push(q.id);save();renderQ();};
-const rt=document.getElementById('retryB');if(rt)rt.onclick=()=>{delete state.answers[q.id];save();renderQ();};
-document.getElementById('finB').onclick=finish;
-if(window.renderMathInElement)try{renderMathInElement(box,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});}catch(e){}
-updateScore();renderNav();}
-function sprOk(q,v){const s=v.replace(/[\s,]/g,'');if(q.accept.includes(s))return true;if(q.expFloat===null||q.expFloat===undefined)return false;let n=null;const fr=s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(fr&&parseFloat(fr[2])!==0)n=parseFloat(fr[1])/parseFloat(fr[2]);else if(/^-?\d+(?:\.\d+)?$/.test(s))n=parseFloat(s);if(n===null||!isFinite(n))return false;const tol=Math.max(0.005,Math.abs(q.expFloat)*0.002);return Math.abs(n-q.expFloat)<=tol;}
-function answer(q,pick){let ok;if(q.type==='mcq')ok=(pick===q.key);else ok=sprOk(q,pick);state.answers[q.id]={pick:pick,ok:ok};save();renderQ();}
-function updateScore(){const ids=Object.keys(state.answers);const ok=ids.filter(k=>state.answers[k].ok).length;const el=document.getElementById('scoreLine');if(el)el.textContent=ids.length?`Score this device: ${ok}/${ids.length} (${Math.round(ok/ids.length*100)}%) — saved automatically`:'Answer to begin — progress saves on this device.';const g=document.getElementById('progFill');if(g){g.style.width=Math.min(100,Math.round(ids.length/QD.length*100))+'%';}}
-function finish(){const L=list();let tot=0,ok=0;const byTier={};L.forEach(q=>{const a=state.answers[q.id];byTier[q.tier]=byTier[q.tier]||{t:0,o:0};byTier[q.tier].t++;if(a){tot++;if(a.ok){ok++;byTier[q.tier].o++;}}});
-let rows=Object.keys(byTier).map(t=>{const b=byTier[t];const p=b.t?Math.round(b.o/b.t*100):0;return `<div><strong style="text-transform:capitalize">${t}</strong> — ${b.o}/${b.t} (${p}%)<div class="bar"><span style="width:${p}%"></span></div></div>`;}).join('');
-const un=L.length-tot;
-document.getElementById('results').innerHTML=`<div class="results"><h2>Drill complete: ${ok}/${L.length}</h2>${un?`<p>${un} unanswered.</p>`:''}${rows}<div class="navrow"><button class="btn btn-g" id="revMiss">Review misses in drill &uarr;</button></div></div>`;
-document.getElementById('revMiss').onclick=()=>{document.getElementById('results').innerHTML='';window.scrollTo(0,0);};
-document.getElementById('results').scrollIntoView({behavior:'smooth'});}
-document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName))return;const m={'1':0,'2':1,'3':2,'4':3,a:0,b:1,c:2,d:3,A:0,B:1,C:2,D:3};if(e.key in m){const b=document.querySelectorAll('#qbox .opt');if(b[m[e.key]])b[m[e.key]].click();}if(e.key==='ArrowRight'){const n=document.getElementById('nextB');if(n)n.click();}if(e.key==='ArrowLeft'){const p=document.getElementById('prevB');if(p)p.click();}});
-document.querySelectorAll('#tierRow .pill').forEach(p=>p.onclick=()=>{document.querySelectorAll('#tierRow .pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');state.tier=p.dataset.t;state.idx=0;renderQ();});
-document.getElementById('flagOnly').onclick=function(){state.flagOnly=!state.flagOnly;this.classList.toggle('on',state.flagOnly);state.idx=0;renderQ();};
-document.getElementById('pauseBtn').onclick=pauseTimer;
-document.getElementById('resetBtn').onclick=resetTimer;
-document.getElementById('restartBtn').onclick=()=>{if(confirm('Clear saved answers for this drill?')){state.answers={};state.flags=[];state.idx=0;save();renderQ();}};
-document.getElementById('themeBtn').onclick=()=>{const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('satdrill_theme',n);}catch(e){}};
-try{if(localStorage.getItem('satdrill_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
-tick();startTimer();renderQ();
-</script><!-- student-tools v1 -->
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=1140,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
+<!-- student-tools v1 -->
 <style>
 
 #st-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0f172a;color:#fff;padding:8px 10px;border-radius:14px;box-shadow:0 10px 25px rgb(0 0 0/.35);max-width:96vw;overflow-x:auto;font-family:system-ui,sans-serif}
@@ -308,4 +400,5 @@ restoreHL();
 })();
 
 </script>
-</body></html>
+</body>
+</html>

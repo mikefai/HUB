@@ -1,143 +1,235 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital SAT Math: Statistics, Probability &amp; Data Distributions | SAT Drill</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script><style>
-:root{--bg:#e9f1fd;--surface:#fff;--surface2:#f4f8ff;--text:#0a1a3c;--muted:#5b6b8c;
---primary:#2b7fff;--primary-dark:#1a5fd0;--soft:#e3efff;--ok:#16a34a;--okbg:#f0fdf4;
---bad:#dc2626;--badbg:#fef2f2;--border:#d7e3f7;--radius:14px;
---font:'Segoe UI',system-ui,-apple-system,sans-serif;--mono:Consolas,monospace}
-[data-theme=dark]{--bg:#0a1428;--surface:#12203c;--surface2:#0e1a32;--text:#eaf1ff;
---muted:#93a4c4;--primary:#5b97ff;--primary-dark:#3f7bf0;--soft:#1b2c52;
---okbg:#052e16;--badbg:#450a0a;--border:#243a63}
-*{box-sizing:border-box}body{margin:0;font-family:var(--font);background:var(--bg);
-color:var(--text);line-height:1.65;padding-bottom:4rem}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);
-position:sticky;top:0;z-index:50}.topbar-in{max-width:1180px;margin:0 auto;
-padding:.6rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.brand{font-weight:800;text-decoration:none;color:var(--text)}
-.badge{background:var(--soft);color:var(--primary);font-weight:800;font-size:.72rem;
-border-radius:6px;padding:.15rem .5rem;text-transform:uppercase;letter-spacing:.05em}
-.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-left:auto}
-.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);
-border-radius:99px;padding:.2rem .7rem;font-size:.78rem;font-weight:600}
-.wrap{max-width:1180px;margin:0 auto;padding:1.2rem}
-.toolbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:.7rem 1rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
-position:sticky;top:57px;z-index:40;box-shadow:0 4px 12px rgba(15,40,100,.07)}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Math: Statistics, Probability &amp; Data Distributions | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
 .timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
-.toolbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--text);
-border-radius:99px;padding:.32rem .85rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.toolbtn.on,.toolbtn.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.pill{border:1.5px solid var(--border);background:var(--surface);color:var(--muted);
-border-radius:99px;padding:.3rem .9rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.pill.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.teach{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-margin:1rem 0;overflow:hidden}
-.teach summary{cursor:pointer;font-weight:800;padding:.9rem 1.2rem;list-style:none}
-.teach summary::-webkit-details-marker{display:none}
-.teach summary::before{content:'\25B6  ';color:var(--primary);font-size:.8rem}
-.teach[open] summary::before{content:'\25BC  '}
-.teach-body{padding:0 1.2rem 1.2rem}
-table.rules{width:100%;border-collapse:collapse;font-size:.86rem}
-table.rules th,table.rules td{border-bottom:1px solid var(--border);padding:.45rem;text-align:left}
-.diff{font-size:.7rem;font-weight:800;text-transform:uppercase;border-radius:6px;padding:.12rem .45rem;white-space:nowrap}
-.diff-easy{background:#dcfce7;color:#166534}.diff-medium{background:#fef3c7;color:#92400e}
-.diff-expert{background:#fee2e2;color:#991b1b}
-.layout{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin-top:1rem}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.stimulus{position:static!important;max-height:none!important}}
-.stimulus{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.1rem;position:sticky;top:140px;max-height:70vh;overflow:auto}
-.qnav{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}
-.qpill{width:36px;height:36px;border-radius:9px;border:1.5px solid var(--border);
-background:var(--surface);color:var(--text);font-weight:800;cursor:pointer}
-.qpill.cur{border-color:var(--primary);background:var(--soft)}
-.qpill.ok{background:#dcfce7;border-color:var(--ok);color:#166534}
-.qpill.no{background:#fee2e2;border-color:var(--bad);color:#991b1b}
-.qpill.flag::after{content:' \2691';font-size:.7rem}
-.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem}
-.opt{display:block;width:100%;text-align:left;margin:.45rem 0;padding:.7rem .9rem;
-border:1.5px solid var(--border);border-radius:10px;background:var(--surface);
-color:var(--text);cursor:pointer;font-size:.95rem;font-family:var(--font)}
-.opt:hover:not(:disabled){border-color:var(--primary)}
-.opt.right{border-color:var(--ok);background:var(--okbg)}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
-.opt.dim{opacity:.8}.opt:disabled{cursor:default}
-.spr-row{display:flex;gap:.5rem;margin:.6rem 0}
-.spr-row input{flex:1;font:inherit;color:var(--text);background:var(--surface2);
-border:1.5px solid var(--border);border-radius:10px;padding:.6rem .8rem;font-family:var(--mono)}
-.feedback{border-radius:10px;padding:.8rem 1rem;margin-top:.7rem;font-size:.92rem}
-.feedback.good{background:var(--okbg);border:1.5px solid var(--ok)}
-.feedback.bad{background:var(--badbg);border:1.5px solid var(--bad)}
-details.sol{margin-top:.7rem}details.sol summary{cursor:pointer;font-weight:800;color:var(--primary)}
-.sol-list{margin:.4rem 0}code{font-family:var(--mono);font-size:.85em;background:var(--surface2);
-padding:.1rem .35rem;border-radius:6px}
-.navrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
-.btn{display:inline-block;border:none;cursor:pointer;font-weight:800;border-radius:99px;
-padding:.55rem 1.3rem;font-size:.9rem;text-decoration:none}
-.btn-p{background:var(--primary);color:#fff}.btn-g{background:var(--soft);color:var(--primary)}
-.results{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.3rem;margin-top:1rem}
-.bar{height:9px;background:var(--surface2);border:1px solid var(--border);border-radius:99px;overflow:hidden}
-.bar>span{display:block;height:100%;background:var(--primary)}
-.foot{max-width:1180px;margin:2rem auto 0;padding:0 1.2rem;color:var(--muted);font-size:.85rem}
-.foot a{color:var(--primary)}
-@media print{.topbar,.toolbar,.navrow,.no-print{display:none!important}body{background:#fff}}
-</style></head><body><div class="topbar"><div class="topbar-in"><a class="brand" href="../../index.html">&larr; SAT Portal</a><span class="badge">SAT drill</span><div class="chips"><span class="chip">Problem-Solving and Data Analysis</span><span class="chip">Target Score 750 - 800</span><span class="chip">5 questions</span><span class="chip">~80s each</span></div></div></div><div class="wrap"><h1>Digital SAT Math: Statistics, Probability &amp; Data Distributions</h1><div class="toolbar"><span class="timer" id="clock">--:--</span><button class="toolbtn" id="pauseBtn">Pause</button><button class="toolbtn" id="resetBtn">Reset timer</button><span id="tierRow"><button class="pill active" data-t="all">All</button><button class="pill" data-t="easy">Easy (1)</button><button class="pill" data-t="medium">Medium (3)</button><button class="pill" data-t="expert">Expert (1)</button></span><button class="toolbtn" id="flagOnly">⚑ Flagged</button><button class="toolbtn" id="themeBtn">Theme</button><button class="toolbtn" id="restartBtn">Restart</button></div><details class="teach"><summary>What this drill trains &amp; how to use it</summary><div class="teach-body"><p><strong>Skills:</strong> Mean, Median, Mode &amp; Outlier Effects, Standard Deviation &amp; Spread, Box-and-Whisker Plots &amp; Interquartile Range (IQR), Margin of Error &amp; Confidence Intervals, Conditional Probability</p><table class="rules"><tr><th>#</th><th>Skill tested</th><th>Tier</th></tr><tr><td>Q1</td><td>Multiple Choice: Margin of Error &amp; Sample Size</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q2</td><td>Multiple Choice: Outlier Impact on Mean vs Median</td><td>Medium <span class="diff diff-medium">Medium</span></td></tr><tr><td>Q3</td><td>Multiple Choice: Box Plots &amp; Interquartile Range</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q4</td><td>Multiple Choice: Two-Way Relative Frequency &amp; Conditional Probability</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q5</td><td>Student-Produced Response: Standard Deviation &amp; Variance</td><td>Easy <span class="diff diff-easy">Easy-Medium</span></td></tr></table><p><strong>How to use:</strong> 1) Read the stem. 2) Answer (keys 1–4, arrows move). 3) Open the solution to study the rule. Filter by tier to train easy, medium, or expert items.</p></div></details><div class="layout"><div class="stimulus"><strong>Navigator</strong><div class="qnav" id="qnav"></div><div class="bar"><span id="progFill" style="width:0%"></span></div><div id="stim"></div></div><div><div id="qbox"></div><div id="results"></div></div></div></div><div class="foot"><a href="../../index.html">&larr; SAT Portal</a> &middot; <a href="../../Show/show_walkthrough.html">Show walkthrough</a> &middot; <a href="../../Test/mock_01.html">Test mock</a> &middot; <a href="../../webapp/index.html#/practice">More practice in SATPrep Studio</a></div><script>
-const QD = [{"id": "sat_math_problem_solving_data_statistics_set_01-q1", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Multiple Choice: Margin of Error & Sample Size", "cat": "Problem-Solving and Data Analysis", "type": "mcq", "stem": "<p>A polling organization surveyed a representative random sample of $1{,}200$ registered voters in a city regarding a proposed public transit bond. The survey found that $58\\%$ of respondents supported the bond with a margin of error of $\\pm 2.8\\%$ at a $95\\%$ confidence level. Which of the following modifications would result in a <strong>smaller margin of error</strong> while maintaining the same $95\\%$ confidence level?</p>", "passage": "", "options": ["Surveying a random sample of $2{,}400$ registered voters in the same city.", "Surveying a random sample of $600$ registered voters in the same city.", "Increasing the confidence level from $95\\%$ to $99\\%$ with the original $1{,}200$ sample.", "Surveying only voters who regularly commute using public transit."], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A</strong>:</li>\n<ul class=\"sol-list\">\n<li>The margin of error formula is $\\text{MOE} = z^* \\cdot \\sqrt{\\frac{p(1-p)}{n}}$. Because sample size $n$ is in the denominator under the square root, <strong>increasing sample size</strong> (e.g., from 1,200 to 2,400) decreases standard error and reduces the margin of error.</li>\n<li>Choice C increases MOE; Choice B decreases sample size (increasing MOE); Choice D introduces selection bias.</li>\n</ul>\n</ul>"}, {"id": "sat_math_problem_solving_data_statistics_set_01-q2", "tier": "medium", "tierRaw": "Medium", "skill": "Multiple Choice: Outlier Impact on Mean vs Median", "cat": "Problem-Solving and Data Analysis", "type": "mcq", "stem": "<p>A small software startup has 8 employees with the following annual salaries (in thousands of dollars): $$\\{65, 70, 72, 75, 80, 82, 85, 90\\}$$ The company hires a new Chief Technology Officer (CTO) with an annual salary of $\\$350{,}000$ ($350$ thousand dollars). How does adding this new salary affect the mean and median of the employee salary distribution?</p>", "passage": "", "options": ["The mean increases significantly, while the median increases by a relatively small amount.", "The median increases significantly, while the mean remains unchanged.", "Both the mean and the median increase by exactly the same amount.", "Neither the mean nor the median changes because the sample size is under 30."], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>Mean</strong>: The extreme outlier of $\\$350\\text{k}$ dramatically pulls the arithmetic sum and mean upward (initial mean $= 76.75\\text{k} \\rightarrow$ new mean $= 107.1\\text{k}$, an increase of over $\\$30\\text{k}$).</li>\n<li><strong>Median</strong>: The median shifts only from the average of the 4th and 5th numbers ($\\frac{75+80}{2} = 77.5$) to the 5th number ($80$), an increase of just $\\$2.5\\text{k}$.</li>\n<li>The median is <em>resistant</em> to extreme outliers, whereas the mean is <em>highly sensitive</em>.</li>\n</ul>\n</ul>"}, {"id": "sat_math_problem_solving_data_statistics_set_01-q3", "tier": "expert", "tierRaw": "Hard", "skill": "Multiple Choice: Box Plots & Interquartile Range", "cat": "Problem-Solving and Data Analysis", "type": "mcq", "stem": "<p>The box plots below summarize the distribution of test scores for two classes, Class A and Class B, each containing 30 students. ``<code> Class A:  |----[   |   ]----| Score:   40   60  75  85   98 Class B:      |--[     |     ]--| Score:        55 70   82    92  100 </code>`` - <strong>Class A</strong>: Minimum = $40$, $Q_1 = 60$, Median = $75$, $Q_3 = 85$, Maximum = $98$ - <strong>Class B</strong>: Minimum = $55$, $Q_1 = 70$, Median = $82$, $Q_3 = 92$, Maximum = $100$ Which of the following statements must be true based on the data?</p>", "passage": "", "options": ["The Interquartile Range (IQR) of Class A is greater than the IQR of Class B.", "The range of scores in Class B is greater than the range of scores in Class A.", "The IQR of Class A is $25$ and the IQR of Class B is $22$.", "At least $50\\%$ of the students in Class A scored higher than the median score of Class B."], "key": "C", "keyDisplay": "C", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: C</strong>:</li>\n<ul class=\"sol-list\">\n<li>$\\text{IQR}_A = Q_3 - Q_1 = 85 - 60 = 25$.</li>\n<li>$\\text{IQR}_B = Q_3 - Q_1 = 92 - 70 = 22$.</li>\n<li>Thus, $\\text{IQR}_A = 25$ and $\\text{IQR}_B = 22$. Choice C is exactly correct (which also means $\\text{IQR}_A &gt; \\text{IQR}_B$, but C provides the exact numerical proof).</li>\n</ul>\n</ul>"}, {"id": "sat_math_problem_solving_data_statistics_set_01-q4", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Multiple Choice: Two-Way Relative Frequency & Conditional Probability", "cat": "Problem-Solving and Data Analysis", "type": "mcq", "stem": "<p>A marine biology laboratory tested the effectiveness of two water purification filters against microplastic contamination in water samples. | Filter Type | High Microplastic Retention (&gt;95%) | Moderate Retention (75–95%) | Low Retention (&lt;75%) | Total Samples | | :--- | :---: | :---: | :---: | :---: | | <strong>Graphene Filter (G-1)</strong> | 144 | 36 | 20 | <strong>200</strong> | | <strong>Cellulose Filter (C-2)</strong> | 84 | 56 | 60 | <strong>200</strong> | | <strong>Total</strong> | <strong>228</strong> | <strong>92</strong> | <strong>80</strong> | <strong>400</strong> | Given that a randomly selected water sample had \"High Microplastic Retention (&gt;95%)\", what is the probability that it was processed by the Graphene Filter (G-1)?</p>", "passage": "", "options": ["$\\frac{144}{200}$", "$\\frac{144}{228}$", "$\\frac{144}{400}$", "$\\frac{228}{400}$"], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B ($\\frac{144}{228} = \\frac{12}{19} \\approx 0.6316$)</strong>:</li>\n<ul class=\"sol-list\">\n<li>Condition: \"High Microplastic Retention (&gt;95%)\" restricts our denominator strictly to that column's total: $228$.</li>\n<li>Numerator: Graphene Filter samples within that column: $144$.</li>\n<li>Probability $= \\frac{144}{228}$.</li>\n</ul>\n</ul>"}, {"id": "sat_math_problem_solving_data_statistics_set_01-q5", "tier": "easy", "tierRaw": "Easy-Medium", "skill": "Student-Produced Response: Standard Deviation & Variance", "cat": "Problem-Solving and Data Analysis", "type": "spr", "stem": "<p>A quality control inspector measures the diameter (in millimeters) of five precision ball bearings from Machine 1: $$\\{25.0, 25.0, 25.0, 25.0, 25.0\\}$$ What is the sample standard deviation, in millimeters, of this measurement set?</p>", "passage": "", "options": ["", "", "", ""], "key": "", "keyDisplay": "0", "accept": ["0"], "expFloat": 0.0, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: 0</strong>:</li>\n<ul class=\"sol-list\">\n<li>Standard deviation measures the dispersion or spread of data points around the arithmetic mean.</li>\n<li>Because all 5 ball bearings have the identical diameter ($25.0\\text{ mm}$), the mean is $25.0\\text{ mm}$ and every deviation $(x_i - \\bar{x}) = 0$.</li>\n<li>The variance and sample standard deviation are strictly $0$.</li>\n</ul>\n</ul>"}];
-const LSKEY = 'satdrill_sat_math_problem_solving_data_statistics_set_01';
-let state = {answers:{}, flags:[], idx:0, tier:'all', flagOnly:false, left:400, timerOn:false, timerId:null, done:false};
-try{const s = JSON.parse(localStorage.getItem(LSKEY)); if(s && s.answers) state.answers=s.answers; if(s&&s.flags) state.flags=s.flags;}catch(e){}
-function save(){try{localStorage.setItem(LSKEY, JSON.stringify({answers:state.answers,flags:state.flags}));}catch(e){}}
-const LET=['A','B','C','D'];
-function list(){return QD.filter(q=>(state.tier==='all'||q.tier===state.tier)&&(!state.flagOnly||state.flags.includes(q.id)));}
-function fmt(s){s=Math.max(0,s);const m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');}
-function tick(){document.getElementById('clock').textContent=fmt(state.left);}
-function startTimer(){if(state.timerId)return;state.timerOn=true;state.timerId=setInterval(()=>{if(!state.timerOn)return;state.left--;tick();if(state.left<=0){clearInterval(state.timerId);state.timerId=null;finish();}},1000);}
-function pauseTimer(){state.timerOn=!state.timerOn;document.getElementById('pauseBtn').textContent=state.timerOn?'Pause':'Resume';}
-function resetTimer(){clearInterval(state.timerId);state.timerId=null;state.left=400;state.timerOn=false;document.getElementById('pauseBtn').textContent='Pause';tick();}
-function renderNav(){const L=list();document.getElementById('qnav').innerHTML=L.map((q,i)=>{const a=state.answers[q.id];let c='qpill'+(i===state.idx?' cur':'')+(a?(a.ok?' ok':' no'):'')+(state.flags.includes(q.id)?' flag':'');return `<button class="${c}" data-i="${i}">${i+1}</button>`;}).join('');
-document.querySelectorAll('#qnav .qpill').forEach(b=>b.onclick=()=>{state.idx=+b.dataset.i;renderQ();});}
-function renderQ(){const L=list();const box=document.getElementById('qbox');
-if(!L.length){box.innerHTML='<div class="qcard"><p>No questions match this filter.</p></div>';document.getElementById('stim').innerHTML='';renderNav();return;}
-if(state.idx>=L.length)state.idx=0;
-const q=L[state.idx],a=state.answers[q.id],flagged=state.flags.includes(q.id);
-let stimHtml=`<span class="badge">${q.cat}</span> <span class="diff diff-${q.tier}">${q.tier}</span><p style="color:var(--muted);font-size:.82rem"><strong>${q.skill}</strong> &middot; source tier: ${q.tierRaw}</p>`;
-if(q.passage)stimHtml+=`<h3>Passage</h3><p>${q.passage}</p>`;
-document.getElementById('stim').innerHTML=stimHtml;
-let inner=`<p><strong>Q${state.idx+1} of ${L.length}.</strong> ${q.stem}</p>`;
-if(q.type==='mcq'){
-inner+='<div>'+q.options.map((o,i)=>{let c='opt';if(a){c+=' dim';if(LET[i]===q.key)c+=' right';else if(LET[i]===a.pick)c+=' wrong';}return `<button class="${c}" data-p="${LET[i]}" ${a?'disabled':''}><strong>${LET[i]}.</strong> ${o}</button>`;}).join('')+'</div>';
-}else{
-inner+=`<div class="spr-row"><input id="sprIn" inputmode="decimal" placeholder="Enter your answer" value="${a?a.pick:''}" ${a?'disabled':''}><button class="btn btn-p" id="sprGo" ${a?'disabled':''}>Check</button></div><p style="color:var(--muted);font-size:.82rem">Student-produced response: equivalent fractions and decimals accepted.</p>`;
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../../index.html">SAT Portal</a> &rsaquo; Problem_Solving_and_Data_Analysis</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../../index.html">&larr; SAT Portal</a> &rsaquo; Problem_Solving_and_Data_Analysis</div>
+<h1>Digital SAT Math: Statistics, Probability &amp; Data Distributions</h1>
+<div class="meta"><span><b>Questions:</b> 12</span><span><b>Level:</b> Score 750 - 800</span><span><b>Topic:</b> Statistics, Probability, Data Distributions & Margin of Error</span><span><b>Suggested time:</b> 16 min</span></div>
+<div class="overview"><ul><li><strong>Domain</strong>: Problem-Solving and Data Analysis</li><li><strong>Target Skills</strong>: Mean, Median, Mode &amp; Outlier Effects, Standard Deviation &amp; Spread, Box-and-Whisker Plots &amp; Interquartile Range (IQR), Margin of Error &amp; Confidence Intervals, Conditional Probability</li><li><strong>Calculator Policy</strong>: Desmos Permitted</li><li><strong>Number of Items</strong>: 12 Items (10 Multiple Choice, 2 Student-Produced Responses)</li><li><strong>Time Recommended</strong>: ~80 seconds per item</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>A polling organization surveyed a representative random sample of <span class=\"mx\">1,200</span> registered voters in a city regarding a proposed public transit bond. The survey found that <span class=\"mx\">58%</span> of respondents supported the bond with a margin of error of <span class=\"mx\">± 2.8%</span> at a <span class=\"mx\">95%</span> confidence level. Which of the following modifications would result in a <strong>smaller margin of error</strong> while maintaining the same <span class=\"mx\">95%</span> confidence level?</p>", "options": [{"L": "A", "t": "Surveying a random sample of <span class=\"mx\">2,400</span> registered voters in the same city."}, {"L": "B", "t": "Surveying a random sample of <span class=\"mx\">600</span> registered voters in the same city."}, {"L": "C", "t": "Increasing the confidence level from <span class=\"mx\">95%</span> to <span class=\"mx\">99%</span> with the original <span class=\"mx\">1,200</span> sample."}, {"L": "D", "t": "Surveying only voters who regularly commute using public transit."}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A</strong>:</li><li>The margin of error formula is <span class=\"mx\">MOE = z<sup>*</sup> · √<span class=\"mx-root\"><span class=\"mx-frac\"><span>p(1-p)</span><span>n</span></span></span></span>. Because sample size <span class=\"mx\">n</span> is in the denominator under the square root, <strong>increasing sample size</strong> (e.g., from 1,200 to 2,400) decreases standard error and reduces the margin of error.</li><li>Choice C increases MOE; Choice B decreases sample size (increasing MOE); Choice D introduces selection bias.</li></ul>", "diff": "Medium-Hard", "domain": "Margin of Error & Sample Size Law"}, {"n": 2, "kind": "mc", "stem": "<p>A small software startup has 8 employees with the following annual salaries (in thousands of dollars):</p>\n<p><span class=\"mx-disp\">{65, 70, 72, 75, 80, 82, 85, 90}</span></p>\n<p>The company hires a new Chief Technology Officer (CTO) with an annual salary of <span class=\"mx\">$350,000</span> (<span class=\"mx\">350</span> thousand dollars). How does adding this new salary affect the mean and median of the employee salary distribution?</p>", "options": [{"L": "A", "t": "The mean increases significantly, while the median increases by a relatively small amount."}, {"L": "B", "t": "The median increases significantly, while the mean remains unchanged."}, {"L": "C", "t": "Both the mean and the median increase by exactly the same amount."}, {"L": "D", "t": "Neither the mean nor the median changes because the sample size is under 30."}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A</strong>:</li><li><strong>Mean</strong>: The extreme outlier of <span class=\"mx\">$350k</span> dramatically pulls the arithmetic sum and mean upward (initial mean <span class=\"mx\">= 76.75k →</span> new mean <span class=\"mx\">= 107.1k</span>, an increase of over <span class=\"mx\">$30k</span>).</li><li><strong>Median</strong>: The median shifts only from the average of the 4th and 5th numbers (<span class=\"mx\"><span class=\"mx-frac\"><span>75+80</span><span>2</span></span> = 77.5</span>) to the 5th number (<span class=\"mx\">80</span>), an increase of just <span class=\"mx\">$2.5k</span>.</li><li>The median is <em>resistant</em> to extreme outliers, whereas the mean is <em>highly sensitive</em>.</li></ul>", "diff": "Medium", "domain": "Outlier Sensitivity: Mean vs. Median"}, {"n": 3, "kind": "mc", "stem": "<p>The box plots below summarize the distribution of test scores for two classes, Class A and Class B, each containing 30 students.</p>\n<p>``` Class A:  |----[   |   ]----| Score:   40   60  75  85   98</p>\n<p>Class B:      |--[     |     ]--| Score:        55 70   82    92  100 ```</p>\n<ul><li><strong>Class A</strong>: Minimum = <span class=\"mx\">40</span>, <span class=\"mx\">Q<sub>1</sub> = 60</span>, Median = <span class=\"mx\">75</span>, <span class=\"mx\">Q<sub>3</sub> = 85</span>, Maximum = <span class=\"mx\">98</span></li><li><strong>Class B</strong>: Minimum = <span class=\"mx\">55</span>, <span class=\"mx\">Q<sub>1</sub> = 70</span>, Median = <span class=\"mx\">82</span>, <span class=\"mx\">Q<sub>3</sub> = 92</span>, Maximum = <span class=\"mx\">100</span></li></ul>\n<p>Which of the following statements must be true based on the data?</p>", "options": [{"L": "A", "t": "The Interquartile Range (IQR) of Class A is greater than the IQR of Class B."}, {"L": "B", "t": "The range of scores in Class B is greater than the range of scores in Class A."}, {"L": "C", "t": "The IQR of Class A is <span class=\"mx\">25</span> and the IQR of Class B is <span class=\"mx\">22</span>."}, {"L": "D", "t": "At least <span class=\"mx\">50%</span> of the students in Class A scored higher than the median score of Class B."}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C</strong>:</li><li><span class=\"mx\">IQR<sub>A</sub> = Q<sub>3</sub> - Q<sub>1</sub> = 85 - 60 = 25</span>.</li><li><span class=\"mx\">IQR<sub>B</sub> = Q<sub>3</sub> - Q<sub>1</sub> = 92 - 70 = 22</span>.</li><li>Thus, <span class=\"mx\">IQR<sub>A</sub> = 25</span> and <span class=\"mx\">IQR<sub>B</sub> = 22</span>. Choice C is exactly correct (which also means <span class=\"mx\">IQR<sub>A</sub> &gt; IQR<sub>B</sub></span>, but C provides the exact numerical proof).</li></ul>", "diff": "Hard", "domain": "Box Plots & Interquartile Range (IQR)"}, {"n": 4, "kind": "mc", "stem": "<p>A marine biology laboratory tested the effectiveness of two water purification filters against microplastic contamination in water samples.</p>\n<table><thead><tr><th>Filter Type</th><th>High Microplastic Retention (&gt;95%)</th><th>Moderate Retention (75–95%)</th><th>Low Retention (&lt;75%)</th><th>Total Samples</th></tr></thead><tbody><tr><td><strong>Graphene Filter (G-1)</strong></td><td>144</td><td>36</td><td>20</td><td><strong>200</strong></td></tr><tr><td><strong>Cellulose Filter (C-2)</strong></td><td>84</td><td>56</td><td>60</td><td><strong>200</strong></td></tr><tr><td><strong>Total</strong></td><td><strong>228</strong></td><td><strong>92</strong></td><td><strong>80</strong></td><td><strong>400</strong></td></tr></tbody></table>\n<p>Given that a randomly selected water sample had &quot;High Microplastic Retention (&gt;95%)&quot;, what is the probability that it was processed by the Graphene Filter (G-1)?</p>", "options": [{"L": "A", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>144</span><span>200</span></span></span>"}, {"L": "B", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>144</span><span>228</span></span></span>"}, {"L": "C", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>144</span><span>400</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>228</span><span>400</span></span></span>"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<span class=\"mx\"><span class=\"mx-frac\"><span>144</span><span>228</span></span> = <span class=\"mx-frac\"><span>12</span><span>19</span></span> ≈ 0.6316</span>)</strong>:</li><li>Condition: &quot;High Microplastic Retention (&gt;95%)&quot; restricts our denominator strictly to that column&#x27;s total: <span class=\"mx\">228</span>.</li><li>Numerator: Graphene Filter samples within that column: <span class=\"mx\">144</span>.</li><li>Probability <span class=\"mx\">= <span class=\"mx-frac\"><span>144</span><span>228</span></span></span>.</li></ul>", "diff": "Medium-Hard", "domain": "Two-Way Conditional Probability"}, {"n": 5, "kind": "spr", "stem": "<p>A quality control inspector measures the diameter (in millimeters) of five precision ball bearings from Machine 1:</p>\n<p><span class=\"mx-disp\">{25.0, 25.0, 25.0, 25.0, 25.0}</span></p>\n<p>What is the sample standard deviation, in millimeters, of this measurement set?</p>", "options": [], "key": "0", "rat": "<ul><li><strong>Correct Answer: 0</strong>:</li><li>Standard deviation measures the dispersion or spread of data points around the arithmetic mean.</li><li>Because all 5 ball bearings have the identical diameter (<span class=\"mx\">25.0 mm</span>), the mean is <span class=\"mx\">25.0 mm</span> and every deviation <span class=\"mx\">(x<sub>i</sub> - bar{x}) = 0</span>.</li><li>The variance and sample standard deviation are strictly <span class=\"mx\">0</span>.</li></ul>\n<hr>", "diff": "Easy-Medium", "domain": "Standard Deviation of Identical Dataset"}, {"n": 6, "kind": "mc", "stem": "<p>A store raises the price of a jacket from <span class=\"mx\">$80</span> to <span class=\"mx\">$100</span>. What is the percent increase in the price?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">20%</span>"}, {"L": "B", "t": "<span class=\"mx\">80%</span>"}, {"L": "C", "t": "<span class=\"mx\">125%</span>"}, {"L": "D", "t": "<span class=\"mx\">25%</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">25%</span>)</strong></li><li><strong>Method 1 (Change over Original)</strong>:</li></ul>\n<p><span class=\"mx-disp\"><span class=\"mx-frac\"><span>100 - 80</span><span>80</span></span> = <span class=\"mx-frac\"><span>20</span><span>80</span></span> = 0.25 = 25%</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">20%</span>)</strong>: Reported the dollar difference as a percent.</li><li><strong>B (<span class=\"mx\">80%</span>)</strong>: Divided old price by new price (<span class=\"mx\">80/100</span>).</li><li><strong>C (<span class=\"mx\">125%</span>)</strong>: Reported new/old (<span class=\"mx\">100/80</span>) instead of the increase.</li></ul>\n<hr>", "diff": "Medium", "domain": "Data Analysis: Percent Change"}, {"n": 7, "kind": "mc", "stem": "<p>A recipe calls for <span class=\"mx\">3</span> cups of flour for every <span class=\"mx\">2</span> cups of sugar. If a baker uses <span class=\"mx\">15</span> cups of flour, how many cups of sugar are needed?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">6</span>"}, {"L": "B", "t": "<span class=\"mx\">7.5</span>"}, {"L": "C", "t": "<span class=\"mx\">22.5</span>"}, {"L": "D", "t": "<span class=\"mx\">10</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">10</span>)</strong></li><li><strong>Method 1 (Proportion)</strong>:</li></ul>\n<p><span class=\"mx-disp\"><span class=\"mx-frac\"><span>3</span><span>2</span></span> = <span class=\"mx-frac\"><span>15</span><span>s</span></span> ⇒ 3s = 30 ⇒ s = 10</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">6</span>)</strong>: Scaled by the wrong factor.</li><li><strong>B (<span class=\"mx\">7.5</span>)</strong>: Halved the flour instead of applying the <span class=\"mx\">3:2</span> ratio.</li><li><strong>C (<span class=\"mx\">22.5</span>)</strong>: Inverted the ratio (<span class=\"mx\">15 · 3/2</span>).</li></ul>\n<hr>", "diff": "Medium", "domain": "Data Analysis: Ratios"}, {"n": 8, "kind": "mc", "stem": "<p>A bag contains <span class=\"mx\">4</span> red marbles, <span class=\"mx\">5</span> blue marbles, and <span class=\"mx\">11</span> green marbles. If one marble is drawn at random, what is the probability it is blue?</p>", "options": [{"L": "A", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>5</span><span>11</span></span></span>"}, {"L": "B", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>1</span><span>4</span></span></span>"}, {"L": "C", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>1</span><span>3</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>11</span><span>20</span></span></span>"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B (<span class=\"mx\"><span class=\"mx-frac\"><span>1</span><span>4</span></span></span>)</strong></li><li><strong>Method 1 (Favorable over Total)</strong>:</li></ul>\n<p>Total <span class=\"mx\">= 4 + 5 + 11 = 20</span>. <span class=\"mx-disp\">P(blue) = <span class=\"mx-frac\"><span>5</span><span>20</span></span> = <span class=\"mx-frac\"><span>1</span><span>4</span></span></span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\"><span class=\"mx-frac\"><span>5</span><span>11</span></span></span>)</strong>: Compared blue to green only.</li><li><strong>C (<span class=\"mx\"><span class=\"mx-frac\"><span>1</span><span>3</span></span></span>)</strong>: Compared blue to non-green (<span class=\"mx\">5/15</span>).</li><li><strong>D (<span class=\"mx\"><span class=\"mx-frac\"><span>11</span><span>20</span></span></span>)</strong>: Gave the probability of green instead.</li></ul>\n<hr>", "diff": "Medium", "domain": "Data Analysis: Simple Probability"}, {"n": 9, "kind": "mc", "stem": "<p>The table below shows the number of pets owned by <span class=\"mx\">10</span> families.</p>\n<table><thead><tr><th>Pets</th><th><span class=\"mx\">6</span></th><th><span class=\"mx\">4</span></th><th><span class=\"mx\">14</span></th></tr></thead><tbody><tr><td>Families</td><td><span class=\"mx\">5</span></td><td><span class=\"mx\">3</span></td><td><span class=\"mx\">2</span></td></tr></tbody></table>\n<p>What is the mean number of pets per family?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">8</span>"}, {"L": "B", "t": "<span class=\"mx\">6</span>"}, {"L": "C", "t": "<span class=\"mx\">7</span>"}, {"L": "D", "t": "<span class=\"mx\">10</span>"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C (<span class=\"mx\">7</span>)</strong></li><li><strong>Method 1 (Weighted Mean)</strong>:</li></ul>\n<p><span class=\"mx-disp\"><span class=\"mx-frac\"><span>6(5) + 4(3) + 14(2)</span><span>10</span></span> = <span class=\"mx-frac\"><span>30 + 12 + 28</span><span>10</span></span> = <span class=\"mx-frac\"><span>70</span><span>10</span></span> = 7</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">8</span>)</strong>: Averaged the three values ignoring weights: <span class=\"mx\">(6 + 4 + 14)/3</span>.</li><li><strong>B (<span class=\"mx\">6</span>)</strong>: Reported the median instead of the mean.</li><li><strong>D (<span class=\"mx\">10</span>)</strong>: Reported the range (<span class=\"mx\">14 - 4</span>).</li></ul>\n<hr>", "diff": "Medium-Hard", "domain": "Data Analysis: Weighted Mean"}, {"n": 10, "kind": "mc", "stem": "<p>A scatterplot of study hours versus test score has a line of best fit given by <span class=\"mx\">y = 5x + 60</span>, where <span class=\"mx\">x</span> is hours studied and <span class=\"mx\">y</span> is the predicted score. What score does the model predict for a student who studies <span class=\"mx\">7</span> hours?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">95</span>"}, {"L": "B", "t": "<span class=\"mx\">35</span>"}, {"L": "C", "t": "<span class=\"mx\">60</span>"}, {"L": "D", "t": "<span class=\"mx\">420</span>"}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A (<span class=\"mx\">95</span>)</strong></li><li><strong>Method 1 (Substitute into the Model)</strong>:</li></ul>\n<p><span class=\"mx-disp\">y = 5(7) + 60 = 35 + 60 = 95</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>B (<span class=\"mx\">35</span>)</strong>: Used the slope term only, dropping the intercept.</li><li><strong>C (<span class=\"mx\">60</span>)</strong>: Reported the intercept (zero hours of study).</li><li><strong>D (<span class=\"mx\">420</span>)</strong>: Multiplied intercept by hours (<span class=\"mx\">60 · 7</span>).</li></ul>\n<hr>", "diff": "Hard", "domain": "Data Analysis: Line of Best Fit"}, {"n": 11, "kind": "mc", "stem": "<p>A car travels at <span class=\"mx\">60</span> miles per hour. Given <span class=\"mx\">1</span> mile <span class=\"mx\">= 5,280</span> feet, what is the speed in feet per second?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">5,280</span>"}, {"L": "B", "t": "<span class=\"mx\">60</span>"}, {"L": "C", "t": "<span class=\"mx\">44</span>"}, {"L": "D", "t": "<span class=\"mx\">88</span>"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D (<span class=\"mx\">88</span>)</strong></li><li><strong>Method 1 (Convert Units)</strong>:</li></ul>\n<p><span class=\"mx-disp\">60 <span class=\"mx-frac\"><span>mi</span><span>h</span></span> · <span class=\"mx-frac\"><span>5,280 ft</span><span>1 mi</span></span> · <span class=\"mx-frac\"><span>1 h</span><span>3,600 s</span></span> = <span class=\"mx-frac\"><span>316,800</span><span>3,600</span></span> = 88 ft/s</span></p>\n<ul><li><strong>Distractor Analysis</strong>:</li><li><strong>A (<span class=\"mx\">5,280</span>)</strong>: Converted miles but forgot time entirely.</li><li><strong>B (<span class=\"mx\">60</span>)</strong>: Kept the number, ignoring units.</li><li><strong>C (<span class=\"mx\">44</span>)</strong>: Halved the correct value.</li></ul>\n<hr>", "diff": "Hard", "domain": "Data Analysis: Unit Conversion"}, {"n": 12, "kind": "spr", "stem": "<p>Two numbers are in the ratio <span class=\"mx\">3:4</span> and their sum is <span class=\"mx\">63</span>. What is the smaller number?</p>\n<p><em>(Enter your answer as an integer.)</em></p>", "options": [], "key": "27", "rat": "<ul><li><strong>Correct Answer: 27</strong></li><li><strong>Method 1 (Parts of a Whole)</strong>:</li></ul>\n<p><span class=\"mx-disp\">3x + 4x = 63 ⇒ 7x = 63 ⇒ x = 9</span> Smaller number <span class=\"mx\">= 3(9) = 27</span>.</p>\n<ul><li><strong>Verification</strong>: <span class=\"mx\">27 + 36 = 63</span> and <span class=\"mx\">27/36 = 3/4</span>. ✓</li></ul>\n<hr>\n<h3>New System Alignment (Updated)</h3>\n<p><strong>Flow:</strong> Teach → Show → Test</p>\n<ul><li><strong>Teach:</strong> Detailed strategy and rules (this file)</li><li><strong>Show:</strong> Walkthrough solving examples — <a href=\"../../Show/show_walkthrough.html\">SAT/Show/show_walkthrough.html</a></li><li><strong>Test:</strong> Real SAT difficulty mock — <a href=\"../../Test/mock_01.html\">SAT/Test/mock_01.html</a></li><li><strong>Portal:</strong> <a href=\"../../index.html\">SAT/index.html</a> (interactive pen / highlight / mark tools)</li></ul>\n<hr>", "diff": "Medium", "domain": "Data Analysis: Ratio Split (SPR)"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:960,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
 }
-if(a){inner+=`<div class="feedback ${a.ok?'good':'bad'}">${a.ok?'&#10003; Correct.':'&#10007; Correct answer: <strong>${q.keyDisplay}</strong>.'}<details class="sol"><summary>Why? Show solution</summary>${q.sol}</details></div>`;}
-inner+=`<div class="navrow"><button class="btn btn-g" id="prevB">&larr; Prev</button><button class="btn btn-g" id="nextB">Next &rarr;</button><button class="btn btn-g" id="flagB">${flagged?'&#9873; Flagged':'&#9872; Flag'}</button>${a?'<button class="btn btn-g" id="retryB">Retry</button>':''}<button class="btn btn-p" id="finB">Finish drill</button></div><div class="navrow"><span id="scoreLine" style="color:var(--muted);font-size:.85rem"></span></div>`;
-box.innerHTML='<div class="qcard">'+inner+'</div>';
-if(q.type==='mcq'&&!a){box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q,b.dataset.p));}
-if(q.type==='spr'&&!a){const go=()=>{const v=document.getElementById('sprIn').value;if(v.trim()==='')return;answer(q,v.trim());};document.getElementById('sprGo').onclick=go;document.getElementById('sprIn').addEventListener('keydown',e=>{if(e.key==='Enter')go();});}
-document.getElementById('prevB').onclick=()=>{state.idx=(state.idx-1+L.length)%L.length;renderQ();};
-document.getElementById('nextB').onclick=()=>{state.idx=(state.idx+1)%L.length;renderQ();};
-document.getElementById('flagB').onclick=function(){const i=state.flags.indexOf(q.id);if(i>=0)state.flags.splice(i,1);else state.flags.push(q.id);save();renderQ();};
-const rt=document.getElementById('retryB');if(rt)rt.onclick=()=>{delete state.answers[q.id];save();renderQ();};
-document.getElementById('finB').onclick=finish;
-if(window.renderMathInElement)try{renderMathInElement(box,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});}catch(e){}
-updateScore();renderNav();}
-function sprOk(q,v){const s=v.replace(/[\s,]/g,'');if(q.accept.includes(s))return true;if(q.expFloat===null||q.expFloat===undefined)return false;let n=null;const fr=s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(fr&&parseFloat(fr[2])!==0)n=parseFloat(fr[1])/parseFloat(fr[2]);else if(/^-?\d+(?:\.\d+)?$/.test(s))n=parseFloat(s);if(n===null||!isFinite(n))return false;const tol=Math.max(0.005,Math.abs(q.expFloat)*0.002);return Math.abs(n-q.expFloat)<=tol;}
-function answer(q,pick){let ok;if(q.type==='mcq')ok=(pick===q.key);else ok=sprOk(q,pick);state.answers[q.id]={pick:pick,ok:ok};save();renderQ();}
-function updateScore(){const ids=Object.keys(state.answers);const ok=ids.filter(k=>state.answers[k].ok).length;const el=document.getElementById('scoreLine');if(el)el.textContent=ids.length?`Score this device: ${ok}/${ids.length} (${Math.round(ok/ids.length*100)}%) — saved automatically`:'Answer to begin — progress saves on this device.';const g=document.getElementById('progFill');if(g){g.style.width=Math.min(100,Math.round(ids.length/QD.length*100))+'%';}}
-function finish(){const L=list();let tot=0,ok=0;const byTier={};L.forEach(q=>{const a=state.answers[q.id];byTier[q.tier]=byTier[q.tier]||{t:0,o:0};byTier[q.tier].t++;if(a){tot++;if(a.ok){ok++;byTier[q.tier].o++;}}});
-let rows=Object.keys(byTier).map(t=>{const b=byTier[t];const p=b.t?Math.round(b.o/b.t*100):0;return `<div><strong style="text-transform:capitalize">${t}</strong> — ${b.o}/${b.t} (${p}%)<div class="bar"><span style="width:${p}%"></span></div></div>`;}).join('');
-const un=L.length-tot;
-document.getElementById('results').innerHTML=`<div class="results"><h2>Drill complete: ${ok}/${L.length}</h2>${un?`<p>${un} unanswered.</p>`:''}${rows}<div class="navrow"><button class="btn btn-g" id="revMiss">Review misses in drill &uarr;</button></div></div>`;
-document.getElementById('revMiss').onclick=()=>{document.getElementById('results').innerHTML='';window.scrollTo(0,0);};
-document.getElementById('results').scrollIntoView({behavior:'smooth'});}
-document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName))return;const m={'1':0,'2':1,'3':2,'4':3,a:0,b:1,c:2,d:3,A:0,B:1,C:2,D:3};if(e.key in m){const b=document.querySelectorAll('#qbox .opt');if(b[m[e.key]])b[m[e.key]].click();}if(e.key==='ArrowRight'){const n=document.getElementById('nextB');if(n)n.click();}if(e.key==='ArrowLeft'){const p=document.getElementById('prevB');if(p)p.click();}});
-document.querySelectorAll('#tierRow .pill').forEach(p=>p.onclick=()=>{document.querySelectorAll('#tierRow .pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');state.tier=p.dataset.t;state.idx=0;renderQ();});
-document.getElementById('flagOnly').onclick=function(){state.flagOnly=!state.flagOnly;this.classList.toggle('on',state.flagOnly);state.idx=0;renderQ();};
-document.getElementById('pauseBtn').onclick=pauseTimer;
-document.getElementById('resetBtn').onclick=resetTimer;
-document.getElementById('restartBtn').onclick=()=>{if(confirm('Clear saved answers for this drill?')){state.answers={};state.flags=[];state.idx=0;save();renderQ();}};
-document.getElementById('themeBtn').onclick=()=>{const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('satdrill_theme',n);}catch(e){}};
-try{if(localStorage.getItem('satdrill_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
-tick();startTimer();renderQ();
-</script><!-- student-tools v1 -->
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=960,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
+<!-- student-tools v1 -->
 <style>
 
 #st-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0f172a;color:#fff;padding:8px 10px;border-radius:14px;box-shadow:0 10px 25px rgb(0 0 0/.35);max-width:96vw;overflow-x:auto;font-family:system-ui,sans-serif}
@@ -308,4 +400,5 @@ restoreHL();
 })();
 
 </script>
-</body></html>
+</body>
+</html>

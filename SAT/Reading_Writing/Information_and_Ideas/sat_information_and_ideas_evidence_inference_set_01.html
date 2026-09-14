@@ -1,143 +1,235 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital SAT Reading &amp; Writing: Information and Ideas Masterclass | SAT Drill</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script><style>
-:root{--bg:#e9f1fd;--surface:#fff;--surface2:#f4f8ff;--text:#0a1a3c;--muted:#5b6b8c;
---primary:#2b7fff;--primary-dark:#1a5fd0;--soft:#e3efff;--ok:#16a34a;--okbg:#f0fdf4;
---bad:#dc2626;--badbg:#fef2f2;--border:#d7e3f7;--radius:14px;
---font:'Segoe UI',system-ui,-apple-system,sans-serif;--mono:Consolas,monospace}
-[data-theme=dark]{--bg:#0a1428;--surface:#12203c;--surface2:#0e1a32;--text:#eaf1ff;
---muted:#93a4c4;--primary:#5b97ff;--primary-dark:#3f7bf0;--soft:#1b2c52;
---okbg:#052e16;--badbg:#450a0a;--border:#243a63}
-*{box-sizing:border-box}body{margin:0;font-family:var(--font);background:var(--bg);
-color:var(--text);line-height:1.65;padding-bottom:4rem}
-.topbar{background:var(--surface);border-bottom:1px solid var(--border);
-position:sticky;top:0;z-index:50}.topbar-in{max-width:1180px;margin:0 auto;
-padding:.6rem 1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.brand{font-weight:800;text-decoration:none;color:var(--text)}
-.badge{background:var(--soft);color:var(--primary);font-weight:800;font-size:.72rem;
-border-radius:6px;padding:.15rem .5rem;text-transform:uppercase;letter-spacing:.05em}
-.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-left:auto}
-.chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);
-border-radius:99px;padding:.2rem .7rem;font-size:.78rem;font-weight:600}
-.wrap{max-width:1180px;margin:0 auto;padding:1.2rem}
-.toolbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:.7rem 1rem;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;
-position:sticky;top:57px;z-index:40;box-shadow:0 4px 12px rgba(15,40,100,.07)}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Reading &amp; Writing: Information and Ideas Masterclass | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
 .timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
-.toolbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--text);
-border-radius:99px;padding:.32rem .85rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.toolbtn.on,.toolbtn.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.pill{border:1.5px solid var(--border);background:var(--surface);color:var(--muted);
-border-radius:99px;padding:.3rem .9rem;cursor:pointer;font-weight:700;font-size:.82rem}
-.pill.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.teach{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-margin:1rem 0;overflow:hidden}
-.teach summary{cursor:pointer;font-weight:800;padding:.9rem 1.2rem;list-style:none}
-.teach summary::-webkit-details-marker{display:none}
-.teach summary::before{content:'\25B6  ';color:var(--primary);font-size:.8rem}
-.teach[open] summary::before{content:'\25BC  '}
-.teach-body{padding:0 1.2rem 1.2rem}
-table.rules{width:100%;border-collapse:collapse;font-size:.86rem}
-table.rules th,table.rules td{border-bottom:1px solid var(--border);padding:.45rem;text-align:left}
-.diff{font-size:.7rem;font-weight:800;text-transform:uppercase;border-radius:6px;padding:.12rem .45rem;white-space:nowrap}
-.diff-easy{background:#dcfce7;color:#166534}.diff-medium{background:#fef3c7;color:#92400e}
-.diff-expert{background:#fee2e2;color:#991b1b}
-.layout{display:grid;grid-template-columns:300px 1fr;gap:1rem;align-items:start;margin-top:1rem}
-@media(max-width:900px){.layout{grid-template-columns:1fr}.stimulus{position:static!important;max-height:none!important}}
-.stimulus{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.1rem;position:sticky;top:140px;max-height:70vh;overflow:auto}
-.qnav{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}
-.qpill{width:36px;height:36px;border-radius:9px;border:1.5px solid var(--border);
-background:var(--surface);color:var(--text);font-weight:800;cursor:pointer}
-.qpill.cur{border-color:var(--primary);background:var(--soft)}
-.qpill.ok{background:#dcfce7;border-color:var(--ok);color:#166534}
-.qpill.no{background:#fee2e2;border-color:var(--bad);color:#991b1b}
-.qpill.flag::after{content:' \2691';font-size:.7rem}
-.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem}
-.opt{display:block;width:100%;text-align:left;margin:.45rem 0;padding:.7rem .9rem;
-border:1.5px solid var(--border);border-radius:10px;background:var(--surface);
-color:var(--text);cursor:pointer;font-size:.95rem;font-family:var(--font)}
-.opt:hover:not(:disabled){border-color:var(--primary)}
-.opt.right{border-color:var(--ok);background:var(--okbg)}
-.opt.wrong{border-color:var(--bad);background:var(--badbg)}
-.opt.dim{opacity:.8}.opt:disabled{cursor:default}
-.spr-row{display:flex;gap:.5rem;margin:.6rem 0}
-.spr-row input{flex:1;font:inherit;color:var(--text);background:var(--surface2);
-border:1.5px solid var(--border);border-radius:10px;padding:.6rem .8rem;font-family:var(--mono)}
-.feedback{border-radius:10px;padding:.8rem 1rem;margin-top:.7rem;font-size:.92rem}
-.feedback.good{background:var(--okbg);border:1.5px solid var(--ok)}
-.feedback.bad{background:var(--badbg);border:1.5px solid var(--bad)}
-details.sol{margin-top:.7rem}details.sol summary{cursor:pointer;font-weight:800;color:var(--primary)}
-.sol-list{margin:.4rem 0}code{font-family:var(--mono);font-size:.85em;background:var(--surface2);
-padding:.1rem .35rem;border-radius:6px}
-.navrow{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
-.btn{display:inline-block;border:none;cursor:pointer;font-weight:800;border-radius:99px;
-padding:.55rem 1.3rem;font-size:.9rem;text-decoration:none}
-.btn-p{background:var(--primary);color:#fff}.btn-g{background:var(--soft);color:var(--primary)}
-.results{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-padding:1.3rem;margin-top:1rem}
-.bar{height:9px;background:var(--surface2);border:1px solid var(--border);border-radius:99px;overflow:hidden}
-.bar>span{display:block;height:100%;background:var(--primary)}
-.foot{max-width:1180px;margin:2rem auto 0;padding:0 1.2rem;color:var(--muted);font-size:.85rem}
-.foot a{color:var(--primary)}
-@media print{.topbar,.toolbar,.navrow,.no-print{display:none!important}body{background:#fff}}
-</style></head><body><div class="topbar"><div class="topbar-in"><a class="brand" href="../../index.html">&larr; SAT Portal</a><span class="badge">SAT drill</span><div class="chips"><span class="chip">Information and Ideas</span><span class="chip">Target 700–800 (Hard-tier Module 2 Calibrated)</span><span class="chip">5 questions</span><span class="chip">~75s each</span></div></div></div><div class="wrap"><h1>Digital SAT Reading &amp; Writing: Information and Ideas Masterclass</h1><div class="toolbar"><span class="timer" id="clock">--:--</span><button class="toolbtn" id="pauseBtn">Pause</button><button class="toolbtn" id="resetBtn">Reset timer</button><span id="tierRow"><button class="pill active" data-t="all">All</button><button class="pill" data-t="easy">Easy (0)</button><button class="pill" data-t="medium">Medium (2)</button><button class="pill" data-t="expert">Expert (3)</button></span><button class="toolbtn" id="flagOnly">⚑ Flagged</button><button class="toolbtn" id="themeBtn">Theme</button><button class="toolbtn" id="restartBtn">Restart</button></div><details class="teach"><summary>What this drill trains &amp; how to use it</summary><div class="teach-body"><p><strong>Skills:</strong> Command of Evidence (Textual &amp; Quantitative), Central Ideas &amp; Details, Inferences</p><table class="rules"><tr><th>#</th><th>Skill tested</th><th>Tier</th></tr><tr><td>Q1</td><td>Central Ideas &amp; Details (Literature / History</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q2</td><td>Command of Evidence (Textual</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q3</td><td>Command of Evidence (Quantitative</td><td>Expert <span class="diff diff-expert">Hard</span></td></tr><tr><td>Q4</td><td>Inferences (Scientific Discourse</td><td>Medium <span class="diff diff-medium">Medium-Hard</span></td></tr><tr><td>Q5</td><td>Inferences (Humanities / Social Sciences</td><td>Medium <span class="diff diff-medium">Medium</span></td></tr></table><p><strong>How to use:</strong> 1) Read the stem. 2) Answer (keys 1–4, arrows move). 3) Open the solution to study the rule. Filter by tier to train easy, medium, or expert items.</p></div></details><div class="layout"><div class="stimulus"><strong>Navigator</strong><div class="qnav" id="qnav"></div><div class="bar"><span id="progFill" style="width:0%"></span></div><div id="stim"></div></div><div><div id="qbox"></div><div id="results"></div></div></div></div><div class="foot"><a href="../../index.html">&larr; SAT Portal</a> &middot; <a href="../../Show/show_walkthrough.html">Show walkthrough</a> &middot; <a href="../../Test/mock_01.html">Test mock</a> &middot; <a href="../../webapp/index.html#/practice">More practice in SATPrep Studio</a></div><script>
-const QD = [{"id": "sat_information_and_ideas_evidence_inference_set_01-q1", "tier": "expert", "tierRaw": "Hard", "skill": "Central Ideas & Details (Literature / History", "cat": "Information and Ideas", "type": "mcq", "stem": "<p>The following text is adapted from Edith Wharton's 1905 novel <em>The House of Mirth</em>. Lily Bart is reflecting on her social standing and financial vulnerability in high-society New York. &gt; Selden had once told her that he considered her the most adaptable creature he had ever met; but she was beginning to see that her adaptability was merely the negative ability to fit herself into any pattern that circumstances imposed. She had been taught to believe that a woman's first duty was to be ornamental, and she had fulfilled that requirement with an effortless grace that concealed the tedious mechanics of the process. Yet, underneath this polished facade, she harbored an unsettling awareness: the very luxuries that sustained her had simultaneously rendered her incapable of surviving outside their narrow, gilded perimeter. Which choice best states the primary purpose of the text?</p>", "passage": "", "options": ["To argue that Lily Bart possesses an innate desire to rebel against the rigid aristocratic traditions of New York society.", "To illustrate Lily Bart's growing realization that her refined social conformity has made her critically dependent on the world she inhabits.", "To contrast Selden's superficial assessment of Lily's adaptability with her proven capacity for genuine self-reliance.", "To condemn the superficiality of high society for deliberately preventing women from acquiring meaningful vocational skills."], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Textual Evidence</strong>: The text notes that Lily realizes her adaptability was \"merely the negative ability to fit herself into any pattern,\" and that underneath her graceful facade, her luxuries had \"simultaneously rendered her incapable of surviving outside their narrow, gilded perimeter.\" This directly matches Choice B.</li>\n</ul>\n<li><strong>Distractor Breakdown</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>A (<em>Innate desire to rebel</em>)</strong>: <em>Incorrect.</em> The passage emphasizes her conformity and adaptation, not an active rebellion against aristocratic norms.</li>\n<li><strong>C (<em>Self-reliance</em>)</strong>: <em>Incorrect.</em> The text states the exact opposite—she is <em>incapable</em> of surviving outside her gilded social circle.</li>\n<li><strong>D (<em>Societal conspiracy against vocational skills</em>)</strong>: <em>Incorrect.</em> While society conditioned her to be \"ornamental,\" the text does not discuss vocational skills or an institutional conspiracy.</li>\n</ul>\n</ul>"}, {"id": "sat_information_and_ideas_evidence_inference_set_01-q2", "tier": "expert", "tierRaw": "Hard", "skill": "Command of Evidence (Textual", "cat": "Information and Ideas", "type": "mcq", "stem": "<p>Ecologist Dr. Elena Vance and colleagues investigated the foraging behaviors of <em>Bombus terricola</em> (yellow-banded bumblebees) in fragmented forest ecosystems. Conventional ecological models posit that floral density is the sole primary determinant of foraging frequency. However, Vance hypothesized that microclimatic thermal stability—specifically shelter from high-velocity wind turbulence provided by dense canopy cover—exerts a stronger influence on bumblebee visitation rates in sub-alpine regions than floral density alone. Which finding, if true, would most directly support Dr. Vance's hypothesis?</p>", "passage": "", "options": ["In sub-alpine clearings with low floral density but substantial windbreaks, *B. terricola* foraging frequencies were significantly higher than in high-density floral meadows exposed to sustained winds.", "*B. terricola* individuals in high-altitude environments exhibited greater metabolic rates when foraging in colder ambient temperatures regardless of wind speed.", "Forest fragmentation reduced overall populations of both *B. terricola* and other native pollinator species across all surveyed elevations.", "Bumblebee visitations to sheltered floral patches increased only when the ambient temperature rose above the seasonal average."], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Textual Evidence</strong>: Vance's hypothesis is that wind shelter (microclimatic thermal stability) is a stronger driver of foraging frequency than floral density. Choice A directly tests this by comparing low floral density + high shelter against high floral density + high wind, showing that shelter produced higher foraging frequency.</li>\n</ul>\n<li><strong>Distractor Breakdown</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>B (<em>Metabolic rates</em>)</strong>: <em>Incorrect.</em> Metabolic rates in cold air do not address foraging frequency or compare windbreaks with floral density.</li>\n<li><strong>C (<em>Overall population decline</em>)</strong>: <em>Incorrect.</em> General demographic reduction across elevations provides no comparative evidence regarding microclimatic wind stability vs floral density.</li>\n<li><strong>D (<em>Average seasonal temperature threshold</em>)</strong>: <em>Incorrect.</em> This introduces an unrelated variable without contrasting floral density against wind turbulence.</li>\n</ul>\n</ul>"}, {"id": "sat_information_and_ideas_evidence_inference_set_01-q3", "tier": "expert", "tierRaw": "Hard", "skill": "Command of Evidence (Quantitative", "cat": "Information and Ideas", "type": "mcq", "stem": "<p>Biochemists examined the enzymatic breakdown of microplastic polymers (polyethylene terephthalate, or PET) by engineered bacterial strains over a 14-day incubation period under controlled laboratory conditions. | Strain Identifier | Polymer Type | Pre-treatment | Degradation Rate (% / day) | Residual Mass after 14 Days (%) | | :--- | :--- | :--- | :---: | :---: | | <strong>Wild-type <em>I. sakaiensis</strong></em> | Crystalline PET | None | 0.8% | 88.8% | | <strong>Engineered PETase-v1</strong> | Crystalline PET | Thermal Annealing | 2.4% | 66.4% | | <strong>Engineered PETase-v2</strong> | Crystalline PET | UV Irradiation | 4.1% | 42.6% | | <strong>Engineered Dual-MHETase</strong> | Semi-crystalline PET | UV Irradiation | 5.9% | 17.4% | The researchers concluded that subjecting polymers to physical pre-treatment accelerates enzymatic cleavage, but maximizing the degradation efficiency of crystalline PET depends predominantly on optimizing the enzyme's catalytic active site rather than increasing incubation duration alone. Which choice best describes data from the table that supports the researchers' conclusion?</p>", "passage": "", "options": ["Engineered PETase-v1 with thermal annealing reduced residual mass to 66.4%, whereas wild-type without pre-treatment left 88.8% residual mass.", "Engineered PETase-v2 achieved a higher daily degradation rate (4.1%/day) on crystalline PET than PETase-v1 (2.4%/day) under physical pre-treatment, leaving 42.6% residual mass.", "Engineered Dual-MHETase left the lowest residual mass (17.4%) when applied to semi-crystalline PET with UV irradiation.", "Wild-type *I. sakaiensis* degraded crystalline PET at a rate of 0.8% per day without requiring physical pre-treatment."], "key": "B", "keyDisplay": "B", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: B</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Quantitative Evidence</strong>: The conclusion has two prongs: physical pre-treatment helps, but catalytic optimization of the enzyme is predominant on crystalline PET. Choice B compares two pre-treated variants on crystalline PET (PETase-v1 at 2.4% vs PETase-v2 at 4.1% degradation rate), directly demonstrating how optimizing the active site variant drastically accelerates degradation under physical pre-treatment.</li>\n</ul>\n<li><strong>Distractor Breakdown</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>A (<em>V1 vs wild-type</em>)</strong>: <em>Incorrect.</em> While true, this only demonstrates the benefit of pre-treatment/engineering broadly, failing to distinguish between specific enzymatic iterations on crystalline PET.</li>\n<li><strong>C (<em>Dual-MHETase on semi-crystalline</em>)</strong>: <em>Incorrect.</em> Dual-MHETase was tested on <em>semi-crystalline</em> PET, so it cannot support claims specific to <em>crystalline</em> PET.</li>\n<li><strong>D (<em>Wild-type baseline</em>)</strong>: <em>Incorrect.</em> Stating the baseline rate does not substantiate the comparative efficacy of active-site optimization.</li>\n</ul>\n</ul>"}, {"id": "sat_information_and_ideas_evidence_inference_set_01-q4", "tier": "medium", "tierRaw": "Medium-Hard", "skill": "Inferences (Scientific Discourse", "cat": "Information and Ideas", "type": "mcq", "stem": "<p>Astronomers measuring the spectroscopic signatures of exoplanet HD 209458b detected atmospheric water vapor, sodium, and titanium oxide. Intriguingly, subsequent observations during secondary eclipse events revealed that the upper atmosphere exhibits an unexpected thermal inversion—where temperature increases with altitude rather than decreasing. In planetary atmospheres, a thermal inversion requires an abundant gaseous species capable of absorbing high-energy stellar UV radiation at high altitudes. If an exoplanet's upper atmosphere lacks such high-altitude stellar absorbers, solar energy penetrates deeper, heating lower layers first and producing a standard declining temperature profile. It can most reasonably be inferred from the text that the atmosphere of HD 209458b:</p>", "passage": "", "options": ["Contains a high-altitude absorber that captures significant stellar UV radiation before it penetrates into the lower atmospheric layers.", "Has completely lost its lower atmospheric layers due to intense stellar radiation during secondary eclipses.", "Experiences greater temperature swings in its lower atmosphere than exoplanets without thermal inversions.", "Is composed entirely of titanium oxide and sodium with negligible traces of hydrogen or helium."], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Logical Proof</strong>: The passage establishes a strict causal rule: thermal inversions (upper layers warmer than lower) require an abundant high-altitude stellar UV absorber. Because HD 209458b exhibits a thermal inversion, it must contain a high-altitude absorber that captures UV radiation before it penetrates downward.</li>\n</ul>\n<li><strong>Distractor Breakdown</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>B (<em>Lost lower atmospheric layers</em>)</strong>: <em>Incorrect.</em> The text mentions thermal profiles across atmospheric depths; it does not claim the lower atmosphere has been stripped away.</li>\n<li><strong>C (<em>Greater temperature swings</em>)</strong>: <em>Incorrect.</em> The text discusses the direction of temperature gradients with altitude, not diurnal/orbital temperature volatility.</li>\n<li><strong>D (<em>Composition exclusively Ti-oxide and Na</em>)</strong>: <em>Incorrect.</em> The text explicitly mentions water vapor as well, and \"composed entirely\" is an unwarranted extreme claim.</li>\n</ul>\n</ul>"}, {"id": "sat_information_and_ideas_evidence_inference_set_01-q5", "tier": "medium", "tierRaw": "Medium", "skill": "Inferences (Humanities / Social Sciences", "cat": "Information and Ideas", "type": "mcq", "stem": "<p>Historical linguists studying the preservation of endangered Celtic languages in Brittany observed that while regional Breton radio broadcasts and bilingual street signage expanded significantly between 1995 and 2020, intergenerational transmission within family households declined from 34% to under 9%. Sociolinguists argue that institutional top-down recognition (such as official signage and media broadcasting) cannot substitute for the organic, daily communicative utility within familial domestic environments that natively anchors living language acquisition. Based on the text, what would the sociolinguists most likely conclude about language preservation initiatives?</p>", "passage": "", "options": ["Initiatives focused solely on media visibility and official institutional displays are insufficient on their own to halt language obsolescence.", "Family households in Brittany deliberately reject official bilingual signage because it undermines cultural autonomy.", "Intergenerational transmission is easier to measure quantitatively than radio broadcasting hours.", "Celtic languages will completely disappear unless bilingual street signs are eliminated in favor of domestic education programs."], "key": "A", "keyDisplay": "A", "accept": [], "expFloat": null, "sol": "<ul class=\"sol-list\">\n<li><strong>Correct Answer: A</strong></li>\n<ul class=\"sol-list\">\n<li><strong>Logical Proof</strong>: The text contrasts increasing public institutional measures (signs, radio) with collapsing domestic intergenerational transmission (34% down to 9%), and notes the sociolinguists' argument that top-down measures cannot substitute for familial communication. Thus, public/media visibility alone cannot prevent language obsolescence.</li>\n</ul>\n<li><strong>Distractor Breakdown</strong>:</li>\n<ul class=\"sol-list\">\n<li><strong>B (<em>Families deliberately reject signage</em>)</strong>: <em>Incorrect.</em> The text presents no evidence of active hostility or rejection from families.</li>\n<li><strong>C (<em>Measurement difficulty</em>)</strong>: <em>Incorrect.</em> The text provides concrete percentages for both; ease of measurement is not discussed.</li>\n<li><strong>D (<em>Eliminating bilingual signs</em>)</strong>: <em>Incorrect.</em> The sociolinguists do not advocate removing signs, but rather emphasize that signage alone is insufficient.</li>\n</ul>\n</ul>"}];
-const LSKEY = 'satdrill_sat_information_and_ideas_evidence_inference_set_01';
-let state = {answers:{}, flags:[], idx:0, tier:'all', flagOnly:false, left:375, timerOn:false, timerId:null, done:false};
-try{const s = JSON.parse(localStorage.getItem(LSKEY)); if(s && s.answers) state.answers=s.answers; if(s&&s.flags) state.flags=s.flags;}catch(e){}
-function save(){try{localStorage.setItem(LSKEY, JSON.stringify({answers:state.answers,flags:state.flags}));}catch(e){}}
-const LET=['A','B','C','D'];
-function list(){return QD.filter(q=>(state.tier==='all'||q.tier===state.tier)&&(!state.flagOnly||state.flags.includes(q.id)));}
-function fmt(s){s=Math.max(0,s);const m=Math.floor(s/60),r=s%60;return String(m).padStart(2,'0')+':'+String(r).padStart(2,'0');}
-function tick(){document.getElementById('clock').textContent=fmt(state.left);}
-function startTimer(){if(state.timerId)return;state.timerOn=true;state.timerId=setInterval(()=>{if(!state.timerOn)return;state.left--;tick();if(state.left<=0){clearInterval(state.timerId);state.timerId=null;finish();}},1000);}
-function pauseTimer(){state.timerOn=!state.timerOn;document.getElementById('pauseBtn').textContent=state.timerOn?'Pause':'Resume';}
-function resetTimer(){clearInterval(state.timerId);state.timerId=null;state.left=375;state.timerOn=false;document.getElementById('pauseBtn').textContent='Pause';tick();}
-function renderNav(){const L=list();document.getElementById('qnav').innerHTML=L.map((q,i)=>{const a=state.answers[q.id];let c='qpill'+(i===state.idx?' cur':'')+(a?(a.ok?' ok':' no'):'')+(state.flags.includes(q.id)?' flag':'');return `<button class="${c}" data-i="${i}">${i+1}</button>`;}).join('');
-document.querySelectorAll('#qnav .qpill').forEach(b=>b.onclick=()=>{state.idx=+b.dataset.i;renderQ();});}
-function renderQ(){const L=list();const box=document.getElementById('qbox');
-if(!L.length){box.innerHTML='<div class="qcard"><p>No questions match this filter.</p></div>';document.getElementById('stim').innerHTML='';renderNav();return;}
-if(state.idx>=L.length)state.idx=0;
-const q=L[state.idx],a=state.answers[q.id],flagged=state.flags.includes(q.id);
-let stimHtml=`<span class="badge">${q.cat}</span> <span class="diff diff-${q.tier}">${q.tier}</span><p style="color:var(--muted);font-size:.82rem"><strong>${q.skill}</strong> &middot; source tier: ${q.tierRaw}</p>`;
-if(q.passage)stimHtml+=`<h3>Passage</h3><p>${q.passage}</p>`;
-document.getElementById('stim').innerHTML=stimHtml;
-let inner=`<p><strong>Q${state.idx+1} of ${L.length}.</strong> ${q.stem}</p>`;
-if(q.type==='mcq'){
-inner+='<div>'+q.options.map((o,i)=>{let c='opt';if(a){c+=' dim';if(LET[i]===q.key)c+=' right';else if(LET[i]===a.pick)c+=' wrong';}return `<button class="${c}" data-p="${LET[i]}" ${a?'disabled':''}><strong>${LET[i]}.</strong> ${o}</button>`;}).join('')+'</div>';
-}else{
-inner+=`<div class="spr-row"><input id="sprIn" inputmode="decimal" placeholder="Enter your answer" value="${a?a.pick:''}" ${a?'disabled':''}><button class="btn btn-p" id="sprGo" ${a?'disabled':''}>Check</button></div><p style="color:var(--muted);font-size:.82rem">Student-produced response: equivalent fractions and decimals accepted.</p>`;
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../../index.html">SAT Portal</a> &rsaquo; Information_and_Ideas</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../../index.html">&larr; SAT Portal</a> &rsaquo; Information_and_Ideas</div>
+<h1>Digital SAT Reading &amp; Writing: Information and Ideas Masterclass</h1>
+<div class="meta"><span><b>Questions:</b> 12</span><span><b>Level:</b> Score 700 - 800</span><span><b>Topic:</b> Command of Evidence, Central Ideas & Inferences Masterclass</span><span><b>Suggested time:</b> 15 min</span></div>
+<div class="overview"><ul><li><strong>Domain</strong>: Information and Ideas</li><li><strong>Target Skills</strong>: Command of Evidence (Textual &amp; Quantitative), Central Ideas &amp; Details, Inferences</li><li><strong>Target Score</strong>: 700–800 (Hard-tier Module 2 Calibrated)</li><li><strong>Number of Items</strong>: 12 Items</li><li><strong>Pacing Guideline</strong>: ~75 seconds per item</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>The following text is adapted from Edith Wharton&#x27;s 1905 novel <em>The House of Mirth</em>. Lily Bart is reflecting on her social standing and financial vulnerability in high-society New York.</p>\n<blockquote>Selden had once told her that he considered her the most adaptable creature he had ever met; but she was beginning to see that her adaptability was merely the negative ability to fit herself into any pattern that circumstances imposed. She had been taught to believe that a woman&#x27;s first duty was to be ornamental, and she had fulfilled that requirement with an effortless grace that concealed the tedious mechanics of the process. Yet, underneath this polished facade, she harbored an unsettling awareness: the very luxuries that sustained her had simultaneously rendered her incapable of surviving outside their narrow, gilded perimeter.</blockquote>\n<p>Which choice best states the primary purpose of the text?</p>", "options": [{"L": "A", "t": "To argue that Lily Bart possesses an innate desire to rebel against the rigid aristocratic traditions of New York society."}, {"L": "B", "t": "To illustrate Lily Bart&#x27;s growing realization that her refined social conformity has made her critically dependent on the world she inhabits."}, {"L": "C", "t": "To contrast Selden&#x27;s superficial assessment of Lily&#x27;s adaptability with her proven capacity for genuine self-reliance."}, {"L": "D", "t": "To condemn the superficiality of high society for deliberately preventing women from acquiring meaningful vocational skills."}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B</strong></li><li><strong>Textual Evidence</strong>: The text notes that Lily realizes her adaptability was &quot;merely the negative ability to fit herself into any pattern,&quot; and that underneath her graceful facade, her luxuries had &quot;simultaneously rendered her incapable of surviving outside their narrow, gilded perimeter.&quot; This directly matches Choice B.</li><li><strong>Distractor Breakdown</strong>:</li><li><strong>A (<em>Innate desire to rebel</em>)</strong>: <em>Incorrect.</em> The passage emphasizes her conformity and adaptation, not an active rebellion against aristocratic norms.</li><li><strong>C (<em>Self-reliance</em>)</strong>: <em>Incorrect.</em> The text states the exact opposite—she is <em>incapable</em> of surviving outside her gilded social circle.</li><li><strong>D (<em>Societal conspiracy against vocational skills</em>)</strong>: <em>Incorrect.</em> While society conditioned her to be &quot;ornamental,&quot; the text does not discuss vocational skills or an institutional conspiracy.</li></ul>\n<hr>", "diff": "Hard", "domain": "Central Ideas & Details"}, {"n": 2, "kind": "mc", "stem": "<p>Ecologist Dr. Elena Vance and colleagues investigated the foraging behaviors of <em>Bombus terricola</em> (yellow-banded bumblebees) in fragmented forest ecosystems. Conventional ecological models posit that floral density is the sole primary determinant of foraging frequency. However, Vance hypothesized that microclimatic thermal stability—specifically shelter from high-velocity wind turbulence provided by dense canopy cover—exerts a stronger influence on bumblebee visitation rates in sub-alpine regions than floral density alone.</p>\n<p>Which finding, if true, would most directly support Dr. Vance&#x27;s hypothesis?</p>", "options": [{"L": "A", "t": "In sub-alpine clearings with low floral density but substantial windbreaks, <em>B. terricola</em> foraging frequencies were significantly higher than in high-density floral meadows exposed to sustained winds."}, {"L": "B", "t": "<em>B. terricola</em> individuals in high-altitude environments exhibited greater metabolic rates when foraging in colder ambient temperatures regardless of wind speed."}, {"L": "C", "t": "Forest fragmentation reduced overall populations of both <em>B. terricola</em> and other native pollinator species across all surveyed elevations."}, {"L": "D", "t": "Bumblebee visitations to sheltered floral patches increased only when the ambient temperature rose above the seasonal average."}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A</strong></li><li><strong>Textual Evidence</strong>: Vance&#x27;s hypothesis is that wind shelter (microclimatic thermal stability) is a stronger driver of foraging frequency than floral density. Choice A directly tests this by comparing low floral density + high shelter against high floral density + high wind, showing that shelter produced higher foraging frequency.</li><li><strong>Distractor Breakdown</strong>:</li><li><strong>B (<em>Metabolic rates</em>)</strong>: <em>Incorrect.</em> Metabolic rates in cold air do not address foraging frequency or compare windbreaks with floral density.</li><li><strong>C (<em>Overall population decline</em>)</strong>: <em>Incorrect.</em> General demographic reduction across elevations provides no comparative evidence regarding microclimatic wind stability vs floral density.</li><li><strong>D (<em>Average seasonal temperature threshold</em>)</strong>: <em>Incorrect.</em> This introduces an unrelated variable without contrasting floral density against wind turbulence.</li></ul>\n<hr>", "diff": "Hard", "domain": "Command of Evidence (Textual)"}, {"n": 3, "kind": "mc", "stem": "<p>Biochemists examined the enzymatic breakdown of microplastic polymers (polyethylene terephthalate, or PET) by engineered bacterial strains over a 14-day incubation period under controlled laboratory conditions.</p>\n<table><thead><tr><th>Strain Identifier</th><th>Polymer Type</th><th>Pre-treatment</th><th>Degradation Rate (% / day)</th><th>Residual Mass after 14 Days (%)</th></tr></thead><tbody><tr><td><strong>Wild-type <em>I. sakaiensis</strong></em></td><td>Crystalline PET</td><td>None</td><td>0.8%</td><td>88.8%</td></tr><tr><td><strong>Engineered PETase-v1</strong></td><td>Crystalline PET</td><td>Thermal Annealing</td><td>2.4%</td><td>66.4%</td></tr><tr><td><strong>Engineered PETase-v2</strong></td><td>Crystalline PET</td><td>UV Irradiation</td><td>4.1%</td><td>42.6%</td></tr><tr><td><strong>Engineered Dual-MHETase</strong></td><td>Semi-crystalline PET</td><td>UV Irradiation</td><td>5.9%</td><td>17.4%</td></tr></tbody></table>\n<p>The researchers concluded that subjecting polymers to physical pre-treatment accelerates enzymatic cleavage, but maximizing the degradation efficiency of crystalline PET depends predominantly on optimizing the enzyme&#x27;s catalytic active site rather than increasing incubation duration alone.</p>\n<p>Which choice best describes data from the table that supports the researchers&#x27; conclusion?</p>", "options": [{"L": "A", "t": "Engineered PETase-v1 with thermal annealing reduced residual mass to 66.4%, whereas wild-type without pre-treatment left 88.8% residual mass."}, {"L": "B", "t": "Engineered PETase-v2 achieved a higher daily degradation rate (4.1%/day) on crystalline PET than PETase-v1 (2.4%/day) under physical pre-treatment, leaving 42.6% residual mass."}, {"L": "C", "t": "Engineered Dual-MHETase left the lowest residual mass (17.4%) when applied to semi-crystalline PET with UV irradiation."}, {"L": "D", "t": "Wild-type <em>I. sakaiensis</em> degraded crystalline PET at a rate of 0.8% per day without requiring physical pre-treatment."}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B</strong></li><li><strong>Quantitative Evidence</strong>: The conclusion has two prongs: physical pre-treatment helps, but catalytic optimization of the enzyme is predominant on crystalline PET. Choice B compares two pre-treated variants on crystalline PET (PETase-v1 at 2.4% vs PETase-v2 at 4.1% degradation rate), directly demonstrating how optimizing the active site variant drastically accelerates degradation under physical pre-treatment.</li><li><strong>Distractor Breakdown</strong>:</li><li><strong>A (<em>V1 vs wild-type</em>)</strong>: <em>Incorrect.</em> While true, this only demonstrates the benefit of pre-treatment/engineering broadly, failing to distinguish between specific enzymatic iterations on crystalline PET.</li><li><strong>C (<em>Dual-MHETase on semi-crystalline</em>)</strong>: <em>Incorrect.</em> Dual-MHETase was tested on <em>semi-crystalline</em> PET, so it cannot support claims specific to <em>crystalline</em> PET.</li><li><strong>D (<em>Wild-type baseline</em>)</strong>: <em>Incorrect.</em> Stating the baseline rate does not substantiate the comparative efficacy of active-site optimization.</li></ul>\n<hr>", "diff": "Hard", "domain": "Command of Evidence (Quantitative)"}, {"n": 4, "kind": "mc", "stem": "<p>Astronomers measuring the spectroscopic signatures of exoplanet HD 209458b detected atmospheric water vapor, sodium, and titanium oxide. Intriguingly, subsequent observations during secondary eclipse events revealed that the upper atmosphere exhibits an unexpected thermal inversion—where temperature increases with altitude rather than decreasing. In planetary atmospheres, a thermal inversion requires an abundant gaseous species capable of absorbing high-energy stellar UV radiation at high altitudes. If an exoplanet&#x27;s upper atmosphere lacks such high-altitude stellar absorbers, solar energy penetrates deeper, heating lower layers first and producing a standard declining temperature profile.</p>\n<p>It can most reasonably be inferred from the text that the atmosphere of HD 209458b:</p>", "options": [{"L": "A", "t": "Contains a high-altitude absorber that captures significant stellar UV radiation before it penetrates into the lower atmospheric layers."}, {"L": "B", "t": "Has completely lost its lower atmospheric layers due to intense stellar radiation during secondary eclipses."}, {"L": "C", "t": "Experiences greater temperature swings in its lower atmosphere than exoplanets without thermal inversions."}, {"L": "D", "t": "Is composed entirely of titanium oxide and sodium with negligible traces of hydrogen or helium."}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A</strong></li><li><strong>Logical Proof</strong>: The passage establishes a strict causal rule: thermal inversions (upper layers warmer than lower) require an abundant high-altitude stellar UV absorber. Because HD 209458b exhibits a thermal inversion, it must contain a high-altitude absorber that captures UV radiation before it penetrates downward.</li><li><strong>Distractor Breakdown</strong>:</li><li><strong>B (<em>Lost lower atmospheric layers</em>)</strong>: <em>Incorrect.</em> The text mentions thermal profiles across atmospheric depths; it does not claim the lower atmosphere has been stripped away.</li><li><strong>C (<em>Greater temperature swings</em>)</strong>: <em>Incorrect.</em> The text discusses the direction of temperature gradients with altitude, not diurnal/orbital temperature volatility.</li><li><strong>D (<em>Composition exclusively Ti-oxide and Na</em>)</strong>: <em>Incorrect.</em> The text explicitly mentions water vapor as well, and &quot;composed entirely&quot; is an unwarranted extreme claim.</li></ul>\n<hr>", "diff": "Medium-Hard", "domain": "Inferences"}, {"n": 5, "kind": "mc", "stem": "<p>Historical linguists studying the preservation of endangered Celtic languages in Brittany observed that while regional Breton radio broadcasts and bilingual street signage expanded significantly between 1995 and 2020, intergenerational transmission within family households declined from 34% to under 9%. Sociolinguists argue that institutional top-down recognition (such as official signage and media broadcasting) cannot substitute for the organic, daily communicative utility within familial domestic environments that natively anchors living language acquisition.</p>\n<p>Based on the text, what would the sociolinguists most likely conclude about language preservation initiatives?</p>", "options": [{"L": "A", "t": "Initiatives focused solely on media visibility and official institutional displays are insufficient on their own to halt language obsolescence."}, {"L": "B", "t": "Family households in Brittany deliberately reject official bilingual signage because it undermines cultural autonomy."}, {"L": "C", "t": "Intergenerational transmission is easier to measure quantitatively than radio broadcasting hours."}, {"L": "D", "t": "Celtic languages will completely disappear unless bilingual street signs are eliminated in favor of domestic education programs."}], "key": "A", "rat": "<ul><li><strong>Correct Answer: A</strong></li><li><strong>Logical Proof</strong>: The text contrasts increasing public institutional measures (signs, radio) with collapsing domestic intergenerational transmission (34% down to 9%), and notes the sociolinguists&#x27; argument that top-down measures cannot substitute for familial communication. Thus, public/media visibility alone cannot prevent language obsolescence.</li><li><strong>Distractor Breakdown</strong>:</li><li><strong>B (<em>Families deliberately reject signage</em>)</strong>: <em>Incorrect.</em> The text presents no evidence of active hostility or rejection from families.</li><li><strong>C (<em>Measurement difficulty</em>)</strong>: <em>Incorrect.</em> The text provides concrete percentages for both; ease of measurement is not discussed.</li><li><strong>D (<em>Eliminating bilingual signs</em>)</strong>: <em>Incorrect.</em> The sociolinguists do not advocate removing signs, but rather emphasize that signage alone is insufficient.</li></ul>\n<hr>", "diff": "Medium", "domain": "Inferences"}, {"n": 6, "kind": "mc", "stem": "<p>A study tracked 500 office workers for a year: those given standing desks reported 12% less back pain than seated colleagues, while both groups closed the same number of support tickets per week.</p>\n<p>Which finding, if true, would best support the claim that standing desks reduce pain without hurting output?</p>", "options": [{"L": "A", "t": "Company sales rose during the study year"}, {"L": "B", "t": "Workers said they liked the standing desks"}, {"L": "C", "t": "Pain reports fell 12% while ticket counts held steady"}, {"L": "D", "t": "Standing desks cost more than chairs"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C</strong></li><li><strong>Textual Proof</strong>: Falling pain plus steady tickets is exactly &quot;less pain without hurting output.&quot;</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> Sales say nothing about pain or tickets.</li><li><strong>B</strong>: <em>Incorrect.</em> Liking desks does not measure pain or output.</li><li><strong>D</strong>: <em>Incorrect.</em> Cost is irrelevant to the health-productivity claim.</li></ul>", "diff": "Medium", "domain": "Information and Ideas"}, {"n": 7, "kind": "mc", "stem": "<p>In logged forests, researchers recorded the near-total loss of frog breeding choruses within two seasons, while the same species called normally in nearby untouched reserves.</p>\n<p>What can most reasonably be inferred from the observations?</p>", "options": [{"L": "A", "t": "The frogs migrated into the reserves"}, {"L": "B", "t": "Logging benefits frog populations"}, {"L": "C", "t": "Every frog in the logged forest died"}, {"L": "D", "t": "Logging coincided with the loss of frog calls"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D</strong></li><li><strong>Textual Proof</strong>: Calls vanished where logging occurred and persisted where it did not — a coincidence of logging with loss.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> Movement was never observed; only silence was.</li><li><strong>B</strong>: <em>Incorrect.</em> Loss of calls contradicts any benefit.</li><li><strong>C</strong>: <em>Incorrect.</em> &quot;Near-total loss of choruses&quot; is not proof every frog died.</li></ul>", "diff": "Medium", "domain": "Information and Ideas"}, {"n": 8, "kind": "mc", "stem": "<p>The octopus Houdini escaped his tank nightly to raid a neighboring tank, unscrewed jar lids to reach crabs, and squirted water at keepers he disliked while sparing favorites. Caretakers eventually secured his lid with a child-proof latch — which he opened in a week.</p>\n<p>Which choice best states the main idea of the text?</p>", "options": [{"L": "A", "t": "Octopuses are dangerous to their keepers"}, {"L": "B", "t": "Aquarium tanks need stronger locks"}, {"L": "C", "t": "Octopuses are remarkably intelligent problem-solvers"}, {"L": "D", "t": "Keepers are unusually kind to octopuses"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C</strong></li><li><strong>Textual Proof</strong>: Escapes, jar-opening, keeper recognition, and latch-defeating all illustrate intelligent problem-solving.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> No keeper was harmed; mischief is not danger.</li><li><strong>B</strong>: <em>Incorrect.</em> Locks are a detail, not the main idea.</li><li><strong>D</strong>: <em>Incorrect.</em> Keeper kindness is background, not the point.</li></ul>", "diff": "Easy-Medium", "domain": "Information and Ideas"}, {"n": 9, "kind": "mc", "stem": "<p>A columnist claims the city&#x27;s bike-share program cut downtown car trips. Which quotation from a traffic report would best support this claim?</p>", "options": [{"L": "A", "t": "&quot;The shared bikes are painted bright red.&quot;"}, {"L": "B", "t": "&quot;The mayor rides a bike-share bicycle herself.&quot;"}, {"L": "C", "t": "&quot;Traffic fell in every district for many unrelated reasons.&quot;"}, {"L": "D", "t": "&quot;Car entries to downtown dropped 18% in the year bike-share launched.&quot;"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D</strong></li><li><strong>Textual Proof</strong>: An 18% drop in downtown car entries the launch year directly evidences fewer car trips.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> Bike color is irrelevant.</li><li><strong>B</strong>: <em>Incorrect.</em> One rider proves nothing about trips.</li><li><strong>C</strong>: <em>Incorrect.</em> &quot;Many unrelated reasons&quot; weakens rather than supports the claim.</li></ul>", "diff": "Hard", "domain": "Information and Ideas"}, {"n": 10, "kind": "mc", "stem": "<p>A museum survey found that 60% of visitors were first-timers and 80% were under forty years old.</p>\n<p>Which conclusion is best supported by the data?</p>", "options": [{"L": "A", "t": "Most visitors are repeat visitors"}, {"L": "B", "t": "The museum draws a young, largely new audience"}, {"L": "C", "t": "Older people dislike museums"}, {"L": "D", "t": "Museum admission must be free"}], "key": "B", "rat": "<ul><li><strong>Correct Answer: B</strong></li><li><strong>Textual Proof</strong>: Majorities first-time (60%) and under forty (80%) compose a young, new audience.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> Directly contradicted by 60% first-timers.</li><li><strong>C</strong>: <em>Incorrect.</em> Nothing about older attitudes was measured.</li><li><strong>D</strong>: <em>Incorrect.</em> Price was never surveyed.</li></ul>", "diff": "Medium", "domain": "Information and Ideas"}, {"n": 11, "kind": "mc", "stem": "<p>Three studies link honeybee decline to farm pesticides, but a fourth finds mite infestations predict colony collapse far better, and affected hives recover when mites — not pesticides — are treated.</p>\n<p>What can most reasonably be concluded?</p>", "options": [{"L": "A", "t": "Pesticides are proven the sole cause"}, {"L": "B", "t": "Mites have been ruled out as a cause"}, {"L": "C", "t": "The evidence is mixed and the cause is debated"}, {"L": "D", "t": "Bee populations are not actually declining"}], "key": "C", "rat": "<ul><li><strong>Correct Answer: C</strong></li><li><strong>Textual Proof</strong>: Competing findings (pesticides vs. mites) with recovery under mite treatment leave the cause genuinely debated.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> &quot;Sole cause&quot; overstates contested evidence.</li><li><strong>B</strong>: <em>Incorrect.</em> Mites predict collapse best; they are not ruled out.</li><li><strong>D</strong>: <em>Incorrect.</em> Decline itself is undisputed in all four studies.</li></ul>", "diff": "Hard", "domain": "Information and Ideas"}, {"n": 12, "kind": "mc", "stem": "<p>Every Saturday for six years, retired teacher June Park has led volunteers replanting native grasses along Miller Creek — quietly, without pay or publicity, until herons returned to nest there last spring.</p>\n<p>The author&#x27;s attitude toward Park is best described as one of:</p>", "options": [{"L": "A", "t": "Contempt"}, {"L": "B", "t": "Indifference"}, {"L": "C", "t": "Skepticism"}, {"L": "D", "t": "Admiration"}], "key": "D", "rat": "<ul><li><strong>Correct Answer: D</strong></li><li><strong>Textual Proof</strong>: &quot;Quietly, without pay,&quot; six years of work, herons returning — the framing admires her.</li><li><strong>Distractor Analysis</strong>:</li><li><strong>A</strong>: <em>Incorrect.</em> Nothing scornful appears.</li><li><strong>B</strong>: <em>Incorrect.</em> A full admiring portrait is not indifference.</li><li><strong>C</strong>: <em>Incorrect.</em> No doubt about her work is raised.</li></ul>\n<hr>\n<h3>New System Alignment (Updated)</h3>\n<p><strong>Flow:</strong> Teach → Show → Test</p>\n<ul><li><strong>Teach:</strong> Detailed strategy and rules (this file)</li><li><strong>Show:</strong> Walkthrough solving examples — <a href=\"../../Show/show_walkthrough.html\">SAT/Show/show_walkthrough.html</a></li><li><strong>Test:</strong> Real SAT difficulty mock — <a href=\"../../Test/mock_01.html\">SAT/Test/mock_01.html</a></li><li><strong>Portal:</strong> <a href=\"../../index.html\">SAT/index.html</a> (interactive pen / highlight / mark tools)</li></ul>\n<hr>", "diff": "Easy-Medium", "domain": "Information and Ideas"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:900,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
 }
-if(a){inner+=`<div class="feedback ${a.ok?'good':'bad'}">${a.ok?'&#10003; Correct.':'&#10007; Correct answer: <strong>${q.keyDisplay}</strong>.'}<details class="sol"><summary>Why? Show solution</summary>${q.sol}</details></div>`;}
-inner+=`<div class="navrow"><button class="btn btn-g" id="prevB">&larr; Prev</button><button class="btn btn-g" id="nextB">Next &rarr;</button><button class="btn btn-g" id="flagB">${flagged?'&#9873; Flagged':'&#9872; Flag'}</button>${a?'<button class="btn btn-g" id="retryB">Retry</button>':''}<button class="btn btn-p" id="finB">Finish drill</button></div><div class="navrow"><span id="scoreLine" style="color:var(--muted);font-size:.85rem"></span></div>`;
-box.innerHTML='<div class="qcard">'+inner+'</div>';
-if(q.type==='mcq'&&!a){box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q,b.dataset.p));}
-if(q.type==='spr'&&!a){const go=()=>{const v=document.getElementById('sprIn').value;if(v.trim()==='')return;answer(q,v.trim());};document.getElementById('sprGo').onclick=go;document.getElementById('sprIn').addEventListener('keydown',e=>{if(e.key==='Enter')go();});}
-document.getElementById('prevB').onclick=()=>{state.idx=(state.idx-1+L.length)%L.length;renderQ();};
-document.getElementById('nextB').onclick=()=>{state.idx=(state.idx+1)%L.length;renderQ();};
-document.getElementById('flagB').onclick=function(){const i=state.flags.indexOf(q.id);if(i>=0)state.flags.splice(i,1);else state.flags.push(q.id);save();renderQ();};
-const rt=document.getElementById('retryB');if(rt)rt.onclick=()=>{delete state.answers[q.id];save();renderQ();};
-document.getElementById('finB').onclick=finish;
-if(window.renderMathInElement)try{renderMathInElement(box,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});}catch(e){}
-updateScore();renderNav();}
-function sprOk(q,v){const s=v.replace(/[\s,]/g,'');if(q.accept.includes(s))return true;if(q.expFloat===null||q.expFloat===undefined)return false;let n=null;const fr=s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(fr&&parseFloat(fr[2])!==0)n=parseFloat(fr[1])/parseFloat(fr[2]);else if(/^-?\d+(?:\.\d+)?$/.test(s))n=parseFloat(s);if(n===null||!isFinite(n))return false;const tol=Math.max(0.005,Math.abs(q.expFloat)*0.002);return Math.abs(n-q.expFloat)<=tol;}
-function answer(q,pick){let ok;if(q.type==='mcq')ok=(pick===q.key);else ok=sprOk(q,pick);state.answers[q.id]={pick:pick,ok:ok};save();renderQ();}
-function updateScore(){const ids=Object.keys(state.answers);const ok=ids.filter(k=>state.answers[k].ok).length;const el=document.getElementById('scoreLine');if(el)el.textContent=ids.length?`Score this device: ${ok}/${ids.length} (${Math.round(ok/ids.length*100)}%) — saved automatically`:'Answer to begin — progress saves on this device.';const g=document.getElementById('progFill');if(g){g.style.width=Math.min(100,Math.round(ids.length/QD.length*100))+'%';}}
-function finish(){const L=list();let tot=0,ok=0;const byTier={};L.forEach(q=>{const a=state.answers[q.id];byTier[q.tier]=byTier[q.tier]||{t:0,o:0};byTier[q.tier].t++;if(a){tot++;if(a.ok){ok++;byTier[q.tier].o++;}}});
-let rows=Object.keys(byTier).map(t=>{const b=byTier[t];const p=b.t?Math.round(b.o/b.t*100):0;return `<div><strong style="text-transform:capitalize">${t}</strong> — ${b.o}/${b.t} (${p}%)<div class="bar"><span style="width:${p}%"></span></div></div>`;}).join('');
-const un=L.length-tot;
-document.getElementById('results').innerHTML=`<div class="results"><h2>Drill complete: ${ok}/${L.length}</h2>${un?`<p>${un} unanswered.</p>`:''}${rows}<div class="navrow"><button class="btn btn-g" id="revMiss">Review misses in drill &uarr;</button></div></div>`;
-document.getElementById('revMiss').onclick=()=>{document.getElementById('results').innerHTML='';window.scrollTo(0,0);};
-document.getElementById('results').scrollIntoView({behavior:'smooth'});}
-document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName))return;const m={'1':0,'2':1,'3':2,'4':3,a:0,b:1,c:2,d:3,A:0,B:1,C:2,D:3};if(e.key in m){const b=document.querySelectorAll('#qbox .opt');if(b[m[e.key]])b[m[e.key]].click();}if(e.key==='ArrowRight'){const n=document.getElementById('nextB');if(n)n.click();}if(e.key==='ArrowLeft'){const p=document.getElementById('prevB');if(p)p.click();}});
-document.querySelectorAll('#tierRow .pill').forEach(p=>p.onclick=()=>{document.querySelectorAll('#tierRow .pill').forEach(x=>x.classList.remove('active'));p.classList.add('active');state.tier=p.dataset.t;state.idx=0;renderQ();});
-document.getElementById('flagOnly').onclick=function(){state.flagOnly=!state.flagOnly;this.classList.toggle('on',state.flagOnly);state.idx=0;renderQ();};
-document.getElementById('pauseBtn').onclick=pauseTimer;
-document.getElementById('resetBtn').onclick=resetTimer;
-document.getElementById('restartBtn').onclick=()=>{if(confirm('Clear saved answers for this drill?')){state.answers={};state.flags=[];state.idx=0;save();renderQ();}};
-document.getElementById('themeBtn').onclick=()=>{const h=document.documentElement;const n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('satdrill_theme',n);}catch(e){}};
-try{if(localStorage.getItem('satdrill_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}
-tick();startTimer();renderQ();
-</script><!-- student-tools v1 -->
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=900,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
+<!-- student-tools v1 -->
 <style>
 
 #st-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0f172a;color:#fff;padding:8px 10px;border-radius:14px;box-shadow:0 10px 25px rgb(0 0 0/.35);max-width:96vw;overflow-x:auto;font-family:system-ui,sans-serif}
@@ -308,4 +400,5 @@ restoreHL();
 })();
 
 </script>
-</body></html>
+</body>
+</html>

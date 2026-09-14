@@ -1,1586 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital SAT Reading and Writing: Full Practice Module 1 | SAT Academic Study Module</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <!-- KaTeX for Math Equation Rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\(', right: '\)', display: false}, {left: '\[', right: '\]', display: true}]});"></script>
-  <style>
-    :root {
-      --primary: #8b5cf6;
-      --primary-dark: #7c3aed;
-      --primary-light: rgba(139, 92, 246, 0.08);
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-      --radius: 12px;
-      --font: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --base-font-size: 16px;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b0f19;
-      --surface: #131b2e;
-      --card-bg: #1e293b;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --primary-light: rgba(255, 255, 255, 0.05);
-      --border: #334155;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: var(--base-font-size); scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      padding-bottom: 80px;
-    }
-
-    /* Global Header */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      padding: 0.75rem 1.5rem;
-    }
-
-    .header-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .btn-back:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    .domain-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(139, 92, 246, 0.08);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn-action {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .btn-action:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .btn-teacher-toggle {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    /* Audio Player Bar */
-    .audio-player-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 1.5rem;
-      font-size: 0.85rem;
-    }
-    .audio-bar-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .audio-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .speed-select {
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
-
-    main {
-      max-width: 1080px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero Banner */
-    .module-hero {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.25rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .module-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), #3b82f6);
-    }
-
-    .module-meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .meta-pill {
-      font-size: 0.8rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .meta-pill.highlight {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    .module-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    /* Scaffolding Card */
-    .scaffold-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .scaffold-header {
-      padding: 1.25rem;
-      background: var(--primary-light);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .scaffold-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .scaffold-content {
-      padding: 1.5rem;
-      display: block;
-    }
-    .scaffold-intro {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    .starter-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .starter-btn {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 12px;
-      border-radius: 8px;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .starter-btn:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-    .starter-btn .tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .starter-btn code {
-      font-family: var(--font);
-      font-size: 0.85rem;
-      color: var(--text);
-      line-height: 1.4;
-    }
-    .pitfall-radar {
-      background: rgba(239, 68, 68, 0.05);
-      border-left: 4px solid #ef4444;
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-    }
-    .pitfall-radar ul {
-      margin: 0.5rem 0 0 1.25rem;
-    }
-    .pitfall-radar li {
-      margin-bottom: 0.3rem;
-    }
-
-    /* Main Content Card */
-    .module-content-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-    }
-
-    /* Typography */
-    .study-heading {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      color: var(--text);
-      scroll-margin-top: 80px;
-    }
-    .study-heading.h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
-    .study-heading.h2 { font-size: 1.45rem; border-left: 4px solid var(--primary); padding-left: 12px; }
-    .study-heading.h3 { font-size: 1.2rem; color: var(--primary); }
-    .study-heading.h4 { font-size: 1.05rem; font-weight: 700; }
-
-    p { margin-bottom: 1.25rem; color: var(--text); }
-    .study-list { margin: 1rem 0 1.5rem 1.5rem; }
-    .study-list li { margin-bottom: 0.6rem; }
-
-    /* Code Blocks */
-    .code-block-wrapper {
-      background: #0f172a;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 1.5rem 0;
-      border: 1px solid #334155;
-    }
-    .code-header {
-      background: #1e293b;
-      padding: 8px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #94a3b8;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .code-actions {
-      display: flex;
-      gap: 6px;
-    }
-    .btn-copy-code {
-      background: transparent;
-      border: 1px solid #475569;
-      color: #cbd5e1;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    .btn-copy-code:hover {
-      background: #334155;
-      color: #fff;
-    }
-    pre {
-      padding: 1.25rem;
-      overflow-x: auto;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #e2e8f0;
-    }
-
-    /* Tables */
-    .table-container {
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-      text-align: left;
-    }
-    .data-table th {
-      background: var(--bg);
-      padding: 12px 16px;
-      border-bottom: 2px solid var(--border);
-      font-weight: 700;
-      color: var(--text);
-    }
-    .data-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table tr:hover td { background: var(--primary-light); }
-
-    /* Alerts */
-    .alert {
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin: 1.5rem 0;
-      border-left: 4px solid;
-    }
-    .alert-title { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .alert-note { background: rgba(59, 130, 246, 0.08); border-color: #3b82f6; }
-    .alert-tip { background: rgba(16, 185, 129, 0.08); border-color: #10b981; }
-    .alert-important { background: rgba(239, 68, 68, 0.08); border-color: #ef4444; }
-    .alert-warning { background: rgba(245, 158, 11, 0.08); border-color: #f59e0b; }
-
-    .study-quote {
-      border-left: 4px solid var(--primary);
-      padding: 1rem 1.25rem;
-      background: var(--bg);
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    /* KaTeX & Desmos Formula Styling */
-    .katex-display {
-      margin: 1.2rem 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0.5rem 0;
-    }
-    .desmos-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: rgba(139, 92, 246, 0.12);
-      color: #7c3aed;
-      margin-bottom: 8px;
-    }
-    .study-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-    /* Interactive Tool Cards */
-    .interactive-tool-card {
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .tool-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tool-title { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
-    .tool-badges { display: flex; gap: 8px; }
-    .badge {
-      background: var(--primary);
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-    }
-    .timer-controls, .speaking-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
-    .btn-tool {
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      background: var(--primary);
-      color: #fff;
-      transition: all 0.2s;
-    }
-    .btn-tool:hover { opacity: 0.9; }
-    .btn-tool-outline { background: var(--bg); border: 1px solid var(--border); color: var(--text); }
-    .btn-tool-outline:hover { border-color: var(--primary); color: var(--primary); }
-    textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 1rem;
-      padding: 1rem;
-      line-height: 1.6;
-      resize: vertical;
-      margin-bottom: 1rem;
-    }
-    textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
-    .stats-bar { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
-    .progress-bar-bg, .speaking-progress-container {
-      flex: 1;
-      height: 10px;
-      background: var(--border);
-      border-radius: 5px;
-      overflow: hidden;
-      min-width: 150px;
-    }
-    .progress-bar-fill, .speaking-progress-bar { height: 100%; background: #10b981; transition: width 0.3s ease; }
-    .word-status-badge { font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); }
-
-    /* Mastery Checklist Card */
-    .mastery-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .mastery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .mastery-score {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .mastery-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mastery-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: var(--bg);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      font-size: 0.92rem;
-    }
-    .mastery-item input[type="checkbox"] {
-      margin-top: 4px;
-      cursor: pointer;
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-    }
-    .mastery-banner {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid #10b981;
-      border-radius: 8px;
-      color: #10b981;
-      text-align: center;
-    }
-
-    /* Teacher Drawer */
-    .teacher-drawer {
-      display: none;
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-    }
-    .teacher-drawer.active { display: block; }
-    .teacher-drawer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.75rem;
-    }
-    .teacher-block { margin-bottom: 1.25rem; }
-    .teacher-block h4 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .teacher-block ul { margin-left: 1.25rem; font-size: 0.9rem; }
-    .teacher-block li { margin-bottom: 0.4rem; }
-    .btn-close-drawer { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    @media print {
-      header, .audio-player-bar, .scaffold-card, .interactive-tool-card, .mastery-card, .teacher-drawer, footer, .btn-copy-code { display: none !important; }
-      body { background: #fff; color: #000; font-size: 12pt; }
-      .module-content-card, .module-hero { border: none; box-shadow: none; padding: 0; margin-bottom: 1rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Reading and Writing: Full Practice Module 1 | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
 </head>
 <body>
-
-  <header>
-    <div class="header-container">
-      <div class="nav-left">
-        <a href="../index.html" class="btn-back">← Back to Digital SAT Portal</a>
-        <span class="domain-tag">🏛️ SAT</span>
-      </div>
-      <div class="nav-actions">
-        <button class="btn-action btn-teacher-toggle" onclick="toggleTeacherMode()">👨‍🏫 Teacher Mode</button>
-        <button class="btn-action" onclick="adjustFontSize(-1)" title="Decrease font size">A-</button>
-        <button class="btn-action" onclick="adjustFontSize(1)" title="Increase font size">A+</button>
-        <button class="btn-action" onclick="window.print()" title="Print / Save PDF">🖨️ PDF</button>
-        <button class="btn-action" onclick="toggleTheme()">🌓 Theme</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="audio-player-bar">
-    <div class="audio-bar-inner">
-      <div class="audio-controls">
-        <span>🔊 <strong>Audio Reader:</strong></span>
-        <button class="btn-action" onclick="toggleReadAloud()" id="btnPlayAudio">▶️ Read Aloud</button>
-        <button class="btn-action" onclick="stopAudio()">⏹️ Stop</button>
-        <select class="speed-select" id="audioSpeed" onchange="updateAudioSpeed()">
-          <option value="0.75">0.75x (Slow - Struggling Learners)</option>
-          <option value="1.0" selected>1.0x (Normal Pace)</option>
-          <option value="1.25">1.25x (Fast Pace)</option>
-        </select>
-      </div>
-      <span style="color: var(--text-muted); font-size: 0.8rem;">Select any text to read specific sections</span>
-    </div>
-  </div>
-
-  <main>
-    
-    <!-- Teacher Mode Drawer -->
-    <div class="teacher-drawer" id="teacherDrawer">
-      <div class="teacher-drawer-header">
-        <h3>👨‍🏫 Teacher Mode: Classroom Facilitator Guide</h3>
-        <button class="btn-close-drawer" onclick="toggleTeacherMode()">✕ Close</button>
-      </div>
-      <div class="teacher-drawer-body">
-        
-        
-        <div class="teacher-block">
-          <h4>🖨️ Classroom Printing</h4>
-          <p>Click below to format this module into a clean, 2-page student handout for classroom distribution:</p>
-          <button class="btn-tool" onclick="window.print()">🖨️ Print Student Worksheet</button>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="module-hero">
-      <div class="module-meta-pills">
-        <span class="meta-pill highlight">Score 700 - 800</span>
-        <span class="meta-pill">Full Practice Module / Mock Test</span>
-        <span class="meta-pill">📅 2026-09-01</span>
-      </div>
-      <h1 class="module-title">Digital SAT Reading and Writing: Full Practice Module 1</h1>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">Interactive Academic Study Module • Pedagogically Scaffolded Curriculum</p>
-    </div>
-
-    
-    
-    
-
-    <article class="module-content-card">
-      <h1 id="digital-sat-reading-and-writing-full-practice-module-1" class="study-heading h1">🏛️ Digital SAT Reading and Writing: Full Practice Module 1</h1>
-<p></p>
-<h2 id="module-overview--test-day-parameters" class="study-heading h2">📋 Module Overview &amp; Test Day Parameters</h2>
-<ul class="study-list">
-<li><strong>Test Section</strong>: Digital SAT Reading and Writing (EBRW)</li>
-<li><strong>Item Count</strong>: 27 Questions (Full Bluebook Module Specification)</li>
-<li><strong>Time Allocated</strong>: 32 Minutes (~71 seconds per item)</li>
-<li><strong>Domain Distribution</strong>:</li>
-</ul>
-<p>  - <em>Craft and Structure</em> (Questions 1–7): Words in Context, Text Structure and Purpose, Cross-Text Connections</p>
-<p>  - <em>Information and Ideas</em> (Questions 8–14): Central Ideas, Command of Evidence (Textual &amp; Quantitative), Inferences</p>
-<p>  - <em>Standard English Conventions</em> (Questions 15–21): Boundaries, Form, Structure, and Sense</p>
-<p>  - <em>Expression of Ideas</em> (Questions 22–27): Transitions, Rhetorical Synthesis</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="section-directions" class="study-heading h2">⏱️ Section Directions</h2>
-<p>Each question in this section includes a short passage or note set followed by a single question and four options (<code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>). Read each stimulus carefully and choose the best answer according to the text and Standard English conventions.</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="module-1-questions-127" class="study-heading h2">❓ Module 1 Questions (1–27)</h2>
-<p></p>
-<h3 id="question-1-craft--structure-words-in-context" class="study-heading h3">Question 1 (Craft &amp; Structure: Words in Context)</h3>
-<p>The poet Phillis Wheatley often had to navigate severe social constraints in 18th-century Boston. While her public elegies adhered strictly to neoclassical verse conventions, her private correspondence reveals a subtly <em>____</em> stance toward the hypocrisies of colonial slaveholders who championed political liberty.</p>
-<p></p>
-<p>Which choice completes the text with the most logical and precise word or phrase?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> complimentary</li>
-<li><strong>B)</strong> trenchant</li>
-<li><strong>C)</strong> vacillating</li>
-<li><strong>D)</strong> deferential</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-2-craft--structure-words-in-context" class="study-heading h3">Question 2 (Craft &amp; Structure: Words in Context)</h3>
-<p>In materials science, aerogels are renowned for their extraordinary thermal insulation. Because over 90% of their internal volume consists of trapped air pockets, their thermal conductivity is nearly <em>____</em> under standard atmospheric conditions.</p>
-<p></p>
-<p>Which choice completes the text with the most logical and precise word or phrase?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> negligible</li>
-<li><strong>B)</strong> volatile</li>
-<li><strong>C)</strong> paramount</li>
-<li><strong>D)</strong> superfluous</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-3-craft--structure-words-in-context" class="study-heading h3">Question 3 (Craft &amp; Structure: Words in Context)</h3>
-<p>Although the economic historian’s initial theory regarding the collapse of the canal trade was met with widespread skepticism, archival discoveries of regional freight manifests provided empirical data that helped to <em>____</em> her once-controversial thesis.</p>
-<p></p>
-<p>Which choice completes the text with the most logical and precise word or phrase?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> repudiate</li>
-<li><strong>B)</strong> complicate</li>
-<li><strong>C)</strong> substantiate</li>
-<li><strong>D)</strong> circumvent</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-4-craft--structure-text-structure--purpose" class="study-heading h3">Question 4 (Craft &amp; Structure: Text Structure &amp; Purpose)</h3>
-<p>The following text is adapted from Jane Austen's 1815 novel <em>Emma</em>.</p>
-<blockquote class="study-quote">Emma Woodhouse, handsome, clever, and rich, with a comfortable home and happy disposition, seemed to unite some of the best blessings of existence; and had lived nearly twenty-one years in the world with very little to distress or vex her. The real evils, indeed, of Emma's situation were the power of having rather too much her own way, and a disposition to think a little too well of herself; these were the disadvantages which threatened alloy to her many enjoyments.</blockquote>
-<p></p>
-<p>Which choice best describes the function of the second sentence in the overall structure of the text?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> It introduces a character flaw that qualifies the idealized depiction presented in the first sentence.</li>
-<li><strong>B)</strong> It disputes the claim that Emma enjoyed substantial wealth and high social status.</li>
-<li><strong>C)</strong> It explains the origin of Emma's familial conflicts with her father.</li>
-<li><strong>D)</strong> It predicts a specific financial disaster that will disrupt Emma's comfortable life.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-5-craft--structure-cross-text-connections" class="study-heading h3">Question 5 (Craft &amp; Structure: Cross-Text Connections)</h3>
-<p><strong>Text 1</strong>  </p>
-<p>Paleontologists have long attributed the end-Cretaceous mass extinction primarily to the catastrophic environmental shock of the Chicxulub asteroid impact. The massive release of vaporized sulfur and soot into the stratosphere triggered a prolonged "impact winter," collapsing global photosynthesizing food chains and wiping out non-avian dinosaurs within a geological instant.</p>
-<p></p>
-<p><strong>Text 2</strong>  </p>
-<p>Geochronological dating of the Deccan Traps volcanic province in modern India demonstrates that massive flood basalt eruptions began hundreds of thousands of years prior to the Chicxulub impact. These sustained eruptions injected vast quantities of mercury, carbon dioxide, and sulfur dioxide into the atmosphere, causing severe global climatic instability and ecological distress long before the asteroid arrived.</p>
-<p></p>
-<p>Based on the texts, how would the author of Text 2 most likely respond to the characterization of the extinction event in Text 1?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> By asserting that the Chicxulub asteroid never struck Earth during the Cretaceous period.</li>
-<li><strong>B)</strong> By arguing that volcanic activity from the Deccan Traps was the sole cause of the extinction, rendering the asteroid impact irrelevant.</li>
-<li><strong>C)</strong> By suggesting that pre-existing ecological stress from massive volcanism significantly contributed to the extinction rather than the asteroid acting in isolation.</li>
-<li><strong>D)</strong> By claiming that stratospheric soot from asteroid impacts warms rather than cools global climates.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-6-craft--structure-text-purpose" class="study-heading h3">Question 6 (Craft &amp; Structure: Text Purpose)</h3>
-<p>In 1928, Alexander Fleming observed that a stray mould contaminating a Petri dish of <em>Staphylococcus</em> bacteria had created a clear zone of inhibition where bacterial colonies could not grow. Rather than discarding the ruined culture, Fleming isolated the active antibacterial substance produced by the <em>Penicillium</em> fungus, initiating the modern era of antibiotic medicine.</p>
-<p></p>
-<p>Which choice best states the main idea of the text?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Fleming's discovery of penicillin demonstrates how astute observation of unexpected experimental contamination can lead to major medical breakthroughs.</li>
-<li><strong>B)</strong> Bacterial contamination of laboratory Petri dishes was extremely common before the invention of modern sterilization techniques.</li>
-<li><strong>C)</strong> <em>Penicillium</em> fungi are more resilient to bacterial infection than other common laboratory moulds.</li>
-<li><strong>D)</strong> Alexander Fleming intended from the outset of his research to invent synthetic antibacterial pharmaceuticals.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-7-craft--structure-words-in-context" class="study-heading h3">Question 7 (Craft &amp; Structure: Words in Context)</h3>
-<p>Marine biologists noted that the symbiotic zooxanthellae living within coral polyps are highly sensitive to thermal anomalies; even a persistent $1^\circ\text{C}$ rise in sea surface temperature can <em>____</em> the expulsion of these vital photosynthetic algae, causing widespread bleaching.</p>
-<p></p>
-<p>Which choice completes the text with the most logical and precise word or phrase?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> mitigate</li>
-<li><strong>B)</strong> precipitate</li>
-<li><strong>C)</strong> circumvent</li>
-<li><strong>D)</strong> retard</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-8-information--ideas-central-ideas" class="study-heading h3">Question 8 (Information &amp; Ideas: Central Ideas)</h3>
-<p>In many mammalian species, play behavior among juveniles has often been dismissed as non-functional surplus energy expenditure. However, recent neurological imaging reveals that social play stimulates synaptic plasticity in the prefrontal cortex, enhancing problem-solving adaptability and emotional self-regulation during adult confrontations.</p>
-<p></p>
-<p>Which choice best summarizes the main idea of the text?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Mammalian play behavior serves critical neurodevelopmental functions that prepare juveniles for adult cognitive and social challenges.</li>
-<li><strong>B)</strong> Adult mammals engage in social play more frequently than juvenile mammals.</li>
-<li><strong>C)</strong> Juvenile mammals with high energy levels are less likely to survive confrontations in adulthood.</li>
-<li><strong>D)</strong> Neurological imaging has proven that non-mammalian species lack the capacity for emotional self-regulation.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-9-information--ideas-command-of-evidence---textual" class="study-heading h3">Question 9 (Information &amp; Ideas: Command of Evidence - Textual)</h3>
-<p>Ecologist Dr. Liam Gallagher investigated whether urban tree canopy composition affects the abundance of native insect pollinators. Conventional urban forestry assumes that exotic ornamental trees support equivalent pollinator diversity compared to native species. Gallagher hypothesized that native deciduous trees (such as <em>Quercus alba</em>) support significantly higher caterpillar biomass—a vital food source for insectivorous birds and native pollinators—than non-native ornamental cultivars (such as <em>Ginkgo biloba</em>).</p>
-<p></p>
-<p>Which finding, if true, would most directly support Dr. Gallagher's hypothesis?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Urban parks with native oak trees exhibited four times greater lepidopteran biomass and double the avian nesting density of parks dominated by non-native ginkgo trees.</li>
-<li><strong>B)</strong> Non-native ornamental trees were found to tolerate urban automotive pollutants and droughts better than native deciduous species.</li>
-<li><strong>C)</strong> Total insect biodiversity was highest in urban botanical gardens that cultivated both exotic tropical flora and native wildflowers.</li>
-<li><strong>D)</strong> Adult native bumblebees visited exotic flower species at equal frequencies when nectar concentrations were identical.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-10-information--ideas-command-of-evidence---quantitative" class="study-heading h3">Question 10 (Information &amp; Ideas: Command of Evidence - Quantitative)</h3>
-<p>Researchers tracked the agricultural yield and irrigation efficiency of three tomato cultivars under standard vs deficit drip irrigation.</p>
-<p></p>
-<div class="table-container"><table class="data-table">
-<thead><tr>
-<th>Tomato Cultivar</th>
-<th>Irrigation Regime</th>
-<th>Water Applied ($m^3/\text{hectare}$)</th>
-<th>Fruit Yield ($\text{tons/hectare}$)</th>
-<th>Water Use Efficiency ($\text{kg fruit}/m^3\text{ water}$)</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Roma Standard</strong></td>
-<td>Full Irrigation</td>
-<td>6,000</td>
-<td>72.0</td>
-<td>12.0</td>
-</tr>
-<tr>
-<td><strong>Roma Standard</strong></td>
-<td>Deficit Irrigation (70%)</td>
-<td>4,200</td>
-<td>58.8</td>
-<td>14.0</td>
-</tr>
-<tr>
-<td><strong>Drought-Resistant DR-9</strong></td>
-<td>Full Irrigation</td>
-<td>6,000</td>
-<td>78.0</td>
-<td>13.0</td>
-</tr>
-<tr>
-<td><strong>Drought-Resistant DR-9</strong></td>
-<td>Deficit Irrigation (70%)</td>
-<td>4,200</td>
-<td>71.4</td>
-<td>17.0</td>
-</tr>
-</tbody>
-</table></div>
-<p></p>
-<p>The agronomists concluded that while deficit irrigation reduces absolute total fruit yield across all cultivars, the drought-resistant DR-9 cultivar optimizes water productivity far more effectively than the standard cultivar under water-stressed conditions.</p>
-<p></p>
-<p>Which choice best uses data from the table to support the agronomists' conclusion?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Under full irrigation, Roma Standard produced 72.0 tons/hectare while using 6,000 $m^3/\text{hectare}$ of water.</li>
-<li><strong>B)</strong> Under deficit irrigation, DR-9 achieved a water use efficiency of 17.0 kg fruit/$m^3$ with a yield of 71.4 tons/ha, whereas Roma Standard produced only 58.8 tons/ha at 14.0 kg/$m^3$.</li>
-<li><strong>C)</strong> Roma Standard and DR-9 both received exactly 4,200 $m^3/\text{hectare}$ of water during the deficit irrigation regime.</li>
-<li><strong>D)</strong> DR-9 produced 78.0 tons/hectare under full irrigation and 71.4 tons/hectare under deficit irrigation.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-11-information--ideas-inferences" class="study-heading h3">Question 11 (Information &amp; Ideas: Inferences)</h3>
-<p>In high-energy astrophysics, fast radio bursts (FRBs) are intense millisecond-duration pulses of radio emission originating from distant galaxies. Because the radio waves travel across billions of light-years of intergalactic plasma, lower-frequency components of the burst are delayed relative to higher frequencies—a phenomenon called plasma dispersion. The total delay is directly proportional to the column density of free electrons along the line of sight.</p>
-<p></p>
-<p>It can most reasonably be inferred from the text that astrophysicists can use plasma dispersion measurements of FRBs to:</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Estimate the total quantity of ionized matter distributed throughout the intergalactic space between the burst source and Earth.</li>
-<li><strong>B)</strong> Prevent high-energy radio waves from dispersing when passing through terrestrial radio telescopes.</li>
-<li><strong>C)</strong> Prove that FRBs originate exclusively inside our own Milky Way galaxy.</li>
-<li><strong>D)</strong> Accelerate low-frequency radio emissions to match the velocity of high-frequency pulses.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-12-information--ideas-inferences" class="study-heading h3">Question 12 (Information &amp; Ideas: Inferences)</h3>
-<p>Historical sociologists analyzing labor disputes in 19th-century textile mills noted that strikes organized by decentralized worker committees succeeded in negotiating wage increases 68% of the time, whereas strikes managed by rigid, hierarchical external trade unions succeeded in only 29% of documented disputes. The researchers attribute this difference to the superior flexibility of decentralized committees in responding quickly to local management concessions.</p>
-<p></p>
-<p>Based on the text, what would the researchers most likely predict regarding labor negotiations?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Hierarchical unions will always refuse to negotiate with textile mill owners under any circumstances.</li>
-<li><strong>B)</strong> Decentralized labor groups are generally more adept at adjusting their bargaining strategies during active disputes than rigid hierarchical unions.</li>
-<li><strong>C)</strong> Textile mills with external trade unions were significantly more profitable than mills with decentralized worker committees.</li>
-<li><strong>D)</strong> Wage increases in 19th-century textile mills were determined entirely by consumer demand for cotton cloth.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-13-information--ideas-command-of-evidence---textual" class="study-heading h3">Question 13 (Information &amp; Ideas: Command of Evidence - Textual)</h3>
-<p>In linguistics, the "Sapir-Whorf hypothesis" proposes that the grammatical structure of a speaker's native language shapes their cognitive perception of the world. Cognitive scientist Dr. Miriam Soto tested this in color perception. In language X, distinct primary words exist for light blue (<em>goluboy</em>) and dark blue (<em>siniy</em>), whereas language Y uses a single word (<em>blue</em>) for both shades. Soto hypothesized that native speakers of language X would distinguish boundary shades between light and dark blue significantly faster in reaction-time discrimination tasks than native speakers of language Y.</p>
-<p></p>
-<p>Which finding, if true, would most directly support Dr. Soto's hypothesis?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Speakers of language X identified color changes crossing the light-blue/dark-blue boundary in 340 milliseconds on average, compared to 490 milliseconds for speakers of language Y.</li>
-<li><strong>B)</strong> Speakers of both language X and language Y exhibited identical brainwave patterns when viewing red and green light spectrums.</li>
-<li><strong>C)</strong> Language Y contains more total color terms for secondary shades like purple and orange than language X.</li>
-<li><strong>D)</strong> Children acquiring language X learn words for shapes before learning words for colors.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-14-information--ideas-central-ideas" class="study-heading h3">Question 14 (Information &amp; Ideas: Central Ideas)</h3>
-<p>While renewable energy installations have surged globally, the intermittent nature of wind and solar generation creates grid stability challenges during peak demand hours. Utility engineers argue that building grid-scale battery storage and modernizing long-distance high-voltage direct current (HVDC) transmission lines are indispensable prerequisites for achieving a zero-carbon electrical grid.</p>
-<p></p>
-<p>Which choice best summarizes the main idea of the text?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Solar and wind energy are inherently too unreliable to ever replace fossil fuels.</li>
-<li><strong>B)</strong> Upgrading storage and transmission infrastructure is essential to overcoming the intermittency of renewable energy sources.</li>
-<li><strong>C)</strong> High-voltage direct current lines consume more energy than traditional alternating current transmission grids.</li>
-<li><strong>D)</strong> Peak demand hours occur exclusively during cloudy and windless weather conditions.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-15-standard-english-conventions-boundaries" class="study-heading h3">Question 15 (Standard English Conventions: Boundaries)</h3>
-<p>During the early years of the space race, mathematician Katherine Johnson calculated orbital trajectories for Project <em>____</em> her extraordinary precision in manual mathematical computation earned the complete trust of astronaut John Glenn prior to his historic 1962 orbital flight.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Mercury,</li>
-<li><strong>B)</strong> Mercury;</li>
-<li><strong>C)</strong> Mercury</li>
-<li><strong>D)</strong> Mercury: which</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-16-standard-english-conventions-modifiers" class="study-heading h3">Question 16 (Standard English Conventions: Modifiers)</h3>
-<p>Originally synthesized in 1897 by German chemist Felix Hoffmann to treat chronic inflammatory <em>____</em> modern clinical trials continue to discover novel cardiovascular and anti-platelet applications for acetylsalicylic acid, commonly known as aspirin.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> pain,</li>
-<li><strong>B)</strong> pain;</li>
-<li><strong>C)</strong> pain, but</li>
-<li><strong>D)</strong> pain, and</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-17-standard-english-conventions-subject-verb-agreement" class="study-heading h3">Question 17 (Standard English Conventions: Subject-Verb Agreement)</h3>
-<p>The extensive collection of illuminated manuscripts and rare Renaissance cartographic maps housed in the university’s special collections department <em>____</em> meticulous conservation by certified archival specialists every three years.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> require</li>
-<li><strong>B)</strong> requires</li>
-<li><strong>C)</strong> are requiring</li>
-<li><strong>D)</strong> have required</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-18-standard-english-conventions-colon-usage" class="study-heading h3">Question 18 (Standard English Conventions: Colon Usage)</h3>
-<p>Ecological restoration specialists frequently rely on three primary native plant species to stabilize coastal sand <em>____</em> American beachgrass, sea oats, and bitter panicum.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> dunes:</li>
-<li><strong>B)</strong> dunes;</li>
-<li><strong>C)</strong> dunes,</li>
-<li><strong>D)</strong> dunes</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-19-standard-english-conventions-verb-tense--aspect" class="study-heading h3">Question 19 (Standard English Conventions: Verb Tense &amp; Aspect)</h3>
-<p>Before the pioneering work of Gregor Mendel on pea plants was rediscovered in the early 20th century, most biologists <em>____</em> that offspring inherited a blended, inseparable dilution of their parents' physical characteristics.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> have believed</li>
-<li><strong>B)</strong> will believe</li>
-<li><strong>C)</strong> had believed</li>
-<li><strong>D)</strong> believe</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-20-standard-english-conventions-semicolon--conjunctive-adverb" class="study-heading h3">Question 20 (Standard English Conventions: Semicolon &amp; Conjunctive Adverb)</h3>
-<p>The composite ceramic tiles lining the spacecraft's heat shield can withstand temperatures exceeding $1{,}650^\circ\text{C}$; <em>____</em> the underlying aluminum airframe remains protected from the extreme thermal friction generated during atmospheric reentry.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> consequently,</li>
-<li><strong>B)</strong> however,</li>
-<li><strong>C)</strong> nonetheless,</li>
-<li><strong>D)</strong> in contrast,</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-21-standard-english-conventions-parallel-structure" class="study-heading h3">Question 21 (Standard English Conventions: Parallel Structure)</h3>
-<p>To qualify for the prestigious engineering fellowship, applicants must submit an original research proposal, provide three professional letters of recommendation, and <em>____</em> a rigorous technical interview before the faculty committee.</p>
-<p></p>
-<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> completing</li>
-<li><strong>B)</strong> complete</li>
-<li><strong>C)</strong> to complete</li>
-<li><strong>D)</strong> they complete</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-22-expression-of-ideas-transitions" class="study-heading h3">Question 22 (Expression of Ideas: Transitions)</h3>
-<p>Deep-sea hydrothermal ecosystems do not rely on photosynthetic primary production from solar energy. <em>____</em> their food webs are anchored by chemosynthetic autotrophs—bacteria that convert toxic hydrogen sulfide and methane into organic carbohydrates.</p>
-<p></p>
-<p>Which choice completes the text with the most logical transition?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Instead,</li>
-<li><strong>B)</strong> Furthermore,</li>
-<li><strong>C)</strong> Similarly,</li>
-<li><strong>D)</strong> For instance,</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-23-expression-of-ideas-transitions" class="study-heading h3">Question 23 (Expression of Ideas: Transitions)</h3>
-<p>The introduction of automated optical sorting machines drastically accelerated productivity at the recycling processing facility. <em>____</em> the machines occasionally misclassified transparent plastic bottles as clear glass containers, requiring manual secondary verification by human workers.</p>
-<p></p>
-<p>Which choice completes the text with the most logical transition?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Therefore,</li>
-<li><strong>B)</strong> In addition,</li>
-<li><strong>C)</strong> However,</li>
-<li><strong>D)</strong> In other words,</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-24-expression-of-ideas-transitions" class="study-heading h3">Question 24 (Expression of Ideas: Transitions)</h3>
-<p>In organic chemistry, chiral molecules exist in two non-superimposable mirror-image forms called enantiomers. While enantiomers possess identical physical boiling and melting points, their biological interactions can differ dramatically. <em>____</em> the $R$-enantiomer of thalidomide acts as a sedative, while its $S$-enantiomer causes severe congenital defects.</p>
-<p></p>
-<p>Which choice completes the text with the most logical transition?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Specifically,</li>
-<li><strong>B)</strong> Consequently,</li>
-<li><strong>C)</strong> In conclusion,</li>
-<li><strong>D)</strong> Nevertheless,</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-25-expression-of-ideas-rhetorical-synthesis" class="study-heading h3">Question 25 (Expression of Ideas: Rhetorical Synthesis)</h3>
-<p>While researching a topic, a student has taken the following notes:</p>
-<ul class="study-list">
-<li>The Svalbard Global Seed Vault is an underground seed bank located on the Norwegian island of Spitsbergen.</li>
-<li>It was established in 2008 to safeguard crop biodiversity against global catastrophe and genetic loss.</li>
-<li>The facility is excavated 120 meters inside a sandstone mountain permafrost layer.</li>
-<li>The ambient permafrost temperature maintains seed storage at $-18^\circ\text{C}$ even during local power grid failure.</li>
-<li>Over 1.2 million distinct seed samples from virtually every nation on Earth are currently preserved there.</li>
-</ul>
-<p></p>
-<p>The student wants to <strong>explain how the vault ensures seed preservation during power failures</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Located on the Norwegian island of Spitsbergen, the Svalbard Global Seed Vault was established in 2008 to safeguard global crop diversity.</li>
-<li><strong>B)</strong> Preserving over 1.2 million seed samples from nations worldwide, the Svalbard vault is located 120 meters inside a sandstone mountain.</li>
-<li><strong>C)</strong> Excavated inside a mountain permafrost layer, the Svalbard vault maintains a constant temperature of $-18^\circ\text{C}$ that keeps seeds safely preserved even during power outages.</li>
-<li><strong>D)</strong> The Svalbard Global Seed Vault currently holds 1.2 million seed samples to protect agriculture from global catastrophe.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-26-expression-of-ideas-rhetorical-synthesis" class="study-heading h3">Question 26 (Expression of Ideas: Rhetorical Synthesis)</h3>
-<p>While researching a topic, a student has taken the following notes:</p>
-<ul class="study-list">
-<li>Biomimicry is the design practice of emulating biological models and natural systems to solve engineering challenges.</li>
-<li>Kingfisher birds dive into water at high speed with almost zero acoustic splash due to their streamlined, wedge-shaped beaks.</li>
-<li>Japanese engineer Eiji Nakatsu redesigned the nose cone of the 500-Series Shinkansen bullet train based on the kingfisher's beak.</li>
-<li>The redesign reduced atmospheric pressure waves (tunnel booms) by 70% and cut train electricity consumption by 15%.</li>
-</ul>
-<p></p>
-<p>The student wants to <strong>present the specific engineering benefits achieved by the bullet train redesign</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Biomimicry involves emulating natural forms, such as the wedge-shaped beak of the kingfisher bird, to resolve complex technical challenges.</li>
-<li><strong>B)</strong> By modeling the Shinkansen bullet train's nose cone after the kingfisher's beak, engineers reduced tunnel noise booms by 70% and lowered electricity consumption by 15%.</li>
-<li><strong>C)</strong> Japanese engineer Eiji Nakatsu observed that kingfishers dive into water without splashing, inspiring his work on the 500-Series Shinkansen train.</li>
-<li><strong>D)</strong> Kingfisher beaks allow the birds to dive silently into water, demonstrating principles of biomimicry used in modern Japanese transportation.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-27-expression-of-ideas-rhetorical-synthesis" class="study-heading h3">Question 27 (Expression of Ideas: Rhetorical Synthesis)</h3>
-<p>While researching a topic, a student has taken the following notes:</p>
-<ul class="study-list">
-<li>Marie Maynard Daly was an American biochemist.</li>
-<li>In 1947, she became the first African American woman to earn a Ph.D. in chemistry in the United States (Columbia University).</li>
-<li>Her pioneering research demonstrated the direct relationship between high cholesterol levels and arterial blockages (atherosclerosis).</li>
-<li>Her work laid the foundation for modern dietary guidelines regarding cardiovascular health.</li>
-</ul>
-<p></p>
-<p>The student wants to <strong>emphasize Marie Maynard Daly's historic academic milestone</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Marie Maynard Daly conducted groundbreaking biochemical research that connected high cholesterol to arterial blockages and heart disease.</li>
-<li><strong>B)</strong> In 1947, Marie Maynard Daly made history by becoming the first African American woman in the United States to earn a Ph.D. in chemistry.</li>
-<li><strong>C)</strong> Modern dietary guidelines for cardiovascular disease are based upon the pioneering arterial research of biochemist Marie Maynard Daly.</li>
-<li><strong>D)</strong> After earning her doctoral degree from Columbia University in 1947, Marie Maynard Daly studied the causes of atherosclerosis.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="complete-answer-key--diagnostic-matrix" class="study-heading h2">🔑 Complete Answer Key &amp; Diagnostic Matrix</h2>
-<p></p>
-<div class="table-container"><table class="data-table">
-<thead><tr>
-<th>Item</th>
-<th>Key</th>
-<th>Domain</th>
-<th>Sub-Skill</th>
-<th>Difficulty</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Q1</strong></td>
-<td><strong>B</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Words in Context</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q2</strong></td>
-<td><strong>A</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Words in Context</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q3</strong></td>
-<td><strong>C</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Words in Context</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q4</strong></td>
-<td><strong>A</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Text Structure and Purpose</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q5</strong></td>
-<td><strong>C</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Cross-Text Connections</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q6</strong></td>
-<td><strong>A</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Central Ideas / Purpose</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q7</strong></td>
-<td><strong>B</strong></td>
-<td>Craft &amp; Structure</td>
-<td>Words in Context</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q8</strong></td>
-<td><strong>A</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Central Ideas</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q9</strong></td>
-<td><strong>A</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Command of Evidence (Textual)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q10</strong></td>
-<td><strong>B</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Command of Evidence (Quantitative)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q11</strong></td>
-<td><strong>A</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Inferences</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q12</strong></td>
-<td><strong>B</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Inferences</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q13</strong></td>
-<td><strong>A</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Command of Evidence (Textual)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q14</strong></td>
-<td><strong>B</strong></td>
-<td>Information &amp; Ideas</td>
-<td>Central Ideas</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q15</strong></td>
-<td><strong>B</strong></td>
-<td>Standard English Conv.</td>
-<td>Boundaries (Semicolon)</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q16</strong></td>
-<td><strong>A</strong></td>
-<td>Standard English Conv.</td>
-<td>Modifier Placement</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q17</strong></td>
-<td><strong>B</strong></td>
-<td>Standard English Conv.</td>
-<td>Subject-Verb Agreement</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q18</strong></td>
-<td><strong>A</strong></td>
-<td>Standard English Conv.</td>
-<td>Colon Usage</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q19</strong></td>
-<td><strong>C</strong></td>
-<td>Standard English Conv.</td>
-<td>Verb Tense &amp; Aspect (Past Perfect)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q20</strong></td>
-<td><strong>A</strong></td>
-<td>Standard English Conv.</td>
-<td>Conjunctive Adverb Boundary</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q21</strong></td>
-<td><strong>B</strong></td>
-<td>Standard English Conv.</td>
-<td>Parallel Structure</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q22</strong></td>
-<td><strong>A</strong></td>
-<td>Expression of Ideas</td>
-<td>Transitions (Alternative/Instead)</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q23</strong></td>
-<td><strong>C</strong></td>
-<td>Expression of Ideas</td>
-<td>Transitions (Contrast/However)</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q24</strong></td>
-<td><strong>A</strong></td>
-<td>Expression of Ideas</td>
-<td>Transitions (Exemplification/Specifically)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q25</strong></td>
-<td><strong>C</strong></td>
-<td>Expression of Ideas</td>
-<td>Rhetorical Synthesis (Power Failure Goal)</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q26</strong></td>
-<td><strong>B</strong></td>
-<td>Expression of Ideas</td>
-<td>Rhetorical Synthesis (Engineering Benefits)</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q27</strong></td>
-<td><strong>B</strong></td>
-<td>Expression of Ideas</td>
-<td>Rhetorical Synthesis (Historic Milestone)</td>
-<td>Easy-Medium</td>
-</tr>
-</tbody>
-</table></div>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="granular-distractor-analysis--solution-explanations" class="study-heading h2">💡 Granular Distractor Analysis &amp; Solution Explanations</h2>
-<p></p>
-<h3 id="questions-17-craft-and-structure" class="study-heading h3">Questions 1–7 (Craft and Structure)</h3>
-<ul class="study-list">
-<li><strong>Q1 (B - trenchant)</strong>: <em>Trenchant</em> means incisive, sharp, or vigorously effective in criticism. The contrast word <em>"While"</em> sets up opposition between her polite public neoclassical verses and her sharp private criticism of colonial hypocrisies. <em>Complimentary</em> (A) and <em>deferential</em> (D) create no contrast; <em>vacillating</em> (C) implies indecisiveness rather than clear critique.</li>
-<li><strong>Q2 (A - negligible)</strong>: <em>Negligible</em> means so small or unimportant as to be disregarded. Because aerogels are 90% air pockets and exceptional thermal insulators, their conductivity is practically zero.</li>
-<li><strong>Q3 (C - substantiate)</strong>: <em>Substantiate</em> means to provide empirical evidence to prove or validate. New archival manifests proved her once-doubted thesis. <em>Repudiate</em> (A) means to reject.</li>
-<li><strong>Q4 (A)</strong>: Sentence 1 introduces Emma's seemingly perfect life, while Sentence 2 introduces her "real evils" (vanity, getting her way too much), qualifying the initial portrait.</li>
-<li><strong>Q5 (C)</strong>: Text 1 treats Chicxulub as the solitary trigger; Text 2 introduces prolonged volcanic stress from the Deccan Traps beforehand. Author 2 would argue both forces operated in tandem rather than the asteroid acting alone.</li>
-<li><strong>Q6 (A)</strong>: Summarizes the accidental mould contamination leading to Fleming's isolation of penicillin.</li>
-<li><strong>Q7 (B - precipitate)</strong>: <em>Precipitate</em> in this context means to cause an event or action to happen suddenly or prematurely (triggering coral bleaching).</li>
-</ul>
-<p></p>
-<h3 id="questions-814-information-and-ideas" class="study-heading h3">Questions 8–14 (Information and Ideas)</h3>
-<ul class="study-list">
-<li><strong>Q8 (A)</strong>: Captures the main finding: play isn't wasted energy, but builds prefrontal synaptic plasticity for adult adaptability.</li>
-<li><strong>Q9 (A)</strong>: Directly proves Gallagher's hypothesis by comparing native oak (4x caterpillar biomass) to exotic ginkgo.</li>
-<li><strong>Q10 (B)</strong>: Demonstrates that under deficit irrigation, DR-9 produces 71.4 t/ha with 17.0 kg/$m^3$ efficiency compared to Roma's 58.8 t/ha at 14.0 kg/$m^3$.</li>
-<li><strong>Q11 (A)</strong>: The text explains that plasma dispersion delay is directly proportional to electron column density; therefore, measuring this delay reveals the quantity of ionized matter across intergalactic space.</li>
-<li><strong>Q12 (B)</strong>: Decentralized committees had a 68% success rate vs 29% for unions because they could pivot and adjust quickly to local negotiations.</li>
-<li><strong>Q13 (A)</strong>: Proves Sapir-Whorf by showing Language X speakers (with 2 distinct words) discriminated boundary shades in 340 ms vs 490 ms for Language Y speakers.</li>
-<li><strong>Q14 (B)</strong>: Summarizes the need for grid batteries and HVDC lines to solve solar/wind intermittency.</li>
-</ul>
-<p></p>
-<h3 id="questions-1521-standard-english-conventions" class="study-heading h3">Questions 15–21 (Standard English Conventions)</h3>
-<ul class="study-list">
-<li><strong>Q15 (B)</strong>: Two complete independent clauses separated by a semicolon (<em>"Johnson calculated orbital trajectories for Project Mercury; her extraordinary precision..."</em>).</li>
-<li><strong>Q16 (A)</strong>: The introductory participial modifier (<em>"Originally synthesized in 1897..."</em>) describes <em>aspirin</em>. Choice A correctly follows the comma with the subject.</li>
-<li><strong>Q17 (B)</strong>: The head subject is <em>"The extensive collection"</em> (singular), which requires the singular verb <em>"requires"</em>.</li>
-<li><strong>Q18 (A)</strong>: A colon follows an independent clause to introduce a specific list of three plant species.</li>
-<li><strong>Q19 (C)</strong>: Past Perfect (<em>"had believed"</em>) indicates a belief held prior to the 20th-century rediscovery.</li>
-<li><strong>Q20 (A)</strong>: <em>Consequently</em> shows the direct causal result of the heat shield tiles protecting the airframe.</li>
-<li><strong>Q21 (B)</strong>: Parallel series of base verbs: <em>submit</em>, <em>provide</em>, and <em>complete</em>.</li>
-</ul>
-<p></p>
-<h3 id="questions-2227-expression-of-ideas" class="study-heading h3">Questions 22–27 (Expression of Ideas)</h3>
-<ul class="study-list">
-<li><strong>Q22 (A - Instead)</strong>: Contrasts the lack of photosynthesis with the replacement mechanism (chemosynthesis).</li>
-<li><strong>Q23 (C - However)</strong>: Shifts from the machine's speed benefit to its classification errors.</li>
-<li><strong>Q24 (A - Specifically)</strong>: Introduces the concrete example of thalidomide's R and S enantiomers.</li>
-<li><strong>Q25 (C)</strong>: Fulfills the exact prompt goal by explaining how the permafrost $-18^\circ\text{C}$ protects seeds during power outages.</li>
-<li><strong>Q26 (B)</strong>: Fulfills the goal by stating the exact metrics (70% tunnel boom reduction, 15% electricity savings).</li>
-<li><strong>Q27 (B)</strong>: Directly highlights the historic 1947 milestone (first African American woman to earn a Ph.D. in chemistry in the US).</li>
-</ul>
-    </article>
-
-    
-    <!-- Self-Assessment Mastery Checklist -->
-    <div class="mastery-card">
-      <div class="mastery-header">
-        <h3>🎯 Student Self-Assessment & Mastery Checklist</h3>
-        <span class="mastery-score" id="masteryScore">0 / 4 Mastered</span>
-      </div>
-      <div class="mastery-list">
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c1')">
-          <span>I can write a compound introduction paraphrasing both visuals without copying prompt words.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c2')">
-          <span>I can write a dual overview summarizing macro-trends with <strong>ZERO figures/percentages</strong>.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c3')">
-          <span>I grouped data logically into 2 separate body paragraphs with clear bridging connectors.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c4')">
-          <span>I used at least 3 advanced academic proportion or comparative phrases (e.g. <em>lion's share, in stark contrast</em>).</span>
-        </label>
-      </div>
-      <div class="mastery-banner" id="masteryBanner" style="display: none;">
-        🎉 <strong>Outstanding! You have mastered the core competencies for this module.</strong>
-      </div>
-    </div>
-    
-
-    <footer>
-      <p>🏛️ SAT Academic Preparation Workspace • Engineered for Classroom Teaching & High-Yield Self-Study</p>
-    </footer>
-  </main>
-
-  <script>
-    // Theme Switcher
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('study_theme', next);
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../index.html">SAT Portal</a> &rsaquo; Practice_Modules</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../index.html">&larr; SAT Portal</a> &rsaquo; Practice_Modules</div>
+<h1>Digital SAT Reading and Writing: Full Practice Module 1</h1>
+<div class="meta"><span><b>Questions:</b> 27</span><span><b>Level:</b> Score 700 - 800</span><span><b>Topic:</b> Digital SAT Reading and Writing Full Practice Test Module 1</span><span><b>Suggested time:</b> 32 min</span></div>
+<div class="overview"><ul><li><strong>Test Section</strong>: Digital SAT Reading and Writing (EBRW)</li><li><strong>Item Count</strong>: 27 Questions (Full Bluebook Module Specification)</li><li><strong>Time Allocated</strong>: 32 Minutes (~71 seconds per item)</li><li><strong>Domain Distribution</strong>:</li><li><em>Craft and Structure</em> (Questions 1–7): Words in Context, Text Structure and Purpose, Cross-Text Connections</li><li><em>Information and Ideas</em> (Questions 8–14): Central Ideas, Command of Evidence (Textual &amp; Quantitative), Inferences</li><li><em>Standard English Conventions</em> (Questions 15–21): Boundaries, Form, Structure, and Sense</li><li><em>Expression of Ideas</em> (Questions 22–27): Transitions, Rhetorical Synthesis</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>The poet Phillis Wheatley often had to navigate severe social constraints in 18th-century Boston. While her public elegies adhered strictly to neoclassical verse conventions, her private correspondence reveals a subtly ______ stance toward the hypocrisies of colonial slaveholders who championed political liberty.</p>\n<p>Which choice completes the text with the most logical and precise word or phrase?</p>", "options": [{"L": "A", "t": "complimentary"}, {"L": "B", "t": "trenchant"}, {"L": "C", "t": "vacillating"}, {"L": "D", "t": "deferential"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Words in Context", "domain": "Craft & Structure"}, {"n": 2, "kind": "mc", "stem": "<p>In materials science, aerogels are renowned for their extraordinary thermal insulation. Because over 90% of their internal volume consists of trapped air pockets, their thermal conductivity is nearly ______ under standard atmospheric conditions.</p>\n<p>Which choice completes the text with the most logical and precise word or phrase?</p>", "options": [{"L": "A", "t": "negligible"}, {"L": "B", "t": "volatile"}, {"L": "C", "t": "paramount"}, {"L": "D", "t": "superfluous"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Words in Context", "domain": "Craft & Structure"}, {"n": 3, "kind": "mc", "stem": "<p>Although the economic historian’s initial theory regarding the collapse of the canal trade was met with widespread skepticism, archival discoveries of regional freight manifests provided empirical data that helped to ______ her once-controversial thesis.</p>\n<p>Which choice completes the text with the most logical and precise word or phrase?</p>", "options": [{"L": "A", "t": "repudiate"}, {"L": "B", "t": "complicate"}, {"L": "C", "t": "substantiate"}, {"L": "D", "t": "circumvent"}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Words in Context", "domain": "Craft & Structure"}, {"n": 4, "kind": "mc", "stem": "<p>The following text is adapted from Jane Austen&#x27;s 1815 novel <em>Emma</em>.</p>\n<blockquote>Emma Woodhouse, handsome, clever, and rich, with a comfortable home and happy disposition, seemed to unite some of the best blessings of existence; and had lived nearly twenty-one years in the world with very little to distress or vex her. The real evils, indeed, of Emma&#x27;s situation were the power of having rather too much her own way, and a disposition to think a little too well of herself; these were the disadvantages which threatened alloy to her many enjoyments.</blockquote>\n<p>Which choice best describes the function of the second sentence in the overall structure of the text?</p>", "options": [{"L": "A", "t": "It introduces a character flaw that qualifies the idealized depiction presented in the first sentence."}, {"L": "B", "t": "It disputes the claim that Emma enjoyed substantial wealth and high social status."}, {"L": "C", "t": "It explains the origin of Emma&#x27;s familial conflicts with her father."}, {"L": "D", "t": "It predicts a specific financial disaster that will disrupt Emma&#x27;s comfortable life."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Text Structure and Purpose", "domain": "Craft & Structure"}, {"n": 5, "kind": "mc", "stem": "<p><strong>Text 1</strong> Paleontologists have long attributed the end-Cretaceous mass extinction primarily to the catastrophic environmental shock of the Chicxulub asteroid impact. The massive release of vaporized sulfur and soot into the stratosphere triggered a prolonged &quot;impact winter,&quot; collapsing global photosynthesizing food chains and wiping out non-avian dinosaurs within a geological instant.</p>\n<p><strong>Text 2</strong> Geochronological dating of the Deccan Traps volcanic province in modern India demonstrates that massive flood basalt eruptions began hundreds of thousands of years prior to the Chicxulub impact. These sustained eruptions injected vast quantities of mercury, carbon dioxide, and sulfur dioxide into the atmosphere, causing severe global climatic instability and ecological distress long before the asteroid arrived.</p>\n<p>Based on the texts, how would the author of Text 2 most likely respond to the characterization of the extinction event in Text 1?</p>", "options": [{"L": "A", "t": "By asserting that the Chicxulub asteroid never struck Earth during the Cretaceous period."}, {"L": "B", "t": "By arguing that volcanic activity from the Deccan Traps was the sole cause of the extinction, rendering the asteroid impact irrelevant."}, {"L": "C", "t": "By suggesting that pre-existing ecological stress from massive volcanism significantly contributed to the extinction rather than the asteroid acting in isolation."}, {"L": "D", "t": "By claiming that stratospheric soot from asteroid impacts warms rather than cools global climates."}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Cross-Text Connections", "domain": "Craft & Structure"}, {"n": 6, "kind": "mc", "stem": "<p>In 1928, Alexander Fleming observed that a stray mould contaminating a Petri dish of <em>Staphylococcus</em> bacteria had created a clear zone of inhibition where bacterial colonies could not grow. Rather than discarding the ruined culture, Fleming isolated the active antibacterial substance produced by the <em>Penicillium</em> fungus, initiating the modern era of antibiotic medicine.</p>\n<p>Which choice best states the main idea of the text?</p>", "options": [{"L": "A", "t": "Fleming&#x27;s discovery of penicillin demonstrates how astute observation of unexpected experimental contamination can lead to major medical breakthroughs."}, {"L": "B", "t": "Bacterial contamination of laboratory Petri dishes was extremely common before the invention of modern sterilization techniques."}, {"L": "C", "t": "<em>Penicillium</em> fungi are more resilient to bacterial infection than other common laboratory moulds."}, {"L": "D", "t": "Alexander Fleming intended from the outset of his research to invent synthetic antibacterial pharmaceuticals."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Central Ideas / Purpose", "domain": "Craft & Structure"}, {"n": 7, "kind": "mc", "stem": "<p>Marine biologists noted that the symbiotic zooxanthellae living within coral polyps are highly sensitive to thermal anomalies; even a persistent <span class=\"mx\">1<sup>\\</sup>circC</span> rise in sea surface temperature can ______ the expulsion of these vital photosynthetic algae, causing widespread bleaching.</p>\n<p>Which choice completes the text with the most logical and precise word or phrase?</p>", "options": [{"L": "A", "t": "mitigate"}, {"L": "B", "t": "precipitate"}, {"L": "C", "t": "circumvent"}, {"L": "D", "t": "retard"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Words in Context", "domain": "Craft & Structure"}, {"n": 8, "kind": "mc", "stem": "<p>In many mammalian species, play behavior among juveniles has often been dismissed as non-functional surplus energy expenditure. However, recent neurological imaging reveals that social play stimulates synaptic plasticity in the prefrontal cortex, enhancing problem-solving adaptability and emotional self-regulation during adult confrontations.</p>\n<p>Which choice best summarizes the main idea of the text?</p>", "options": [{"L": "A", "t": "Mammalian play behavior serves critical neurodevelopmental functions that prepare juveniles for adult cognitive and social challenges."}, {"L": "B", "t": "Adult mammals engage in social play more frequently than juvenile mammals."}, {"L": "C", "t": "Juvenile mammals with high energy levels are less likely to survive confrontations in adulthood."}, {"L": "D", "t": "Neurological imaging has proven that non-mammalian species lack the capacity for emotional self-regulation."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Central Ideas", "domain": "Information & Ideas"}, {"n": 9, "kind": "mc", "stem": "<p>Ecologist Dr. Liam Gallagher investigated whether urban tree canopy composition affects the abundance of native insect pollinators. Conventional urban forestry assumes that exotic ornamental trees support equivalent pollinator diversity compared to native species. Gallagher hypothesized that native deciduous trees (such as <em>Quercus alba</em>) support significantly higher caterpillar biomass—a vital food source for insectivorous birds and native pollinators—than non-native ornamental cultivars (such as <em>Ginkgo biloba</em>).</p>\n<p>Which finding, if true, would most directly support Dr. Gallagher&#x27;s hypothesis?</p>", "options": [{"L": "A", "t": "Urban parks with native oak trees exhibited four times greater lepidopteran biomass and double the avian nesting density of parks dominated by non-native ginkgo trees."}, {"L": "B", "t": "Non-native ornamental trees were found to tolerate urban automotive pollutants and droughts better than native deciduous species."}, {"L": "C", "t": "Total insect biodiversity was highest in urban botanical gardens that cultivated both exotic tropical flora and native wildflowers."}, {"L": "D", "t": "Adult native bumblebees visited exotic flower species at equal frequencies when nectar concentrations were identical."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Command of Evidence (Textual)", "domain": "Information & Ideas"}, {"n": 10, "kind": "mc", "stem": "<p>Researchers tracked the agricultural yield and irrigation efficiency of three tomato cultivars under standard vs deficit drip irrigation.</p>\n<table><thead><tr><th>Tomato Cultivar</th><th>Irrigation Regime</th><th>Water Applied (<span class=\"mx\">m<sup>3</sup>/hectare</span>)</th><th>Fruit Yield (<span class=\"mx\">tons/hectare</span>)</th><th>Water Use Efficiency (<span class=\"mx\">kg fruit/m<sup>3</sup> water</span>)</th></tr></thead><tbody><tr><td><strong>Roma Standard</strong></td><td>Full Irrigation</td><td>6,000</td><td>72.0</td><td>12.0</td></tr><tr><td><strong>Roma Standard</strong></td><td>Deficit Irrigation (70%)</td><td>4,200</td><td>58.8</td><td>14.0</td></tr><tr><td><strong>Drought-Resistant DR-9</strong></td><td>Full Irrigation</td><td>6,000</td><td>78.0</td><td>13.0</td></tr><tr><td><strong>Drought-Resistant DR-9</strong></td><td>Deficit Irrigation (70%)</td><td>4,200</td><td>71.4</td><td>17.0</td></tr></tbody></table>\n<p>The agronomists concluded that while deficit irrigation reduces absolute total fruit yield across all cultivars, the drought-resistant DR-9 cultivar optimizes water productivity far more effectively than the standard cultivar under water-stressed conditions.</p>\n<p>Which choice best uses data from the table to support the agronomists&#x27; conclusion?</p>", "options": [{"L": "A", "t": "Under full irrigation, Roma Standard produced 72.0 tons/hectare while using 6,000 <span class=\"mx\">m<sup>3</sup>/hectare</span> of water."}, {"L": "B", "t": "Under deficit irrigation, DR-9 achieved a water use efficiency of 17.0 kg fruit/<span class=\"mx\">m<sup>3</sup></span> with a yield of 71.4 tons/ha, whereas Roma Standard produced only 58.8 tons/ha at 14.0 kg/<span class=\"mx\">m<sup>3</sup></span>."}, {"L": "C", "t": "Roma Standard and DR-9 both received exactly 4,200 <span class=\"mx\">m<sup>3</sup>/hectare</span> of water during the deficit irrigation regime."}, {"L": "D", "t": "DR-9 produced 78.0 tons/hectare under full irrigation and 71.4 tons/hectare under deficit irrigation."}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Command of Evidence (Quantitative)", "domain": "Information & Ideas"}, {"n": 11, "kind": "mc", "stem": "<p>In high-energy astrophysics, fast radio bursts (FRBs) are intense millisecond-duration pulses of radio emission originating from distant galaxies. Because the radio waves travel across billions of light-years of intergalactic plasma, lower-frequency components of the burst are delayed relative to higher frequencies—a phenomenon called plasma dispersion. The total delay is directly proportional to the column density of free electrons along the line of sight.</p>\n<p>It can most reasonably be inferred from the text that astrophysicists can use plasma dispersion measurements of FRBs to:</p>", "options": [{"L": "A", "t": "Estimate the total quantity of ionized matter distributed throughout the intergalactic space between the burst source and Earth."}, {"L": "B", "t": "Prevent high-energy radio waves from dispersing when passing through terrestrial radio telescopes."}, {"L": "C", "t": "Prove that FRBs originate exclusively inside our own Milky Way galaxy."}, {"L": "D", "t": "Accelerate low-frequency radio emissions to match the velocity of high-frequency pulses."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Inferences", "domain": "Information & Ideas"}, {"n": 12, "kind": "mc", "stem": "<p>Historical sociologists analyzing labor disputes in 19th-century textile mills noted that strikes organized by decentralized worker committees succeeded in negotiating wage increases 68% of the time, whereas strikes managed by rigid, hierarchical external trade unions succeeded in only 29% of documented disputes. The researchers attribute this difference to the superior flexibility of decentralized committees in responding quickly to local management concessions.</p>\n<p>Based on the text, what would the researchers most likely predict regarding labor negotiations?</p>", "options": [{"L": "A", "t": "Hierarchical unions will always refuse to negotiate with textile mill owners under any circumstances."}, {"L": "B", "t": "Decentralized labor groups are generally more adept at adjusting their bargaining strategies during active disputes than rigid hierarchical unions."}, {"L": "C", "t": "Textile mills with external trade unions were significantly more profitable than mills with decentralized worker committees."}, {"L": "D", "t": "Wage increases in 19th-century textile mills were determined entirely by consumer demand for cotton cloth."}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Inferences", "domain": "Information & Ideas"}, {"n": 13, "kind": "mc", "stem": "<p>In linguistics, the &quot;Sapir-Whorf hypothesis&quot; proposes that the grammatical structure of a speaker&#x27;s native language shapes their cognitive perception of the world. Cognitive scientist Dr. Miriam Soto tested this in color perception. In language X, distinct primary words exist for light blue (<em>goluboy</em>) and dark blue (<em>siniy</em>), whereas language Y uses a single word (<em>blue</em>) for both shades. Soto hypothesized that native speakers of language X would distinguish boundary shades between light and dark blue significantly faster in reaction-time discrimination tasks than native speakers of language Y.</p>\n<p>Which finding, if true, would most directly support Dr. Soto&#x27;s hypothesis?</p>", "options": [{"L": "A", "t": "Speakers of language X identified color changes crossing the light-blue/dark-blue boundary in 340 milliseconds on average, compared to 490 milliseconds for speakers of language Y."}, {"L": "B", "t": "Speakers of both language X and language Y exhibited identical brainwave patterns when viewing red and green light spectrums."}, {"L": "C", "t": "Language Y contains more total color terms for secondary shades like purple and orange than language X."}, {"L": "D", "t": "Children acquiring language X learn words for shapes before learning words for colors."}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Command of Evidence (Textual)", "domain": "Information & Ideas"}, {"n": 14, "kind": "mc", "stem": "<p>While renewable energy installations have surged globally, the intermittent nature of wind and solar generation creates grid stability challenges during peak demand hours. Utility engineers argue that building grid-scale battery storage and modernizing long-distance high-voltage direct current (HVDC) transmission lines are indispensable prerequisites for achieving a zero-carbon electrical grid.</p>\n<p>Which choice best summarizes the main idea of the text?</p>", "options": [{"L": "A", "t": "Solar and wind energy are inherently too unreliable to ever replace fossil fuels."}, {"L": "B", "t": "Upgrading storage and transmission infrastructure is essential to overcoming the intermittency of renewable energy sources."}, {"L": "C", "t": "High-voltage direct current lines consume more energy than traditional alternating current transmission grids."}, {"L": "D", "t": "Peak demand hours occur exclusively during cloudy and windless weather conditions."}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Central Ideas", "domain": "Information & Ideas"}, {"n": 15, "kind": "mc", "stem": "<p>During the early years of the space race, mathematician Katherine Johnson calculated orbital trajectories for Project ______ her extraordinary precision in manual mathematical computation earned the complete trust of astronaut John Glenn prior to his historic 1962 orbital flight.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "Mercury,"}, {"L": "B", "t": "Mercury;"}, {"L": "C", "t": "Mercury"}, {"L": "D", "t": "Mercury: which"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Boundaries (Semicolon)", "domain": "Standard English Conv."}, {"n": 16, "kind": "mc", "stem": "<p>Originally synthesized in 1897 by German chemist Felix Hoffmann to treat chronic inflammatory ______ modern clinical trials continue to discover novel cardiovascular and anti-platelet applications for acetylsalicylic acid, commonly known as aspirin.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "pain,"}, {"L": "B", "t": "pain;"}, {"L": "C", "t": "pain, but"}, {"L": "D", "t": "pain, and"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Modifier Placement", "domain": "Standard English Conv."}, {"n": 17, "kind": "mc", "stem": "<p>The extensive collection of illuminated manuscripts and rare Renaissance cartographic maps housed in the university’s special collections department ______ meticulous conservation by certified archival specialists every three years.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "require"}, {"L": "B", "t": "requires"}, {"L": "C", "t": "are requiring"}, {"L": "D", "t": "have required"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Subject-Verb Agreement", "domain": "Standard English Conv."}, {"n": 18, "kind": "mc", "stem": "<p>Ecological restoration specialists frequently rely on three primary native plant species to stabilize coastal sand ______ American beachgrass, sea oats, and bitter panicum.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "dunes:"}, {"L": "B", "t": "dunes;"}, {"L": "C", "t": "dunes,"}, {"L": "D", "t": "dunes"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Colon Usage", "domain": "Standard English Conv."}, {"n": 19, "kind": "mc", "stem": "<p>Before the pioneering work of Gregor Mendel on pea plants was rediscovered in the early 20th century, most biologists ______ that offspring inherited a blended, inseparable dilution of their parents&#x27; physical characteristics.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "have believed"}, {"L": "B", "t": "will believe"}, {"L": "C", "t": "had believed"}, {"L": "D", "t": "believe"}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Verb Tense & Aspect (Past Perfect)", "domain": "Standard English Conv."}, {"n": 20, "kind": "mc", "stem": "<p>The composite ceramic tiles lining the spacecraft&#x27;s heat shield can withstand temperatures exceeding <span class=\"mx\">1,650<sup>\\</sup>circC</span>; ______ the underlying aluminum airframe remains protected from the extreme thermal friction generated during atmospheric reentry.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "consequently,"}, {"L": "B", "t": "however,"}, {"L": "C", "t": "nonetheless,"}, {"L": "D", "t": "in contrast,"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Conjunctive Adverb Boundary", "domain": "Standard English Conv."}, {"n": 21, "kind": "mc", "stem": "<p>To qualify for the prestigious engineering fellowship, applicants must submit an original research proposal, provide three professional letters of recommendation, and ______ a rigorous technical interview before the faculty committee.</p>\n<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>", "options": [{"L": "A", "t": "completing"}, {"L": "B", "t": "complete"}, {"L": "C", "t": "to complete"}, {"L": "D", "t": "they complete"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Parallel Structure", "domain": "Standard English Conv."}, {"n": 22, "kind": "mc", "stem": "<p>Deep-sea hydrothermal ecosystems do not rely on photosynthetic primary production from solar energy. ______ their food webs are anchored by chemosynthetic autotrophs—bacteria that convert toxic hydrogen sulfide and methane into organic carbohydrates.</p>\n<p>Which choice completes the text with the most logical transition?</p>", "options": [{"L": "A", "t": "Instead,"}, {"L": "B", "t": "Furthermore,"}, {"L": "C", "t": "Similarly,"}, {"L": "D", "t": "For instance,"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Transitions (Alternative/Instead)", "domain": "Expression of Ideas"}, {"n": 23, "kind": "mc", "stem": "<p>The introduction of automated optical sorting machines drastically accelerated productivity at the recycling processing facility. ______ the machines occasionally misclassified transparent plastic bottles as clear glass containers, requiring manual secondary verification by human workers.</p>\n<p>Which choice completes the text with the most logical transition?</p>", "options": [{"L": "A", "t": "Therefore,"}, {"L": "B", "t": "In addition,"}, {"L": "C", "t": "However,"}, {"L": "D", "t": "In other words,"}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Transitions (Contrast/However)", "domain": "Expression of Ideas"}, {"n": 24, "kind": "mc", "stem": "<p>In organic chemistry, chiral molecules exist in two non-superimposable mirror-image forms called enantiomers. While enantiomers possess identical physical boiling and melting points, their biological interactions can differ dramatically. ______ the <span class=\"mx\">R</span>-enantiomer of thalidomide acts as a sedative, while its <span class=\"mx\">S</span>-enantiomer causes severe congenital defects.</p>\n<p>Which choice completes the text with the most logical transition?</p>", "options": [{"L": "A", "t": "Specifically,"}, {"L": "B", "t": "Consequently,"}, {"L": "C", "t": "In conclusion,"}, {"L": "D", "t": "Nevertheless,"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Transitions (Exemplification/Specifically)", "domain": "Expression of Ideas"}, {"n": 25, "kind": "mc", "stem": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul><li>The Svalbard Global Seed Vault is an underground seed bank located on the Norwegian island of Spitsbergen.</li><li>It was established in 2008 to safeguard crop biodiversity against global catastrophe and genetic loss.</li><li>The facility is excavated 120 meters inside a sandstone mountain permafrost layer.</li><li>The ambient permafrost temperature maintains seed storage at <span class=\"mx\">-18<sup>\\</sup>circC</span> even during local power grid failure.</li><li>Over 1.2 million distinct seed samples from virtually every nation on Earth are currently preserved there.</li></ul>\n<p>The student wants to <strong>explain how the vault ensures seed preservation during power failures</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>", "options": [{"L": "A", "t": "Located on the Norwegian island of Spitsbergen, the Svalbard Global Seed Vault was established in 2008 to safeguard global crop diversity."}, {"L": "B", "t": "Preserving over 1.2 million seed samples from nations worldwide, the Svalbard vault is located 120 meters inside a sandstone mountain."}, {"L": "C", "t": "Excavated inside a mountain permafrost layer, the Svalbard vault maintains a constant temperature of <span class=\"mx\">-18<sup>\\</sup>circC</span> that keeps seeds safely preserved even during power outages."}, {"L": "D", "t": "The Svalbard Global Seed Vault currently holds 1.2 million seed samples to protect agriculture from global catastrophe."}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Rhetorical Synthesis (Power Failure Goal)", "domain": "Expression of Ideas"}, {"n": 26, "kind": "mc", "stem": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul><li>Biomimicry is the design practice of emulating biological models and natural systems to solve engineering challenges.</li><li>Kingfisher birds dive into water at high speed with almost zero acoustic splash due to their streamlined, wedge-shaped beaks.</li><li>Japanese engineer Eiji Nakatsu redesigned the nose cone of the 500-Series Shinkansen bullet train based on the kingfisher&#x27;s beak.</li><li>The redesign reduced atmospheric pressure waves (tunnel booms) by 70% and cut train electricity consumption by 15%.</li></ul>\n<p>The student wants to <strong>present the specific engineering benefits achieved by the bullet train redesign</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>", "options": [{"L": "A", "t": "Biomimicry involves emulating natural forms, such as the wedge-shaped beak of the kingfisher bird, to resolve complex technical challenges."}, {"L": "B", "t": "By modeling the Shinkansen bullet train&#x27;s nose cone after the kingfisher&#x27;s beak, engineers reduced tunnel noise booms by 70% and lowered electricity consumption by 15%."}, {"L": "C", "t": "Japanese engineer Eiji Nakatsu observed that kingfishers dive into water without splashing, inspiring his work on the 500-Series Shinkansen train."}, {"L": "D", "t": "Kingfisher beaks allow the birds to dive silently into water, demonstrating principles of biomimicry used in modern Japanese transportation."}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Rhetorical Synthesis (Engineering Benefits)", "domain": "Expression of Ideas"}, {"n": 27, "kind": "mc", "stem": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul><li>Marie Maynard Daly was an American biochemist.</li><li>In 1947, she became the first African American woman to earn a Ph.D. in chemistry in the United States (Columbia University).</li><li>Her pioneering research demonstrated the direct relationship between high cholesterol levels and arterial blockages (atherosclerosis).</li><li>Her work laid the foundation for modern dietary guidelines regarding cardiovascular health.</li></ul>\n<p>The student wants to <strong>emphasize Marie Maynard Daly&#x27;s historic academic milestone</strong>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>", "options": [{"L": "A", "t": "Marie Maynard Daly conducted groundbreaking biochemical research that connected high cholesterol to arterial blockages and heart disease."}, {"L": "B", "t": "In 1947, Marie Maynard Daly made history by becoming the first African American woman in the United States to earn a Ph.D. in chemistry."}, {"L": "C", "t": "Modern dietary guidelines for cardiovascular disease are based upon the pioneering arterial research of biochemist Marie Maynard Daly."}, {"L": "D", "t": "After earning her doctoral degree from Columbia University in 1947, Marie Maynard Daly studied the causes of atherosclerosis."}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Rhetorical Synthesis (Historic Milestone)", "domain": "Expression of Ideas"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:1920,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
     }
-    (function() {
-      const saved = localStorage.getItem('study_theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    })();
-
-    // Font Scaling
-    let currentScale = 16;
-    function adjustFontSize(delta) {
-      currentScale = Math.min(22, Math.max(13, currentScale + delta));
-      document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      localStorage.setItem('study_font_size', currentScale);
-    }
-    (function() {
-      const savedSize = localStorage.getItem('study_font_size');
-      if (savedSize) {
-        currentScale = parseInt(savedSize, 10);
-        document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      }
-    })();
-
-    // Teacher Mode Toggle
-    function toggleTeacherMode() {
-      const drawer = document.getElementById('teacherDrawer');
-      if (drawer) {
-        drawer.classList.toggle('active');
-        if (drawer.classList.contains('active')) {
-          drawer.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-
-    // Scaffolding Toggle & Inserter
-    function toggleScaffold() {
-      const content = document.getElementById('scaffoldContent');
-      const icon = document.getElementById('scaffoldIcon');
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.innerText = '▼';
-      } else {
-        content.style.display = 'none';
-        icon.innerText = '▶';
-      }
-    }
-
-    function updateAudioSpeed() {
-      audioRate = parseFloat(document.getElementById('audioSpeed').value) || 1.0;
-      if (isSpeaking) {
-        stopAudio();
-        toggleReadAloud();
-      }
-    }
-
-    function toggleReadAloud() {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech is not supported in this browser.');
-        return;
-      }
-      if (isSpeaking) {
-        stopAudio();
-        return;
-      }
-      
-      const selected = window.getSelection().toString().trim();
-      const textToRead = selected || document.querySelector('.module-content-card').innerText;
-      
-      currentUtterance = new SpeechSynthesisUtterance(textToRead);
-      currentUtterance.rate = audioRate;
-      currentUtterance.lang = 'en-US';
-
-      currentUtterance.onstart = () => {
-        isSpeaking = true;
-        document.getElementById('btnPlayAudio').innerText = '⏸️ Pause';
-      };
-      currentUtterance.onend = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-      currentUtterance.onerror = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-
-      window.speechSynthesis.speak(currentUtterance);
-    }
-
-    function stopAudio() {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        const btn = document.getElementById('btnPlayAudio');
-        if (btn) btn.innerText = '▶️ Read Aloud';
-      }
-    }
-
-    function readTextChunk(btn) {
-      const pre = btn.closest('.code-block-wrapper').querySelector('pre code');
-      if (pre && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(pre.innerText);
-        utter.rate = audioRate;
-        window.speechSynthesis.speak(utter);
-      }
-    }
-
-    // Mastery Checklist Logic
-    const pageKey = 'mastery_' + window.location.pathname;
-    function updateMastery(chk, key) {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      checks[key] = chk.checked;
-      localStorage.setItem(pageKey, JSON.stringify(checks));
-      renderMastery();
-    }
-    function renderMastery() {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      let count = 0;
-      ['c1', 'c2', 'c3', 'c4'].forEach((k, idx) => {
-        const el = document.querySelectorAll('.mastery-item input')[idx];
-        if (el) {
-          el.checked = !!checks[k];
-          if (checks[k]) count++;
-        }
-      });
-      const scoreEl = document.getElementById('masteryScore');
-      const banner = document.getElementById('masteryBanner');
-      if (scoreEl) scoreEl.innerText = `${count} / 4 Mastered`;
-      if (banner) banner.style.display = count === 4 ? 'block' : 'none';
-    }
-    (function() { renderMastery(); })();
-  </script>
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
+}
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=1920,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
 <!-- student-tools v1 -->
 <style>
 

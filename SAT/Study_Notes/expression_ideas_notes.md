@@ -8,7 +8,30 @@ content_type: Study Notes / Strategy Guide
 
 # Expression of Ideas — Study Notes
 
-Transitions / rhetorical synthesis / organization; match relationship; check coherence.
+Transitions and rhetorical synthesis. Logic first, then the student's exact goal.
+
+## Core Rules
+
+- **Transitions**: classify the relationship before choosing — continuation (*moreover, for example*), contrast (*however, in contrast*), cause-effect (*therefore, as a result*), concession (*although, despite*).
+- **Rhetorical synthesis**: restate the goal in your own words ("show the gap," "support with numbers"), then keep only notes serving that goal. Cross out the rest.
+- **Relevance test**: a choice fails if it is true but off-goal, partial when the goal needs a comparison, or numerically vague when the goal needs numbers.
+- **Concision**: among relevant choices, the one achieving the goal with no extra fluff wins.
+
+## Worked Micro-Example
+
+Goal: show promise-vs-outcome gap. Notes: promised 500 homes, built 60. Winner: "The plan promised 500 homes but delivered only 60" — ceremonies, budgets, or lone numbers each miss the contrast.
+
+## Common Traps
+
+- *However* for pure results (use *therefore* family).
+- *For example* when no general claim precedes it.
+- Picking an impressive detail that ignores the stated goal.
+
+## Self-Check (answers in the drills)
+
+- Lawns declined while gardens rose: transition? *(In contrast,)*
+- Toll rose, ferry ridership doubled: transition? *(As a result,)*
+- Costs high but lives saved: transition? *(Despite)*
 
 - **Teach:** Detailed rules above
 - **Show:** [SAT/Show/show_walkthrough.html](../Show/show_walkthrough.html)

@@ -1,1500 +1,234 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital SAT Math: Full Practice Module 1 | SAT Academic Study Module</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <!-- KaTeX for Math Equation Rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\(', right: '\)', display: false}, {left: '\[', right: '\]', display: true}]});"></script>
-  <style>
-    :root {
-      --primary: #8b5cf6;
-      --primary-dark: #7c3aed;
-      --primary-light: rgba(139, 92, 246, 0.08);
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-      --radius: 12px;
-      --font: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --base-font-size: 16px;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b0f19;
-      --surface: #131b2e;
-      --card-bg: #1e293b;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --primary-light: rgba(255, 255, 255, 0.05);
-      --border: #334155;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: var(--base-font-size); scroll-behavior: smooth; }
-    body {
-      font-family: var(--font);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      padding-bottom: 80px;
-    }
-
-    /* Global Header */
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      padding: 0.75rem 1.5rem;
-    }
-
-    .header-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .btn-back:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    .domain-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(139, 92, 246, 0.08);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn-action {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .btn-action:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-    .btn-teacher-toggle {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    /* Audio Player Bar */
-    .audio-player-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0.5rem 1.5rem;
-      font-size: 0.85rem;
-    }
-    .audio-bar-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    .audio-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .speed-select {
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
-
-    main {
-      max-width: 1080px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero Banner */
-    .module-hero {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.25rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .module-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), #3b82f6);
-    }
-
-    .module-meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .meta-pill {
-      font-size: 0.8rem;
-      padding: 4px 12px;
-      border-radius: 20px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .meta-pill.highlight {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
-    }
-
-    .module-title {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text);
-    }
-
-    /* Scaffolding Card */
-    .scaffold-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .scaffold-header {
-      padding: 1.25rem;
-      background: var(--primary-light);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
-    .scaffold-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .scaffold-content {
-      padding: 1.5rem;
-      display: block;
-    }
-    .scaffold-intro {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    .starter-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .starter-btn {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 12px;
-      border-radius: 8px;
-      text-align: left;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .starter-btn:hover {
-      border-color: var(--primary);
-      background: var(--primary-light);
-    }
-    .starter-btn .tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-    .starter-btn code {
-      font-family: var(--font);
-      font-size: 0.85rem;
-      color: var(--text);
-      line-height: 1.4;
-    }
-    .pitfall-radar {
-      background: rgba(239, 68, 68, 0.05);
-      border-left: 4px solid #ef4444;
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-    }
-    .pitfall-radar ul {
-      margin: 0.5rem 0 0 1.25rem;
-    }
-    .pitfall-radar li {
-      margin-bottom: 0.3rem;
-    }
-
-    /* Main Content Card */
-    .module-content-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2rem;
-    }
-
-    /* Typography */
-    .study-heading {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 800;
-      color: var(--text);
-      scroll-margin-top: 80px;
-    }
-    .study-heading.h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
-    .study-heading.h2 { font-size: 1.45rem; border-left: 4px solid var(--primary); padding-left: 12px; }
-    .study-heading.h3 { font-size: 1.2rem; color: var(--primary); }
-    .study-heading.h4 { font-size: 1.05rem; font-weight: 700; }
-
-    p { margin-bottom: 1.25rem; color: var(--text); }
-    .study-list { margin: 1rem 0 1.5rem 1.5rem; }
-    .study-list li { margin-bottom: 0.6rem; }
-
-    /* Code Blocks */
-    .code-block-wrapper {
-      background: #0f172a;
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 1.5rem 0;
-      border: 1px solid #334155;
-    }
-    .code-header {
-      background: #1e293b;
-      padding: 8px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #94a3b8;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    .code-actions {
-      display: flex;
-      gap: 6px;
-    }
-    .btn-copy-code {
-      background: transparent;
-      border: 1px solid #475569;
-      color: #cbd5e1;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    .btn-copy-code:hover {
-      background: #334155;
-      color: #fff;
-    }
-    pre {
-      padding: 1.25rem;
-      overflow-x: auto;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #e2e8f0;
-    }
-
-    /* Tables */
-    .table-container {
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
-      text-align: left;
-    }
-    .data-table th {
-      background: var(--bg);
-      padding: 12px 16px;
-      border-bottom: 2px solid var(--border);
-      font-weight: 700;
-      color: var(--text);
-    }
-    .data-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-    .data-table tr:last-child td { border-bottom: none; }
-    .data-table tr:hover td { background: var(--primary-light); }
-
-    /* Alerts */
-    .alert {
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin: 1.5rem 0;
-      border-left: 4px solid;
-    }
-    .alert-title { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .alert-note { background: rgba(59, 130, 246, 0.08); border-color: #3b82f6; }
-    .alert-tip { background: rgba(16, 185, 129, 0.08); border-color: #10b981; }
-    .alert-important { background: rgba(239, 68, 68, 0.08); border-color: #ef4444; }
-    .alert-warning { background: rgba(245, 158, 11, 0.08); border-color: #f59e0b; }
-
-    .study-quote {
-      border-left: 4px solid var(--primary);
-      padding: 1rem 1.25rem;
-      background: var(--bg);
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    /* KaTeX & Desmos Formula Styling */
-    .katex-display {
-      margin: 1.2rem 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      padding: 0.5rem 0;
-    }
-    .desmos-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      background: rgba(139, 92, 246, 0.12);
-      color: #7c3aed;
-      margin-bottom: 8px;
-    }
-    .study-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-
-    /* Interactive Tool Cards */
-    .interactive-tool-card {
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .tool-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tool-title { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
-    .tool-badges { display: flex; gap: 8px; }
-    .badge {
-      background: var(--primary);
-      color: #fff;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-    }
-    .timer-controls, .speaking-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
-    .btn-tool {
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      background: var(--primary);
-      color: #fff;
-      transition: all 0.2s;
-    }
-    .btn-tool:hover { opacity: 0.9; }
-    .btn-tool-outline { background: var(--bg); border: 1px solid var(--border); color: var(--text); }
-    .btn-tool-outline:hover { border-color: var(--primary); color: var(--primary); }
-    textarea {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 1rem;
-      padding: 1rem;
-      line-height: 1.6;
-      resize: vertical;
-      margin-bottom: 1rem;
-    }
-    textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
-    .stats-bar { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
-    .progress-bar-bg, .speaking-progress-container {
-      flex: 1;
-      height: 10px;
-      background: var(--border);
-      border-radius: 5px;
-      overflow: hidden;
-      min-width: 150px;
-    }
-    .progress-bar-fill, .speaking-progress-bar { height: 100%; background: #10b981; transition: width 0.3s ease; }
-    .word-status-badge { font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: var(--bg); border: 1px solid var(--border); }
-
-    /* Mastery Checklist Card */
-    .mastery-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin: 2rem 0;
-      box-shadow: var(--shadow);
-    }
-    .mastery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .mastery-score {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-    .mastery-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mastery-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background: var(--bg);
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      font-size: 0.92rem;
-    }
-    .mastery-item input[type="checkbox"] {
-      margin-top: 4px;
-      cursor: pointer;
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-    }
-    .mastery-banner {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid #10b981;
-      border-radius: 8px;
-      color: #10b981;
-      text-align: center;
-    }
-
-    /* Teacher Drawer */
-    .teacher-drawer {
-      display: none;
-      background: var(--surface);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
-    }
-    .teacher-drawer.active { display: block; }
-    .teacher-drawer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.75rem;
-    }
-    .teacher-block { margin-bottom: 1.25rem; }
-    .teacher-block h4 { font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .teacher-block ul { margin-left: 1.25rem; font-size: 0.9rem; }
-    .teacher-block li { margin-bottom: 0.4rem; }
-    .btn-close-drawer { background: transparent; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-muted); }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    @media print {
-      header, .audio-player-bar, .scaffold-card, .interactive-tool-card, .mastery-card, .teacher-drawer, footer, .btn-copy-code { display: none !important; }
-      body { background: #fff; color: #000; font-size: 12pt; }
-      .module-content-card, .module-hero { border: none; box-shadow: none; padding: 0; margin-bottom: 1rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital SAT Math: Full Practice Module 1 | SAT Interactive Drill</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--text:#0f172a;--muted:#64748b;--primary:#7c3aed;--primary-d:#6d28d9;--primary-l:#ede9fe;--ok:#16a34a;--ok-l:#dcfce7;--bad:#dc2626;--bad-l:#fee2e2;--warn:#d97706;--warn-l:#fef3c7;--border:#e2e8f0;--radius:12px;--font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+[data-theme="dark"]{--bg:#0b0f19;--surface:#131b2e;--text:#f1f5f9;--muted:#94a3b8;--primary:#a78bfa;--primary-d:#8b5cf6;--primary-l:#2e1065;--ok-l:#052e16;--bad-l:#450a0a;--warn-l:#451a03;--border:#334155}
+*{box-sizing:border-box}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;margin:0;padding:0 1rem 5rem}
+.wrap{max-width:880px;margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);margin:0 -1rem;padding:.6rem 1rem}
+.topbar-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between}
+.brand{font-weight:800;font-size:.95rem}.brand a{color:var(--primary);text-decoration:none}
+.crumbs{font-size:.8rem;color:var(--muted);margin:.9rem 0 .4rem}.crumbs a{color:var(--primary);text-decoration:none}
+h1{font-size:1.6rem;line-height:1.3;border-left:6px solid var(--primary);padding-left:.9rem;margin:.4rem 0 1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.82rem;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.6rem 1rem;margin-bottom:1rem}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.7rem 1rem;margin-bottom:1rem}
+.btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;padding:.5rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--primary);background:var(--primary-l)}
+.btn.pri{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.pri:hover{background:var(--primary-d)}
+.btn.on{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.timer{font-family:var(--mono);font-weight:700;font-size:1.05rem}
+.timer.low{color:var(--bad)}
+.progress{height:10px;background:var(--border);border-radius:6px;overflow:hidden;margin:.4rem 0 1rem}
+.progress>div{height:100%;width:0;background:var(--primary);transition:width .25s}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.pill{min-width:34px;height:34px;padding:0 8px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:.82rem;font-weight:700;cursor:pointer;color:var(--text)}
+.pill.cur{border-color:var(--primary);box-shadow:0 0 0 2px var(--primary-l)}
+.pill.ans{background:var(--primary-l);border-color:var(--primary);color:var(--primary)}
+.pill.flagged::after{content:" ⚑";color:var(--warn)}
+.pill.good{background:var(--ok-l);border-color:var(--ok);color:var(--ok)}
+.pill.miss{background:var(--bad-l);border-color:var(--bad);color:var(--bad)}
+.qcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.3rem;margin:0 0 1.1rem;box-shadow:0 4px 6px -1px rgb(0 0 0/.05)}
+.qcard.cur{border-color:var(--primary)}
+.qtop{display:flex;gap:.6rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.qnum{font-weight:800;color:var(--primary)}
+.qtag{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--primary-l);color:var(--primary)}
+.qtag.diff{background:var(--warn-l);color:var(--warn)}
+.qacts{margin-left:auto;display:flex;gap:6px}
+.iconbtn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:.25rem .6rem;cursor:pointer;color:var(--muted);font-size:.9rem}
+.iconbtn.flagged{color:var(--warn);border-color:var(--warn)}
+.qstem{font-size:1.02rem;margin-bottom:.9rem}
+.qstem p{margin:.55rem 0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;text-align:left;width:100%;padding:.65rem .8rem;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);cursor:pointer;font:inherit;font-size:.95rem}
+.opt:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l)}
+.opt .ol{font-family:var(--mono);font-weight:700;border:1px solid var(--border);border-radius:6px;padding:0 8px;background:var(--bg);flex:none}
+.opt.sel{border-color:var(--primary);background:var(--primary-l)}
+.opt.good{border-color:var(--ok);background:var(--ok-l)}
+.opt.good .ol{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.miss{border-color:var(--bad);background:var(--bad-l)}
+.opt.miss .ol{background:var(--bad);border-color:var(--bad);color:#fff}
+.opt:disabled{cursor:default}
+.spr-row{display:flex;gap:8px;flex-wrap:wrap}
+.spr{flex:1;min-width:180px;border:1px solid var(--border);border-radius:9px;padding:.6rem .8rem;font:inherit;font-size:1rem;background:var(--surface);color:var(--text)}
+.spr.good{border-color:var(--ok);background:var(--ok-l)}
+.spr.miss{border-color:var(--bad);background:var(--bad-l)}
+.rat{margin-top:.9rem;padding:.8rem 1rem;border-radius:9px;background:var(--bg);border-left:4px solid var(--primary);font-size:.92rem}
+.rat p{margin:.45rem 0}.rat ul,.rat ol{margin:.4rem 0 .6rem;padding-left:1.3rem}.rat li{margin:.2rem 0}
+.rat table{border-collapse:collapse;width:100%;margin:.6rem 0;font-size:.85rem}
+.rat th,.rat td{border:1px solid var(--border);padding:.35rem .6rem;text-align:left}
+.score{background:var(--surface);border:2px solid var(--primary);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:1.2rem 0;display:none}
+.score.show{display:block}
+.score h2{margin:0 0 .4rem;font-size:1.3rem}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0}
+.flow a{flex:1;min-width:150px;text-align:center;text-decoration:none;font-weight:700;font-size:.88rem;border:1px solid var(--primary);color:var(--primary);border-radius:9px;padding:.6rem}
+.flow a:hover{background:var(--primary-l)}
+.mx{white-space:nowrap}.mx-disp{display:block;text-align:center;margin:.7rem 0;font-size:1.08em;overflow-x:auto}
+.mx-frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 .1em}
+.mx-frac>span{padding:0 .35em}.mx-frac>span:first-child{border-bottom:1.5px solid currentColor}
+.mx-root{border-top:1.5px solid currentColor;padding:0 .1em}
+.mx-cases{display:inline-flex;align-items:stretch;gap:.3em;vertical-align:middle}
+.mx-brace{font-size:1.6em;line-height:1}
+.mx-rows{display:inline-flex;flex-direction:column;gap:.15em}
+code{font-family:var(--mono);font-size:.85em;background:var(--primary-l);padding:.1rem .35rem;border-radius:6px}
+pre{background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow:auto}
+pre code{background:none;color:inherit;padding:0}
+table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.9rem}
+th,td{border:1px solid var(--border);padding:.45rem .65rem;text-align:left}
+blockquote{border-left:4px solid var(--primary);margin:.8rem 0;padding:.3rem 1rem;background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+.overview{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.1rem;font-size:.92rem}
+.overview ul{margin:.4rem 0 .6rem;padding-left:1.3rem}
+@media print{.topbar,.controls,.pills,.qacts,.flow,#st-bar,#st-show,#st-canvas,.st-p,#st-tip,#st-toast{display:none!important}.rat{display:block!important}.qcard{break-inside:avoid}}
+</style>
 </head>
 <body>
-
-  <header>
-    <div class="header-container">
-      <div class="nav-left">
-        <a href="../index.html" class="btn-back">← Back to Digital SAT Portal</a>
-        <span class="domain-tag">🏛️ SAT</span>
-      </div>
-      <div class="nav-actions">
-        <button class="btn-action btn-teacher-toggle" onclick="toggleTeacherMode()">👨‍🏫 Teacher Mode</button>
-        <button class="btn-action" onclick="adjustFontSize(-1)" title="Decrease font size">A-</button>
-        <button class="btn-action" onclick="adjustFontSize(1)" title="Increase font size">A+</button>
-        <button class="btn-action" onclick="window.print()" title="Print / Save PDF">🖨️ PDF</button>
-        <button class="btn-action" onclick="toggleTheme()">🌓 Theme</button>
-      </div>
-    </div>
-  </header>
-
-  <div class="audio-player-bar">
-    <div class="audio-bar-inner">
-      <div class="audio-controls">
-        <span>🔊 <strong>Audio Reader:</strong></span>
-        <button class="btn-action" onclick="toggleReadAloud()" id="btnPlayAudio">▶️ Read Aloud</button>
-        <button class="btn-action" onclick="stopAudio()">⏹️ Stop</button>
-        <select class="speed-select" id="audioSpeed" onchange="updateAudioSpeed()">
-          <option value="0.75">0.75x (Slow - Struggling Learners)</option>
-          <option value="1.0" selected>1.0x (Normal Pace)</option>
-          <option value="1.25">1.25x (Fast Pace)</option>
-        </select>
-      </div>
-      <span style="color: var(--text-muted); font-size: 0.8rem;">Select any text to read specific sections</span>
-    </div>
-  </div>
-
-  <main>
-    
-    <!-- Teacher Mode Drawer -->
-    <div class="teacher-drawer" id="teacherDrawer">
-      <div class="teacher-drawer-header">
-        <h3>👨‍🏫 Teacher Mode: Classroom Facilitator Guide</h3>
-        <button class="btn-close-drawer" onclick="toggleTeacherMode()">✕ Close</button>
-      </div>
-      <div class="teacher-drawer-body">
-        
-        
-        <div class="teacher-block">
-          <h4>🖨️ Classroom Printing</h4>
-          <p>Click below to format this module into a clean, 2-page student handout for classroom distribution:</p>
-          <button class="btn-tool" onclick="window.print()">🖨️ Print Student Worksheet</button>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="module-hero">
-      <div class="module-meta-pills">
-        <span class="meta-pill highlight">Score 700 - 800</span>
-        <span class="meta-pill">Full Practice Module / Mock Test</span>
-        <span class="meta-pill">📅 2026-09-01</span>
-      </div>
-      <h1 class="module-title">Digital SAT Math: Full Practice Module 1</h1>
-      <p style="color: var(--text-muted); font-size: 0.95rem;">Interactive Academic Study Module • Pedagogically Scaffolded Curriculum</p>
-    </div>
-
-    
-    
-    
-
-    <article class="module-content-card">
-      <h1 id="digital-sat-math-full-practice-module-1" class="study-heading h1">📐 Digital SAT Math: Full Practice Module 1</h1>
-<p></p>
-<h2 id="module-overview--test-parameters" class="study-heading h2">📋 Module Overview &amp; Test Parameters</h2>
-<ul class="study-list">
-<li><strong>Test Section</strong>: Digital SAT Math (Calculator Permitted Throughout)</li>
-<li><strong>Item Count</strong>: 22 Questions (17 Multiple Choice + 5 Student-Produced Responses)</li>
-<li><strong>Time Allocated</strong>: 35 Minutes (~95 seconds per item)</li>
-<li><strong>Domain Coverage</strong>:</li>
-</ul>
-<p>  - <em>Algebra</em> (Questions 1–6): Linear equations, linear inequalities, systems of linear equations</p>
-<p>  - <em>Advanced Math</em> (Questions 7–13): Quadratic equations, polynomial operations, nonlinear functions, radical/rational equations</p>
-<p>  - <em>Problem-Solving and Data Analysis</em> (Questions 14–18): Ratios, rates, percentages, two-variable data, probability, statistics</p>
-<p>  - <em>Geometry and Trigonometry</em> (Questions 19–22): Circles, triangles, radians, trigonometry, 3D volume</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="math-problems-questions-122" class="study-heading h2">❓ Math Problems (Questions 1–22)</h2>
-<p></p>
-<h3 id="question-1-algebra-linear-function-modeling" class="study-heading h3">Question 1 (Algebra: Linear Function Modeling)</h3>
-<p>A commercial solar installation company charges a flat equipment consultation fee of $\$450$ plus $\$125$ per solar panel installed. If a commercial client was billed a total of $\$5{,}700$, how many solar panels were installed?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $38$</li>
-<li><strong>B)</strong> $42$</li>
-<li><strong>C)</strong> $45$</li>
-<li><strong>D)</strong> $49$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-2-algebra-linear-inequality" class="study-heading h3">Question 2 (Algebra: Linear Inequality)</h3>
-<p>Which of the following points $(x, y)$ satisfies the system of inequalities below?</p>
-<p></p>
-<p>$$\begin{cases} </p>
-<p>y &gt; 2x - 5 \\ </p>
-<p>y \le -x + 4 </p>
-<p>\end{cases}$$</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $(3, 2)$</li>
-<li><strong>B)</strong> $(0, -6)$</li>
-<li><strong>C)</strong> $(1, 1)$</li>
-<li><strong>D)</strong> $(2, 5)$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-3-algebra-system-of-linear-equations---no-solution" class="study-heading h3">Question 3 (Algebra: System of Linear Equations - No Solution)</h3>
-<p>In the given system of equations, $a$ and $b$ are constants.</p>
-<p></p>
-<p>$$\begin{cases} </p>
-<p>4x - 6y = 15 \\ </p>
-<p>ax + 9y = b </p>
-<p>\end{cases}$$</p>
-<p></p>
-<p>If the system has no solution, which of the following could be the values of $a$ and $b$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $a = -6$ and $b = -22.5$</li>
-<li><strong>B)</strong> $a = -6$ and $b = 10$</li>
-<li><strong>C)</strong> $a = 6$ and $b = -22.5$</li>
-<li><strong>D)</strong> $a = 6$ and $b = 15$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-4-algebra-rearranging-literal-equations" class="study-heading h3">Question 4 (Algebra: Rearranging Literal Equations)</h3>
-<p>The formula for the electric power $P$ dissipated through a resistor is given by:</p>
-<p></p>
-<p>$$P = \frac{V^2}{R}$$</p>
-<p></p>
-<p>where $V$ is voltage and $R$ is electrical resistance. Which of the following correctly expresses $V$ in terms of $P$ and $R$, assuming all quantities are positive?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $V = \sqrt{P \cdot R}$</li>
-<li><strong>B)</strong> $V = \frac{P}{R^2}$</li>
-<li><strong>C)</strong> $V = (P \cdot R)^2$</li>
-<li><strong>D)</strong> $V = \sqrt{\frac{P}{R}}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-5-algebra-parallel--perpendicular-lines" class="study-heading h3">Question 5 (Algebra: Parallel &amp; Perpendicular Lines)</h3>
-<p>Line $L_1$ in the $xy$-plane passes through the points $(-2, 5)$ and $(4, -1)$. Line $L_2$ is perpendicular to line $L_1$ and passes through the point $(3, 7)$. What is the $y$-intercept of line $L_2$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $(0, 4)$</li>
-<li><strong>B)</strong> $(0, 3)$</li>
-<li><strong>C)</strong> $(0, -4)$</li>
-<li><strong>D)</strong> $(0, 10)$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-6-algebra-absolute-value-equation" class="study-heading h3">Question 6 (Algebra: Absolute Value Equation)</h3>
-<p>What is the sum of all real solutions to the equation $|2x - 7| = 13$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $3$</li>
-<li><strong>B)</strong> $7$</li>
-<li><strong>C)</strong> $10$</li>
-<li><strong>D)</strong> $14$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-7-advanced-math-quadratic-vertex-minimum" class="study-heading h3">Question 7 (Advanced Math: Quadratic Vertex Minimum)</h3>
-<p>The function $f(x) = 3x^2 - 24x + 55$ models the height, in meters, of a drone relative to a canyon floor $x$ seconds after launch. What is the minimum height reached by the drone?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $4\text{ meters}$</li>
-<li><strong>B)</strong> $7\text{ meters}$</li>
-<li><strong>C)</strong> $12\text{ meters}$</li>
-<li><strong>D)</strong> $55\text{ meters}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-8-advanced-math-equivalent-polynomial-expressions" class="study-heading h3">Question 8 (Advanced Math: Equivalent Polynomial Expressions)</h3>
-<p>Which of the following is equivalent to the expression $\frac{2x^3 - 5x^2 + 8x - 12}{x - 2}$ for all $x \ne 2$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $2x^2 - x + 6$</li>
-<li><strong>B)</strong> $2x^2 - x + 6 + \frac{0}{x - 2}$</li>
-<li><strong>C)</strong> $2x^2 - 9x + 26 - \frac{64}{x - 2}$</li>
-<li><strong>D)</strong> $2x^2 - x + 6$ (Exact division with remainder $0$)</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-9-advanced-math-quadratic-formula--radical-form" class="study-heading h3">Question 9 (Advanced Math: Quadratic Formula &amp; Radical Form)</h3>
-<p>If $x &gt; 0$ and $x^2 - 6x - 11 = 0$, what is the value of $x$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $3 + 2\sqrt{5}$</li>
-<li><strong>B)</strong> $3 + 4\sqrt{5}$</li>
-<li><strong>C)</strong> $6 + \sqrt{20}$</li>
-<li><strong>D)</strong> $3 + \sqrt{11}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-10-advanced-math-exponent-rules-with-radicals" class="study-heading h3">Question 10 (Advanced Math: Exponent Rules with Radicals)</h3>
-<p>For all positive values of $y$, the expression $\sqrt[3]{y^5} \cdot \sqrt{y^3}$ can be written in the form $y^k$, where $k$ is a constant. What is the value of $k$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $\frac{19}{6}$</li>
-<li><strong>B)</strong> $\frac{15}{6}$</li>
-<li><strong>C)</strong> $\frac{8}{5}$</li>
-<li><strong>D)</strong> $\frac{5}{2}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-11-advanced-math-nonlinear-systems-of-equations" class="study-heading h3">Question 11 (Advanced Math: Nonlinear Systems of Equations)</h3>
-<p>How many distinct real intersection points do the graphs of $y = x^2 - 4x + 5$ and $y = 2x - 4$ share in the $xy$-plane?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> Zero</li>
-<li><strong>B)</strong> Exactly one</li>
-<li><strong>C)</strong> Exactly two</li>
-<li><strong>D)</strong> Infinitely many</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-12-advanced-math-exponential-decay-function" class="study-heading h3">Question 12 (Advanced Math: Exponential Decay Function)</h3>
-<p>A radioactive isotope sample has an initial mass of $640\text{ grams}$. The mass of the isotope decreases by $50\%$ every $14$ days. Which equation models the remaining mass $M(t)$, in grams, after $t$ days?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $M(t) = 640(0.5)^{14t}$</li>
-<li><strong>B)</strong> $M(t) = 640(0.5)^{\frac{t}{14}}$</li>
-<li><strong>C)</strong> $M(t) = 640(2)^{\frac{t}{14}}$</li>
-<li><strong>D)</strong> $M(t) = 14(0.5)^{\frac{t}{640}}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-13-advanced-math-function-transformations" class="study-heading h3">Question 13 (Advanced Math: Function Transformations)</h3>
-<p>The graph of $y = g(x)$ is obtained by shifting the graph of $f(x) = (x + 3)^2 - 5$ three units to the right and four units upwards. What is the equation of $g(x)$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $g(x) = x^2 - 1$</li>
-<li><strong>B)</strong> $g(x) = (x + 6)^2 - 1$</li>
-<li><strong>C)</strong> $g(x) = x^2 - 9$</li>
-<li><strong>D)</strong> $g(x) = (x - 3)^2 + 1$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-14-data-analysis-two-way-probability-table" class="study-heading h3">Question 14 (Data Analysis: Two-Way Probability Table)</h3>
-<p>A software firm surveyed 150 software engineers regarding their primary programming language and their work arrangement.</p>
-<p></p>
-<div class="table-container"><table class="data-table">
-<thead><tr>
-<th>Work Arrangement</th>
-<th>Python</th>
-<th>TypeScript / JavaScript</th>
-<th>Rust</th>
-<th>Total</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Fully Remote</strong></td>
-<td>45</td>
-<td>35</td>
-<td>10</td>
-<td><strong>90</strong></td>
-</tr>
-<tr>
-<td><strong>Hybrid / On-site</strong></td>
-<td>20</td>
-<td>30</td>
-<td>10</td>
-<td><strong>60</strong></td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>65</strong></td>
-<td><strong>65</strong></td>
-<td><strong>20</strong></td>
-<td><strong>150</strong></td>
-</tr>
-</tbody>
-</table></div>
-<p></p>
-<p>If an engineer who codes primarily in Python is chosen at random, what is the probability that this engineer works Fully Remote?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $\frac{45}{150}$</li>
-<li><strong>B)</strong> $\frac{45}{90}$</li>
-<li><strong>C)</strong> $\frac{45}{65}$</li>
-<li><strong>D)</strong> $\frac{65}{150}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-15-data-analysis-percentage-increase--unit-conversion" class="study-heading h3">Question 15 (Data Analysis: Percentage Increase &amp; Unit Conversion)</h3>
-<p>A manufacturing plant produced $12{,}000$ microchips in May. In June, production increased by $25\%$. In July, production decreased by $10\%$ relative to June. How many microchips were produced in July?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $13{,}500$</li>
-<li><strong>B)</strong> $13{,}800$</li>
-<li><strong>C)</strong> $14{,}200$</li>
-<li><strong>D)</strong> $15{,}000$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-16-data-analysis-scatterplot-line-of-best-fit" class="study-heading h3">Question 16 (Data Analysis: Scatterplot Line of Best Fit)</h3>
-<p>The scatterplot below shows the relationship between ambient outdoor temperature $x$ (in $^\circ\text{C}$) and hourly electricity consumption $y$ (in kilowatt-hours) for an office building. The line of best fit is given by:</p>
-<p></p>
-<p>$$\hat{y} = 1.85x + 42.0$$</p>
-<p></p>
-<p>Based on this model, what is the predicted electricity consumption, in kilowatt-hours, when the ambient temperature is $32^\circ\text{C}$?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $98.2\text{ kWh}$</li>
-<li><strong>B)</strong> $101.2\text{ kWh}$</li>
-<li><strong>C)</strong> $104.5\text{ kWh}$</li>
-<li><strong>D)</strong> $112.0\text{ kWh}$</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-17-data-analysis-statistical-standard-deviation--spread" class="study-heading h3">Question 17 (Data Analysis: Statistical Standard Deviation &amp; Spread)</h3>
-<p>Dataset $A$ consists of the numbers $\{10, 10, 10, 10, 10\}$. Dataset $B$ consists of the numbers $\{6, 8, 10, 12, 14\}$. Which of the following statements comparing their standard deviations ($\sigma_A$ and $\sigma_B$) is true?</p>
-<p></p>
-<ul class="study-list">
-<li><strong>A)</strong> $\sigma_A &gt; \sigma_B$</li>
-<li><strong>B)</strong> $\sigma_A = \sigma_B$</li>
-<li><strong>C)</strong> $\sigma_A = 0$ and $\sigma_B &gt; 0$</li>
-<li><strong>D)</strong> The standard deviations cannot be determined without sample weights.</li>
-</ul>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-18-student-produced-response-algebra---constant-in-linear-system" class="study-heading h3">Question 18 (Student-Produced Response: Algebra - Constant in Linear System)</h3>
-<p>In the system of equations below, $m$ is a constant.</p>
-<p></p>
-<p>$$\begin{cases} </p>
-<p>6x - 8y = 20 \\ </p>
-<p>-9x + my = -30 </p>
-<p>\end{cases}$$</p>
-<p></p>
-<p>If the system has infinitely many solutions, what is the value of $m$?</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-19-student-produced-response-geometry---circle-radius" class="study-heading h3">Question 19 (Student-Produced Response: Geometry - Circle Radius)</h3>
-<p>A circle in the $xy$-plane has the equation $x^2 + y^2 - 12x + 16y + 19 = 0$. What is the radius of the circle?</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-20-student-produced-response-trigonometry---right-triangle-identity" class="study-heading h3">Question 20 (Student-Produced Response: Trigonometry - Right Triangle Identity)</h3>
-<p>In a right triangle $\triangle PQR$ with right angle at $Q$, $\cos(P) = \frac{12}{13}$. What is the value of $\tan(P)$?</p>
-<p></p>
-<p><em>(Enter your answer as a fraction in simplest form, e.g. <code>5/12</code>).</em></p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-21-student-produced-response-advanced-math---sum-of-roots" class="study-heading h3">Question 21 (Student-Produced Response: Advanced Math - Sum of Roots)</h3>
-<p>What is the sum of the solutions to the quadratic equation $3x^2 - 21x + 14 = 0$?</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h3 id="question-22-student-produced-response-3d-geometry---cylinder-volume" class="study-heading h3">Question 22 (Student-Produced Response: 3D Geometry - Cylinder Volume)</h3>
-<p>A right circular cylinder has a base radius of $4\text{ cm}$ and a height of $9\text{ cm}$. If the volume of the cylinder is $k\pi\text{ cm}^3$, what is the value of the constant $k$?</p>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="complete-answer-key--diagnostic-matrix" class="study-heading h2">🔑 Complete Answer Key &amp; Diagnostic Matrix</h2>
-<p></p>
-<div class="table-container"><table class="data-table">
-<thead><tr>
-<th>Item</th>
-<th>Key / Value</th>
-<th>Domain</th>
-<th>Sub-Topic</th>
-<th>Difficulty Tier</th>
-</tr></thead><tbody>
-<tr>
-<td><strong>Q1</strong></td>
-<td><strong>B (42)</strong></td>
-<td>Algebra</td>
-<td>Linear Modeling</td>
-<td>Easy-Medium</td>
-</tr>
-<tr>
-<td><strong>Q2</strong></td>
-<td><strong>C ((1, 1))</strong></td>
-<td>Algebra</td>
-<td>Linear Inequalities</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q3</strong></td>
-<td><strong>B ($a = -6, b = 10$)</strong></td>
-<td>Algebra</td>
-<td>Systems (No Solution)</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q4</strong></td>
-<td><strong>A ($V = \sqrt{P \cdot R}$)</strong></td>
-<td>Algebra</td>
-<td>Literal Equations</td>
-<td>Easy</td>
-</tr>
-<tr>
-<td><strong>Q5</strong></td>
-<td><strong>A ((0, 4))</strong></td>
-<td>Algebra</td>
-<td>Perpendicular Lines</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q6</strong></td>
-<td><strong>B (7)</strong></td>
-<td>Algebra</td>
-<td>Absolute Value Equations</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q7</strong></td>
-<td><strong>B (7)</strong></td>
-<td>Advanced Math</td>
-<td>Quadratic Vertex Minimum</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q8</strong></td>
-<td><strong>A ($2x^2 - x + 6$)</strong></td>
-<td>Advanced Math</td>
-<td>Polynomial Division</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q9</strong></td>
-<td><strong>A ($3 + 2\sqrt{5}$)</strong></td>
-<td>Advanced Math</td>
-<td>Quadratic Formula / Radicals</td>
-<td>Medium-Hard</td>
-</tr>
-<tr>
-<td><strong>Q10</strong></td>
-<td><strong>A ($\frac{19}{6}$)</strong></td>
-<td>Advanced Math</td>
-<td>Fractional Exponents</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q11</strong></td>
-<td><strong>B (Exactly one)</strong></td>
-<td>Advanced Math</td>
-<td>Nonlinear System Intersection</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q12</strong></td>
-<td><strong>B ($M(t) = 640(0.5)^{t/14}$)</strong></td>
-<td>Advanced Math</td>
-<td>Exponential Decay Modeling</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q13</strong></td>
-<td><strong>A ($g(x) = x^2 - 1$)</strong></td>
-<td>Advanced Math</td>
-<td>Function Transformations</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q14</strong></td>
-<td><strong>C ($\frac{45}{65}$)</strong></td>
-<td>Data Analysis</td>
-<td>Conditional Probability</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q15</strong></td>
-<td><strong>A (13,500)</strong></td>
-<td>Data Analysis</td>
-<td>Compound Percent Change</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q16</strong></td>
-<td><strong>B (101.2)</strong></td>
-<td>Data Analysis</td>
-<td>Linear Regression Line of Best Fit</td>
-<td>Easy-Medium</td>
-</tr>
-<tr>
-<td><strong>Q17</strong></td>
-<td><strong>C ($\sigma_A = 0, \sigma_B &gt; 0$)</strong></td>
-<td>Data Analysis</td>
-<td>Standard Deviation / Spread</td>
-<td>Easy-Medium</td>
-</tr>
-<tr>
-<td><strong>Q18</strong></td>
-<td><strong>12</strong></td>
-<td>Algebra</td>
-<td>Infinite Solution Constant</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q19</strong></td>
-<td><strong>9</strong></td>
-<td>Geometry</td>
-<td>Circle Standard Form Radius</td>
-<td>Hard</td>
-</tr>
-<tr>
-<td><strong>Q20</strong></td>
-<td><strong>5/12</strong></td>
-<td>Trigonometry</td>
-<td>Right Triangle Trigonometry</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q21</strong></td>
-<td><strong>7</strong></td>
-<td>Advanced Math</td>
-<td>Vieta's Formulas (Sum of Roots)</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td><strong>Q22</strong></td>
-<td><strong>144</strong></td>
-<td>Geometry</td>
-<td>Cylinder Volume Constant</td>
-<td>Medium</td>
-</tr>
-</tbody>
-</table></div>
-<p></p>
-<hr class="study-divider">
-<p></p>
-<h2 id="dual-solutions-distractor-rationales--explanations" class="study-heading h2">💡 Dual Solutions, Distractor Rationales &amp; Explanations</h2>
-<p></p>
-<h3 id="question-1" class="study-heading h3">Question 1</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: $450 + 125n = 5700 \implies 125n = 5250 \implies n = 42$.</li>
-<li><strong>Desmos</strong>: Type <code>450 + 125n = 5700</code> into line 1. Desmos plots vertical line at $x = 42$.</li>
-</ul>
-<p></p>
-<h3 id="question-2" class="study-heading h3">Question 2</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Test $(1, 1)$:</li>
-</ul>
-<p>  - $1 &gt; 2(1) - 5 \implies 1 &gt; -3$ (True)</p>
-<p>  - $1 \le -(1) + 4 \implies 1 \le 3$ (True)</p>
-<ul class="study-list">
-<li><strong>Desmos</strong>: Graph <code>y &gt; 2x - 5</code> and <code>y &lt;= -x + 4</code>. The point $(1, 1)$ falls inside the double-shaded overlapping feasible region.</li>
-</ul>
-<p></p>
-<h3 id="question-3" class="study-heading h3">Question 3</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: For no solution, slopes must match ($\frac{4}{a} = \frac{-6}{9} \implies -6a = 36 \implies a = -6$) but $y$-intercepts must differ ($\frac{15}{b} \ne -\frac{2}{3} \implies b \ne -22.5$). Choice B has $a = -6$ and $b = 10$.</li>
-<li><strong>Desmos</strong>: Graph <code>4x - 6y = 15</code> and <code>ax + 9y = b</code> with sliders. When $a = -6$ and $b = 10$, the lines are parallel and never intersect.</li>
-</ul>
-<p></p>
-<h3 id="question-4" class="study-heading h3">Question 4</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: $P = \frac{V^2}{R} \implies V^2 = P \cdot R \implies V = \sqrt{P \cdot R}$.</li>
-</ul>
-<p></p>
-<h3 id="question-5" class="study-heading h3">Question 5</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  - Slope $m_1 = \frac{-1 - 5}{4 - (-2)} = \frac{-6}{6} = -1$.</p>
-<p>  - Perpendicular slope $m_2 = -\frac{1}{-1} = 1$.</p>
-<p>  - Equation of $L_2$: $y - 7 = 1(x - 3) \implies y = x + 4$. The $y$-intercept is $(0, 4)$.</p>
-<p></p>
-<h3 id="question-6" class="study-heading h3">Question 6</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: $2x - 7 = 13 \implies 2x = 20 \implies x = 10$, or $2x - 7 = -13 \implies 2x = -6 \implies x = -3$.</li>
-</ul>
-<p>  $$\text{Sum} = 10 + (-3) = 7$$</p>
-<p></p>
-<h3 id="question-7" class="study-heading h3">Question 7</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  - Vertex $x = -\frac{b}{2a} = -\frac{-24}{2(3)} = 4$.</p>
-<p>  - Minimum height $f(4) = 3(4)^2 - 24(4) + 55 = 48 - 96 + 55 = 7\text{ meters}$.</p>
-<ul class="study-list">
-<li><strong>Desmos</strong>: Type <code>f(x) = 3x^2 - 24x + 55</code>. Click the minimum vertex point at $(4, 7)$. The $y$-value is $7$.</li>
-</ul>
-<p></p>
-<h3 id="question-8" class="study-heading h3">Question 8</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Synthetic division of $(2x^3 - 5x^2 + 8x - 12)$ by $(x - 2)$:</li>
-</ul>
-<p>  $$\text{Quotient: } 2x^2 - x + 6\text{ with Remainder } 0$$</p>
-<ul class="study-list">
-<li><strong>Desmos</strong>: Graph $y_1 = \frac{2x^3 - 5x^2 + 8x - 12}{x - 2}$ and $y_2 = 2x^2 - x + 6$. The two parabolas overlap perfectly across all points.</li>
-</ul>
-<p></p>
-<h3 id="question-9" class="study-heading h3">Question 9</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  $$x = \frac{-(-6) \pm \sqrt{(-6)^2 - 4(1)(-11)}}{2(1)} = \frac{6 \pm \sqrt{36 + 44}}{2} = \frac{6 \pm \sqrt{80}}{2} = \frac{6 \pm 4\sqrt{5}}{2} = 3 + 2\sqrt{5}\text{ (since } x &gt; 0)$$</p>
-<p></p>
-<h3 id="question-10" class="study-heading h3">Question 10</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  $$y^{\frac{5}{3}} \cdot y^{\frac{3}{2}} = y^{\frac{5}{3} + \frac{3}{2}} = y^{\frac{10 + 9}{6}} = y^{\frac{19}{6}} \implies k = \frac{19}{6}$$</p>
-<p></p>
-<h3 id="question-11" class="study-heading h3">Question 11</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Equate expressions:</li>
-</ul>
-<p>  $$x^2 - 4x + 5 = 2x - 4 \implies x^2 - 6x + 9 = 0 \implies (x - 3)^2 = 0 \implies x = 3$$</p>
-<p>  Discriminant $\Delta = (-6)^2 - 4(1)(9) = 0$, indicating exactly one tangent intersection point at $(3, 2)$.</p>
-<ul class="study-list">
-<li><strong>Desmos</strong>: Graph both equations; they touch at single tangent point $(3, 2)$.</li>
-</ul>
-<p></p>
-<h3 id="question-12" class="study-heading h3">Question 12</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Standard half-life equation: $M(t) = M_0 \cdot (0.5)^{\frac{t}{h}}$, where $M_0 = 640$ and half-life $h = 14$ days $\implies M(t) = 640(0.5)^{\frac{t}{14}}$.</li>
-</ul>
-<p></p>
-<h3 id="question-13" class="study-heading h3">Question 13</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  - Original: $f(x) = (x + 3)^2 - 5$ with vertex at $(-3, -5)$.</p>
-<p>  - Shift right 3: $x$-coordinate becomes $-3 + 3 = 0$.</p>
-<p>  - Shift up 4: $y$-coordinate becomes $-5 + 4 = -1$.</p>
-<p>  - New vertex form: $g(x) = (x - 0)^2 - 1 = x^2 - 1$.</p>
-<p></p>
-<h3 id="question-14" class="study-heading h3">Question 14</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Denominator is all Python users ($65$). Numerator is remote Python users ($45$). Probability is $\frac{45}{65} = \frac{9}{13}$.</li>
-</ul>
-<p></p>
-<h3 id="question-15" class="study-heading h3">Question 15</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>:</li>
-</ul>
-<p>  - June: $12000 \times 1.25 = 15000$.</p>
-<p>  - July: $15000 \times 0.90 = 13500$.</p>
-<p></p>
-<h3 id="question-16" class="study-heading h3">Question 16</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: $\hat{y} = 1.85(32) + 42.0 = 59.2 + 42.0 = 101.2\text{ kWh}$.</li>
-</ul>
-<p></p>
-<h3 id="question-17" class="study-heading h3">Question 17</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Dataset $A$ has identical values, so variance and standard deviation are strictly $0$ ($\sigma_A = 0$). Dataset $B$ has spread, so $\sigma_B &gt; 0$.</li>
-</ul>
-<p></p>
-<h3 id="question-18" class="study-heading h3">Question 18</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Ratio equality for infinite solutions:</li>
-</ul>
-<p>  $$\frac{6}{-9} = \frac{-8}{m} \implies 6m = (-9)(-8) = 72 \implies m = \frac{72}{6} = 12$$</p>
-<p></p>
-<h3 id="question-19" class="study-heading h3">Question 19</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Complete the square:</li>
-</ul>
-<p>  $$(x^2 - 12x + 36) + (y^2 + 16y + 64) = -19 + 36 + 64 = 81$$</p>
-<p>  $$(x - 6)^2 + (y + 8)^2 = 81 \implies r = \sqrt{81} = 9$$</p>
-<p></p>
-<h3 id="question-20" class="study-heading h3">Question 20</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: In a 5-12-13 right triangle where $\cos(P) = \frac{\text{adj}}{\text{hyp}} = \frac{12}{13}$, opposite side $= \sqrt{13^2 - 12^2} = 5$.</li>
-</ul>
-<p>  $$\tan(P) = \frac{\text{opp}}{\text{adj}} = \frac{5}{12}$$</p>
-<p></p>
-<h3 id="question-21" class="study-heading h3">Question 21</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: By Vieta's formulas, for $ax^2 + bx + c = 0$, the sum of roots is:</li>
-</ul>
-<p>  $$x_1 + x_2 = -\frac{b}{a} = -\frac{-21}{3} = \frac{21}{3} = 7$$</p>
-<p></p>
-<h3 id="question-22" class="study-heading h3">Question 22</h3>
-<ul class="study-list">
-<li><strong>Algebraic</strong>: Cylinder volume $V = \pi r^2 h = \pi (4)^2 (9) = \pi (16)(9) = 144\pi \implies k = 144$.</li>
-</ul>
-    </article>
-
-    
-    <!-- Self-Assessment Mastery Checklist -->
-    <div class="mastery-card">
-      <div class="mastery-header">
-        <h3>🎯 Student Self-Assessment & Mastery Checklist</h3>
-        <span class="mastery-score" id="masteryScore">0 / 4 Mastered</span>
-      </div>
-      <div class="mastery-list">
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c1')">
-          <span>I can write a compound introduction paraphrasing both visuals without copying prompt words.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c2')">
-          <span>I can write a dual overview summarizing macro-trends with <strong>ZERO figures/percentages</strong>.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c3')">
-          <span>I grouped data logically into 2 separate body paragraphs with clear bridging connectors.</span>
-        </label>
-        <label class="mastery-item">
-          <input type="checkbox" onchange="updateMastery(this, 'c4')">
-          <span>I used at least 3 advanced academic proportion or comparative phrases (e.g. <em>lion's share, in stark contrast</em>).</span>
-        </label>
-      </div>
-      <div class="mastery-banner" id="masteryBanner" style="display: none;">
-        🎉 <strong>Outstanding! You have mastered the core competencies for this module.</strong>
-      </div>
-    </div>
-    
-
-    <footer>
-      <p>🏛️ SAT Academic Preparation Workspace • Engineered for Classroom Teaching & High-Yield Self-Study</p>
-    </footer>
-  </main>
-
-  <script>
-    // Theme Switcher
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('study_theme', next);
+<div class="topbar"><div class="topbar-in">
+<div class="brand">SAT <a href="../index.html">SAT Portal</a> &rsaquo; Practice_Modules</div>
+<div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+<span class="timer" id="mx-timer">--:--</span>
+<button class="btn on" id="mx-mode" title="Practice: instant feedback. Exam: feedback on submit.">Practice mode</button>
+<button class="btn" id="mx-theme" title="Dark / light">🌓</button>
+<button class="btn pri" id="mx-submit">Submit</button>
+</div></div></div>
+<div class="wrap">
+<div class="crumbs"><a href="../index.html">&larr; SAT Portal</a> &rsaquo; Practice_Modules</div>
+<h1>Digital SAT Math: Full Practice Module 1</h1>
+<div class="meta"><span><b>Questions:</b> 22</span><span><b>Level:</b> Score 700 - 800</span><span><b>Topic:</b> Digital SAT Math Full Practice Test Module 1</span><span><b>Suggested time:</b> 35 min</span></div>
+<div class="overview"><ul><li><strong>Test Section</strong>: Digital SAT Math (Calculator Permitted Throughout)</li><li><strong>Item Count</strong>: 22 Questions (17 Multiple Choice + 5 Student-Produced Responses)</li><li><strong>Time Allocated</strong>: 35 Minutes (~95 seconds per item)</li><li><strong>Domain Coverage</strong>:</li><li><em>Algebra</em> (Questions 1–6): Linear equations, linear inequalities, systems of linear equations</li><li><em>Advanced Math</em> (Questions 7–13): Quadratic equations, polynomial operations, nonlinear functions, radical/rational equations</li><li><em>Problem-Solving and Data Analysis</em> (Questions 14–18): Ratios, rates, percentages, two-variable data, probability, statistics</li><li><em>Geometry and Trigonometry</em> (Questions 19–22): Circles, triangles, radians, trigonometry, 3D volume</li></ul></div>
+<div class="controls">
+<button class="btn" id="mx-prev">← Prev</button>
+<button class="btn" id="mx-next">Next →</button>
+<button class="btn" id="mx-unflag" title="Jump to first unanswered">Unanswered ↓</button>
+<button class="btn" id="mx-reset" title="Clear answers on this device">Reset</button>
+<span style="font-size:.82rem;color:var(--muted)">Keys: A–D / 1–4 answer • F flag • ←/→ move</span>
+</div>
+<div class="progress"><div id="mx-bar"></div></div>
+<div class="pills" id="mx-pills"></div>
+<div id="mx-cards"></div>
+<div class="score" id="mx-score"></div>
+<div class="flow"><a href="../Show/show_walkthrough.html">SAT/Show/show_walkthrough.html</a><a href="../Test/mock_01.html">SAT/Test/mock_01.html</a><a href="../index.html">SAT/index.html</a></div>
+</div>
+<script>
+(function(){
+"use strict";
+var Q=[{"n": 1, "kind": "mc", "stem": "<p>A commercial solar installation company charges a flat equipment consultation fee of <span class=\"mx\">$450</span> plus <span class=\"mx\">$125</span> per solar panel installed. If a commercial client was billed a total of <span class=\"mx\">$5,700</span>, how many solar panels were installed?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">38</span>"}, {"L": "B", "t": "<span class=\"mx\">42</span>"}, {"L": "C", "t": "<span class=\"mx\">45</span>"}, {"L": "D", "t": "<span class=\"mx\">49</span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Linear Modeling", "domain": "Algebra"}, {"n": 2, "kind": "mc", "stem": "<p>Which of the following points <span class=\"mx\">(x, y)</span> satisfies the system of inequalities below?</p>\n<p><span class=\"mx-disp\"><span class=\"mx-cases\"><span class=\"mx-brace\">⎧</span><span class=\"mx-rows\"><span class=\"mx-row\"><span>y &gt; 2x - 5</span></span><span class=\"mx-row\"><span>y le -x + 4</span></span></span></span></span></p>", "options": [{"L": "A", "t": "<span class=\"mx\">(3, 2)</span>"}, {"L": "B", "t": "<span class=\"mx\">(0, -6)</span>"}, {"L": "C", "t": "<span class=\"mx\">(1, 1)</span>"}, {"L": "D", "t": "<span class=\"mx\">(2, 5)</span>"}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Linear Inequalities", "domain": "Algebra"}, {"n": 3, "kind": "mc", "stem": "<p>In the given system of equations, <span class=\"mx\">a</span> and <span class=\"mx\">b</span> are constants.</p>\n<p><span class=\"mx-disp\"><span class=\"mx-cases\"><span class=\"mx-brace\">⎧</span><span class=\"mx-rows\"><span class=\"mx-row\"><span>4x - 6y = 15</span></span><span class=\"mx-row\"><span>ax + 9y = b</span></span></span></span></span></p>\n<p>If the system has no solution, which of the following could be the values of <span class=\"mx\">a</span> and <span class=\"mx\">b</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">a = -6</span> and <span class=\"mx\">b = -22.5</span>"}, {"L": "B", "t": "<span class=\"mx\">a = -6</span> and <span class=\"mx\">b = 10</span>"}, {"L": "C", "t": "<span class=\"mx\">a = 6</span> and <span class=\"mx\">b = -22.5</span>"}, {"L": "D", "t": "<span class=\"mx\">a = 6</span> and <span class=\"mx\">b = 15</span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Systems (No Solution)", "domain": "Algebra"}, {"n": 4, "kind": "mc", "stem": "<p>The formula for the electric power <span class=\"mx\">P</span> dissipated through a resistor is given by:</p>\n<p><span class=\"mx-disp\">P = <span class=\"mx-frac\"><span>V<sup>2</sup></span><span>R</span></span></span></p>\n<p>where <span class=\"mx\">V</span> is voltage and <span class=\"mx\">R</span> is electrical resistance. Which of the following correctly expresses <span class=\"mx\">V</span> in terms of <span class=\"mx\">P</span> and <span class=\"mx\">R</span>, assuming all quantities are positive?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">V = √<span class=\"mx-root\">P · R</span></span>"}, {"L": "B", "t": "<span class=\"mx\">V = <span class=\"mx-frac\"><span>P</span><span>R<sup>2</sup></span></span></span>"}, {"L": "C", "t": "<span class=\"mx\">V = (P · R)<sup>2</sup></span>"}, {"L": "D", "t": "<span class=\"mx\">V = √<span class=\"mx-root\"><span class=\"mx-frac\"><span>P</span><span>R</span></span></span></span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Literal Equations", "domain": "Algebra"}, {"n": 5, "kind": "mc", "stem": "<p>Line <span class=\"mx\">L<sub>1</sub></span> in the <span class=\"mx\">xy</span>-plane passes through the points <span class=\"mx\">(-2, 5)</span> and <span class=\"mx\">(4, -1)</span>. Line <span class=\"mx\">L<sub>2</sub></span> is perpendicular to line <span class=\"mx\">L<sub>1</sub></span> and passes through the point <span class=\"mx\">(3, 7)</span>. What is the <span class=\"mx\">y</span>-intercept of line <span class=\"mx\">L<sub>2</sub></span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">(0, 4)</span>"}, {"L": "B", "t": "<span class=\"mx\">(0, 3)</span>"}, {"L": "C", "t": "<span class=\"mx\">(0, -4)</span>"}, {"L": "D", "t": "<span class=\"mx\">(0, 10)</span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Perpendicular Lines", "domain": "Algebra"}, {"n": 6, "kind": "mc", "stem": "<p>What is the sum of all real solutions to the equation <span class=\"mx\">|2x - 7| = 13</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">3</span>"}, {"L": "B", "t": "<span class=\"mx\">7</span>"}, {"L": "C", "t": "<span class=\"mx\">10</span>"}, {"L": "D", "t": "<span class=\"mx\">14</span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Absolute Value Equations", "domain": "Algebra"}, {"n": 7, "kind": "mc", "stem": "<p>The function <span class=\"mx\">f(x) = 3x<sup>2</sup> - 24x + 55</span> models the height, in meters, of a drone relative to a canyon floor <span class=\"mx\">x</span> seconds after launch. What is the minimum height reached by the drone?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">4 meters</span>"}, {"L": "B", "t": "<span class=\"mx\">7 meters</span>"}, {"L": "C", "t": "<span class=\"mx\">12 meters</span>"}, {"L": "D", "t": "<span class=\"mx\">55 meters</span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Quadratic Vertex Minimum", "domain": "Advanced Math"}, {"n": 8, "kind": "mc", "stem": "<p>Which of the following is equivalent to the expression <span class=\"mx\"><span class=\"mx-frac\"><span>2x<sup>3</sup> - 5x<sup>2</sup> + 8x - 12</span><span>x - 2</span></span></span> for all <span class=\"mx\">x ne 2</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">2x<sup>2</sup> - x + 6</span>"}, {"L": "B", "t": "<span class=\"mx\">2x<sup>2</sup> - x + 6 + <span class=\"mx-frac\"><span>0</span><span>x - 2</span></span></span>"}, {"L": "C", "t": "<span class=\"mx\">2x<sup>2</sup> - 9x + 26 - <span class=\"mx-frac\"><span>64</span><span>x - 2</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\">2x<sup>2</sup> - x + 6</span> (Exact division with remainder <span class=\"mx\">0</span>)"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Polynomial Division", "domain": "Advanced Math"}, {"n": 9, "kind": "mc", "stem": "<p>If <span class=\"mx\">x &gt; 0</span> and <span class=\"mx\">x<sup>2</sup> - 6x - 11 = 0</span>, what is the value of <span class=\"mx\">x</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">3 + 2√<span class=\"mx-root\">5</span></span>"}, {"L": "B", "t": "<span class=\"mx\">3 + 4√<span class=\"mx-root\">5</span></span>"}, {"L": "C", "t": "<span class=\"mx\">6 + √<span class=\"mx-root\">20</span></span>"}, {"L": "D", "t": "<span class=\"mx\">3 + √<span class=\"mx-root\">11</span></span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Quadratic Formula / Radicals", "domain": "Advanced Math"}, {"n": 10, "kind": "mc", "stem": "<p>For all positive values of <span class=\"mx\">y</span>, the expression <span class=\"mx\">√<sup>3</sup><span class=\"mx-root\">y<sup>5</sup></span> · √<span class=\"mx-root\">y<sup>3</sup></span></span> can be written in the form <span class=\"mx\">y<sup>k</sup></span>, where <span class=\"mx\">k</span> is a constant. What is the value of <span class=\"mx\">k</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>19</span><span>6</span></span></span>"}, {"L": "B", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>15</span><span>6</span></span></span>"}, {"L": "C", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>8</span><span>5</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>5</span><span>2</span></span></span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Fractional Exponents", "domain": "Advanced Math"}, {"n": 11, "kind": "mc", "stem": "<p>How many distinct real intersection points do the graphs of <span class=\"mx\">y = x<sup>2</sup> - 4x + 5</span> and <span class=\"mx\">y = 2x - 4</span> share in the <span class=\"mx\">xy</span>-plane?</p>", "options": [{"L": "A", "t": "Zero"}, {"L": "B", "t": "Exactly one"}, {"L": "C", "t": "Exactly two"}, {"L": "D", "t": "Infinitely many"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Nonlinear System Intersection", "domain": "Advanced Math"}, {"n": 12, "kind": "mc", "stem": "<p>A radioactive isotope sample has an initial mass of <span class=\"mx\">640 grams</span>. The mass of the isotope decreases by <span class=\"mx\">50%</span> every <span class=\"mx\">14</span> days. Which equation models the remaining mass <span class=\"mx\">M(t)</span>, in grams, after <span class=\"mx\">t</span> days?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">M(t) = 640(0.5)<sup>14t</sup></span>"}, {"L": "B", "t": "<span class=\"mx\">M(t) = 640(0.5)<sup><span class=\"mx-frac\"><span>t</span><span>14</span></span></sup></span>"}, {"L": "C", "t": "<span class=\"mx\">M(t) = 640(2)<sup><span class=\"mx-frac\"><span>t</span><span>14</span></span></sup></span>"}, {"L": "D", "t": "<span class=\"mx\">M(t) = 14(0.5)<sup><span class=\"mx-frac\"><span>t</span><span>640</span></span></sup></span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Exponential Decay Modeling", "domain": "Advanced Math"}, {"n": 13, "kind": "mc", "stem": "<p>The graph of <span class=\"mx\">y = g(x)</span> is obtained by shifting the graph of <span class=\"mx\">f(x) = (x + 3)<sup>2</sup> - 5</span> three units to the right and four units upwards. What is the equation of <span class=\"mx\">g(x)</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">g(x) = x<sup>2</sup> - 1</span>"}, {"L": "B", "t": "<span class=\"mx\">g(x) = (x + 6)<sup>2</sup> - 1</span>"}, {"L": "C", "t": "<span class=\"mx\">g(x) = x<sup>2</sup> - 9</span>"}, {"L": "D", "t": "<span class=\"mx\">g(x) = (x - 3)<sup>2</sup> + 1</span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Function Transformations", "domain": "Advanced Math"}, {"n": 14, "kind": "mc", "stem": "<p>A software firm surveyed 150 software engineers regarding their primary programming language and their work arrangement.</p>\n<table><thead><tr><th>Work Arrangement</th><th>Python</th><th>TypeScript / JavaScript</th><th>Rust</th><th>Total</th></tr></thead><tbody><tr><td><strong>Fully Remote</strong></td><td>45</td><td>35</td><td>10</td><td><strong>90</strong></td></tr><tr><td><strong>Hybrid / On-site</strong></td><td>20</td><td>30</td><td>10</td><td><strong>60</strong></td></tr><tr><td><strong>Total</strong></td><td><strong>65</strong></td><td><strong>65</strong></td><td><strong>20</strong></td><td><strong>150</strong></td></tr></tbody></table>\n<p>If an engineer who codes primarily in Python is chosen at random, what is the probability that this engineer works Fully Remote?</p>", "options": [{"L": "A", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>45</span><span>150</span></span></span>"}, {"L": "B", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>45</span><span>90</span></span></span>"}, {"L": "C", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>45</span><span>65</span></span></span>"}, {"L": "D", "t": "<span class=\"mx\"><span class=\"mx-frac\"><span>65</span><span>150</span></span></span>"}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Conditional Probability", "domain": "Data Analysis"}, {"n": 15, "kind": "mc", "stem": "<p>A manufacturing plant produced <span class=\"mx\">12,000</span> microchips in May. In June, production increased by <span class=\"mx\">25%</span>. In July, production decreased by <span class=\"mx\">10%</span> relative to June. How many microchips were produced in July?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">13,500</span>"}, {"L": "B", "t": "<span class=\"mx\">13,800</span>"}, {"L": "C", "t": "<span class=\"mx\">14,200</span>"}, {"L": "D", "t": "<span class=\"mx\">15,000</span>"}], "key": "A", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Compound Percent Change", "domain": "Data Analysis"}, {"n": 16, "kind": "mc", "stem": "<p>The scatterplot below shows the relationship between ambient outdoor temperature <span class=\"mx\">x</span> (in <span class=\"mx\"><sup>\\</sup>circC</span>) and hourly electricity consumption <span class=\"mx\">y</span> (in kilowatt-hours) for an office building. The line of best fit is given by:</p>\n<p><span class=\"mx-disp\">hat{y} = 1.85x + 42.0</span></p>\n<p>Based on this model, what is the predicted electricity consumption, in kilowatt-hours, when the ambient temperature is <span class=\"mx\">32<sup>\\</sup>circC</span>?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">98.2 kWh</span>"}, {"L": "B", "t": "<span class=\"mx\">101.2 kWh</span>"}, {"L": "C", "t": "<span class=\"mx\">104.5 kWh</span>"}, {"L": "D", "t": "<span class=\"mx\">112.0 kWh</span>"}], "key": "B", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Linear Regression Line of Best Fit", "domain": "Data Analysis"}, {"n": 17, "kind": "mc", "stem": "<p>Dataset <span class=\"mx\">A</span> consists of the numbers <span class=\"mx\">{10, 10, 10, 10, 10}</span>. Dataset <span class=\"mx\">B</span> consists of the numbers <span class=\"mx\">{6, 8, 10, 12, 14}</span>. Which of the following statements comparing their standard deviations (<span class=\"mx\">σ<sub>A</sub></span> and <span class=\"mx\">σ<sub>B</sub></span>) is true?</p>", "options": [{"L": "A", "t": "<span class=\"mx\">σ<sub>A</sub> &gt; σ<sub>B</sub></span>"}, {"L": "B", "t": "<span class=\"mx\">σ<sub>A</sub> = σ<sub>B</sub></span>"}, {"L": "C", "t": "<span class=\"mx\">σ<sub>A</sub> = 0</span> and <span class=\"mx\">σ<sub>B</sub> &gt; 0</span>"}, {"L": "D", "t": "The standard deviations cannot be determined without sample weights."}], "key": "C", "rat": "<p>Review the stimulus and eliminate each distractor.</p>", "diff": "Standard Deviation / Spread", "domain": "Data Analysis"}, {"n": 18, "kind": "spr", "stem": "<p>In the system of equations below, <span class=\"mx\">m</span> is a constant.</p>\n<p><span class=\"mx-disp\"><span class=\"mx-cases\"><span class=\"mx-brace\">⎧</span><span class=\"mx-rows\"><span class=\"mx-row\"><span>6x - 8y = 20</span></span><span class=\"mx-row\"><span>-9x + my = -30</span></span></span></span></span></p>\n<p>If the system has infinitely many solutions, what is the value of <span class=\"mx\">m</span>?</p>", "options": [], "key": "12", "rat": "<p>Enter an equivalent value (fractions and decimals accepted).</p>", "diff": "Infinite Solution Constant", "domain": "Algebra"}, {"n": 19, "kind": "spr", "stem": "<p>A circle in the <span class=\"mx\">xy</span>-plane has the equation <span class=\"mx\">x<sup>2</sup> + y<sup>2</sup> - 12x + 16y + 19 = 0</span>. What is the radius of the circle?</p>", "options": [], "key": "9", "rat": "<p>Enter an equivalent value (fractions and decimals accepted).</p>", "diff": "Circle Standard Form Radius", "domain": "Geometry"}, {"n": 20, "kind": "spr", "stem": "<p>In a right triangle <span class=\"mx\">△ PQR</span> with right angle at <span class=\"mx\">Q</span>, <span class=\"mx\">cos(P) = <span class=\"mx-frac\"><span>12</span><span>13</span></span></span>. What is the value of <span class=\"mx\">tan(P)</span>?</p>\n<p><em>(Enter your answer as a fraction in simplest form, e.g. <code>5/12</code>).</em></p>", "options": [], "key": "5/12", "rat": "<p>Enter an equivalent value (fractions and decimals accepted).</p>", "diff": "Right Triangle Trigonometry", "domain": "Trigonometry"}, {"n": 21, "kind": "spr", "stem": "<p>What is the sum of the solutions to the quadratic equation <span class=\"mx\">3x<sup>2</sup> - 21x + 14 = 0</span>?</p>", "options": [], "key": "7", "rat": "<p>Enter an equivalent value (fractions and decimals accepted).</p>", "diff": "Vieta's Formulas (Sum of Roots)", "domain": "Advanced Math"}, {"n": 22, "kind": "spr", "stem": "<p>A right circular cylinder has a base radius of <span class=\"mx\">4 cm</span> and a height of <span class=\"mx\">9 cm</span>. If the volume of the cylinder is <span class=\"mx\">kπ cm<sup>3</sup></span>, what is the value of the constant <span class=\"mx\">k</span>?</p>", "options": [], "key": "144", "rat": "<p>Enter an equivalent value (fractions and decimals accepted).</p>", "diff": "Cylinder Volume Constant", "domain": "Geometry"}];
+var PAGE=(function(){try{var p=location.pathname.split('/').filter(Boolean);return 'sat:'+p.slice(-2).join('/');}catch(e){return 'sat:page';}})();
+var S={mode:'practice',submitted:false,current:0,ans:{},flag:{},left:2100,timerOn:true};
+try{var sv=JSON.parse(localStorage.getItem(PAGE)||'null');if(sv&&sv.ans){S.ans=sv.ans;S.flag=sv.flag||{};}}catch(e){}
+function save(){try{localStorage.setItem(PAGE,JSON.stringify({ans:S.ans,flag:S.flag}));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function answeredCount(){var c=0;Q.forEach(function(q,i){if(S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)c++;});return c;}
+function sprNorm(s){return String(s).replace(/\s+/g,'').replace(/,/g,'');}
+function sprNum(s){var m=sprNorm(s).match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/);if(m&&+m[2]!==0)return +m[1]/+m[2];var v=parseFloat(sprNorm(s));return isNaN(v)?null:v;}
+function sprEqual(a,b){var x=sprNorm(a),y=sprNorm(b);if(!x||!y)return false;if(x===y)return true;var p1=x.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/),p2=y.match(/^\(?(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)\)?$/);if(p1&&p2)return Math.abs(+p1[1]-+p2[1])<1e-9&&Math.abs(+p1[2]-+p2[2])<1e-9;var v1=sprNum(x),v2=sprNum(y);return v1!==null&&v2!==null&&Math.abs(v1-v2)<1e-9;}
+function isCorrect(i){var q=Q[i],a=S.ans[i];if(a===undefined||a===''||a===null)return null;if(q.kind==='spr')return sprEqual(a,q.key);return a===q.key;}
+function render(){
+  var host=$('mx-cards');host.innerHTML='';
+  Q.forEach(function(q,i){
+    var card=document.createElement('article');card.className='qcard'+(i===S.current?' cur':'');card.id='card-'+i;
+    var tags=(q.diff?'<span class="qtag diff">'+esc(q.diff)+'</span>':'')+(q.domain?'<span class="qtag">'+esc(q.domain)+'</span>':'');
+    var h='<div class="qtop"><span class="qnum">Q'+q.n+'</span>'+tags+'<span class="qacts"><button class="iconbtn'+(S.flag[i]?' flagged':'')+'" data-flag="'+i+'" title="Flag (F)">⚑</button></span></div>';
+    h+='<div class="qstem">'+q.stem+'</div>';
+    if(q.kind==='spr'){
+      var v=S.ans[i]===undefined?'':esc(S.ans[i]);
+      h+='<div class="spr-row"><input class="spr" id="spr-'+i+'" value="'+v+'" placeholder="Your answer" inputmode="decimal" autocomplete="off"><button class="btn pri" data-check="'+i+'">Check</button></div><div class="rat" id="rat-'+i+'" hidden></div>';
+    }else{
+      h+='<div class="opts">'+q.options.map(function(o){
+        var cls='opt'+(S.ans[i]===o.L?' sel':'');
+        return '<button class="'+cls+'" data-q="'+i+'" data-l="'+o.L+'"><span class="ol">'+o.L+'</span><span>'+o.t+'</span></button>';
+      }).join('')+'</div><div class="rat" id="rat-'+i+'" hidden></div>';
     }
-    (function() {
-      const saved = localStorage.getItem('study_theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    })();
-
-    // Font Scaling
-    let currentScale = 16;
-    function adjustFontSize(delta) {
-      currentScale = Math.min(22, Math.max(13, currentScale + delta));
-      document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      localStorage.setItem('study_font_size', currentScale);
-    }
-    (function() {
-      const savedSize = localStorage.getItem('study_font_size');
-      if (savedSize) {
-        currentScale = parseInt(savedSize, 10);
-        document.documentElement.style.setProperty('--base-font-size', currentScale + 'px');
-      }
-    })();
-
-    // Teacher Mode Toggle
-    function toggleTeacherMode() {
-      const drawer = document.getElementById('teacherDrawer');
-      if (drawer) {
-        drawer.classList.toggle('active');
-        if (drawer.classList.contains('active')) {
-          drawer.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-
-    // Scaffolding Toggle & Inserter
-    function toggleScaffold() {
-      const content = document.getElementById('scaffoldContent');
-      const icon = document.getElementById('scaffoldIcon');
-      if (content.style.display === 'none') {
-        content.style.display = 'block';
-        icon.innerText = '▼';
-      } else {
-        content.style.display = 'none';
-        icon.innerText = '▶';
-      }
-    }
-
-    function updateAudioSpeed() {
-      audioRate = parseFloat(document.getElementById('audioSpeed').value) || 1.0;
-      if (isSpeaking) {
-        stopAudio();
-        toggleReadAloud();
-      }
-    }
-
-    function toggleReadAloud() {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech is not supported in this browser.');
-        return;
-      }
-      if (isSpeaking) {
-        stopAudio();
-        return;
-      }
-      
-      const selected = window.getSelection().toString().trim();
-      const textToRead = selected || document.querySelector('.module-content-card').innerText;
-      
-      currentUtterance = new SpeechSynthesisUtterance(textToRead);
-      currentUtterance.rate = audioRate;
-      currentUtterance.lang = 'en-US';
-
-      currentUtterance.onstart = () => {
-        isSpeaking = true;
-        document.getElementById('btnPlayAudio').innerText = '⏸️ Pause';
-      };
-      currentUtterance.onend = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-      currentUtterance.onerror = () => {
-        isSpeaking = false;
-        document.getElementById('btnPlayAudio').innerText = '▶️ Read Aloud';
-      };
-
-      window.speechSynthesis.speak(currentUtterance);
-    }
-
-    function stopAudio() {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        const btn = document.getElementById('btnPlayAudio');
-        if (btn) btn.innerText = '▶️ Read Aloud';
-      }
-    }
-
-    function readTextChunk(btn) {
-      const pre = btn.closest('.code-block-wrapper').querySelector('pre code');
-      if (pre && 'speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(pre.innerText);
-        utter.rate = audioRate;
-        window.speechSynthesis.speak(utter);
-      }
-    }
-
-    // Mastery Checklist Logic
-    const pageKey = 'mastery_' + window.location.pathname;
-    function updateMastery(chk, key) {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      checks[key] = chk.checked;
-      localStorage.setItem(pageKey, JSON.stringify(checks));
-      renderMastery();
-    }
-    function renderMastery() {
-      const checks = JSON.parse(localStorage.getItem(pageKey) || '{}');
-      let count = 0;
-      ['c1', 'c2', 'c3', 'c4'].forEach((k, idx) => {
-        const el = document.querySelectorAll('.mastery-item input')[idx];
-        if (el) {
-          el.checked = !!checks[k];
-          if (checks[k]) count++;
-        }
-      });
-      const scoreEl = document.getElementById('masteryScore');
-      const banner = document.getElementById('masteryBanner');
-      if (scoreEl) scoreEl.innerText = `${count} / 4 Mastered`;
-      if (banner) banner.style.display = count === 4 ? 'block' : 'none';
-    }
-    (function() { renderMastery(); })();
-  </script>
+    card.innerHTML=h;host.appendChild(card);
+  });
+  renderPills();updateBar();refresh(true);
+}
+function renderPills(){
+  $('mx-pills').innerHTML=Q.map(function(q,i){
+    var c='pill'+(i===S.current?' cur':'')+((S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null)?' ans':'')+(S.flag[i]?' flagged':'');
+    return '<button class="'+c+'" data-goto="'+i+'">'+q.n+'</button>';
+  }).join('');
+}
+function updateBar(){$('mx-bar').style.width=Math.round(answeredCount()/Q.length*100)+'%';}
+function setCurrent(i){S.current=Math.max(0,Math.min(Q.length-1,i));Array.prototype.forEach.call(document.querySelectorAll('.qcard.cur'),function(e){e.classList.remove('cur');});var c=$('card-'+S.current);if(c)c.classList.add('cur');renderPills();}
+function reveal(i){
+  var q=Q[i],rat=$('rat-'+i);if(!rat)return;
+  var ok=isCorrect(i);
+  if(q.kind==='spr'){
+    var inp=$('spr-'+i);if(inp){inp.classList.remove('good','miss');if(ok!==null)inp.classList.add(ok?'good':'miss');}
+  }else{
+    Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){
+      b.classList.remove('good','miss');
+      if(b.getAttribute('data-l')===q.key)b.classList.add('good');
+      else if(b.getAttribute('data-l')===S.ans[i]&&ok===false)b.classList.add('miss');
+    });
+  }
+  rat.innerHTML=(ok===true?'<strong style="color:var(--ok)">✓ Correct.</strong> ':(ok===false?'<strong style="color:var(--bad)">✗ Not quite.</strong> Correct answer: <strong>'+esc(q.key)+'</strong>. ':''))+q.rat;
+  rat.hidden=false;
+}
+function refresh(revealAnswered){
+  Q.forEach(function(q,i){
+    var rat=$('rat-'+i);if(!rat)return;
+    var show=S.submitted||(S.mode==='practice'&&S.ans[i]!==undefined&&S.ans[i]!==''&&S.ans[i]!==null);
+    if(show&&revealAnswered!==false)reveal(i);else if(!show){rat.hidden=true;
+      if(q.kind==='spr'){var inp=$('spr-'+i);if(inp)inp.classList.remove('good','miss');}
+      else Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.remove('good','miss');});}
+  });
+  updateBar();renderScore();
+}
+function selectMC(i,L){
+  if(S.submitted)return;
+  S.ans[i]=L;save();setCurrent(i);
+  Array.prototype.forEach.call(document.querySelectorAll('#card-'+i+' .opt'),function(b){b.classList.toggle('sel',b.getAttribute('data-l')===L);});
+  if(S.mode==='practice')reveal(i);else{updateBar();renderPills();}
+}
+function submitAll(){
+  S.submitted=true;save();
+  var right=0;Q.forEach(function(q,i){if(isCorrect(i)===true)right++;reveal(i);});
+  var pct=Math.round(right/Q.length*100);
+  var sc=$('mx-score');
+  var miss=Q.map(function(q,i){return i;}).filter(function(i){return isCorrect(i)!==true;});
+  sc.innerHTML='<h2>Score: '+right+' / '+Q.length+' ('+pct+'%)</h2><p>'+(miss.length?'Review: '+miss.map(function(i){return '<a href="#card-'+i+'" style="color:var(--primary)">Q'+Q[i].n+'</a>';}).join(' · '):'Perfect — nothing to review.')+'</p><p><button class="btn" id="mx-retry">Retry missed ('+miss.length+')</button> <button class="btn" id="mx-again">Restart all</button></p>';
+  sc.classList.add('show');renderPills();
+  var rt=$('mx-retry');if(rt)rt.onclick=function(){miss.forEach(function(i){delete S.ans[i];});S.submitted=false;save();sc.classList.remove('show');refresh(false);render();if(miss.length)setCurrent(miss[0]);};
+  var ag=$('mx-again');if(ag)ag.onclick=function(){S.ans={};S.submitted=false;save();sc.classList.remove('show');refresh(false);render();setCurrent(0);};
+  sc.scrollIntoView({behavior:'smooth'});
+}
+function renderScore(){}
+document.addEventListener('click',function(e){
+  var o=e.target.closest&&e.target.closest('.opt');if(o){selectMC(+o.getAttribute('data-q'),o.getAttribute('data-l'));return;}
+  var c=e.target.closest&&e.target.closest('[data-check]');if(c){var i=+c.getAttribute('data-check');var inp=$('spr-'+i);S.ans[i]=inp.value;save();setCurrent(i);if(S.mode==='practice'||S.submitted)reveal(i);else{updateBar();renderPills();}return;}
+  var f=e.target.closest&&e.target.closest('[data-flag]');if(f){var j=+f.getAttribute('data-flag');S.flag[j]=!S.flag[j];save();f.classList.toggle('flagged',!!S.flag[j]);renderPills();return;}
+  var g=e.target.closest&&e.target.closest('[data-goto]');if(g){setCurrent(+g.getAttribute('data-goto'));var cd=$('card-'+S.current);if(cd)cd.scrollIntoView({behavior:'smooth',block:'start'});return;}
+});
+$('mx-submit').onclick=submitAll;
+$('mx-prev').onclick=function(){setCurrent(S.current-1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-next').onclick=function(){setCurrent(S.current+1);var c=$('card-'+S.current);if(c)c.scrollIntoView({behavior:'smooth'});};
+$('mx-unflag').onclick=function(){for(var i=0;i<Q.length;i++){if(S.ans[i]===undefined||S.ans[i]===''||S.ans[i]===null){setCurrent(i);var c=$('card-'+i);if(c)c.scrollIntoView({behavior:'smooth'});return;}}};
+$('mx-reset').onclick=function(){if(confirm('Clear all answers on this page?')){S.ans={};S.flag={};S.submitted=false;save();$('mx-score').classList.remove('show');render();}};
+$('mx-mode').onclick=function(){S.mode=(S.mode==='practice')?'exam':'practice';var b=$('mx-mode');b.textContent=(S.mode==='practice'?'Practice mode':'Exam mode');b.classList.toggle('on',S.mode==='practice');refresh(false);};
+$('mx-theme').onclick=function(){var h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');};
+document.addEventListener('keydown',function(e){
+  var t=e.target;if(t&&(t.tagName==='TEXTAREA'||t.tagName==='INPUT'))return;
+  var k=e.key.toLowerCase();
+  if(['a','b','c','d'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,k.toUpperCase());}
+  else if(['1','2','3','4'].indexOf(k)>-1&&Q[S.current]&&Q[S.current].kind==='mc'){selectMC(S.current,'ABCD'[+k-1]);}
+  else if(k==='f'){S.flag[S.current]=!S.flag[S.current];save();render();}
+  else if(k==='arrowdown'){e.preventDefault();setCurrent(S.current+1);}
+  else if(k==='arrowup'){e.preventDefault();setCurrent(S.current-1);}
+});
+var totalSec=2100,left=totalSec,timerEl=$('mx-timer');
+function tick(){var m=Math.floor(left/60),s=left%60;timerEl.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;timerEl.classList.toggle('low',left<300);if(left>0)left--;}
+tick();setInterval(tick,1000);
+window.addEventListener('beforeprint',function(){Q.forEach(function(q,i){var r=$('rat-'+i);if(r){r.hidden=false;}});});
+render();
+})();
+</script>
+<!-- student-tools v1 -->
 <!-- student-tools v1 -->
 <style>
 
